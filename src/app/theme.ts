@@ -26,4 +26,21 @@ export const theme = {
     body_md: '14px',
     body_sm: '12px',
   },
+  fontWeight: {
+    title_xl: 700,
+    title_lg: 700,
+    title_md: 700,
+    title_sm: 400,
+    body_lg: 700,
+    body_md: 400,
+    body_sm: 400,
+  },
+  button: {
+    pad_x: '8px',
+    pad_y: '4px',
+  },
+  radius: {
+    sm: '4px',
+    md: '12px',
+  },
 } as const
