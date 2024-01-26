@@ -46,7 +46,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'example1: name of paper',
-    authors: [MEMBER.example1],
+    authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['civics', 'visualization'],
@@ -60,7 +60,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'example: this is preprint',
-    authors: [MEMBER.example1],
+    authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 'Preprints',
     topics: ['civics', 'visualization'],
@@ -70,7 +70,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'example1: name of paper',
-    authors: [MEMBER.example1],
+    authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['civics', 'visualization'],
@@ -79,7 +79,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'example: this is preprint',
-    authors: [MEMBER.example1],
+    authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 'Preprints',
     topics: ['civics', 'visualization'],
