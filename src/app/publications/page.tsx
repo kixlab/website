@@ -1,49 +1,16 @@
 'use client'
 
-import React from 'react'
-import styled from '@emotion/styled'
+// import React from 'react'
 
 import { PUBLICATIONS, YearTypes } from '@/data/publications'
 import PublicationCard from '@/components/PublicationCard'
-
-const Main = styled.main`
-  padding: 40px 96px;
-`
-
-const PageTitle = styled.h1`
-  margin: 0;
-  ${props => props.theme.fontVariant.title_lg}
-`
-
-const Sections = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-`
-
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-`
-
-const SectionTitle = styled.h2`
-  margin: 0;
-  ${props => props.theme.fontVariant.title_md}
-  color: ${props => props.theme.color.orange900};
-`
-
-const SectionContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`
+import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 
 export default function Page() {
   return (
-    <Main>
+    <main>
+      <h1>Publications</h1>
       <Sections>
-        <PageTitle>Publications</PageTitle>
         {YearTypes.map(
           (year, i) =>
             PUBLICATIONS.filter(({ year: y }) => y === year).length >= 1 && (
@@ -58,6 +25,6 @@ export default function Page() {
             )
         )}
       </Sections>
-    </Main>
+    </main>
   )
 }
