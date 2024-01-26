@@ -23,7 +23,7 @@ export const Nav = styled.nav`
 
 export const Logo = styled.a`
   text-decoration: none;
-  font-size: ${props => props.theme.fontSize.title_sm};
+  ${props => props.theme.fontVariant.title_sm}
   color: ${props => props.theme.color.gray900};
   display: flex;
   align-items: end;

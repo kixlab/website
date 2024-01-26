@@ -7,8 +7,7 @@ export const URL = styled.a`
   align-items: center;
   background-color: ${props => props.theme.color.orange200};
   text-decoration: none;
-  font-size: ${props => props.theme.fontSize.body_sm};
-  font-weight: ${props => props.theme.fontWeight.body_sm};
+  ${props => props.theme.fontVariant.body_sm}
   padding: ${props => props.theme.button.pad_y} ${props => props.theme.button.pad_x};
   border-radius: ${props => props.theme.radius.sm};
   width: fit-content;
