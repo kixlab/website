@@ -3,6 +3,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
+import { FontVariant, Color } from '@/app/theme'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,13 +19,13 @@ export const Nav = styled.nav`
   justify-content: space-between;
   padding: 12px 96px 16px 96px;
   align-items: end;
-  border-bottom: 1px solid ${props => props.theme.color.gray300};
+  border-bottom: 1px solid ${Color.gray300};
 `
 
 export const Logo = styled.a`
   text-decoration: none;
-  ${props => props.theme.fontVariant.title_sm}
-  color: ${props => props.theme.color.gray900};
+  ${FontVariant.title_sm}
+  color: ${Color.gray900};
   display: flex;
   align-items: end;
   gap: 8px;
@@ -40,11 +41,11 @@ export const NavUl = styled.ul`
 
 const Anchor = styled(Link)<{ selected: boolean }>`
   text-decoration: none;
-  color: ${props => (props.selected ? props.theme.color.orange900 : props.theme.color.gray600)};
-  box-shadow: ${props => (props.selected ? `0px 1px 0px 0px ${props.theme.color.orange900}` : null)};
+  color: ${props => (props.selected ? Color.orange900 : Color.gray600)};
+  box-shadow: ${props => (props.selected ? `0px 1px 0px 0px ${Color.orange900}` : null)};
   &:hover {
     cursor: pointer;
-    color: ${props => props.theme.color.orange900};
+    color: ${Color.orange900};
   }
 `
 

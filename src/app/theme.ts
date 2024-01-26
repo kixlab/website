@@ -1,12 +1,11 @@
 import { css } from '@emotion/react'
-import { text } from 'stream/consumers'
 
 const textVariant = (size: `${number}px`, weight: number) => css`
   font-size: ${size};
   font-weight: ${weight};
 `
 
-const color = {
+export const Color = {
   white: '#FFFFFF',
   black: '#000000',
   gray900: '#252525',
@@ -31,7 +30,7 @@ const color = {
   orange50: '#FFF8E1',
 } as const
 
-const fontSize = {
+const FontSize = {
   title_xl: '36px',
   title_lg: '28px',
   title_md: '22px',
@@ -41,7 +40,7 @@ const fontSize = {
   body_sm: '12px',
 } as const
 
-const fontWeight = {
+const FontWeight = {
   title_xl: 700,
   title_lg: 700,
   title_md: 700,
@@ -51,29 +50,22 @@ const fontWeight = {
   body_sm: 400,
 } as const
 
-const fontVariant = {
-  title_xl: textVariant(fontSize.title_xl, fontWeight.title_xl),
-  title_lg: textVariant(fontSize.title_lg, fontWeight.title_lg),
-  title_md: textVariant(fontSize.title_md, fontWeight.title_md),
-  title_sm: textVariant(fontSize.title_sm, fontWeight.title_sm),
-  body_lg: textVariant(fontSize.body_lg, fontWeight.body_lg),
-  body_md: textVariant(fontSize.body_md, fontWeight.body_md),
-  body_sm: textVariant(fontSize.body_sm, fontWeight.body_sm),
+export const FontVariant = {
+  title_xl: textVariant(FontSize.title_xl, FontWeight.title_xl),
+  title_lg: textVariant(FontSize.title_lg, FontWeight.title_lg),
+  title_md: textVariant(FontSize.title_md, FontWeight.title_md),
+  title_sm: textVariant(FontSize.title_sm, FontWeight.title_sm),
+  body_lg: textVariant(FontSize.body_lg, FontWeight.body_lg),
+  body_md: textVariant(FontSize.body_md, FontWeight.body_md),
+  body_sm: textVariant(FontSize.body_sm, FontWeight.body_sm),
 } as const
 
-const button = {
-  pad_x: '8px',
-  pad_y: '4px',
+export const Padding = {
+  x: '8px',
+  y: '4px',
 } as const
 
-const radius = {
+export const Radius = {
   sm: '4px',
   md: '12px',
-} as const
-
-export const theme = {
-  color,
-  fontVariant,
-  button,
-  radius,
 } as const
