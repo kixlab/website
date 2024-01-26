@@ -18,7 +18,7 @@ const PageTitle = styled.h1`
 const Sections = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 `
 
 const Section = styled.div`
@@ -36,7 +36,7 @@ const SectionTitle = styled.h2`
 const SectionContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
 `
 
 export default function Page() {
