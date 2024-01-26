@@ -13,14 +13,13 @@ const Card = styled.div`
 `
 
 const Title = styled.div`
-  font-size: ${props => props.theme.fontSize.body_lg};
-  font-weight: ${props => props.theme.fontWeight.body_lg};
+  ${props => props.theme.fontVariant.body_lg}
 `
 
 const Info = styled.div`
   display: flex;
   gap: 12px;
-  font-size: ${props => props.theme.fontSize.body_md};
+  ${props => props.theme.fontVariant.body_md}
   color: ${props => props.theme.color.gray700};
 `
 

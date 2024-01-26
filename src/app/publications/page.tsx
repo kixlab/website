@@ -12,7 +12,7 @@ const Main = styled.main`
 
 const PageTitle = styled.h1`
   margin: 0;
-  font-size: ${props => props.theme.fontSize.title_lg};
+  ${props => props.theme.fontVariant.title_lg}
 `
 
 const Sections = styled.div`
@@ -29,8 +29,7 @@ const Section = styled.div`
 
 const SectionTitle = styled.h2`
   margin: 0;
-  font-size: ${props => props.theme.fontSize.title_md};
-  font-weight: ${props => props.theme.fontWeight.title_md};
+  ${props => props.theme.fontVariant.title_md}
   color: ${props => props.theme.color.orange900};
 `
 
