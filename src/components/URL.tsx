@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 export const URL = styled.a`
   display: flex;
   align-items: center;
-  background-color: ${props => props.theme.color.orange200};
+  background-color: ${props => props.theme.color.orange100};
   text-decoration: none;
   ${props => props.theme.fontVariant.body_sm}
   padding: ${props => props.theme.button.pad_y} ${props => props.theme.button.pad_x};
@@ -37,5 +37,13 @@ export const URL = styled.a`
     display: inline-block;
     width: 11px;
     height: 16px;
+  }
+
+  &:hover {
+    background-color: ${props => props.theme.color.orange200};
+  }
+
+  &:active {
+    background-color: ${props => props.theme.color.orange300};
   }
 `
