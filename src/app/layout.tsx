@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
 
-import { Providers } from '@/app/providers'
 import NavBar from '@/components/NavBar'
+import GlobalStyles from '@/app/GlobalStyles'
 
 const notoSans = Noto_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -15,10 +15,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={notoSans.className}>
-        <Providers>
-          <NavBar />
-          {children}
-        </Providers>
+        <GlobalStyles />
+        <NavBar />
+        {children}
       </body>
     </html>
   )

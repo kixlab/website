@@ -1,17 +1,18 @@
 'use client'
 
 import styled from '@emotion/styled'
+import { FontVariant, Color, Padding, Radius } from '@/app/theme'
 
 export const URL = styled.a`
   display: flex;
   align-items: center;
-  background-color: ${props => props.theme.color.orange100};
+  background-color: ${Color.orange100};
   text-decoration: none;
-  ${props => props.theme.fontVariant.body_sm}
-  padding: ${props => props.theme.button.pad_y} ${props => props.theme.button.pad_x};
-  border-radius: ${props => props.theme.radius.sm};
+  ${FontVariant.body_sm}
+  padding: ${Padding.y} ${Padding.x};
+  border-radius: ${Radius.sm};
   width: fit-content;
-  color: ${props => props.theme.color.gray900};
+  color: ${Color.gray900};
 
   &::before {
     content: '🔗';
@@ -40,10 +41,10 @@ export const URL = styled.a`
   }
 
   &:hover {
-    background-color: ${props => props.theme.color.orange200};
+    background-color: ${Color.orange200};
   }
 
   &:active {
-    background-color: ${props => props.theme.color.orange300};
+    background-color: ${Color.orange300};
   }
 `

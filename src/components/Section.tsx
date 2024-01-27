@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { FontVariant, Color } from '@/app/theme'
 
 export const Sections = styled.div`
   display: flex;
@@ -14,8 +15,8 @@ export const Section = styled.div`
 
 export const SectionTitle = styled.h2`
   margin: 0;
-  ${props => props.theme.fontVariant.title_md}
-  color: ${props => props.theme.color.orange900};
+  ${FontVariant.title_md}
+  color: ${Color.orange900};
 `
 
 export const SectionContent = styled.div`
