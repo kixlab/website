@@ -1,8 +1,21 @@
+export const CareerTypes = [
+  'Associate Professor',
+  'Postdoc Researcher',
+  'Ph.D. Student',
+  'M.S. Student',
+  'Visiting Researcher',
+  'Undergrad Intern',
+  'Staff',
+  'Alumni',
+] as const
+
+export type CareerType = (typeof CareerTypes)[number]
+
 interface Props {
-  name: string
+  firstName: string
   lastName: string
   email: string
-  career: string
+  career: CareerType
   img: string
   site: string
 }
@@ -14,13 +27,13 @@ class Member {
   }
 
   get fullName() {
-    return `${this.name} ${this.lastName}`
+    return `${this.firstName} ${this.lastName}`
   }
 }
 
 export const MEMBER = {
   juhokim: new Member({
-    name: 'Juho',
+    firstName: 'Juho',
     lastName: 'Kim',
     email: 'juhokim@kaist.ac.kr',
     career: 'Associate Professor',
@@ -28,7 +41,7 @@ export const MEMBER = {
     site: 'http://juhokim.com/',
   }),
   hyoungwookjin: new Member({
-    name: 'Hyoungwook',
+    firstName: 'Hyoungwook',
     lastName: 'Jin',
     email: 'jinhw@kaist.ac.kr',
     career: 'M.S. Student',
@@ -36,7 +49,7 @@ export const MEMBER = {
     site: 'https://jhw123.github.io',
   }),
   alexsuryapranata: new Member({
-    name: 'Alex',
+    firstName: 'Alex',
     lastName: 'Suryapranata',
     email: 'alextio@kaist.ac.kr',
     career: 'M.S. Student',
