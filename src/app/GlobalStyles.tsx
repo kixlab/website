@@ -7,6 +7,11 @@ export default function GlobalStyles() {
   return (
     <Global
       styles={css`
+        html {
+          scroll-behavior: smooth;
+          scroll-padding-top: 79px;
+        }
+        ,
         main {
           display: flex;
           flex-direction: column;
