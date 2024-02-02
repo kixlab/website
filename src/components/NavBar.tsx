@@ -15,11 +15,14 @@ interface NavItemProps {
 }
 
 export const Nav = styled.nav`
+  position: sticky;
+  top: 0px;
   display: flex;
   justify-content: space-between;
   padding: 12px 96px 16px 96px;
   align-items: end;
   border-bottom: 1px solid ${Color.gray300};
+  background-color: ${Color.white};
 `
 
 export const Logo = styled.a`
