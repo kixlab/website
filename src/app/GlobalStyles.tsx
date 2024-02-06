@@ -2,6 +2,7 @@
 
 import { Global, css } from '@emotion/react'
 import { FontVariant, Color } from '@/app/theme'
+import { NAV_BAR_HEIGHT } from '@/components/NavBar'
 
 export default function GlobalStyles() {
   return (
@@ -9,7 +10,7 @@ export default function GlobalStyles() {
       styles={css`
         html {
           scroll-behavior: smooth;
-          scroll-padding-top: 79px;
+          scroll-padding-top: ${NAV_BAR_HEIGHT + 24}px;
         }
         ,
         main {

@@ -14,15 +14,22 @@ interface NavItemProps {
   selected: boolean
 }
 
+export const NAV_BAR_HEIGHT = 56
+
 export const Nav = styled.nav`
   position: sticky;
   top: 0px;
+
   display: flex;
-  justify-content: space-between;
-  padding: 12px 96px 16px 96px;
-  align-items: end;
+
   border-bottom: 1px solid ${Color.gray300};
+  box-sizing: border-box;
+  height: ${NAV_BAR_HEIGHT}px;
+  padding: 12px 96px 16px 96px;
+
   background-color: ${Color.white};
+  justify-content: space-between;
+  align-items: end;
 `
 
 export const Logo = styled.a`
