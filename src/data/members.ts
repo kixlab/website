@@ -31,6 +31,14 @@ export const MEMBER = {
     img: 'hyoungwookjin.jpg',
     site: 'https://jhw123.github.io',
   }),
+  alexsuryapranata: new Member({
+    name: 'Alex',
+    lastName: 'Suryapranata',
+    email: 'alextio@kaist.ac.kr',
+    career: 'M.S. Student',
+    img: 'alexsurya.jpg',
+    site: ''
+  }),
 } as const
 
 export const MEMBERS = Object.values(MEMBER)
