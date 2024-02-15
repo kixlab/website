@@ -1,8 +1,9 @@
 import { css } from '@emotion/react'
 
-const textVariant = (size: `${number}px`, weight: number) => css`
+const textVariant = (size: `${number}px`, weight: number, lineHeight: number) => css`
   font-size: ${size};
   font-weight: ${weight};
+  line-height: ${lineHeight};
 `
 
 export const Color = {
@@ -50,14 +51,24 @@ const FontWeight = {
   body_sm: 400,
 } as const
 
+const LineHeight = {
+  title_xl: 1.6,
+  title_lg: 1.6,
+  title_md: 1.6,
+  title_sm: 1.6,
+  body_lg: 1.6,
+  body_md: 1.6,
+  body_sm: 1.6,
+} as const
+
 export const FontVariant = {
-  title_xl: textVariant(FontSize.title_xl, FontWeight.title_xl),
-  title_lg: textVariant(FontSize.title_lg, FontWeight.title_lg),
-  title_md: textVariant(FontSize.title_md, FontWeight.title_md),
-  title_sm: textVariant(FontSize.title_sm, FontWeight.title_sm),
-  body_lg: textVariant(FontSize.body_lg, FontWeight.body_lg),
-  body_md: textVariant(FontSize.body_md, FontWeight.body_md),
-  body_sm: textVariant(FontSize.body_sm, FontWeight.body_sm),
+  title_xl: textVariant(FontSize.title_xl, FontWeight.title_xl, LineHeight.title_xl),
+  title_lg: textVariant(FontSize.title_lg, FontWeight.title_lg, LineHeight.title_lg),
+  title_md: textVariant(FontSize.title_md, FontWeight.title_md, LineHeight.title_md),
+  title_sm: textVariant(FontSize.title_sm, FontWeight.title_sm, LineHeight.title_sm),
+  body_lg: textVariant(FontSize.body_lg, FontWeight.body_lg, LineHeight.body_lg),
+  body_md: textVariant(FontSize.body_md, FontWeight.body_md, LineHeight.body_md),
+  body_sm: textVariant(FontSize.body_sm, FontWeight.body_sm, LineHeight.body_sm),
 } as const
 
 export const Padding = {
