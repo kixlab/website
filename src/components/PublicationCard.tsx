@@ -24,6 +24,12 @@ const Info = styled.div`
   color: ${Color.gray700};
 `
 
+const SubInfo = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+`
+
 const Venue = styled.div`
   font-style: italic;
 `
@@ -35,6 +41,11 @@ const URLs = styled.div`
   gap: 8px;
 `
 
+const Tags = styled.span`
+  ${FontVariant.body_sm}
+  color: ${Color.gray700};
+`
+
 export default function PublicationCard({ key, pub }: { key: number; pub: Publication }) {
   return (
     <Card key={key}>
@@ -43,14 +54,18 @@ export default function PublicationCard({ key, pub }: { key: number; pub: Public
         <Venue>{pub.venue}</Venue>
         <Author>{pub.authors.map(({ name, lastName }, i) => name + ' ' + lastName).join(', ')}</Author>
       </Info>
-
-      <URLs>
-        {pub.links?.map(({ url, type }, i) => (
-          <URL href={url} key={i} type={type} target="_blank">
-            {type}
-          </URL>
-        ))}
-      </URLs>
+      <SubInfo>
+        {pub.links && (
+          <URLs>
+            {pub.links?.map(({ url, type }, i) => (
+              <URL href={url} key={i} type={type} target="_blank">
+                {type}
+              </URL>
+            ))}
+          </URLs>
+        )}
+        <Tags>{pub.topics.map(topic => '#' + topic.charAt(0).toUpperCase() + topic.slice(1)).join(' ')}</Tags>
+      </SubInfo>
     </Card>
   )
 }
