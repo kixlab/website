@@ -41,13 +41,7 @@ export default function PublicationCard({ key, pub }: { key: number; pub: Public
       <Title>{pub.title}</Title>
       <Info>
         <Venue>{pub.venue}</Venue>
-        <Author>
-          {pub.authors.map(({ name, lastName }, i) => (
-            <span key={i}>
-              {name} {lastName}
-            </span>
-          ))}
-        </Author>
+        <Author>{pub.authors.map(({ name, lastName }, i) => name + ' ' + lastName).join(', ')}</Author>
       </Info>
 
       <URLs>
