@@ -37,7 +37,7 @@ export const MEMBER = {
     email: 'alextio@kaist.ac.kr',
     career: 'M.S. Student',
     img: 'alexsurya.jpg',
-    site: ''
+    site: '',
   }),
 } as const
 

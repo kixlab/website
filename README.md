@@ -1,4 +1,4 @@
-Repo of [Kixlab's redesigned website](https://www.kixlab.org/). 
+Repo of [Kixlab's redesigned website](https://www.kixlab.org/).
 
 # Getting Started
 
@@ -13,14 +13,16 @@ Repo of [Kixlab's redesigned website](https://www.kixlab.org/).
 5. Someone with authority will go on and merge your changes.
 
 ### People
+
 1. Go to `src/data/members.ts`
 2. Add a new element object, following the format of the others.
 3. For the picture, please choose an image with 1:1 aspect ratio like the others. (Suggested size: 500x500px). Place the file inside `public/images/members/` and rename it to your name.
 
-### News 
-1. Go to `src/data/posts.ts` 
+### News
+
+1. Go to `src/data/posts.ts`
 2. Add a new element object, following the format of others.
-3. For the picture, please choose an image with 1:1 aspect ratio like the others. (Suggested size: 500x500px). Place the file inside `public/images/posts/`. 
+3. For the picture, please choose an image with 1:1 aspect ratio like the others. (Suggested size: 500x500px). Place the file inside `public/images/posts/`.
 
 ### Publications
 
@@ -29,6 +31,7 @@ Repo of [Kixlab's redesigned website](https://www.kixlab.org/).
 3. ???
 
 ## Development
+
 First, clone this repo. Then, run the following:
 
 ```bash
