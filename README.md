@@ -1,10 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Repo of [Kixlab's redesigned website](https://www.kixlab.org/). 
 
-## Getting Started
+# Getting Started
 
-First, run the development server:
+## Adding Content
+
+**Please don't commit directly to master. Instead, create a pull request (PR) and then notify the website czar.**
+
+1. Create a new branch from master: `git checkout -b my-branch-name`
+2. Add and commit your changes. `git status` to check what you did, `git add ...` to add new files, `git commit -m "Put a comprehensive summary of your changes here"`
+3. Push your new branch: `git push` (depending on your settings, git will complain and tell you what to do instead).
+4. Go to https://github.com/kixlab/kixlab.github.io and create a new Pull Request for your branch.
+5. Someone with authority will go on and merge your changes.
+
+### People
+1. Go to `src/data/members.ts`
+2. Add a new element object, following the format of the others.
+3. For the picture, please choose an image with 1:1 aspect ratio like the others. (Suggested size: 500x500px). Place the file inside `public/images/members/` and rename it to your name.
+
+### News 
+1. Go to `src/data/posts.ts` 
+2. Add a new element object, following the format of others.
+3. For the picture, please choose an image with 1:1 aspect ratio like the others. (Suggested size: 500x500px). Place the file inside `public/images/posts/`. 
+
+### Publications
+
+1. Go to `src/data/publications.ts`
+2. Add a new element object, following the format of others.
+3. ???
+
+## Development
+First, clone this repo. Then, run the following:
 
 ```bash
+yarn
 yarn dev
 ```
 
@@ -13,18 +41,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
