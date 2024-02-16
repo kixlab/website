@@ -6,7 +6,7 @@ export type PublicationType = (typeof PublicationTypes)[number]
 export const YearTypes = ['Preprints', 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017] as const // 0 means preprint
 export type YearType = (typeof YearTypes)[number]
 
-export const ResearchTopic = [
+export const ResearchTopics = [
   'datamining',
   'crowdsourcing',
   'learning',
@@ -15,7 +15,7 @@ export const ResearchTopic = [
   'social',
   'human-ai-interaction',
 ] as const
-export type ResearchTopic = (typeof ResearchTopic)[number]
+export type ResearchTopic = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
   ACM = 'ACM DL',
