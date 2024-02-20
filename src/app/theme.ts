@@ -76,6 +76,12 @@ export const Padding = {
   y: '4px',
 } as const
 
+export const Spacing = {
+  sm: '4px',
+  md: '8px',
+  lg: '12px',
+}
+
 export const Radius = {
   sm: '4px',
   md: '12px',
