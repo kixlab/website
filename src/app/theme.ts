@@ -46,7 +46,7 @@ const FontWeight = {
   title_lg: 700,
   title_md: 700,
   title_sm: 400,
-  body_lg: 700,
+  body_lg: 500,
   body_md: 400,
   body_sm: 400,
 } as const
