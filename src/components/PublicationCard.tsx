@@ -41,6 +41,15 @@ const URLs = styled.div`
   gap: 8px;
 `
 
+const Award = styled.div`
+  ${FontVariant.body_sm}
+  color: ${Color.orange900};
+  &::before {
+    content: '🥇';
+    margin-right: 2px;
+  }
+`
+
 const Tags = styled.span`
   ${FontVariant.body_sm}
   color: ${Color.gray700};
@@ -64,6 +73,7 @@ export default function PublicationCard({ key, pub }: { key: number; pub: Public
             ))}
           </URLs>
         )}
+        {pub.award && <Award>{pub.award}</Award>}
         <Tags>{pub.topics.map(topic => '#' + topic.charAt(0).toUpperCase() + topic.slice(1)).join(' ')}</Tags>
       </SubInfo>
     </Card>

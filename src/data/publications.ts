@@ -57,6 +57,7 @@ export const PUBLICATIONS: Publication[] = [
       { url: 'https://youtube.com', type: PublicationLinkType.VID },
       { url: 'https://arxiv.org', type: PublicationLinkType.ARX },
     ],
+    award: 'Best Example Award',
   },
   {
     title: 'example: this is preprint',
@@ -65,7 +66,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 'Preprints',
     topics: ['civics', 'visualization'],
     type: 'conference',
-    award: 'best example award',
+    award: 'Best Example Award',
     links: [],
   },
   {
@@ -75,7 +76,6 @@ export const PUBLICATIONS: Publication[] = [
     year: 2018,
     topics: ['civics', 'visualization'],
     type: 'conference',
-    award: '',
   },
   {
     title: 'example: this is preprint',
@@ -84,6 +84,5 @@ export const PUBLICATIONS: Publication[] = [
     year: 'Preprints',
     topics: ['civics', 'visualization'],
     type: 'conference',
-    award: 'best example award',
   },
 ] as const
