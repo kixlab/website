@@ -12,6 +12,10 @@ class Member {
   constructor(attrs: Props) {
     Object.assign(this, attrs)
   }
+
+  get fullName() {
+    return `${this.name} ${this.lastName}`
+  }
 }
 
 export const MEMBER = {

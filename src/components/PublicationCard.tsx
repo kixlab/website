@@ -2,7 +2,6 @@
 
 import React from 'react'
 import styled from '@emotion/styled'
-
 import { FontVariant, Color } from '@/app/theme'
 import type { Publication } from '@/data/publications'
 import { URL } from '@/components/URL'
@@ -35,9 +34,9 @@ const URLs = styled.div`
   gap: 8px;
 `
 
-export default function PublicationCard({ key, pub }: { key: number; pub: Publication }) {
+export default function PublicationCard({ pub }: { pub: Publication }) {
   return (
-    <Card key={key}>
+    <Card>
       <Title>{pub.title}</Title>
       <Info>
         <Venue>{pub.venue}</Venue>
