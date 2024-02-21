@@ -17,7 +17,7 @@ export default function Page() {
               <SectionGroup>
               {groupEditions(editions).map((editionGroup, i) => (
                 <SectionEditions key={i}>
-                  {editionGroup.map((edition, i) => (
+                  {editionGroup.map((edition: any, i: any) => (
                     <SectionEdition key={i} href={edition.url}> • {edition.semester}</SectionEdition>
                   ))}
                 </SectionEditions>
@@ -88,7 +88,7 @@ const HorizontalLine = styled.hr`
   width: 100%;
 `
 
-function groupEditions(editions) {
+function groupEditions(editions: any) {
   const groupedEditions = [];
   for (let i = 0; i < editions.length; i += 3) {
     groupedEditions.push(editions.slice(i, i + 3));
