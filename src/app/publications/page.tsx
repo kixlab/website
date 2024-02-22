@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 
-import { PUBLICATIONS, YearTypes, PublicationTypes, ResearchTopics } from '@/data/publications'
+import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
 import type { PublicationType, ResearchTopic } from '@/data/publications'
 import PublicationCard from '@/components/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
