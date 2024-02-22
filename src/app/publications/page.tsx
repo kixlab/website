@@ -8,6 +8,7 @@ import type { PublicationType, ResearchTopic } from '@/data/publications'
 import PublicationCard from '@/components/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import Filter from '@/components/Filter'
+import { uniq } from 'lodash'
 
 const Filters = styled.div`
   display: flex;
@@ -55,19 +56,30 @@ export default function Page() {
         />
       </Filters>
       <Sections>
-        {YearTypes.map(
-          (year, i) =>
-            publicationList.filter(({ year: y }) => y === year).length >= 1 && (
-              <Section key={i}>
-                <SectionTitle>{year}</SectionTitle>
-                <SectionContent>
-                  {PUBLICATIONS.filter(({ year: y }) => y === year).map(pub => (
-                    <PublicationCard key={i} pub={pub} />
-                  ))}
-                </SectionContent>
-              </Section>
-            )
+        {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
+          <Section>
+            <SectionTitle>Preprints</SectionTitle>
+            <SectionContent>
+              {publicationList
+                .filter(pub => pub.type === 'preprint')
+                .map(pub => (
+                  <PublicationCard key={pub.title} pub={pub} />
+                ))}
+            </SectionContent>
+          </Section>
         )}
+        {uniq(PUBLICATIONS.map(p => p.year)).map((year, i) => (
+          <Section key={i}>
+            <SectionTitle>{year}</SectionTitle>
+            <SectionContent>
+              {publicationList
+                .filter(({ year: y }) => y === year)
+                .map(pub => (
+                  <PublicationCard key={pub.title} pub={pub} />
+                ))}
+            </SectionContent>
+          </Section>
+        ))}
       </Sections>
     </main>
   )
