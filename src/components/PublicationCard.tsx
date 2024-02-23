@@ -63,7 +63,7 @@ export default function PublicationCard({ pub }: { pub: Publication }) {
         <Author>{pub.authors.map(({ name, lastName }, i) => name + ' ' + lastName).join(', ')}</Author>
       </Info>
       <SubInfo>
-        {pub.links && (
+        {pub.links && pub.links?.length > 0 && (
           <URLs>
             {pub.links?.map(({ url, type }, i) => (
               <URL href={url} key={i} type={type} target="_blank">
