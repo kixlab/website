@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "style-check": "npx prettier . --check"
+    "style-check": "prettier . --check"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -26,7 +26,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "^9.1.0",
-    "prettier": "3.2.4",
+    "prettier": "^3.2.4",
     "typescript": "^5"
   },
   "packageManager": "yarn@4.0.2"

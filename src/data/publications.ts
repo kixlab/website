@@ -3,9 +3,6 @@ import Member, { MEMBER } from './members'
 export const PublicationTypes = ['conference', 'poster', 'workshop', 'journal', 'preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
 
-export const YearTypes = ['Preprints', 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017] as const // 0 means preprint
-export type YearType = (typeof YearTypes)[number]
-
 export const ResearchTopic = [
   'datamining',
   'crowdsourcing',
@@ -27,7 +24,7 @@ export enum PublicationLinkType {
 export interface Publication {
   title: string
   authors: Member[]
-  year: YearType
+  year: number
   venue: string
   topics: ResearchTopic[]
   type: PublicationType
@@ -62,9 +59,9 @@ export const PUBLICATIONS: Publication[] = [
     title: 'example: this is preprint',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
-    year: 'Preprints',
+    year: 2024,
     topics: ['civics', 'visualization'],
-    type: 'conference',
+    type: 'preprint',
     award: 'best example award',
     links: [],
   },
@@ -81,7 +78,7 @@ export const PUBLICATIONS: Publication[] = [
     title: 'example: this is preprint',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
-    year: 'Preprints',
+    year: 2024,
     topics: ['civics', 'visualization'],
     type: 'conference',
     award: 'best example award',
