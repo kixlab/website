@@ -28,6 +28,7 @@ export const Color = {
   orange200: '#FFE082',
   orange100: '#FFECB3',
   orange50: '#FFF8E1',
+  green300: '#4CAF50',
 } as const
 
 const FontSize = {
