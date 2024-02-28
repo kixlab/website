@@ -1,8 +1,10 @@
 'use client'
 
 import styled from '@emotion/styled'
+import React from 'react'
 import { COURSES } from '@/data/courses'
 import { FontVariant, Color } from '@/app/theme'
+import _ from 'lodash'
 
 export default function Page() {
   return (
@@ -10,18 +12,17 @@ export default function Page() {
       <h1>Courses</h1>
       <Sections>
         {COURSES.map(({ code, title, description, editions }, i) => (
-          <>
+          <React.Fragment key={i}>
             <Section key={i}>
               <SectionTitle>
                 {code} {title}
               </SectionTitle>
               <SectionContent>{description}</SectionContent>
               <SectionGroup>
-                {groupEditions(editions).map((editionGroup, i) => (
-                  <SectionEditions key={i}>
-                    {editionGroup.map((edition: any, i: any) => (
-                      <SectionEdition key={i} href={edition.url}>
-                        {' '}
+                {_.chunk(editions, 3).map((editionGroup: any, j: any) => (
+                  <SectionEditions key={j}>
+                    {editionGroup.map((edition: any, k: any) => (
+                      <SectionEdition key={k} href={edition.url}>
                         • {edition.semester}
                       </SectionEdition>
                     ))}
@@ -30,7 +31,7 @@ export default function Page() {
               </SectionGroup>
             </Section>
             {i < COURSES.length - 1 && <HorizontalLine />}
-          </>
+          </React.Fragment>
         ))}
       </Sections>
     </main>
@@ -91,11 +92,3 @@ const HorizontalLine = styled.hr`
   background-color: ${Color.gray300};
   width: 100%;
 `
-
-function groupEditions(editions: any) {
-  const groupedEditions = []
-  for (let i = 0; i < editions.length; i += 3) {
-    groupedEditions.push(editions.slice(i, i + 3))
-  }
-  return groupedEditions
-}
