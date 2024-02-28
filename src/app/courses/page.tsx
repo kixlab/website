@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { COURSES } from '@/data/courses'
 import { FontVariant, Color } from '@/app/theme'
-import _ from 'lodash'
+import { chunk } from 'lodash'
 
 export default function Page() {
   return (
@@ -19,7 +19,7 @@ export default function Page() {
               </SectionTitle>
               <SectionContent>{description}</SectionContent>
               <SectionGroup>
-                {_.chunk(editions, 3).map((editionGroup: any, j: any) => (
+                {chunk(editions, 3).map((editionGroup: any, j: any) => (
                   <SectionEditions key={j}>
                     {editionGroup.map((edition: any, k: any) => (
                       <SectionEdition key={k} href={edition.url}>
