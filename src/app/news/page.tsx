@@ -39,7 +39,12 @@ export default function Page() {
           display: modal ? 'block' : 'none',
         }}
       >
-        <NewsModal post={modalContent} onClose={() => setModal(false)} />
+        <NewsModal
+          post={modalContent}
+          onClose={() => {
+            setModalContent(null)
+            setModal(false)}
+            } />
       </div>
     </main>
   )

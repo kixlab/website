@@ -45,7 +45,7 @@ export const Category = styled.span`
   text-transform: capitalize;
 `
 
-export const Date = styled.div`
+export const NewsDate = styled.div`
   ${FontVariant.body_sm}
   color: ${Color.gray700};
   margin-bottom: 4px;
@@ -81,7 +81,7 @@ export default function NewsCard({
   setModal: (modal: boolean) => void
   setModalContent: (post: Post | null) => void
 }) {
-  var currentDate = new window.Date();
+  var currentDate = new Date();
   var open = post.endsAt && post.endsAt > currentDate;
   var closed = post.endsAt && post.endsAt < currentDate;
 
@@ -104,7 +104,7 @@ export default function NewsCard({
         {open && <Category style={{ backgroundColor: Color.green300 }}>Open</Category>}
       </CategoryContainer>
       <Title>{post.title}</Title>
-      <Date>{post.date.toDateString()}</Date>
+      <NewsDate>{post.date.toDateString()}</NewsDate>
       <Summary>
         <Markdown>{post.summary}</Markdown>
       </Summary>

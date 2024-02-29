@@ -1,7 +1,8 @@
 import React from 'react'
+import Image from 'next/image'
 import styled from '@emotion/styled'
 import { Color, FontVariant } from '@/app/theme'
-import { Category, CategoryContainer, Date, categoryColors } from './NewsCard'
+import { Category, CategoryContainer, NewsDate, categoryColors } from './NewsCard'
 import Post from '@/data/posts'
 import Markdown from 'react-markdown'
 
@@ -42,6 +43,7 @@ const Title = styled.div`
 
 const Close = styled.div`
   cursor: pointer;
+  ${FontVariant.title_sm}
 `
 
 const Content = styled.div`
@@ -56,11 +58,10 @@ const Content = styled.div`
 `
 
 export default function NewsModal({post, onClose }: {
-  post: Post
+  post: Post | null
   onClose: () => void
 }) {
   const [mdContent, setMdContent] = React.useState<string | null>(null)
-  
   if (!post) {
     return null
   } else {
@@ -92,10 +93,13 @@ export default function NewsModal({post, onClose }: {
               </CategoryContainer>
               <Title>{post.title}</Title>
             </div>
-            <Close onClick={onClose}>x</Close>
+            <Close onClick={onClose}>
+              <Image src="/images/close.svg" alt="Close" width="24" height="24" />
+              {/* <img width="24" src="/images/close.svg" alt="Close" /> */}
+            </Close>
           </Header>
 
-          <Date style={{ marginBottom: '8px' }}>{post.date.toDateString()}</Date>
+          <NewsDate style={{ marginBottom: '8px' }}>{post.date.toDateString()}</NewsDate>
           <Content>
             <Markdown>{mdContent}</Markdown>
           </Content>
