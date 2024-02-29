@@ -60,7 +60,7 @@ export default function PublicationCard({ pub }: { pub: Publication }) {
       <Title>{pub.title}</Title>
       <Info>
         <Venue>{pub.venue}</Venue>
-        <Author>{pub.authors.map(({ name, lastName }, i) => name + ' ' + lastName).join(', ')}</Author>
+        <Author>{pub.authors.map(({ fullName }) => fullName).join(', ')}</Author>
       </Info>
       <SubInfo>
         {pub.links && pub.links?.length > 0 && (
