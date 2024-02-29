@@ -275,12 +275,6 @@ export const MEMBER = {
     lastName: 'Yadgarova',
     img: 'noza.jpeg',
   },
-  example8: {
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'example@kaist.ac.kr',
-    career: 'M.S. Student',
-    img: 'example.png',
   taehyunyang: {
     firstName: 'Taehyun',
     lastName: 'Yang',
