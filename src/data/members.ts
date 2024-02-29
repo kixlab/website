@@ -4,8 +4,8 @@ export const CareerTypes = [
   'Ph.D. Student',
   'M.S. Student',
   'Visiting Researcher',
-  'Undergrad Intern',
-  'Staff',
+  'Undergraduate Interns',
+  'Administrative Staff',
   'Alumni',
 ] as const
 
@@ -45,7 +45,7 @@ export const MEMBER = {
     lastName: 'Jin',
     email: 'jinhw@kaist.ac.kr',
     career: 'M.S. Student',
-    img: 'hyoungwookjin.jpg',
+    img: 'hyoungwook.jpg',
     site: 'https://jhw123.github.io',
   }),
   alexsuryapranata: new Member({
