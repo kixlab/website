@@ -4,7 +4,7 @@ export const CareerTypes = [
   'Ph.D. Student',
   'M.S. Student',
   'Visiting Researcher',
-  'Undergraduate Interns',
+  'Undergraduate Intern',
   'Administrative Staff',
   'Alumni',
 ] as const
@@ -217,42 +217,42 @@ export const MEMBER = {
     firstName: 'Haeseul',
     lastName: 'Cha',
     email: 'jjchs1@kaist.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'haeseul.jpg',
   },
   yumincho: {
     firstName: 'Yumin',
     lastName: 'Cho',
     email: 'dbals1184@kaist.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'yumincho.png',
   },
   daeheonjeong: {
     firstName: 'Daeheon',
     lastName: 'Jeong',
     email: 'neohgeek@gmail.com',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'daeheon.jpg',
   },
   dongyunjung: {
     firstName: 'Dongyun',
     lastName: 'Jung',
     email: 'djung2023@kaist.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'dongyun.jpeg',
   },
   chanyoungkim: {
     firstName: 'Chanyoung',
     lastName: 'Kim',
     email: 'itnoj15@kaist.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'chanyoung.jpg',
   },
   jinhyeonkwon: {
     firstName: 'Jinhyeon',
     lastName: 'Kwon',
     email: 'athexplorer@kaist.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'jhkwon.jpg',
     site: 'https://jinhyeonkwon.github.io',
   },
@@ -260,14 +260,14 @@ export const MEMBER = {
     firstName: 'Yokyung',
     lastName: 'Lee',
     email: 'ykleeee@kaist.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'yokyung.png',
   },
   yoonahpark: {
     firstName: 'Yoonah',
     lastName: 'Park',
     email: 'wisdomsword21@snu.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'yoonah.jpg',
   },
   shahnozayadgarova: {
@@ -285,7 +285,7 @@ export const MEMBER = {
     firstName: 'Taehyun',
     lastName: 'Yang',
     email: '0705danny@snu.ac.kr',
-    career: 'Undergraduate Interns',
+    career: 'Undergraduate Intern',
     img: 'taehyun.png',
   },
   oaksilkim: {
@@ -296,9 +296,6 @@ export const MEMBER = {
     img: 'oaksil.jpg',
   },
 
-
-
-  
 } as const satisfies Record<string, Member>
 
 export const MEMBERS_KEY = Object.keys(MEMBER)
