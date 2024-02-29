@@ -48,7 +48,6 @@ const Value = styled.span<{ filtered: boolean }>`
   text-overflow: ellipsis;
 
   &:hover {
-    // background-color: ${props => (props.filtered ? Color.orange50 : Color.gray50)};
     color: ${props => (props.filtered ? Color.orange900 : Color.black)};
   }
 `
