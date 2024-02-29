@@ -23,7 +23,7 @@ export enum PublicationLinkType {
 
 export interface Publication {
   title: string
-  authors: Member[]
+  authors: (Member | string)[]
   year: number
   venue: string
   topics: ResearchTopic[]
@@ -35,7 +35,7 @@ export interface Publication {
 export const PUBLICATIONS: Publication[] = [
   {
     title: 'CodeTree: A System for Learnersourcing Subgoal Hierarchies in Code Examples',
-    authors: [MEMBER.hyoungwookjin, MEMBER.juhokim],
+    authors: [MEMBER.hyoungwookjin, MEMBER.juhokim, 'John Doe'],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['crowdsourcing', 'learning'],
