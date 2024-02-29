@@ -43,8 +43,9 @@ export default function Page() {
           post={modalContent}
           onClose={() => {
             setModalContent(null)
-            setModal(false)}
-            } />
+            setModal(false)
+          }}
+        />
       </div>
     </main>
   )

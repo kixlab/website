@@ -81,9 +81,9 @@ export default function NewsCard({
   setModal: (modal: boolean) => void
   setModalContent: (post: Post | null) => void
 }) {
-  var currentDate = new Date();
-  var open = post.endsAt && post.endsAt > currentDate;
-  var closed = post.endsAt && post.endsAt < currentDate;
+  var currentDate = new Date()
+  var open = post.endsAt && post.endsAt > currentDate
+  var closed = post.endsAt && post.endsAt < currentDate
 
   return (
     <PostContainer

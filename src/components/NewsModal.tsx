@@ -57,18 +57,15 @@ const Content = styled.div`
   }
 `
 
-export default function NewsModal({post, onClose }: {
-  post: Post | null
-  onClose: () => void
-}) {
+export default function NewsModal({ post, onClose }: { post: Post | null; onClose: () => void }) {
   const [mdContent, setMdContent] = React.useState<string | null>(null)
   if (!post) {
     return null
   } else {
-    var currentDate = new window.Date();
-    var open = post.endsAt && post.endsAt > currentDate;
-    var closed = post.endsAt && post.endsAt < currentDate;
-    
+    var currentDate = new window.Date()
+    var open = post.endsAt && post.endsAt > currentDate
+    var closed = post.endsAt && post.endsAt < currentDate
+
     fetch(`/posts/${post.content}`)
       .then(response => response.text())
       .then(text => {
@@ -76,7 +73,7 @@ export default function NewsModal({post, onClose }: {
         div.innerHTML = text
         setMdContent(div.textContent)
       })
-    
+
     return (
       <ModalContainer>
         <ModalCard>
