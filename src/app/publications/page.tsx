@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
 import type { PublicationType, ResearchTopic } from '@/data/publications'
-import PublicationCard from '@/components/PublicationCard'
+import PublicationCard from '@/components/Publication/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import Filter from '@/components/Filter'
 import { uniq } from 'lodash'
