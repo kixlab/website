@@ -73,12 +73,10 @@ const ReadMore = styled.div`
 export default function NewsCard({
   post,
   position,
-  setModal,
   setModalContent,
 }: {
   post: Post
   position: 'left' | 'right'
-  setModal: (modal: boolean) => void
   setModalContent: (post: Post | null) => void
 }) {
   const currentDate = new Date()
@@ -112,7 +110,6 @@ export default function NewsCard({
         <ReadMore
           onClick={e => {
             e.preventDefault()
-            setModal(true)
             setModalContent(post)
           }}
         >

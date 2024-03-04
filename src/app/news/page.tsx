@@ -7,7 +7,6 @@ import Post, { POSTS } from '@/data/posts'
 import NewsModal from '@/components/NewsModal'
 
 export default function Page() {
-  const [modal, setModal] = useState(false)
   const [modalContent, setModalContent] = useState<Post | null>(null)
 
   return (
@@ -28,7 +27,6 @@ export default function Page() {
                 endsAt,
               }}
               position={i % 2 === 0 ? 'left' : 'right'}
-              setModal={setModal}
               setModalContent={setModalContent}
             />
           )
@@ -36,14 +34,13 @@ export default function Page() {
       </NewsSection>
       <div
         style={{
-          display: modal ? 'block' : 'none',
+          display: modalContent ? 'block' : 'none',
         }}
       >
         <NewsModal
           post={modalContent}
           onClose={() => {
             setModalContent(null)
-            setModal(false)
           }}
         />
       </div>
