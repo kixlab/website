@@ -3,7 +3,7 @@ interface Props {
   date: Date
   categories: string[]
   summary: string
-  content?: string // Add path to markdown file if exists
+  contentMdFilePath?: string // Add path to markdown file if exists
   endsAt?: Date // Add if the post has a deadline
 }
 
@@ -43,7 +43,7 @@ export const POST = {
     date: new Date('2023-12-18'),
     categories: ['publication'],
     summary: 'Four papers from KIXLAB have been accepted to [IUI 2024](https://iui.acm.org/2024/).',
-    content: '2023-12-18-iui2024.md',
+    contentMdFilePath: '2023-12-18-iui2024.md',
   }),
   thesis2024Award: new Post({
     title: 'DaEun won the department’s Outstanding Thesis Award',
@@ -56,7 +56,7 @@ export const POST = {
     date: new Date('2024-01-19'),
     categories: ['publication'],
     summary: 'Eight papers from KIXLAB have been conditionally accepted to [CHI 2024](https://chi2024.acm.org/).',
-    content: '2024-01-19-chi.md',
+    contentMdFilePath: '2024-01-19-chi.md',
   }),
   hcikorea2024Award: new Post({
     title: 'Yoonjoo received Outstanding Presentation Award at HCI Korea 2024',
@@ -64,7 +64,7 @@ export const POST = {
     categories: ['award'],
     summary:
       'Yoonjoo Lee received the Outstanding Presentation Award at HCI Korea 2024 for her talk on [DAPIE: Interactive Step-by-Step Explanatory Dialogues to Answer Children’s Why and How Questions](https://dapie.kixlab.org/). Congratulations!',
-    content: '2024-hcikorea-yoonjoo.md',
+    contentMdFilePath: '2024-hcikorea-yoonjoo.md',
   }),
 } as const
 

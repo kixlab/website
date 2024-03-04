@@ -62,11 +62,11 @@ export default function NewsModal({ post, onClose }: { post: Post | null; onClos
   if (!post) {
     return null
   } else {
-    var currentDate = new window.Date()
-    var open = post.endsAt && post.endsAt > currentDate
-    var closed = post.endsAt && post.endsAt < currentDate
+    const currentDate = new window.Date()
+    const open = post.endsAt && post.endsAt > currentDate
+    const closed = post.endsAt && post.endsAt < currentDate
 
-    fetch(`/posts/${post.content}`)
+    fetch(`/posts/${post.contentMdFilePath}`)
       .then(response => response.text())
       .then(text => {
         const div = document.createElement('div')
@@ -92,7 +92,6 @@ export default function NewsModal({ post, onClose }: { post: Post | null; onClos
             </div>
             <Close onClick={onClose}>
               <Image src="/images/close.svg" alt="Close" width="24" height="24" />
-              {/* <img width="24" src="/images/close.svg" alt="Close" /> */}
             </Close>
           </Header>
 

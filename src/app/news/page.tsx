@@ -16,7 +16,7 @@ export default function Page() {
       <NewsSection>
         <NewsLine />
         {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime()).map(
-          ({ title, date, categories, summary, content, endsAt }, i) => (
+          ({ title, date, categories, summary, contentMdFilePath, endsAt }, i) => (
             <NewsCard
               key={i}
               post={{
@@ -24,7 +24,7 @@ export default function Page() {
                 date,
                 categories,
                 summary,
-                content,
+                contentMdFilePath,
                 endsAt,
               }}
               position={i % 2 === 0 ? 'left' : 'right'}
