@@ -13,8 +13,14 @@ const Card = styled.div`
   gap: 6px;
 `
 
-const Title = styled.div`
+const Title = styled.a`
   ${FontVariant.body_lg}
+  text-decoration: none;
+  color: ${Color.gray900};
+
+  &[href]: hover {
+    text-decoration: underline;
+  }
 `
 
 const Info = styled.div`
@@ -41,7 +47,6 @@ const URLs = styled.div`
 
 const Award = styled.div`
   ${FontVariant.body_sm}
-  color: ${Color.orange900};
   &::before {
     content: '🥇';
     margin-right: 2px;
@@ -56,7 +61,7 @@ const Tags = styled.span`
 export default function PublicationCard({ pub }: { pub: Publication }) {
   return (
     <Card>
-      <Title>{pub.title}</Title>
+      <Title href={pub.paperLink}>{pub.title}</Title>
       <Info>
         <Venue>{pub.venue}</Venue>
         <Author authors={pub.authors} />

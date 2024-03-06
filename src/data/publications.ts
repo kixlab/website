@@ -23,6 +23,7 @@ export enum PublicationLinkType {
 
 export interface Publication {
   title: string
+  paperLink?: string
   authors: (Member | string)[]
   year: number
   venue: string
@@ -35,6 +36,7 @@ export interface Publication {
 export const PUBLICATIONS: Publication[] = [
   {
     title: 'CodeTree: A System for Learnersourcing Subgoal Hierarchies in Code Examples',
+    paperLink: 'https://google.com',
     authors: [MEMBER.hyoungwookjin, MEMBER.juhokim, 'John Doe'],
     venue: 'CSCW 2024',
     year: 2024,
@@ -75,7 +77,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'conference',
   },
   {
-    title: 'example: this is preprint',
+    title: 'example: this is preprint 2',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 2024,
