@@ -3,7 +3,7 @@ import Member, { MEMBER } from './members'
 export const PublicationTypes = ['conference', 'poster', 'workshop', 'journal', 'preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
 
-export const ResearchTopic = [
+export const ResearchTopics = [
   'datamining',
   'crowdsourcing',
   'learning',
@@ -12,7 +12,7 @@ export const ResearchTopic = [
   'social',
   'human-ai-interaction',
 ] as const
-export type ResearchTopic = (typeof ResearchTopic)[number]
+export type ResearchTopic = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
   ACM = 'ACM DL',
@@ -23,7 +23,8 @@ export enum PublicationLinkType {
 
 export interface Publication {
   title: string
-  authors: Member[]
+  paperLink?: string
+  authors: (Member | string)[]
   year: number
   venue: string
   topics: ResearchTopic[]
@@ -35,7 +36,8 @@ export interface Publication {
 export const PUBLICATIONS: Publication[] = [
   {
     title: 'CodeTree: A System for Learnersourcing Subgoal Hierarchies in Code Examples',
-    authors: [MEMBER.hyoungwookjin, MEMBER.juhokim],
+    paperLink: 'https://google.com',
+    authors: [MEMBER.hyoungwookjin, MEMBER.juhokim, 'John Doe'],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['crowdsourcing', 'learning'],
@@ -54,6 +56,7 @@ export const PUBLICATIONS: Publication[] = [
       { url: 'https://youtube.com', type: PublicationLinkType.VID },
       { url: 'https://arxiv.org', type: PublicationLinkType.ARX },
     ],
+    award: 'Best Example Award',
   },
   {
     title: 'example: this is preprint',
@@ -62,7 +65,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 2024,
     topics: ['civics', 'visualization'],
     type: 'preprint',
-    award: 'best example award',
+    award: 'Best Example Award',
     links: [],
   },
   {
@@ -72,15 +75,13 @@ export const PUBLICATIONS: Publication[] = [
     year: 2018,
     topics: ['civics', 'visualization'],
     type: 'conference',
-    award: '',
   },
   {
-    title: 'example: this is preprint',
+    title: 'example: this is preprint 2',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 2024,
     topics: ['civics', 'visualization'],
     type: 'conference',
-    award: 'best example award',
   },
 ] as const

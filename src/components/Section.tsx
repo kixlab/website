@@ -4,13 +4,13 @@ import { FontVariant, Color } from '@/app/theme'
 export const Sections = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 `
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
 `
 
 export const SectionTitle = styled.h2`
@@ -22,7 +22,7 @@ export const SectionTitle = styled.h2`
 export const SectionContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 `
 
 export const NewsSection = styled.div`
