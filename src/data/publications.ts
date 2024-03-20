@@ -12,7 +12,7 @@ export const ResearchTopics = [
   'social',
   'human-ai-interaction',
 ] as const
-export type ResearchTopic = (typeof ResearchTopics)[number]
+export type ResearchTopicType = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
   ACM = 'ACM DL',
