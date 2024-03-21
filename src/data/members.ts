@@ -1,10 +1,13 @@
+import { ResearchTopicType } from "./publications"
+
 interface Props {
   name: string
   lastName: string
   email: string
   career: string
   img: string
-  site: string
+  site?: string
+  researchTopics?: ResearchTopicType[]
 }
 
 interface Member extends Props {}
@@ -16,6 +19,11 @@ class Member {
   get fullName() {
     return `${this.name} ${this.lastName}`
   }
+
+  get imgPath() {
+    let dirPath = '/images/members/'
+    return `${dirPath}${this.img}`
+  }
 }
 
 export const MEMBER = {
@@ -26,6 +34,7 @@ export const MEMBER = {
     career: 'Associate Professor',
     img: 'juhokim.jpg',
     site: 'http://juhokim.com/',
+    researchTopics: ["datamining", "crowdsourcing", "learning", "civics", "visualization", "social", "human-ai-interaction"]
   }),
   hyoungwookjin: new Member({
     name: 'Hyoungwook',
@@ -34,6 +43,7 @@ export const MEMBER = {
     career: 'M.S. Student',
     img: 'hyoungwookjin.jpg',
     site: 'https://jhw123.github.io',
+    researchTopics: ["learning"]
   }),
   alexsuryapranata: new Member({
     name: 'Alex',
@@ -41,7 +51,6 @@ export const MEMBER = {
     email: 'alextio@kaist.ac.kr',
     career: 'M.S. Student',
     img: 'alexsurya.jpg',
-    site: '',
   }),
 } as const
 
