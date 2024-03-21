@@ -274,6 +274,8 @@ export const MEMBER = {
     firstName: 'Shahnoza',
     lastName: 'Yadgarova',
     img: 'noza.jpeg',
+    email: 'yadgarova@kaist.ac.kr',
+    career: 'Undergraduate Intern'
   },
   taehyunyang: {
     firstName: 'Taehyun',
