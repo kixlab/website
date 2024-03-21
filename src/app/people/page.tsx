@@ -72,6 +72,7 @@ export default function Page() {
 
   return (
     <main>
+<<<<<<< HEAD
       <h1>People</h1>
       <MainInner>
         <Sections>
@@ -107,6 +108,11 @@ export default function Page() {
           </TableOfContents>
         </nav>
       </MainInner>
+=======
+      {MEMBERS.map(({ fullName }, i) => (
+        <div key={i}>{fullName}</div>
+      ))}
+>>>>>>> renewal
     </main>
   )
 }

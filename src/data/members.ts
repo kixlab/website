@@ -27,7 +27,11 @@ class Member {
   }
 
   get fullName() {
+<<<<<<< HEAD
     return `${this.firstName} ${this.lastName}`
+=======
+    return `${this.name} ${this.lastName}`
+>>>>>>> renewal
   }
 }
 
@@ -167,6 +171,7 @@ export const MEMBER = {
     img: 'hyoungwook.jpg',
     site: 'https://jhw123.github.io',
   }),
+<<<<<<< HEAD
   juhoonlee: new Member({
     firstName: 'Juhoon',
     lastName: 'Lee',
@@ -303,6 +308,17 @@ export const MEMBER = {
     img: 'oaksil.jpg',
   }),
 } as const satisfies Record<string, Member>
+=======
+  alexsuryapranata: new Member({
+    name: 'Alex',
+    lastName: 'Suryapranata',
+    email: 'alextio@kaist.ac.kr',
+    career: 'M.S. Student',
+    img: 'alexsurya.jpg',
+    site: '',
+  }),
+} as const
+>>>>>>> renewal
 
 export const MEMBERS_KEY = Object.keys(MEMBER)
 export const MEMBERS = MEMBER as Record<string, Member>
