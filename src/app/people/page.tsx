@@ -107,7 +107,6 @@ export default function Page() {
           </TableOfContents>
         </nav>
       </MainInner>
-
     </main>
   )
 }
