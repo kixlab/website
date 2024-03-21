@@ -275,7 +275,7 @@ export const MEMBER = {
     lastName: 'Yadgarova',
     img: 'noza.jpeg',
     email: 'yadgarova@kaist.ac.kr',
-    career: 'Undergraduate Intern'
+    career: 'Undergraduate Intern',
   },
   taehyunyang: {
     firstName: 'Taehyun',
@@ -291,10 +291,6 @@ export const MEMBER = {
     career: 'Administrative Staff',
     img: 'oaksil.jpg',
   },
-
-
-
-  
 } as const satisfies Record<string, Member>
 
 export const MEMBERS_KEY = Object.keys(MEMBER)
