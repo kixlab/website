@@ -69,23 +69,26 @@ export default function Page() {
             </SectionContent>
           </Section>
         )}
-        {uniq(PUBLICATIONS.map(p => p.year)).map((year, i) => (
-          <>
-            <Divider />
-            <Section key={i}>
-              <SectionTitle>{year}</SectionTitle>
-              <SectionContent>
-                {publicationList
-                  .filter(({ year: y }) => y === year)
-                  .map(pub => (
-                    <>
-                      <PublicationCard key={pub.title} pub={pub} />
-                    </>
-                  ))}
-              </SectionContent>
-            </Section>
-          </>
-        ))}
+        {uniq(PUBLICATIONS.map(p => p.year))
+          .sort()
+          .reverse()
+          .map((year, i) => (
+            <>
+              <Divider />
+              <Section key={i}>
+                <SectionTitle>{year}</SectionTitle>
+                <SectionContent>
+                  {publicationList
+                    .filter(({ year: y }) => y === year)
+                    .map(pub => (
+                      <>
+                        <PublicationCard key={pub.title} pub={pub} />
+                      </>
+                    ))}
+                </SectionContent>
+              </Section>
+            </>
+          ))}
       </Sections>
     </main>
   )
