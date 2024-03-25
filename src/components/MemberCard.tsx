@@ -2,11 +2,9 @@
 
 import React from 'react'
 import styled from '@emotion/styled'
-
 import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
-
-import type { Member } from '@/data/members'
+import type Member from '@/data/members'
 
 const Card = styled.div`
   display: flex;
