@@ -54,7 +54,7 @@ export default function Page() {
           handleOptionChange={handleResearchTopicChange}
         />
         <Filter
-          filterName="Type"
+          filterName="Publication Type"
           optionSet={['All', ...PublicationTypes]}
           optionSelected={publicationType}
           handleOptionChange={handlePublicationTypeChange}
