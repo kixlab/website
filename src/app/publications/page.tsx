@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
@@ -17,16 +18,19 @@ const Filters = styled.div`
 `
 
 export default function Page() {
-  const [researchTopic, setResearchTopic] = useState<ResearchTopic | 'All'>('All')
-  const [publicationType, setPublicationType] = useState<PublicationType | 'All'>('All')
+  const router = useRouter()
+  const params = useSearchParams()
+  const researchTopic = (params.get('researchTopic') as ResearchTopic | null) ?? 'All'
+  const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
+
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
 
   const handleResearchTopicChange = (topic: string) => {
-    setResearchTopic(topic as ResearchTopic)
+    router.push(`/publications/?researchTopic=${topic}&publicationType=${publicationType}`)
   }
 
   const handlePublicationTypeChange = (type: string) => {
-    setPublicationType(type as PublicationType)
+    router.push(`/publications/?researchTopic=${researchTopic}&publicationType=${type}`)
   }
 
   useEffect(() => {
