@@ -15,6 +15,7 @@ export const ResearchTopics = [
 export type ResearchTopic = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
+  PDF = 'PDF',
   ACM = 'ACM DL',
   WEB = 'Website',
   VID = 'Video',
@@ -23,7 +24,6 @@ export enum PublicationLinkType {
 
 export interface Publication {
   title: string
-  paperLink?: string
   authors: (Member | string)[]
   year: number
   venue: string
@@ -36,7 +36,6 @@ export interface Publication {
 export const PUBLICATIONS: Publication[] = [
   {
     title: 'CodeTree: A System for Learnersourcing Subgoal Hierarchies in Code Examples',
-    paperLink: 'https://google.com',
     authors: [MEMBER.hyoungwookjin, MEMBER.juhokim, 'John Doe'],
     venue: 'CSCW 2024',
     year: 2024,
