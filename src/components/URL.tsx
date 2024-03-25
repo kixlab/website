@@ -19,6 +19,11 @@ export const URL = styled.a`
     margin-right: 6px;
   }
 
+  &[href&='.pdf']::before {
+    content: '📄';
+    margin-right: 6px;
+  }
+
   &[href*='youtube.com']::before {
     display: inline-block;
     content: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/16px-YouTube_full-color_icon_%282017%29.svg.png');
