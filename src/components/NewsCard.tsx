@@ -63,7 +63,7 @@ const Summary = styled.div`
   }
 `
 
-const ReadMore = styled.div`
+export const ReadMore = styled.div`
   ${FontVariant.body_md}
   color: ${Color.orange900};
   cursor: pointer;

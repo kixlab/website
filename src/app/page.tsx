@@ -2,205 +2,385 @@
 
 // import { Section, SectionTitle, SectionContent } from '@/components/Section'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Color, FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
+import Markdown from 'react-markdown'
+
 import heroImg from '../../public/images/hero-image.png'
 import { POSTS } from '@/data/posts'
 import { MEMBERS } from '@/data/members'
-
 import { ResearchTopics } from '@/data/publications'
+import { ReadMore } from '@/components/NewsCard'
 
 const Section = styled.section<{ altBackground?: boolean }>`
-  background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
-  // gap: 0;
+  // background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
   margin: 0 auto;
   width: 100%;
-  padding: 96px;
+  padding: 48px 96px;
   // max-width: 1000px;
 `
-const SectionTitle = styled.h2`
-  ${FontVariant.title_md}
-  text-align: center;
-  // margin-top: 48px;
-  margin-bottom: 48px;
-
-  &:after {
-    content: '';
-    // position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 50px;
-    height: 2px;
-    background-color: black;
-  }
-`
-
-const Grid = styled.div`
+const GridContainer = styled.div<{ columnTemplate: string }>`
   display: grid;
-  gap: 48px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: ${props => props.columnTemplate || '1fr 1fr'}; // default is two columns
 `
-
-const GridItem = styled.div`
-  padding: 26px;
-  border: thin solid;
-  border-radius: 15px;
-`
-
-const Flex = styled.div`
+const FlexContainer = styled.div<{ direction?: 'row' | 'column'; gap?: string }>`
   display: flex;
+  flex-direction: ${props => props.direction || 'row'};
+  gap: ${props => props.gap || '0px'}
   // height: 100%;
   align-items: center;
   max-width: 100vw;
-  justify-content: space-between;
-`
-const FlexItem = styled.div`
-  // flex-basis: 100%;
-  flex: 1;
-  // max-width: 100vw;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 `
 
-const Title = styled.h1`
-  ${FontVariant.title_xl}
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-`
-
-const CardTitle = styled.h3`
-  ${FontVariant.title_md}
-`
-const CardAvatar = styled(Image)`
-  border-radius: 50%;
-  max-width: 36px;
-  max-height: 36px;
-  width: auto;
-  height: auto;
-`
-const Text = styled.p`
+const Text = styled.div`
   ${FontVariant.body_md}
   color: ${Color.gray700}
-`
-const Label = styled.div`
-  ${FontVariant.body_md}
-  width: fit-content;
-  background-color: #7d7d7d;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: white;
-  text-transform: capitalize;
+
+  p {
+    margin: 0;
+  }
 `
 
-export default function Page() {
-  let filteredMembers = []
+const SectionHeader = ({ title, subtitle }) => {
+  const Title = styled.h2`
+    ${FontVariant.title_lg}
+    display: grid;
+
+    /* Orange bar above title */
+    &:before {
+      content: '';
+      justify-self: left;
+      border: 4px solid ${Color.orange900}; // careful of margins (8px needs to be 4px here)
+      width: 48px;
+      margin-bottom: 8px;
+    }
+
+    /* Black bar underneath title */
+    // &:after {
+    //   content: '';
+    //   // justify-self: center;
+    //   border: 1px solid black;
+    //   margin-top: 8px;
+    //   width: 72px;
+    // }
+  `
+  const Subtitle = styled.h3`
+    ${FontVariant.title_sm}
+  `
   return (
-    <main style={{ padding: '0px', gap: '0px', maxWidth: '100vw' }}>
-      <Section id="hero-section" style={{ padding: '0' }}>
-        <Flex>
-          <FlexItem>
-            <Flex
-              id="hero-text-area"
-              style={{
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'start',
-                padding: '0 96px 0 96px',
-              }}
-            >
-              <Title>
-                Welcome to <span style={{ color: `${Color.orange900}`, padding: '0 7px 0 0' }}>Kixlab</span>!
-              </Title>
-              <br />
-              <CardTitle style={{ lineHeight: '1.7em', marginBottom: '10px' }}>
-                Research of <br /> <strong>Human-Computer Interaction</strong> at Scale
-              </CardTitle>
-              <Text style={{ textAlign: 'justify', color: '#565656' }}>
-                The KAIST Interaction Lab (KIXLAB) is a human-computer interaction research group in the School of
-                Computing at KAIST. Our mission is to improve ways people learn, collaborate, discuss, make decisions,
-                and take action online by designing new interactive systems that leverage and support interaction at
-                scale.
-              </Text>
-            </Flex>
-          </FlexItem>
-          <FlexItem style={{ flexShrink: '2' }}>
-            <Image
-              src={heroImg}
-              alt="Kixlab group picture"
-              layout="responsive"
-              priority
-              // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </FlexItem>
-        </Flex>
-      </Section>
+    <div style={{ display: 'grid', gap: '8px', marginBottom: '72px' }}>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
+    </div>
+  )
+}
 
-      <Section id="news-section" altBackground={true} style={{ paddingBottom: '48px' }}>
-        <SectionTitle>Latest News</SectionTitle>
-        <Flex style={{ alignItems: 'stretch', columnGap: '72px' }}>
+const HeroSection = () => {
+  const RespFontSize = {
+    title_xl: '2.25rem',
+    title_lg: '1.75rem',
+    title_sm: '1rem',
+  } as const
+
+  const HeroTextArea = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 0 96px;
+  `
+
+  const HeroTitle = styled.h1`
+    font-size: 36px;
+    // font-size: clamp(2rem, 2.25vw + 1rem, 5rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  `
+  const HeroSubtitle = styled.h2`
+    font-size: 22px;
+    // font-size: clamp(1.25rem, 1.15vw + 0.5rem, 2.5rem);
+    font-weight: 300;
+    // line-height: 1.7rem;
+    margin-bottom: 32px;
+  `
+  const HeroMessage = styled.p`
+    font-size: 16px;
+    // font-size: clamp(1rem, 0.65vw + 0.5rem, 2rem);
+    color: ${Color.gray700};
+    text-align: justify;
+    min-width: 300px;
+    max-width: 100%;
+  `
+
+  return (
+    <Section id="hero-section" style={{ padding: '0' }}>
+      {/* padding: 0 is to allow image to stretch to the right side of the webpage*/}
+      <GridContainer>
+        <HeroTextArea id="hero-text-area">
+          <HeroTitle>
+            Welcome to <span style={{ color: `${Color.orange900}`, paddingRight: '7px' }}>Kixlab</span>!
+          </HeroTitle>
+          <HeroSubtitle>
+            Research of <br /> <strong style={{ fontWeight: '700' }}>Human-Computer Interaction</strong> at Scale
+          </HeroSubtitle>
+          <HeroMessage>
+            The KAIST Interaction Lab (KIXLAB) is a human-computer interaction research group in the School of Computing
+            at KAIST. Our mission is to improve ways people learn, collaborate, discuss, make decisions, and take action
+            online by designing new interactive systems that leverage and support interaction at scale.
+          </HeroMessage>
+        </HeroTextArea>
+        <div style={{ display: 'grid', alignContent: 'center' }}>
+          <Image
+            id="hero-image"
+            src={heroImg}
+            alt="Kixlab group picture"
+            layout="responsive"
+            priority
+            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+      </GridContainer>
+    </Section>
+  )
+}
+
+const NewsSection = () => {
+  const NewsItemsArea = styled.div`
+    display: flex;
+    flex-direction: row;
+    // align-items: center;
+    flex-wrap: wrap;
+    gap: 72px;
+  `
+
+  const NewsItem = styled.div`
+    flex: 1;
+    min-width: 249px;
+  `
+  const NewsItemTitle = styled.h3`
+    ${FontVariant.title_md}
+  `
+  const NewsItemLabelsArea = styled.div`
+    display: grid;
+    gap: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  `
+  const NewsItemLabel = styled.div`
+    ${FontVariant.body_md}
+    width: fit-content;
+    background-color: #7d7d7d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    text-transform: capitalize;
+  `
+  const NewsItemTextArea = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  `
+
+  return (
+    <Section id="news-section" altBackground={true}>
+      <SectionHeader title="Latest News" subtitle="Check the latest news from KIXLAB" />
+      <FlexContainer direction="column" style={{ gap: '72px', justifyContent: 'space-between' }}>
+        <NewsItemsArea>
           {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime())
             .slice(0, 4)
             .map(post => (
-              <FlexItem>
-                <Grid>
+              <NewsItem>
+                <NewsItemLabelsArea style={{ marginBottom: '10px' }}>
                   {post.categories.map(category => (
-                    <Label>
-                      {/* <span style={{ fontColor: 'white' }}>{category}</span> */}
-                      {category}
-                    </Label>
+                    <NewsItemLabel>{category}</NewsItemLabel>
                   ))}
-                </Grid>
-                <CardTitle>{post.title}</CardTitle>
-                <Text style={{ fontColor: `${Color.gray700}` }}>{post.date.toDateString()}</Text>
-                <Text>{post.summary}</Text>
-              </FlexItem>
+                </NewsItemLabelsArea>
+                <NewsItemTextArea>
+                  <NewsItemTitle>{post.title}</NewsItemTitle>
+                  <Text>{post.date.toDateString()}</Text>
+                  <Text>
+                    <Markdown>{post.summary}</Markdown>
+
+                    {
+                      // open modal popup window when user clicks "See the details"
+                      post.content && (
+                        <ReadMore
+                          onClick={e => {
+                            e.preventDefault()
+                            setModal(true)
+                            setModalContent(post)
+                          }}
+                        >
+                          See the details
+                        </ReadMore>
+                      )
+                    }
+                  </Text>
+                </NewsItemTextArea>
+              </NewsItem>
             ))}
-        </Flex>
-      </Section>
+        </NewsItemsArea>
+        <Link
+          href="/news"
+          style={{
+            border: `1px solid ${Color.gray500}`,
+            padding: '8px 20px',
+            width: 'fit-content',
+            alignSelf: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          See More →
+        </Link>
+      </FlexContainer>
+    </Section>
+  )
+}
+const ResearchThemesSection = () => {
+  const ResearchTopicsArea = styled.div`
+    display: grid;
+    gap: 48px;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  `
 
-      <Section id="research-section">
-        <SectionTitle>Research Themes</SectionTitle>
-        <Grid>
-          {ResearchTopics.map(topic => (
-            <GridItem>
-              <CardTitle style={{ textTransform: 'capitalize' }}>
-                🤖<br></br>
-                {topic}
-              </CardTitle>
-              <Text style={{ color: 'gray', paddingBottom: '12px' }}>One or two line description of this project</Text>
-              <Flex style={{ flexDirection: 'row', justifyContent: 'start', gap: '8px' }}>
-                {
-                  (filteredMembers = MEMBERS.filter(
-                    member => Array.isArray(member.researchTopics) && member.researchTopics.includes(topic)
-                  )
-                    .slice(0, 6)
-                    .map(member => (
-                      <CardAvatar
-                        width={36}
-                        height={36}
-                        src={member.imgPath}
-                        alt={member.fullName}
-                        style={{ borderRadius: '50%' }}
-                      ></CardAvatar>
-                    )))
-                }
+  const ResearchTopicItem = styled.div`
+    padding: 26px;
+    border: thin solid;
+    border-radius: 15px;
+    &:hover {
+      box-shadow: 3px 3px 10px 0px ${Color.orange300};
+    }
+    transition: box-shadow 0.3s ease-in-out;
+  `
 
-                {
-                  /* Add +{number} in case of overfill */
-                  filteredMembers.slice(6).length > 0 && (
-                    <span style={{ width: '36px', textAlign: 'center' }}>+{filteredMembers.slice(6).length}</span>
-                  )
-                }
-              </Flex>
-            </GridItem>
-          ))}
-        </Grid>
-      </Section>
+  const ResearchTopicItemTitle = styled.h3`
+    ${FontVariant.title_md}
+  `
 
-      <Section id="media-section" altBackground={true}>
-        <SectionTitle>KIXLAB on Media</SectionTitle>
-        <Flex>
-          <FlexItem></FlexItem>
-        </Flex>
-      </Section>
+  const ResearchTopicMembersArea = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 8px;
+  `
+
+  const ResearchTopicsMemberAvatar = styled(Image)`
+    border-radius: 50%;
+    max-width: 36px;
+    max-height: 36px;
+    width: auto;
+    height: auto;
+  `
+  let filteredMembers = []
+  return (
+    <Section id="research-section">
+      {/* <SectionTitle>Research Themes</SectionTitle> */}
+      <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
+      <ResearchTopicsArea>
+        {ResearchTopics.map(topic => (
+          <ResearchTopicItem>
+            <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
+              🤖<br></br>
+              {topic}
+            </ResearchTopicItemTitle>
+            <Text style={{ color: 'gray', paddingBottom: '12px' }}>One or two line description of this project</Text>
+            <ResearchTopicMembersArea>
+              {
+                (filteredMembers = MEMBERS.filter(
+                  member => Array.isArray(member.researchTopics) && member.researchTopics.includes(topic)
+                )
+                  .slice(0, 6)
+                  .map(member => (
+                    <ResearchTopicsMemberAvatar
+                      width={36}
+                      height={36}
+                      src={member.imgPath}
+                      alt={member.fullName}
+                    ></ResearchTopicsMemberAvatar>
+                  )))
+              }
+
+              {
+                /* Add +{number} in case of overfill */
+                filteredMembers.slice(6).length > 0 && (
+                  <span style={{ width: '36px', textAlign: 'center' }}>+{filteredMembers.slice(6).length}</span>
+                )
+              }
+            </ResearchTopicMembersArea>
+          </ResearchTopicItem>
+        ))}
+      </ResearchTopicsArea>
+    </Section>
+  )
+}
+
+const MediaSection = () => {
+  const MediaArea = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 72px;
+  `
+  const VideoTitle = styled.h3`
+    ${FontVariant.title_md}
+    text-align: center;
+  `
+  const VideoDate = styled.h4`
+    text-align: center;
+    font-size: 16px;
+  `
+  const videos = [
+    {
+      url: 'https://www.youtube.com/embed/j0v1Cr74kN8?si=tp_blkpKqN4FP9te',
+      title: 'What is Interaction-centric AI?',
+      date: '2022.10.28',
+    },
+    {
+      url: 'https://www.youtube.com/embed/pkhTuiYvvw4?si=hUee7IqJ-m95L1k2',
+      title: 'KIXLAB Introduction',
+      date: '2021.02.12',
+    },
+    { url: 'https://www.youtube.com/embed/GgvkmXXPFPI?si=YWMLcLMhac5kRYzJ', title: 'Open KAIST', date: '2022.01.10' },
+  ]
+
+  return (
+    <Section id="media-section">
+      <SectionHeader title="KIXLAB on Media" subtitle="Explore KIXLAB’s media realm" />
+      <MediaArea>
+        {videos.map(video => (
+          <GridContainer columnTemplate="1fr" style={{ gap: '4px' }}>
+            <iframe
+              width="473"
+              height="291"
+              src={video.url}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+            <VideoTitle>{video.title}</VideoTitle>
+            <VideoDate>{video.date}</VideoDate>
+          </GridContainer>
+        ))}
+      </MediaArea>
+    </Section>
+  )
+}
+
+export default function Page() {
+  return (
+    <main style={{ padding: '0px', gap: '0px', marginBottom: '16px' }}>
+      <HeroSection></HeroSection>
+      <NewsSection> </NewsSection>
+      <ResearchThemesSection></ResearchThemesSection>
+      <MediaSection></MediaSection>
     </main>
   )
 }
