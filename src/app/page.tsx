@@ -85,7 +85,12 @@ const HeroSection = () => {
     title_sm: '1rem',
   } as const
 
+  const HeroContainer = styled.div`
+    display: flex;
+  `
+
   const HeroTextArea = styled.div`
+    flex-basis: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,10 +122,16 @@ const HeroSection = () => {
     max-width: 100%;
   `
 
+  const HeroImageContainer = styled.div`
+    flex-basis: 50%;
+    display: grid;
+    align-content: center;
+  `
+
   return (
     <Section id="hero-section" style={{ padding: '0' }}>
       {/* padding: 0 is to allow image to stretch to the right side of the webpage*/}
-      <GridContainer>
+      <HeroContainer>
         <HeroTextArea id="hero-text-area">
           <HeroTitle>
             Welcome to <span style={{ color: `${Color.orange900}`, paddingRight: '7px' }}>Kixlab</span>!
@@ -134,7 +145,7 @@ const HeroSection = () => {
             online by designing new interactive systems that leverage and support interaction at scale.
           </HeroMessage>
         </HeroTextArea>
-        <div style={{ display: 'grid', alignContent: 'center' }}>
+        <HeroImageContainer>
           <Image
             id="hero-image"
             src={heroImg}
@@ -143,8 +154,8 @@ const HeroSection = () => {
             priority
             // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-        </div>
-      </GridContainer>
+        </HeroImageContainer>
+      </HeroContainer>
     </Section>
   )
 }
@@ -192,11 +203,11 @@ const NewsSection = () => {
         <NewsItemsArea>
           {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime())
             .slice(0, 4)
-            .map(post => (
-              <NewsItem>
+            .map((post, i) => (
+              <NewsItem key={i}>
                 <NewsItemLabelsArea style={{ marginBottom: '10px' }}>
-                  {post.categories.map(category => (
-                    <NewsItemLabel>{category}</NewsItemLabel>
+                  {post.categories.map((category, j) => (
+                    <NewsItemLabel key={j}>{category}</NewsItemLabel>
                   ))}
                 </NewsItemLabelsArea>
                 <NewsItemTextArea>
@@ -281,7 +292,7 @@ const ResearchThemesSection = () => {
       {/* <SectionTitle>Research Themes</SectionTitle> */}
       <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
       <ResearchTopicsArea>
-        {ResearchTopics.map(topic => (
+        {ResearchTopics.map((topic, i) => (
           <ResearchTopicItem>
             <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
               🤖<br></br>
