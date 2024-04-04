@@ -94,23 +94,23 @@ const HeroSection = () => {
   `
 
   const HeroTitle = styled.h1`
-    font-size: 36px;
-    // font-size: clamp(2rem, 2.25vw + 1rem, 5rem);
+    // font-size: 36px;
+    font-size: clamp(2rem, 2vw + 1rem, 5rem);
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-bottom: 24px;
   `
   const HeroSubtitle = styled.h2`
-    font-size: 22px;
-    // font-size: clamp(1.25rem, 1.15vw + 0.5rem, 2.5rem);
+    // font-size: 22px;
+    font-size: clamp(1.25rem, 1vw + 0.5rem, 2.5rem);
     font-weight: 300;
     // line-height: 1.7rem;
     margin-bottom: 32px;
   `
   const HeroMessage = styled.p`
-    font-size: 16px;
-    // font-size: clamp(1rem, 0.65vw + 0.5rem, 2rem);
+    // font-size: 16px;
+    font-size: clamp(1rem, 0.65vw + 0.5rem, 2rem);
     color: ${Color.gray700};
     text-align: justify;
     min-width: 300px;
