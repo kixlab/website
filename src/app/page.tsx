@@ -14,7 +14,7 @@ import { ResearchTopics } from '@/data/publications'
 import { ReadMore } from '@/components/NewsCard'
 
 const Section = styled.section<{ altBackground?: boolean }>`
-  // background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
+  background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
   margin: 0 auto;
   width: 100%;
   padding: 48px 96px;
@@ -335,7 +335,7 @@ const MediaSection = () => {
     flex-direction: row;
     flex: auto;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 72px;
   `
   const VideoTitle = styled.h3`
@@ -361,7 +361,7 @@ const MediaSection = () => {
   ]
 
   return (
-    <Section id="media-section">
+    <Section id="media-section" altBackground={true}>
       <SectionHeader title="KIXLAB on Media" subtitle="Explore KIXLAB’s media realm" />
       <MediaArea>
         {videos.map(video => (
