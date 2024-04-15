@@ -27,7 +27,7 @@ export interface Publication {
   authors: (Member | string)[]
   year: number
   venue: string
-  topics: ResearchTopic[]
+  topics: ResearchTopicType[]
   type: PublicationType
   award?: string
   links?: { url: string; type: PublicationLinkType }[]

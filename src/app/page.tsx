@@ -12,22 +12,23 @@ import { POSTS } from '@/data/posts'
 import { MEMBERS } from '@/data/members'
 import { ResearchTopics } from '@/data/publications'
 import { ReadMore } from '@/components/NewsCard'
+import React from 'react'
 
 const Section = styled.section<{ altBackground?: boolean }>`
-  background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
+  background-color: ${(props) => (props.altBackground ? '#F6F6F6' : 'white')};
   margin: 0 auto;
   width: 100%;
   padding: 48px 96px;
-  // max-width: 1000px;
+  // max-width: 1440px;
 `
 const GridContainer = styled.div<{ columnTemplate: string }>`
   display: grid;
-  grid-template-columns: ${props => props.columnTemplate || '1fr 1fr'}; // default is two columns
+  grid-template-columns: ${(props) => props.columnTemplate || '1fr 1fr'}; // default is two columns
 `
 const FlexContainer = styled.div<{ direction?: 'row' | 'column'; gap?: string }>`
   display: flex;
-  flex-direction: ${props => props.direction || 'row'};
-  gap: ${props => props.gap || '0px'}
+  flex-direction: ${(props) => props.direction || 'row'};
+  gap: ${(props) => props.gap || '0px'}
   // height: 100%;
   align-items: center;
   max-width: 100vw;
@@ -44,7 +45,7 @@ const Text = styled.div`
   }
 `
 
-const SectionHeader = ({ title, subtitle }) => {
+const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => {
   const Title = styled.h2`
     ${FontVariant.title_lg}
     display: grid;
@@ -100,7 +101,7 @@ const HeroSection = () => {
 
   const HeroTitle = styled.h1`
     // font-size: 36px;
-    font-size: clamp(2rem, 2vw + 1rem, 5rem);
+    font-size: clamp(2rem, 2vw + 1rem, 4rem);
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -216,7 +217,7 @@ const NewsSection = () => {
                   <Text>
                     <Markdown>{post.summary}</Markdown>
 
-                    {
+                    {/* {
                       // open modal popup window when user clicks "See the details"
                       post.content && (
                         <ReadMore
@@ -229,7 +230,7 @@ const NewsSection = () => {
                           See the details
                         </ReadMore>
                       )
-                    }
+                    } */}
                   </Text>
                 </NewsItemTextArea>
               </NewsItem>
@@ -293,7 +294,7 @@ const ResearchThemesSection = () => {
       <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
       <ResearchTopicsArea>
         {ResearchTopics.map((topic, i) => (
-          <ResearchTopicItem>
+          <ResearchTopicItem key={i}>
             <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
               🤖<br></br>
               {topic}
@@ -302,15 +303,16 @@ const ResearchThemesSection = () => {
             <ResearchTopicMembersArea>
               {
                 (filteredMembers = MEMBERS.filter(
-                  member => Array.isArray(member.researchTopics) && member.researchTopics.includes(topic)
+                  (member) => Array.isArray(member.researchTopics) && member.researchTopics.includes(topic)
                 )
                   .slice(0, 6)
-                  .map(member => (
+                  .map((member, j) => (
                     <ResearchTopicsMemberAvatar
                       width={36}
                       height={36}
                       src={member.imgPath}
                       alt={member.fullName}
+                      key={j}
                     ></ResearchTopicsMemberAvatar>
                   )))
               }
@@ -364,17 +366,17 @@ const MediaSection = () => {
     <Section id="media-section" altBackground={true}>
       <SectionHeader title="KIXLAB on Media" subtitle="Explore KIXLAB’s media realm" />
       <MediaArea>
-        {videos.map(video => (
-          <GridContainer columnTemplate="1fr" style={{ gap: '4px' }}>
+        {videos.map((video, i) => (
+          <GridContainer columnTemplate="1fr" style={{ gap: '4px' }} key={i}>
             <iframe
               width="473"
               height="291"
               src={video.url}
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
             <VideoTitle>{video.title}</VideoTitle>
             <VideoDate>{video.date}</VideoDate>
@@ -389,7 +391,7 @@ export default function Page() {
   return (
     <main style={{ padding: '0px', gap: '0px', marginBottom: '16px' }}>
       <HeroSection></HeroSection>
-      <NewsSection> </NewsSection>
+      <NewsSection></NewsSection>
       <ResearchThemesSection></ResearchThemesSection>
       <MediaSection></MediaSection>
     </main>

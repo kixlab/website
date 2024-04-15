@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
-import type { PublicationType, ResearchTopic } from '@/data/publications'
+import type { PublicationType, ResearchTopicType } from '@/data/publications'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import Filter from '@/components/Filter'
@@ -17,12 +17,12 @@ const Filters = styled.div`
 `
 
 export default function Page() {
-  const [researchTopic, setResearchTopic] = useState<ResearchTopic | 'All'>('All')
+  const [researchTopic, setResearchTopic] = useState<ResearchTopicType | 'All'>('All')
   const [publicationType, setPublicationType] = useState<PublicationType | 'All'>('All')
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
 
   const handleResearchTopicChange = (topic: string) => {
-    setResearchTopic(topic as ResearchTopic)
+    setResearchTopic(topic as ResearchTopicType)
   }
 
   const handlePublicationTypeChange = (type: string) => {
@@ -32,7 +32,7 @@ export default function Page() {
   useEffect(() => {
     setPublicationList(
       PUBLICATIONS.filter(
-        pub =>
+        (pub) =>
           (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
           (publicationType === 'All' || pub.type === publicationType)
       )
@@ -57,19 +57,19 @@ export default function Page() {
         />
       </Filters>
       <Sections>
-        {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
+        {PUBLICATIONS.filter((pub) => pub.type === 'preprint').length > 0 && (
           <Section>
             <SectionTitle>Preprints</SectionTitle>
             <SectionContent>
               {publicationList
-                .filter(pub => pub.type === 'preprint')
-                .map(pub => (
+                .filter((pub) => pub.type === 'preprint')
+                .map((pub) => (
                   <PublicationCard key={pub.title} pub={pub} />
                 ))}
             </SectionContent>
           </Section>
         )}
-        {uniq(PUBLICATIONS.map(p => p.year)).map((year, i) => (
+        {uniq(PUBLICATIONS.map((p) => p.year)).map((year, i) => (
           <>
             <Divider />
             <Section key={i}>
@@ -77,7 +77,7 @@ export default function Page() {
               <SectionContent>
                 {publicationList
                   .filter(({ year: y }) => y === year)
-                  .map(pub => (
+                  .map((pub) => (
                     <>
                       <PublicationCard key={pub.title} pub={pub} />
                     </>
