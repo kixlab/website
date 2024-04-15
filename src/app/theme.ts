@@ -39,7 +39,7 @@ const FontSize = {
   body_lg: '17px',
   body_md: '14px',
   body_sm: '12px',
-  body_xs: '8px'
+  body_xs: '8px',
 } as const
 
 const FontWeight = {

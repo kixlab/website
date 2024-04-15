@@ -14,7 +14,7 @@ const SelectName = styled.span<{ filtered: boolean }>`
   ${FontVariant.body_sm}
   width: fit-content;
   margin-right: 6px;
-  color: ${props => (props.filtered ? Color.orange900 : Color.gray700)};
+  color: ${(props) => (props.filtered ? Color.orange900 : Color.gray700)};
   white-space: nowrap;
 `
 
@@ -34,7 +34,7 @@ const Value = styled.span<{ filtered: boolean }>`
 
   overflow: hidden;
 
-  border: 1px solid ${props => (props.filtered ? Color.orange900 : Color.gray300)};
+  border: 1px solid ${(props) => (props.filtered ? Color.orange900 : Color.gray300)};
   border-radius: ${Radius.md};
   padding: 6px 16px 6px 12px;
 
@@ -42,13 +42,13 @@ const Value = styled.span<{ filtered: boolean }>`
 
   vertical-align: middle;
   justify-content: space-between;
-  color: ${props => (props.filtered ? Color.orange900 : Color.gray700)};
+  color: ${(props) => (props.filtered ? Color.orange900 : Color.gray700)};
 
   white-space: nowrap;
   text-overflow: ellipsis;
 
   &:hover {
-    color: ${props => (props.filtered ? Color.orange900 : Color.black)};
+    color: ${(props) => (props.filtered ? Color.orange900 : Color.black)};
   }
 `
 
@@ -119,10 +119,10 @@ export default function Filter({ filterName, optionSet, optionSelected, handleOp
         </Value>
         {optionOpen && (
           <OptList>
-            {optionSet.map(topic => (
+            {optionSet.map((topic) => (
               <FilterOption
                 key={topic}
-                onMouseDown={e => {
+                onMouseDown={(e) => {
                   handleOptionChange(topic)
                   toggleList()
                   e.preventDefault()

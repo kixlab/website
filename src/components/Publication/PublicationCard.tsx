@@ -77,7 +77,7 @@ export default function PublicationCard({ pub }: { pub: Publication }) {
           </URLs>
         )}
         {pub.award && <Award>{pub.award}</Award>}
-        <Tags>{pub.topics.map(topic => '#' + topic.charAt(0).toUpperCase() + topic.slice(1)).join(' ')}</Tags>
+        <Tags>{pub.topics.map((topic) => '#' + topic.charAt(0).toUpperCase() + topic.slice(1)).join(' ')}</Tags>
       </SubInfo>
     </Card>
   )

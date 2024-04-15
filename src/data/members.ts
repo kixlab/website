@@ -1,4 +1,4 @@
-import { ResearchTopicType } from "./publications"
+import { ResearchTopicType } from './publications'
 
 interface Props {
   name: string
@@ -34,7 +34,15 @@ export const MEMBER = {
     career: 'Associate Professor',
     img: 'juhokim.jpg',
     site: 'http://juhokim.com/',
-    researchTopics: ["datamining", "crowdsourcing", "learning", "civics", "visualization", "social", "human-ai-interaction"]
+    researchTopics: [
+      'datamining',
+      'crowdsourcing',
+      'learning',
+      'civics',
+      'visualization',
+      'social',
+      'human-ai-interaction',
+    ],
   }),
   hyoungwookjin: new Member({
     name: 'Hyoungwook',
@@ -43,7 +51,7 @@ export const MEMBER = {
     career: 'M.S. Student',
     img: 'hyoungwookjin.jpg',
     site: 'https://jhw123.github.io',
-    researchTopics: ["learning"]
+    researchTopics: ['learning'],
   }),
   alexsuryapranata: new Member({
     name: 'Alex',
