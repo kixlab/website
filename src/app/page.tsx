@@ -7,7 +7,7 @@ import { Color, FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
 import Markdown from 'react-markdown'
 
-import heroImg from '../../public/images/hero-image.png'
+// import heroImg from '../../public/images/hero-image.png'
 import { POSTS } from '@/data/posts'
 import { MEMBERS } from '@/data/members'
 import { ResearchTopics } from '@/data/publications'
@@ -96,12 +96,12 @@ const HeroSection = () => {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: 0 96px;
+    padding: 90px 96px;
   `
 
   const HeroTitle = styled.h1`
     // font-size: 36px;
-    font-size: clamp(2rem, 2vw + 1rem, 4rem);
+    font-size: clamp(2rem, 1vw + 2rem, 3.5rem);
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -109,7 +109,7 @@ const HeroSection = () => {
   `
   const HeroSubtitle = styled.h2`
     // font-size: 22px;
-    font-size: clamp(1.25rem, 1vw + 0.5rem, 2.5rem);
+    font-size: clamp(1.25rem, 0.3125 + 4.17vw, 2.5rem);
     font-weight: 300;
     // line-height: 1.7rem;
     margin-bottom: 32px;
@@ -127,6 +127,8 @@ const HeroSection = () => {
     flex-basis: 50%;
     display: grid;
     align-content: center;
+    position: relative;
+    z-index: 0;
   `
 
   return (
@@ -146,13 +148,15 @@ const HeroSection = () => {
             online by designing new interactive systems that leverage and support interaction at scale.
           </HeroMessage>
         </HeroTextArea>
-        <HeroImageContainer>
+        <HeroImageContainer id="hero-image-area">
           <Image
             id="hero-image"
-            src={heroImg}
+            src={'/images/hero-image.png'}
             alt="Kixlab group picture"
-            layout="responsive"
+            fill={true}
+            // layout="responsive"
             priority
+            style={{ objectFit: 'contain' }}
             // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </HeroImageContainer>
@@ -389,7 +393,7 @@ const MediaSection = () => {
 
 export default function Page() {
   return (
-    <main style={{ padding: '0px', gap: '0px', marginBottom: '16px' }}>
+    <main style={{ padding: '0px', gap: '0px', marginBottom: '16px', alignItems: 'center' }}>
       <HeroSection></HeroSection>
       <NewsSection></NewsSection>
       <ResearchThemesSection></ResearchThemesSection>
