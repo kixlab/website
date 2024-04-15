@@ -61,7 +61,7 @@ const Tags = styled.span`
 export default function PublicationCard({ pub }: { pub: Publication }) {
   return (
     <Card>
-      <Title href={pub.paperLink}>{pub.title}</Title>
+      <Title>{pub.title}</Title>
       <Info>
         <Venue>{pub.venue}</Venue>
         <Author authors={pub.authors} />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
@@ -17,16 +18,19 @@ const Filters = styled.div`
 `
 
 export default function Page() {
-  const [researchTopic, setResearchTopic] = useState<ResearchTopicType | 'All'>('All')
-  const [publicationType, setPublicationType] = useState<PublicationType | 'All'>('All')
+  const router = useRouter()
+  const params = useSearchParams()
+  const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
+  const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
+
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
 
   const handleResearchTopicChange = (topic: string) => {
-    setResearchTopic(topic as ResearchTopicType)
+    router.push(`/publications/?researchTopic=${topic}&publicationType=${publicationType}`)
   }
 
   const handlePublicationTypeChange = (type: string) => {
-    setPublicationType(type as PublicationType)
+    router.push(`/publications/?researchTopic=${researchTopic}&publicationType=${type}`)
   }
 
   useEffect(() => {
@@ -50,7 +54,7 @@ export default function Page() {
           handleOptionChange={handleResearchTopicChange}
         />
         <Filter
-          filterName="Type"
+          filterName="Publication Type"
           optionSet={['All', ...PublicationTypes]}
           optionSelected={publicationType}
           handleOptionChange={handlePublicationTypeChange}
@@ -69,23 +73,26 @@ export default function Page() {
             </SectionContent>
           </Section>
         )}
-        {uniq(PUBLICATIONS.map((p) => p.year)).map((year, i) => (
-          <>
-            <Divider />
-            <Section key={i}>
-              <SectionTitle>{year}</SectionTitle>
-              <SectionContent>
-                {publicationList
-                  .filter(({ year: y }) => y === year)
-                  .map((pub) => (
-                    <>
-                      <PublicationCard key={pub.title} pub={pub} />
-                    </>
-                  ))}
-              </SectionContent>
-            </Section>
-          </>
-        ))}
+        {uniq(PUBLICATIONS.map((p) => p.year))
+          .sort()
+          .reverse()
+          .map((year, i) => (
+            <>
+              <Divider />
+              <Section key={i}>
+                <SectionTitle>{year}</SectionTitle>
+                <SectionContent>
+                  {publicationList
+                    .filter(({ year: y }) => y === year)
+                    .map((pub) => (
+                      <>
+                        <PublicationCard key={pub.title} pub={pub} />
+                      </>
+                    ))}
+                </SectionContent>
+              </Section>
+            </>
+          ))}
       </Sections>
     </main>
   )

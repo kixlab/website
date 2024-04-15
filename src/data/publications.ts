@@ -15,6 +15,7 @@ export const ResearchTopics = [
 export type ResearchTopicType = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
+  PDF = 'PDF',
   ACM = 'ACM DL',
   WEB = 'Website',
   VID = 'Video',
@@ -23,7 +24,6 @@ export enum PublicationLinkType {
 
 export interface Publication {
   title: string
-  paperLink?: string
   authors: (Member | string)[]
   year: number
   venue: string
@@ -36,12 +36,18 @@ export interface Publication {
 export const PUBLICATIONS: Publication[] = [
   {
     title: 'CodeTree: A System for Learnersourcing Subgoal Hierarchies in Code Examples',
-    paperLink: 'https://google.com',
     authors: [MEMBER.hyoungwookjin, MEMBER.juhokim, 'John Doe'],
     venue: 'CSCW 2024',
     year: 2024,
-    topics: ['crowdsourcing', 'learning'],
-    type: 'conference',
+    topics: ['learning', 'social'],
+    type: 'journal',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2023/chi2023-workshop-customer-paper.pdf',
+        type: PublicationLinkType.PDF,
+      },
+      { url: 'https://dl.acm.org', type: PublicationLinkType.ACM },
+    ],
   },
   {
     title: 'example1: name of paper',
@@ -51,7 +57,10 @@ export const PUBLICATIONS: Publication[] = [
     topics: ['civics', 'visualization'],
     type: 'conference',
     links: [
-      { url: 'https://dl.acm.org', type: PublicationLinkType.ACM },
+      {
+        url: 'https://kixlab.github.io/website-files/2023/uist2023-llmobjects-paper.pdf',
+        type: PublicationLinkType.PDF,
+      },
       { url: 'https://kixlab.org', type: PublicationLinkType.WEB },
       { url: 'https://youtube.com', type: PublicationLinkType.VID },
       { url: 'https://arxiv.org', type: PublicationLinkType.ARX },
@@ -59,29 +68,55 @@ export const PUBLICATIONS: Publication[] = [
     award: 'Best Example Award',
   },
   {
-    title: 'example: this is preprint',
+    title: 'example2: this is preprint',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 2024,
-    topics: ['civics', 'visualization'],
+    topics: ['datamining'],
     type: 'preprint',
-    award: 'Best Example Award',
     links: [],
+    award: 'Best Example Award',
   },
   {
-    title: 'example1: name of paper',
+    title: 'example3: name of paper',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
     year: 2018,
+    topics: ['crowdsourcing'],
+    type: 'poster',
+  },
+  {
+    title: 'example4: this is workshop',
+    authors: [MEMBER.juhokim],
+    venue: 'CHI 2018',
+    year: 2023,
     topics: ['civics', 'visualization'],
     type: 'conference',
   },
   {
-    title: 'example: this is preprint 2',
+    title: 'example5',
     authors: [MEMBER.juhokim],
     venue: 'CHI 2018',
-    year: 2024,
-    topics: ['civics', 'visualization'],
+    year: 2019,
+    topics: ['human-ai-interaction'],
     type: 'conference',
+    award: 'Special Award',
+  },
+  {
+    title: 'example6',
+    authors: [MEMBER.juhokim],
+    venue: 'CHI 2018',
+    year: 2018,
+    topics: ['visualization'],
+    type: 'conference',
+  },
+  {
+    title: 'example7',
+    authors: [MEMBER.juhokim],
+    venue: 'CHI 2018',
+    year: 2019,
+    topics: ['human-ai-interaction', 'civics'],
+    type: 'conference',
+    award: 'Special Award',
   },
 ] as const
