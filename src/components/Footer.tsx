@@ -2,6 +2,7 @@
 
 import React from 'react'
 import styled from '@emotion/styled'
+import Image from 'next/image'
 
 import { Color, FontVariant, FontSize, FontWeight } from '@/app/theme'
 
@@ -52,14 +53,6 @@ const LogoLink = styled.a`
   display: inline-block;
 `
 
-const Logo1 = styled.img`
-  height: 50px;
-`
-
-const Logo2 = styled.img`
-  height: 40px;
-`
-
 export default function Footer() {
   return (
     <FooterContainer>
@@ -77,10 +70,10 @@ export default function Footer() {
       </FooterTextContainer>
       <FooterLogoContainer>
         <LogoLink href="http://hci.kaist.ac.kr" target="_blank">
-          <Logo1 src="/images/logo_kaist_hci_white.png" alt="The HCI KAIST Logo" />
+          <Image width={81} height={50} src="/images/logo_kaist_hci_white.png" alt="The HCI KAIST Logo" />
         </LogoLink>
         <LogoLink href="https://cs.kaist.ac.kr" target="_blank">
-          <Logo2 src="/images/logo_kaist_soc_white.png" alt="School of Computing Logo" />
+          <Image width={148.41} height={40} src="/images/logo_kaist_soc_white.png" alt="School of Computing Logo" />
         </LogoLink>
       </FooterLogoContainer>
     </FooterContainer>
