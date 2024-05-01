@@ -31,7 +31,7 @@ export const Color = {
   green300: '#4CAF50',
 } as const
 
-const FontSize = {
+export const FontSize = {
   title_xl: '36px',
   title_lg: '28px',
   title_md: '22px',
@@ -41,7 +41,7 @@ const FontSize = {
   body_sm: '12px',
 } as const
 
-const FontWeight = {
+export const FontWeight = {
   title_xl: 700,
   title_lg: 700,
   title_md: 700,
