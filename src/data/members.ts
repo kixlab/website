@@ -21,8 +21,7 @@ class Member {
   }
 
   get imgPath() {
-    let dirPath = '/images/members/'
-    return `${dirPath}${this.img}`
+    return `/images/members/${this.img}`
   }
 }
 

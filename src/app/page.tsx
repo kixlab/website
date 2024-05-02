@@ -1,17 +1,14 @@
 'use client'
 
-// import { Section, SectionTitle, SectionContent } from '@/components/Section'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Color, FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
 import Markdown from 'react-markdown'
 
-// import heroImg from '../../public/images/hero-image.png'
 import { POSTS } from '@/data/posts'
 import { MEMBERS } from '@/data/members'
 import { ResearchTopics } from '@/data/publications'
-import { ReadMore } from '@/components/NewsCard'
 import React from 'react'
 
 const Section = styled.section<{ altBackground?: boolean }>`
@@ -19,7 +16,6 @@ const Section = styled.section<{ altBackground?: boolean }>`
   margin: 0 auto;
   width: 100%;
   padding: 48px 96px;
-  // max-width: 1440px;
 `
 const GridContainer = styled.div<{ columnTemplate: string }>`
   display: grid;
@@ -29,7 +25,6 @@ const FlexContainer = styled.div<{ direction?: 'row' | 'column'; gap?: string }>
   display: flex;
   flex-direction: ${(props) => props.direction || 'row'};
   gap: ${(props) => props.gap || '0px'}
-  // height: 100%;
   align-items: center;
   max-width: 100vw;
   justify-content: space-evenly;
@@ -58,15 +53,6 @@ const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ title, s
       width: 48px;
       margin-bottom: 8px;
     }
-
-    /* Black bar underneath title */
-    // &:after {
-    //   content: '';
-    //   // justify-self: center;
-    //   border: 1px solid black;
-    //   margin-top: 8px;
-    //   width: 72px;
-    // }
   `
   const Subtitle = styled.h3`
     ${FontVariant.title_sm}
@@ -100,7 +86,6 @@ const HeroSection = () => {
   `
 
   const HeroTitle = styled.h1`
-    // font-size: 36px;
     font-size: clamp(2rem, 1vw + 2rem, 3.5rem);
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -108,14 +93,11 @@ const HeroSection = () => {
     margin-bottom: 24px;
   `
   const HeroSubtitle = styled.h2`
-    // font-size: 22px;
     font-size: clamp(1.25rem, 0.3125 + 4.17vw, 2.5rem);
     font-weight: 300;
-    // line-height: 1.7rem;
     margin-bottom: 32px;
   `
   const HeroMessage = styled.p`
-    // font-size: 16px;
     font-size: clamp(1rem, 0.65vw + 0.5rem, 2rem);
     color: ${Color.gray700};
     text-align: justify;
@@ -154,10 +136,8 @@ const HeroSection = () => {
             src={'/images/hero-image.png'}
             alt="Kixlab group picture"
             fill={true}
-            // layout="responsive"
             priority
             style={{ objectFit: 'contain' }}
-            // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </HeroImageContainer>
       </HeroContainer>
@@ -169,7 +149,6 @@ const NewsSection = () => {
   const NewsItemsArea = styled.div`
     display: flex;
     flex-direction: row;
-    // align-items: center;
     flex-wrap: wrap;
     gap: 72px;
   `
@@ -220,21 +199,6 @@ const NewsSection = () => {
                   <Text>{post.date.toDateString()}</Text>
                   <Text>
                     <Markdown>{post.summary}</Markdown>
-
-                    {/* {
-                      // open modal popup window when user clicks "See the details"
-                      post.content && (
-                        <ReadMore
-                          onClick={e => {
-                            e.preventDefault()
-                            setModal(true)
-                            setModalContent(post)
-                          }}
-                        >
-                          See the details
-                        </ReadMore>
-                      )
-                    } */}
                   </Text>
                 </NewsItemTextArea>
               </NewsItem>
