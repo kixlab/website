@@ -54,3 +54,29 @@ export const NewsLine = styled.div`
     transform: translate(-50%, -50%);
   }
 `
+
+const Title = styled.h2`
+  ${FontVariant.title_lg}
+  display: grid;
+
+  /* Orange bar above title */
+  &:before {
+    content: '';
+    justify-self: left;
+    border: 4px solid ${Color.orange900}; // careful of margins (8px needs to be 4px here)
+    width: 48px;
+    margin-bottom: 8px;
+  }
+`
+const Subtitle = styled.h3`
+  ${FontVariant.title_sm}
+`
+
+export const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => {
+  return (
+    <div style={{ display: 'grid', gap: '8px', marginBottom: '72px' }}>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
+    </div>
+  )
+}
