@@ -29,7 +29,6 @@ export const HeroSection = () => {
     font-size: clamp(2rem, 1vw + 2rem, 3.5rem);
     font-weight: 700;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
     margin-bottom: 24px;
   `
   const HeroSubtitle = styled.h2`
@@ -59,7 +58,7 @@ export const HeroSection = () => {
       <HeroContainer>
         <HeroTextArea id="hero-text-area">
           <HeroTitle>
-            Welcome to <span style={{ color: `${Color.orange900}`, paddingRight: '7px' }}>Kixlab</span>!
+            WELCOME TO <span style={{ color: `${Color.orange900}`, paddingRight: '7px' }}>KIXLAB</span>!
           </HeroTitle>
           <HeroSubtitle>
             Research of <br /> <strong style={{ fontWeight: '700' }}>Human-Computer Interaction</strong> at Scale

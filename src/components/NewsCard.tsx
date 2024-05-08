@@ -108,7 +108,7 @@ export default function NewsCard({
       </Summary>
       {post.contentMdFilePath && (
         <ReadMore
-          onClick={(e) => {
+          onClick={e => {
             e.preventDefault()
             setModalContent(post)
           }}

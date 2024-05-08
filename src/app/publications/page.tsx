@@ -36,7 +36,7 @@ export default function Page() {
   useEffect(() => {
     setPublicationList(
       PUBLICATIONS.filter(
-        (pub) =>
+        pub =>
           (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
           (publicationType === 'All' || pub.type === publicationType)
       )
@@ -61,19 +61,19 @@ export default function Page() {
         />
       </Filters>
       <Sections>
-        {PUBLICATIONS.filter((pub) => pub.type === 'preprint').length > 0 && (
+        {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
           <Section>
             <SectionTitle>Preprints</SectionTitle>
             <SectionContent>
               {publicationList
-                .filter((pub) => pub.type === 'preprint')
-                .map((pub) => (
+                .filter(pub => pub.type === 'preprint')
+                .map(pub => (
                   <PublicationCard key={pub.title} pub={pub} />
                 ))}
             </SectionContent>
           </Section>
         )}
-        {uniq(PUBLICATIONS.map((p) => p.year))
+        {uniq(PUBLICATIONS.map(p => p.year))
           .sort()
           .reverse()
           .map((year, i) => (
@@ -84,7 +84,7 @@ export default function Page() {
                 <SectionContent>
                   {publicationList
                     .filter(({ year: y }) => y === year)
-                    .map((pub) => (
+                    .map(pub => (
                       <>
                         <PublicationCard key={pub.title} pub={pub} />
                       </>

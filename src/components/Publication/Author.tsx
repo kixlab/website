@@ -17,7 +17,7 @@ const NotLabMember = styled.span`
 export default function Author({ authors }: { authors: (Member | string)[] }) {
   return (
     <AuthorList>
-      {authors.map((author) =>
+      {authors.map(author =>
         author instanceof Member ? (
           <LabMember key={author.fullName}>{author.fullName}</LabMember>
         ) : (

@@ -67,8 +67,8 @@ export default function NewsModal({ post, onClose }: { post: Post | null; onClos
     const closed = post.endsAt && post.endsAt < currentDate
 
     fetch(`/posts/${post.contentMdFilePath}`)
-      .then((response) => response.text())
-      .then((text) => {
+      .then(response => response.text())
+      .then(text => {
         const div = document.createElement('div')
         div.innerHTML = text
         setMdContent(div.textContent)
