@@ -6,7 +6,7 @@ export const Section = styled.section<{ altBackground?: boolean }>`
   background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
   margin: 0 auto;
   width: 100%;
-  padding: clamp(24px, calc(24px + 0.113 * (100vw - ${ScreenSize.md})), 48px)
+  padding: clamp(48px, calc(48px + 0.113 * (100vw - ${ScreenSize.md})), 48px)
     clamp(48px, calc(48px + 0.226 * (100vw - ${ScreenSize.md})), 96px);
 `
 export const GridContainer = styled.div<{ columnTemplate: string }>`

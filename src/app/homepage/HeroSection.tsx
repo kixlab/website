@@ -15,10 +15,12 @@ export const HeroSection = () => {
   const HeroContainer = styled.div`
     display: flex;
     position: relative;
+    justify-content: space-between;
     gap: 24px;
 
     @media (max-width: ${ScreenSize.md}) {
       flex-direction: column;
+      gap: 0px;
     }
   `
 
@@ -28,7 +30,8 @@ export const HeroSection = () => {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: clamp(48px, calc(48px + 0.23 * (100vw - ${ScreenSize.md})), 96px);
+    padding: clamp(24px, calc(24px + 0.23 * (100vw - ${ScreenSize.md})), 96px)
+      clamp(48px, calc(48px + 0.23 * (100vw - ${ScreenSize.md})), 96px);
   `
 
   const HeroTitle = styled.h1`
@@ -38,7 +41,7 @@ export const HeroSection = () => {
     margin-bottom: 24px;
     text-align: left;
 
-    @media (max-width: ${ScreenSize.sm}) {
+    @media (max-width: ${ScreenSize.md}) {
       align-self: center;
       text-align: center;
     }
@@ -49,7 +52,7 @@ export const HeroSection = () => {
     font-weight: 300;
     margin-bottom: 32px;
 
-    @media (max-width: ${ScreenSize.sm}) {
+    @media (max-width: ${ScreenSize.md}) {
       align-self: center;
       text-align: center;
     }
@@ -63,10 +66,12 @@ export const HeroSection = () => {
 
   const HeroImageContainer = styled.div`
     flex-basis: 50%;
-    display: grid;
-    align-content: center;
     position: relative;
     z-index: 0;
+    @media (max-width: ${ScreenSize.md}) {
+      // TODO: Set the min-height more systematically. This is a temporary fix.
+      min-height: 30vh;
+    }
   `
 
   return (
@@ -86,14 +91,14 @@ export const HeroSection = () => {
             online by designing new interactive systems that leverage and support interaction at scale.
           </HeroMessage>
         </HeroTextArea>
-        <HeroImageContainer id="hero-image-area">
+        <HeroImageContainer id="hero-image-container">
           <Image
             id="hero-image"
             src={'/images/hero-image.png'}
             alt="Kixlab group picture"
             fill={true}
             priority
-            style={{ position: 'absolute', objectFit: 'contain', width: '100%', height: '100%' }}
+            style={{ position: 'absolute', objectFit: 'cover', width: '100%', height: '100%' }}
           />
         </HeroImageContainer>
       </HeroContainer>
