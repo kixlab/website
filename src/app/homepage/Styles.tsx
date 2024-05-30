@@ -20,7 +20,6 @@ export const FlexContainer = styled.div<{ direction?: 'row' | 'column'; gap?: st
   align-items: center;
   max-width: 100vw;
   justify-content: space-evenly;
-  // flex-wrap: wrap;
 `
 
 export const Text = styled.div`

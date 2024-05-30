@@ -68,9 +68,11 @@ const Title = styled.h2`
     margin-bottom: 8px;
   }
 `
+
 const Subtitle = styled.h3`
   ${FontVariant.title_sm}
 `
+
 const TitleContainer = styled.div`
   display: grid;
   gap: 8px;

@@ -73,7 +73,6 @@ export const HeroSection = () => {
       min-height: 30vh;
     }
   `
-
   return (
     <Section id="hero-section" style={{ padding: '0' }}>
       {/* padding: 0 is to allow image to stretch to the right side of the webpage*/}
