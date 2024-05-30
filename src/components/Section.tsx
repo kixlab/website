@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { FontVariant, Color } from '@/app/theme'
+import { FontVariant, Color, ScreenSize } from '@/app/theme'
 
 export const Sections = styled.div`
   display: flex;
@@ -71,12 +71,17 @@ const Title = styled.h2`
 const Subtitle = styled.h3`
   ${FontVariant.title_sm}
 `
+const TitleContainer = styled.div`
+  display: grid;
+  gap: 8px;
+  margin-bottom: clamp(24px, calc(24px + 0.23 * (100vw - ${ScreenSize.md})), 48px);
+`
 
 export const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ title, subtitle }) => {
   return (
-    <div style={{ display: 'grid', gap: '8px', marginBottom: '72px' }}>
+    <TitleContainer>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
-    </div>
+    </TitleContainer>
   )
 }

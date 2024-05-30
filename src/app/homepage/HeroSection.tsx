@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Color } from '@/app/theme'
+import { Color, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
 import { Section } from './Styles'
@@ -14,6 +14,12 @@ export const HeroSection = () => {
 
   const HeroContainer = styled.div`
     display: flex;
+    position: relative;
+    gap: 24px;
+
+    @media (max-width: ${ScreenSize.md}) {
+      flex-direction: column;
+    }
   `
 
   const HeroTextArea = styled.div`
@@ -22,7 +28,7 @@ export const HeroSection = () => {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: 90px 96px;
+    padding: clamp(48px, calc(48px + 0.23 * (100vw - ${ScreenSize.md})), 96px);
   `
 
   const HeroTitle = styled.h1`
@@ -30,17 +36,28 @@ export const HeroSection = () => {
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: 24px;
+    text-align: left;
+
+    @media (max-width: ${ScreenSize.sm}) {
+      align-self: center;
+      text-align: center;
+    }
   `
+
   const HeroSubtitle = styled.h2`
     font-size: clamp(1.25rem, 0.3125 + 4.17vw, 2.5rem);
     font-weight: 300;
     margin-bottom: 32px;
+
+    @media (max-width: ${ScreenSize.sm}) {
+      align-self: center;
+      text-align: center;
+    }
   `
   const HeroMessage = styled.p`
     font-size: clamp(1rem, 0.65vw + 0.5rem, 2rem);
     color: ${Color.gray700};
     text-align: justify;
-    min-width: 300px;
     max-width: 100%;
   `
 
@@ -76,7 +93,7 @@ export const HeroSection = () => {
             alt="Kixlab group picture"
             fill={true}
             priority
-            style={{ objectFit: 'contain' }}
+            style={{ position: 'absolute', objectFit: 'contain', width: '100%', height: '100%' }}
           />
         </HeroImageContainer>
       </HeroContainer>

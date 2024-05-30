@@ -1,12 +1,13 @@
 'use client'
-import { Color, FontVariant } from '@/app/theme'
+import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
 
 export const Section = styled.section<{ altBackground?: boolean }>`
   background-color: ${props => (props.altBackground ? '#F6F6F6' : 'white')};
   margin: 0 auto;
   width: 100%;
-  padding: 48px 96px;
+  padding: clamp(24px, calc(24px + 0.113 * (100vw - ${ScreenSize.md})), 48px)
+    clamp(48px, calc(48px + 0.226 * (100vw - ${ScreenSize.md})), 96px);
 `
 export const GridContainer = styled.div<{ columnTemplate: string }>`
   display: grid;
