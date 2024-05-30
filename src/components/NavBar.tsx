@@ -30,6 +30,7 @@ export const Nav = styled.nav`
   background-color: ${Color.white};
   justify-content: space-between;
   align-items: end;
+  z-index: 1;
 `
 
 export const Logo = styled.a`

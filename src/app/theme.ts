@@ -39,6 +39,7 @@ const FontSize = {
   body_lg: '17px',
   body_md: '14px',
   body_sm: '12px',
+  body_xs: '8px',
 } as const
 
 const FontWeight = {
@@ -49,6 +50,7 @@ const FontWeight = {
   body_lg: 700,
   body_md: 400,
   body_sm: 400,
+  body_xs: 400,
 } as const
 
 export const FontVariant = {
@@ -59,6 +61,7 @@ export const FontVariant = {
   body_lg: textVariant(FontSize.body_lg, FontWeight.body_lg),
   body_md: textVariant(FontSize.body_md, FontWeight.body_md),
   body_sm: textVariant(FontSize.body_sm, FontWeight.body_sm),
+  body_xs: textVariant(FontSize.body_xs, FontWeight.body_xs),
 } as const
 
 export const Padding = {

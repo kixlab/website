@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
-import type { PublicationType, ResearchTopic } from '@/data/publications'
+import type { PublicationType, ResearchTopicType } from '@/data/publications'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import Filter from '@/components/Filter'
@@ -20,7 +20,7 @@ const Filters = styled.div`
 export default function Page() {
   const router = useRouter()
   const params = useSearchParams()
-  const researchTopic = (params.get('researchTopic') as ResearchTopic | null) ?? 'All'
+  const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
   const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
 
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)

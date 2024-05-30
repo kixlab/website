@@ -12,7 +12,7 @@ export const ResearchTopics = [
   'social',
   'human-ai-interaction',
 ] as const
-export type ResearchTopic = (typeof ResearchTopics)[number]
+export type ResearchTopicType = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
   PDF = 'PDF',
@@ -27,7 +27,7 @@ export interface Publication {
   authors: (Member | string)[]
   year: number
   venue: string
-  topics: ResearchTopic[]
+  topics: ResearchTopicType[]
   type: PublicationType
   award?: string
   links?: { url: string; type: PublicationLinkType }[]
