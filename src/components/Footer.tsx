@@ -20,9 +20,9 @@ const FooterTextContainer = styled.div`
   gap: 4px;
 `
 
-const FooterText = styled.p<{ bold?: boolean}>`
+const FooterText = styled.p<{ bold?: boolean }>`
   ${FontVariant.body_lg}
-  font-weight: ${props => props.bold ? FontWeight.body_lg : FontWeight.body_md};
+  font-weight: ${props => (props.bold ? FontWeight.body_lg : FontWeight.body_md)};
   color: ${Color.white};
   margin: 0;
 `
