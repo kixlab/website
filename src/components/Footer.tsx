@@ -20,15 +20,9 @@ const FooterTextContainer = styled.div`
   gap: 4px;
 `
 
-const FooterText1 = styled.p`
+const FooterText = styled.p<{ bold?: boolean}>`
   ${FontVariant.body_lg}
-  color: ${Color.white};
-  margin: 0;
-`
-
-const FooterText2 = styled.p`
-  font-size: ${FontSize.body_lg};
-  font-weight: ${FontWeight.body_md};
+  font-weight: ${props => props.bold ? FontWeight.body_lg : FontWeight.body_md};
   color: ${Color.white};
   margin: 0;
 `
@@ -57,16 +51,16 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterTextContainer>
-        <FooterText1>Our Bunker</FooterText1>
-        <FooterText2>KAIST, N1 Room 624,</FooterText2>
-        <FooterText2>291 Daehak-ro, Yuseong-gu, Daejeon (34141)</FooterText2>
-        <FooterText2>
+        <FooterText bold>Our Bunker</FooterText>
+        <FooterText>KAIST, N1 Room 624,</FooterText>
+        <FooterText>291 Daehak-ro, Yuseong-gu, Daejeon (34141)</FooterText>
+        <FooterText>
           Republic of Korea (
           <MapLink href="https://goo.gl/maps/8PG4bhyMoxwS1pXH8" target="_blank">
             Google Map
           </MapLink>
           )
-        </FooterText2>
+        </FooterText>
       </FooterTextContainer>
       <FooterLogoContainer>
         <LogoLink href="http://hci.kaist.ac.kr" target="_blank">
