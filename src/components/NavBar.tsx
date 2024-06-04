@@ -26,7 +26,7 @@ export const Nav = styled.nav`
   background-color: ${Color.white};
   justify-content: space-between;
   align-items: center;
-  z-index: 1;
+  z-index: 2;
 
   padding: 12px 24px 16px 96px;
   padding-left: clamp(
@@ -63,6 +63,21 @@ export const NavUl = styled.ul`
   padding: 0px;
   @media (max-width: ${ScreenSize.sm}) {
     flex-direction: column;
+    align-items: center;
+    gap: 0px;
+
+    & > li {
+      height: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      &:last-child {
+        border-bottom: 1px solid ${Color.gray300};
+      }
+    }
   }
 `
 
@@ -92,7 +107,8 @@ const DropDownMenu = styled.div`
     display: none;
   }
   @media (max-width: ${ScreenSize.sm}) {
-    padding: 12px 48px;
+    // TODO: Decide whether to keep centered menu items vs left-aligned menu items
+    // padding: 12px 48px;
   }
 `
 
