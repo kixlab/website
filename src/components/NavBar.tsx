@@ -103,6 +103,15 @@ const DropDownMenu = styled.div`
   background-color: ${Color.white};
   width: 100vw;
   z-index: 1;
+  /* Animation */
+  transition: transform 0.2s ease-in-out;
+  &.open {
+    transform: translateY(0px);
+  }
+  &.closed {
+    transform: translateY(-100%);
+  }
+  /* Media queries */
   @media (min-width: ${ScreenSize.sm}) {
     display: none;
   }
@@ -117,6 +126,7 @@ const HamburgerButton = styled.button`
   width: 30px;
   background-color: white;
   border: none;
+  cursor: pointer;
   @media (max-width: ${ScreenSize.sm}) {
     display: block;
   }
@@ -165,8 +175,8 @@ export default function NavBar() {
           <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
         </HamburgerButton>
       </Nav>
-      {isOpen && (
-        <DropDownMenu id="dropdown">
+      {
+        <DropDownMenu id="dropdown" className={isOpen ? 'open' : 'closed'}>
           <NavUl>
             {NavList.map((item, i) => (
               <li key={item.path}>
@@ -177,7 +187,7 @@ export default function NavBar() {
             ))}
           </NavUl>
         </DropDownMenu>
-      )}
+      }
     </>
   )
 }
