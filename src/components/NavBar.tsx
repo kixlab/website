@@ -61,6 +61,9 @@ export const NavUl = styled.ul`
   gap: 2vw;
   margin: 0px;
   padding: 0px;
+  @media (max-width: ${ScreenSize.sm}) {
+    flex-direction: column;
+  }
 `
 
 const Anchor = styled(Link)<{ selected: boolean }>`
@@ -80,26 +83,24 @@ export const NavItem: React.FC<NavItemProps> = ({ children, href, selected }) =>
 )
 
 const DropDownMenu = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 1rem;
-  width: 300px;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: height 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-  padding: 12px 24px 0px 96px;
-  @media (min-width: 784px) {
+  position: fixed;
+  top: ${NAV_BAR_HEIGHT};
+  background-color: ${Color.white};
+  width: 100vw;
+  z-index: 1;
+  @media (min-width: ${ScreenSize.sm}) {
     display: none;
   }
   @media (max-width: ${ScreenSize.sm}) {
-    padding: 12px 48px 0px 48px;
+    padding: 12px 48px;
   }
 `
+
 const HamburgerButton = styled.button`
   display: none;
   width: 30px;
+  background-color: white;
+  border: none;
   @media (max-width: ${ScreenSize.sm}) {
     display: block;
   }
@@ -145,11 +146,11 @@ export default function NavBar() {
         </NavRow>
 
         <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
-          <Image src="/images/hamburger-icon.svg" width={32} height={24} alt="Menu" />
+          <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
         </HamburgerButton>
       </Nav>
       {isOpen && (
-        <DropDownMenu>
+        <DropDownMenu id="dropdown">
           <NavUl>
             {NavList.map((item, i) => (
               <li key={item.path}>
