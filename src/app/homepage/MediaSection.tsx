@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { SectionHeader } from '@/components/Section'
 import React from 'react'
 import { Section } from './Styles'
+import VIDEOS from '@/data/videos'
 
 const MediaArea = styled.div`
   display: flex;
@@ -36,26 +37,12 @@ const VideoDate = styled.h4`
   font-size: 16px;
 `
 
-const videos = [
-  {
-    url: 'https://www.youtube.com/embed/j0v1Cr74kN8?si=tp_blkpKqN4FP9te',
-    title: 'What is Interaction-centric AI?',
-    date: '2022.10.28',
-  },
-  {
-    url: 'https://www.youtube.com/embed/pkhTuiYvvw4?si=hUee7IqJ-m95L1k2',
-    title: 'KIXLAB Introduction',
-    date: '2021.02.12',
-  },
-  { url: 'https://www.youtube.com/embed/GgvkmXXPFPI?si=YWMLcLMhac5kRYzJ', title: 'Open KAIST', date: '2022.01.10' },
-]
-
 export const MediaSection = () => {
   return (
     <Section id="media-section" altBackground={true}>
       <SectionHeader title="KIXLAB on Media" subtitle="Explore KIXLAB’s media realm" />
       <MediaArea>
-        {videos.map(video => (
+        {VIDEOS.map(video => (
           <VideoCard key={video.url}>
             <VideoContainer>
               <iframe
@@ -70,7 +57,7 @@ export const MediaSection = () => {
               ></iframe>
             </VideoContainer>
             <VideoTitle>{video.title}</VideoTitle>
-            <VideoDate>{video.date}</VideoDate>
+            <VideoDate>{video.formattedDate}</VideoDate>
           </VideoCard>
         ))}
       </MediaArea>
