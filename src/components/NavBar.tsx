@@ -13,7 +13,6 @@ interface NavItemProps {
   href: string
   selected: boolean
 }
-
 export const NAV_BAR_HEIGHT = 56
 
 export const Nav = styled.nav`
@@ -104,7 +103,7 @@ const DropDownMenu = styled.div`
   width: 100vw;
   z-index: 1;
   /* Animation */
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s;
   &.open {
     transform: translateY(0px);
   }
@@ -140,7 +139,8 @@ const ResponsiveSpan = styled.span`
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = React.useState(false)
-
+  const dropdownRef = React.useRef<HTMLDivElement>(null)
+  const hamburgerRef = React.useRef<HTMLButtonElement>(null)
   const NavList = [
     { navItem: 'Home', path: '/' },
     { navItem: 'People', path: '/people' },
@@ -148,8 +148,23 @@ export default function NavBar() {
     { navItem: 'Courses', path: '/courses' },
     { navItem: 'News', path: '/news' },
   ]
-
   const pathname = usePathname()
+
+  // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
+  React.useEffect(() => {
+    const handleClickOutsideDropDownMenu = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node) &&
+        hamburgerRef.current &&
+        !hamburgerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutsideDropDownMenu)
+    return () => document.removeEventListener('mousedown', handleClickOutsideDropDownMenu)
+  }, [dropdownRef])
 
   return (
     <>
@@ -171,12 +186,12 @@ export default function NavBar() {
           </NavUl>
         </NavRow>
 
-        <HamburgerButton onClick={() => setIsOpen(!isOpen)}>
+        <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
           <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
         </HamburgerButton>
       </Nav>
       {
-        <DropDownMenu id="dropdown" className={isOpen ? 'open' : 'closed'}>
+        <DropDownMenu ref={dropdownRef} className={isOpen ? 'open' : 'closed'}>
           <NavUl>
             {NavList.map((item, i) => (
               <li key={item.path}>
