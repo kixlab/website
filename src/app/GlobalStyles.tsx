@@ -25,6 +25,9 @@ export default function GlobalStyles() {
         /* https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html*/
         body {
           line-height: 1.5;
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
         }
 
         /* Prevent media from overflowing and make them not inline elements */

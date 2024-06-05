@@ -12,6 +12,7 @@ const FooterContainer = styled.footer`
   align-items: flex-start;
   padding: 36px 48px;
   background-color: ${Color.gray600};
+  margin-top: auto;
 `
 
 const FooterTextContainer = styled.div`
