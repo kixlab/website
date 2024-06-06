@@ -18,7 +18,7 @@
     "@emotion/styled": "^11.11.0",
     "date-fns": "^3.2.0",
     "lodash": "^4.17.21",
-    "next": "14.0.4",
+    "next": "14.1.1",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1"
