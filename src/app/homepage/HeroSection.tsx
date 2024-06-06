@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Color, ScreenSize } from '@/app/theme'
+import { Color, ScreenSize, linearlyScaleSize } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
 import { Section } from './Styles'
@@ -16,7 +16,8 @@ export const HeroSection = () => {
     display: flex;
     position: relative;
     justify-content: space-between;
-    gap: 24px;
+    // TODO: Decide whether to keep gap
+    // gap: 24px;
 
     @media (max-width: ${ScreenSize.md}) {
       flex-direction: column;
@@ -30,11 +31,22 @@ export const HeroSection = () => {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding: clamp(24px, calc(24px + 0.23 * (100vw - ${ScreenSize.md})), 96px)
-      clamp(48px, calc(48px + 0.23 * (100vw - ${ScreenSize.md})), 96px);
+    padding: ${linearlyScaleSize({
+        minSizePx: 24,
+        maxSizePx: 96,
+        minScreenSizePx: parseInt(ScreenSize.md),
+        maxScreenSizePx: parseInt(ScreenSize.lg),
+      })}
+      ${linearlyScaleSize({
+        minSizePx: 48,
+        maxSizePx: 96,
+        minScreenSizePx: parseInt(ScreenSize.md),
+        maxScreenSizePx: parseInt(ScreenSize.lg),
+      })};
   `
 
   const HeroTitle = styled.h1`
+    // TODO: Try to make the responsive font-size more systematic. This is a temporary fix.
     font-size: clamp(2rem, 1vw + 2rem, 3.5rem);
     font-weight: 700;
     letter-spacing: 0.5px;

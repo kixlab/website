@@ -3,7 +3,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { FontVariant, Color, ScreenSize } from '@/app/theme'
+import { FontVariant, Color, ScreenSize, linearlyScaleSize } from '@/app/theme'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -27,12 +27,15 @@ export const Nav = styled.nav`
   align-items: center;
   z-index: 2;
 
-  padding: 12px 24px 16px 96px;
-  padding-left: clamp(
-    48px,
-    calc(48px + 0.23 * (100vw - ${ScreenSize.md})),
-    96px
-  ); // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
+  // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
+  // TODO: Replace the magic constants with a more systematic approach
+  padding: 12px 24px 16px
+    ${linearlyScaleSize({
+      minSizePx: 48,
+      maxSizePx: 96,
+      minScreenSizePx: parseInt(ScreenSize.md),
+      maxScreenSizePx: parseInt(ScreenSize.lg),
+    })};
   @media (max-width: ${ScreenSize.sm}) {
     padding-right: 48px; // Make the padding on the sides equivalent when the hamburger button appears
   }
