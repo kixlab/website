@@ -20,9 +20,7 @@ const SelectName = styled.span<{ filtered: boolean }>`
 
 const SelectBody = styled.div`
   position: relative;
-  min-width: 230px;
-  width: 100%;
-  width: fit-content;
+  min-width: 25vw;
 
   ${FontVariant.body_md}
 

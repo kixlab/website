@@ -73,3 +73,28 @@ export const Radius = {
   sm: '4px',
   md: '12px',
 } as const
+
+export const ScreenSize = {
+  sm: '576px',
+  md: '784px', // Navbar looks weird below 784px
+  lg: '992px',
+  xl: '1200px',
+} as const
+
+interface LinearlyScaleSizeParams {
+  minScreenSizePx: number
+  minSizePx: number
+  maxScreenSizePx: number
+  maxSizePx: number
+}
+
+/* Refer to https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/ for the math*/
+/* TODO: Specify the return value type of this function*/
+export const linearlyScaleSize = ({
+  minScreenSizePx,
+  minSizePx,
+  maxScreenSizePx,
+  maxSizePx,
+}: LinearlyScaleSizeParams) => {
+  return `clamp(${minSizePx}px, calc(${minSizePx}px + ${minSizePx} / ${maxScreenSizePx - minScreenSizePx} * (100vw - ${minScreenSizePx}px)), ${maxSizePx}px)`
+}

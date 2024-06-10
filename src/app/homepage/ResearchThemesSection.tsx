@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Color, FontVariant } from '@/app/theme'
+import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
 import { MEMBERS } from '@/data/members'
 import { ResearchTopics } from '@/data/publications'
@@ -11,7 +11,7 @@ import { Section, Text } from './Styles'
 const ResearchTopicsArea = styled.div`
   display: grid;
   gap: 48px;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 45%), 1fr));
 `
 
 const ResearchTopicItem = styled.div`
@@ -45,7 +45,7 @@ const ResearchTopicsMemberAvatar = styled(Image)`
 
 export const ResearchThemesSection = () => {
   const [membersByResearchTopic, numVisible] = useMemo(() => {
-    // TODO: Fix the type of membersByResearchTopic
+    // TODO: Specify the type of membersByResearchTopic
     const membersByResearchTopic: Record<string, any[]> = {}
     ResearchTopics.forEach(topic => {
       membersByResearchTopic[topic] = MEMBERS.filter(
