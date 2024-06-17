@@ -32,6 +32,18 @@ export const NewsSection = styled.div`
   margin: 0 auto;
   padding: 50px 0;
   max-width: 1000px;
+  width: 100%;
+
+  @media (max-width: ${ScreenSize.xl}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0;
+  }
+
+  @media (max-width: ${ScreenSize.md}) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const NewsLine = styled.div`
@@ -52,6 +64,10 @@ export const NewsLine = styled.div`
     left: 50%;
     top: 0;
     transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: ${ScreenSize.xl}) {
+    display: none;
   }
 `
 
