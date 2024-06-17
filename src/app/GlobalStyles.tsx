@@ -1,7 +1,7 @@
 'use client'
 
 import { Global, css } from '@emotion/react'
-import { FontVariant, Color } from '@/app/theme'
+import { FontVariant, Color, ScreenSize } from '@/app/theme'
 import { NAV_BAR_HEIGHT } from '@/components/NavBar'
 
 export default function GlobalStyles() {
@@ -62,6 +62,10 @@ export default function GlobalStyles() {
           flex-direction: column;
           padding: 40px 96px;
           gap: 32px;
+
+          @media (max-width: ${ScreenSize.md}) {
+            padding: 40px 24px;
+          }
         }
         ,
         h1 {

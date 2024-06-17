@@ -66,6 +66,7 @@ export const NewsDate = styled.div`
 
 const Summary = styled.div`
   ${FontVariant.body_md}
+  word-break: break-word;
   color: ${Color.gray700};
 
   a {
