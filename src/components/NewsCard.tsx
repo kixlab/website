@@ -25,8 +25,9 @@ const PostContainer = styled.div<{ position: 'left' | 'right' }>`
   border-radius: 8px;
   border: 1px solid ${Color.gray300};
   padding: 16px;
-  margin-left: ${props => (props.position === 'left' ? postWidth + padding : 0)}px;
-  margin-right: ${props => (props.position === 'right' ? postWidth + padding : 0)}px;
+  margin-${props => (props.position === 'left' ? 'right' : 'left')}: ${padding}px;
+  margin-${props => (props.position === 'left' ? 'left' : 'right')}: auto;
+
   align-items: ${props => (props.position === 'left' ? 'flex-start' : 'flex-end')};
   text-align: ${props => (props.position === 'left' ? 'left' : 'right')};
 
