@@ -1,9 +1,8 @@
-'use client'
 import Image from 'next/image'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
-import { MEMBERS } from '@/data/members'
-import { ResearchTopics } from '@/data/publications'
+import { MEMBERS, IMember } from '@/data/members'
+import { ResearchTopics, PUBLICATIONS, type ResearchTopicType } from '@/data/publications'
 import { SectionHeader } from '@/components/Section'
 import { useMemo } from 'react'
 import { Section, Text } from './Styles'
@@ -32,6 +31,7 @@ const ResearchTopicMembersArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: start;
+  align-items: center;
   gap: 8px;
 `
 
@@ -43,16 +43,32 @@ const ResearchTopicsMemberAvatar = styled(Image)`
   height: auto;
 `
 
+const GatherMembersByResearchTopic = () => {
+  // TODO: Somehow avoid having to define the keys explicitly. Typescript doesn't allow empty definition
+  const membersByResearchTopic: Record<ResearchTopicType, any[]> = {
+    datamining: [],
+    crowdsourcing: [],
+    learning: [],
+    civics: [],
+    visualization: [],
+    social: [],
+    'human-ai-interaction': [],
+  }
+  ResearchTopics.forEach(topic => {
+    const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(topic))
+    const authors = filteredPublications.sort((a, b) => b.year - a.year).flatMap(publication => publication.authors)
+    const filteredMembers = Object.values(MEMBERS)
+    const authorMembers = filteredMembers.filter(member => authors.includes(`${member.firstName} ${member.lastName}`))
+    membersByResearchTopic[topic] = authorMembers
+  })
+  return membersByResearchTopic
+}
+
 export const ResearchThemesSection = () => {
   const [membersByResearchTopic, numVisible] = useMemo(() => {
     // TODO: Specify the type of membersByResearchTopic
-    const membersByResearchTopic: Record<string, any[]> = {}
-    ResearchTopics.forEach(topic => {
-      membersByResearchTopic[topic] = MEMBERS.filter(
-        member => member.researchTopics && member.researchTopics.includes(topic)
-      )
-    })
-    return [membersByResearchTopic, 4]
+    const membersByResearchTopic: Record<string, any[]> = GatherMembersByResearchTopic()
+    return [membersByResearchTopic, 6]
   }, [])
 
   return (
@@ -72,8 +88,8 @@ export const ResearchThemesSection = () => {
                   <ResearchTopicsMemberAvatar
                     width={36}
                     height={36}
-                    src={member.imgPath}
-                    alt={member.fullName}
+                    src={`/images/members/${member.img}`}
+                    alt={`${member.firstName} ${member.lastName}`}
                     key={member.email}
                   />
                 ))}
