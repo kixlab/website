@@ -1,4 +1,4 @@
-import Member, { MEMBER } from './members'
+import { IMember, MEMBERS } from './members'
 
 export const PublicationTypes = ['conference', 'poster', 'workshop', 'journal', 'preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
@@ -27,7 +27,7 @@ export enum PublicationLinkType {
 
 export interface Publication {
   title: string
-  authors: (Member | string)[]
+  authors: (IMember | string)[]
   year: number
   venue: string
   topics: ResearchTopicType[]
@@ -39,7 +39,7 @@ export interface Publication {
 export const PUBLICATIONS: Publication[] = [
   {
     title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
-    authors: ['Jeongeon Park', 'Bryan Min', 'Xiaojuan Ma', MEMBER.juhokim],
+    authors: ['Jeongeon Park', 'Bryan Min', 'Xiaojuan Ma', MEMBERS.juhokim],
     venue: 'arXiv preprint',
     year: 2023,
     topics: ['human-ai-interaction'],
@@ -53,7 +53,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'CReHate: Cross-cultural Re-annotation of English Hate Speech Dataset',
-    authors: ['Nayeon Lee', 'Chani Jung', 'Junho Myung', 'Jiho Jin', MEMBER.juhokim, 'Alice Oh'],
+    authors: ['Nayeon Lee', 'Chani Jung', 'Junho Myung', 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
     year: 2024,
     venue: 'arXiv preprint',
     topics: ['social'],
@@ -76,7 +76,7 @@ export const PUBLICATIONS: Publication[] = [
       'Yoonsu Kim',
       'Tak Yeon Lee',
       'Hwajung Hong',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'So-Yeon Ahn',
       'Alice Oh',
     ],
@@ -101,7 +101,7 @@ export const PUBLICATIONS: Publication[] = [
       'Jisu Kim',
       'John Joon Young Chung',
       'Eytan Adar',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'FAccT 2024',
     year: 2024,
@@ -112,7 +112,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'EduLive: Re-Creating Cues for Instructor-Learner Interaction in Educational Live Streams with Learners’ Transcript-Based Annotations',
-    authors: ['Jingchao Fang', 'Jeongeon Park', MEMBER.juhokim, 'Hao-Chuan Wang'],
+    authors: ['Jingchao Fang', 'Jeongeon Park', MEMBERS.juhokim, 'Hao-Chuan Wang'],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['learning', 'social'],
@@ -121,7 +121,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'VIVID: Human-AI Collaborative Authoring of Vicarious Dialogues from Lecture Videos',
-    authors: ['Seulgi Choi', 'Hyewon Lee', 'Yoonjoo Lee', MEMBER.juhokim],
+    authors: ['Seulgi Choi', 'Hyewon Lee', 'Yoonjoo Lee', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
     topics: ['human-ai-interaction', 'learning'],
@@ -140,7 +140,7 @@ export const PUBLICATIONS: Publication[] = [
       'Yoonjoo Lee',
       'Hyeonsu B Kang',
       'Matt Latzke',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Jonathan Bragg',
       'Joseph Chee Chang',
       'Pao Siangliulue',
@@ -158,7 +158,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'CreativeConnect: Supporting Reference Recombination for Graphic Design Ideation with Generative AI',
-    authors: ['DaEun Choi', 'Sumin Hong', 'Jeongeon Park', 'John Joon Young Chung', MEMBER.juhokim],
+    authors: ['DaEun Choi', 'Sumin Hong', 'Jeongeon Park', 'John Joon Young Chung', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
     topics: ['human-ai-interaction'],
@@ -176,7 +176,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'GenQuery: Supporting Expressive Visual Search with Generative Models',
-    authors: ['Kihoon Son', 'DaEun Choi', 'Tae Soo Kim', 'Young-Ho Kim', MEMBER.juhokim],
+    authors: ['Kihoon Son', 'DaEun Choi', 'Tae Soo Kim', 'Young-Ho Kim', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
     topics: ['human-ai-interaction'],
@@ -194,7 +194,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Demystifying Tacit Knowledge in Graphic Design: Characteristics, Instances, Approaches, and Guidelines',
-    authors: ['Kihoon Son', 'DaEun Choi', 'Tae Soo Kim', MEMBER.juhokim],
+    authors: ['Kihoon Son', 'DaEun Choi', 'Tae Soo Kim', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
     topics: ['learning'],
@@ -212,7 +212,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Teach AI How to Code: Using Large Language Models as Teachable Agents for Programming Education',
-    authors: [MEMBER.hyoungwookjin, 'Seonghee Lee', 'Hyungyu Shin', MEMBER.juhokim],
+    authors: [MEMBERS.hyoungwookjin, 'Seonghee Lee', 'Hyungyu Shin', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
     topics: ['human-ai-interaction', 'learning'],
@@ -226,7 +226,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'EvalLM: Interactive Evaluation of Large Language Model Prompts on User-Defined Criteria',
-    authors: ['Tae Soo Kim', 'Yoonjoo Lee', 'Jamin Shin', 'Young-Ho Kim', MEMBER.juhokim],
+    authors: ['Tae Soo Kim', 'Yoonjoo Lee', 'Jamin Shin', 'Young-Ho Kim', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
     topics: ['human-ai-interaction'],
@@ -250,7 +250,7 @@ export const PUBLICATIONS: Publication[] = [
       'Gwanmo Park',
       'Dae Hyun Kim',
       'Nam Wook Kim',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Jinwook Seo',
     ],
     venue: 'CHI 2024',
@@ -283,7 +283,7 @@ export const PUBLICATIONS: Publication[] = [
       'Seungone Kim',
       'Yongrae Jo',
       'James Thorne',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Minjoon Seo',
     ],
     venue: 'ICLR 2024 (Spotlight)',
@@ -309,7 +309,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       "Understanding Users' Dissatisfaction with ChatGPT Responses: Types, Resolving Tactics, and the Effect of Knowledge Level",
-    authors: ['Yoonsu Kim', 'Jueon Lee', 'Seoyoung Kim', 'Jaehyuk Park', MEMBER.juhokim],
+    authors: ['Yoonsu Kim', 'Jueon Lee', 'Seoyoung Kim', 'Jaehyuk Park', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
     topics: ['human-ai-interaction'],
@@ -331,7 +331,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'ExpressEdit: Video Editing with Natural Language and Sketching',
-    authors: ['Bekzat Tilekbay', 'Saelyne Yang', 'Michal A Lewkowicz', 'Alex Suryapranata', MEMBER.juhokim],
+    authors: ['Bekzat Tilekbay', 'Saelyne Yang', 'Michal A Lewkowicz', 'Alex Suryapranata', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
     topics: ['human-ai-interaction'],
@@ -353,7 +353,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: "DataDive: Supporting Readers' Contextualization of Statistical Statements with Data Exploration",
-    authors: ['Hyunwoo Kim', 'Khanh Duy Le', 'Gionnieve Lim', 'Dae Hyun Kim', 'Yoo Jin Hong', MEMBER.juhokim],
+    authors: ['Hyunwoo Kim', 'Khanh Duy Le', 'Gionnieve Lim', 'Dae Hyun Kim', 'Yoo Jin Hong', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
     topics: ['crowdsourcing', 'human-ai-interaction', 'civics'],
@@ -375,7 +375,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'DynamicLabels: Supporting Informed Construction of Machine Learning Label Sets with Crowd Feedback',
-    authors: ['Jeongeon Park', 'Eunyoung Ko', 'Yeon Su Park', 'Jinyeong Yim', MEMBER.juhokim],
+    authors: ['Jeongeon Park', 'Eunyoung Ko', 'Yeon Su Park', 'Jinyeong Yim', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
     topics: ['crowdsourcing', 'human-ai-interaction'],
@@ -398,7 +398,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Is the Same Performance Really the Same?: Understanding How Listeners Perceive ASR Results Differently According to the Speaker’s Accent',
-    authors: ['Seoyoung Kim', 'Yeon Su Park', 'Dakyeom Ahn', 'Jin Myung Kwak', MEMBER.juhokim],
+    authors: ['Seoyoung Kim', 'Yeon Su Park', 'Dakyeom Ahn', 'Jin Myung Kwak', MEMBERS.juhokim],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['human-ai-interaction', 'social'],
@@ -407,7 +407,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'CodeTree: A System for Learnersourcing Subgoal Hierarchies in Code Examples',
-    authors: [MEMBER.hyoungwookjin, MEMBER.juhokim],
+    authors: [MEMBERS.hyoungwookjin, MEMBERS.juhokim],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['crowdsourcing', 'learning'],
@@ -416,7 +416,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Re:SPect: Enabling Active and Scalable Responses to Networked Online Harassment',
-    authors: ['Haesoo Kim', 'Juhoon Lee', MEMBER.juhokim, 'Jeong-woo Jang'],
+    authors: ['Haesoo Kim', 'Juhoon Lee', MEMBERS.juhokim, 'Jeong-woo Jang'],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['social'],
@@ -425,7 +425,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Cells, Generators, and Lenses: Design Framework for Object-Oriented Interaction with Large Language Models',
-    authors: ['Tae Soo Kim', 'Yoonjoo Lee', 'Minsuk Chang', MEMBER.juhokim],
+    authors: ['Tae Soo Kim', 'Yoonjoo Lee', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'UIST 2023',
     year: 2023,
     topics: ['human-ai-interaction'],
@@ -491,7 +491,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'EmphasisChecker: A Tool for Guiding Chart and Caption Emphasis',
-    authors: ['Dae Hyun Kim', 'Seulgi Choi', MEMBER.juhokim, 'Vidya Setlur', 'Maneesh Agrawala'],
+    authors: ['Dae Hyun Kim', 'Seulgi Choi', MEMBERS.juhokim, 'Vidya Setlur', 'Maneesh Agrawala'],
     venue: 'IEEE VIS 2023',
     year: 2023,
     topics: ['visualization'],
@@ -521,7 +521,7 @@ export const PUBLICATIONS: Publication[] = [
       'Amy X. Zhang',
       'Elena L. Glassman',
       'Simon Perrault',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CSCW SIG',
     year: 2023,
@@ -543,7 +543,7 @@ export const PUBLICATIONS: Publication[] = [
       'Junho Myung',
       'Minsun Kim',
       'Hyunseung Lim',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Tak Yeon Lee',
       'Hwajung Hong',
       'So-Yeon Ahn',
@@ -562,7 +562,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Look Upon Thyself: Understanding the Effect of Self-Reflection on Toxic Behavior in Online Gaming',
-    authors: ['Juhoon Lee', MEMBER.juhokim, 'Jeong-woo Jang'],
+    authors: ['Juhoon Lee', MEMBERS.juhokim, 'Jeong-woo Jang'],
     venue: 'CHI 2023 Workshop on Combating Toxicity, Harassment, and Abuse in Online Social Spaces',
     year: 2023,
     topics: ['social'],
@@ -577,7 +577,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Towards an Experience-Centric Paradigm of Online Harassment: Responding to Calling out and Networked Harassment',
-    authors: ['Haesoo Kim', 'Juhoon Lee', MEMBER.juhokim, 'Jeong-woo Jang'],
+    authors: ['Haesoo Kim', 'Juhoon Lee', MEMBERS.juhokim, 'Jeong-woo Jang'],
     venue: 'CHI 2023 Workshop on Combating Toxicity, Harassment, and Abuse in Online Social Spaces',
     year: 2023,
     topics: ['social'],
@@ -592,7 +592,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Moderating Customer Inquiries and Responses to Alleviate Stress and Reduce Emotional Dissonance of Customer Service Representatives',
-    authors: ['Hyung-Kwon Ko', 'Kihoon Son', MEMBER.hyoungwookjin, 'Yoonseo Choi', 'Xiang ‘Anthony’ Chen'],
+    authors: ['Hyung-Kwon Ko', 'Kihoon Son', MEMBERS.hyoungwookjin, 'Yoonseo Choi', 'Xiang ‘Anthony’ Chen'],
     venue: 'CHI 2023 Workshop on Generative AI and HCI',
     year: 2023,
     topics: ['human-ai-interaction'],
@@ -606,7 +606,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'LMCanvas: Object-Oriented Interaction to Personalize Large Language Model-Powered Writing Environments',
-    authors: ['Tae Soo Kim', 'Arghya Sarkar', 'Yoonjoo Lee', 'Minsuk Chang', MEMBER.juhokim],
+    authors: ['Tae Soo Kim', 'Arghya Sarkar', 'Yoonjoo Lee', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'CHI 2023 Workshop on Generative AI and HCI',
     year: 2023,
     topics: ['human-ai-interaction'],
@@ -624,7 +624,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Creator-friendly Algorithms: Behaviors, Challenges, and Design Opportunities in Algorithmic Platforms',
-    authors: ['Yoonseo Choi', 'Eun Jeong Kang', 'Min Kyung Lee', MEMBER.juhokim],
+    authors: ['Yoonseo Choi', 'Eun Jeong Kang', 'Min Kyung Lee', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['human-ai-interaction'],
@@ -638,7 +638,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Beyond Instructions: A Taxonomy of Information Types in How-to Videos',
-    authors: ['Saelyne Yang', 'Sangkyung Kwak', 'Juhoon Lee', MEMBER.juhokim],
+    authors: ['Saelyne Yang', 'Sangkyung Kwak', 'Juhoon Lee', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['learning'],
@@ -652,7 +652,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'How Older Adults Use Online Videos for Learning',
-    authors: ['Seoyoung Kim', 'Donghoon Shin', 'Jeongyeon Kim', 'Soonwoo Kwon', MEMBER.juhokim],
+    authors: ['Seoyoung Kim', 'Donghoon Shin', 'Jeongyeon Kim', 'Soonwoo Kwon', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['learning', 'datamining'],
@@ -666,7 +666,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'DAPIE: Interactive Step-by-Step Explanatory Dialogues to Answer Children’s Why and How Questions',
-    authors: ['Yoonjoo Lee', 'Tae Soo Kim', 'Sungdong Kim', 'Yohan Yun', MEMBER.juhokim],
+    authors: ['Yoonjoo Lee', 'Tae Soo Kim', 'Sungdong Kim', 'Yohan Yun', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['human-ai-interaction', 'learning'],
@@ -688,7 +688,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Surch: Enabling Structural Search and Comparison for Surgical Videos',
-    authors: ['Jeongyeon Kim', 'DaEun Choi', 'Nicole Lee', 'Matt Beane', MEMBER.juhokim],
+    authors: ['Jeongyeon Kim', 'DaEun Choi', 'Nicole Lee', 'Matt Beane', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['learning'],
@@ -703,7 +703,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'ModSandbox: Facilitating Online Community Moderation Through Error Prediction and Improvement of Automated Rules',
-    authors: ['Jean Y Song', 'Sangwook Lee', 'Jisoo Lee', 'Mina Kim', MEMBER.juhokim],
+    authors: ['Jean Y Song', 'Sangwook Lee', 'Jisoo Lee', 'Mina Kim', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['social', 'civics'],
@@ -717,7 +717,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: "Large-scale Text-to-Image Generation Models for Visual Artists' Creative Works",
-    authors: ['Hyung-Kwon Ko', 'Gwanmo Park', 'Hyeon Jeon', 'Jaemin Jo', MEMBER.juhokim, 'Jinwook Seo'],
+    authors: ['Hyung-Kwon Ko', 'Gwanmo Park', 'Hyeon Jeon', 'Jaemin Jo', MEMBERS.juhokim, 'Jinwook Seo'],
     venue: 'IUI 2023',
     year: 2023,
     topics: ['human-ai-interaction'],
@@ -731,7 +731,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'When Does it Become Harassment?: An Investigation of Online Criticism and Calling Out in Twitter',
-    authors: ['Haesoo Kim', 'Haeeun Kim', MEMBER.juhokim, 'Jeong-woo Jang'],
+    authors: ['Haesoo Kim', 'Haeeun Kim', MEMBERS.juhokim, 'Jeong-woo Jang'],
     venue: 'CSCW 2022',
     year: 2022,
     topics: ['social'],
@@ -745,7 +745,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Learnersourcing Modular and Dynamic Multiple Choice Questions',
-    authors: ['Haesoo Kim', 'Inhwa Song', MEMBER.juhokim],
+    authors: ['Haesoo Kim', 'Inhwa Song', MEMBERS.juhokim],
     venue: 'L@S 2022 Workshop on Learnersourcing: Student-generated Content @ Scale',
     year: 2022,
     topics: ['learning'],
@@ -759,7 +759,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Learnersourcing Subgoal Hierarchies of Code Examples',
-    authors: [MEMBER.hyoungwookjin, MEMBER.juhokim],
+    authors: [MEMBERS.hyoungwookjin, MEMBERS.juhokim],
     venue: 'L@S 2022 Workshop on Learnersourcing: Student-generated Content @ Scale',
     year: 2022,
     topics: ['learning'],
@@ -773,7 +773,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Interactive Children’s Story Rewriting Through Parent-Children Interaction',
-    authors: ['Yoonjoo Lee', 'Tae Soo Kim', 'Minsuk Chang', MEMBER.juhokim],
+    authors: ['Yoonjoo Lee', 'Tae Soo Kim', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'ACL 2022 Workshop on Intelligent and Interactive Writing Assistants',
     year: 2022,
     topics: ['human-ai-interaction'],
@@ -787,7 +787,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Improving Video Interfaces by Presenting Informational Units of Videos',
-    authors: ['Saelyne Yang', 'Sangkyung Kwak', 'Tae Soo Kim', MEMBER.juhokim],
+    authors: ['Saelyne Yang', 'Sangkyung Kwak', 'Tae Soo Kim', MEMBERS.juhokim],
     venue: 'CHI 2022 Workshop on Computational Approaches for Understanding, Generating, and Adapting User Interfaces',
     year: 2022,
     topics: ['learning'],
@@ -802,7 +802,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'RLens: A Computer-aided Visualization System for Supporting Reflection on Language Learning under Distributed Tutorship',
-    authors: ['Meng Xia', 'Yankun Zhao', 'Jihyeong Hong', 'Mehmet Hamza Erol', 'Taewook Kim', MEMBER.juhokim],
+    authors: ['Meng Xia', 'Yankun Zhao', 'Jihyeong Hong', 'Mehmet Hamza Erol', 'Taewook Kim', MEMBERS.juhokim],
     venue: 'Learning at Scale 2022',
     year: 2022,
     topics: ['learning'],
@@ -816,7 +816,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Techniques for Semantic Search and Comparison for Robotic Surgery Videos',
-    authors: ['Jeongyeon Kim', 'DaEun Choi', 'Matthew Beane', MEMBER.juhokim],
+    authors: ['Jeongyeon Kim', 'DaEun Choi', 'Matthew Beane', MEMBERS.juhokim],
     venue:
       'CHI 2022 Workshop on Integration of Human Factors in Surgery: Interdisciplinary Collaboration in Design, Development, and Evaluation of Surgical Technologies',
     year: 2022,
@@ -831,7 +831,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'ReviewAid: A Scaffolded Approach to Supporting Readers’ Evaluation of Health News',
-    authors: ['Eunyoung Ko', 'Yeonsu Kim', MEMBER.juhokim],
+    authors: ['Eunyoung Ko', 'Yeonsu Kim', MEMBERS.juhokim],
     venue: 'ICLS 2022',
     year: 2022,
     topics: ['learning', 'social', 'civics'],
@@ -845,7 +845,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Capturing Diverse and Precise Reactions to a Comment with User-Generated Labels',
-    authors: ['Eunyoung Ko', 'Eunseo Choi', 'Jeong-woo Jang', MEMBER.juhokim],
+    authors: ['Eunyoung Ko', 'Eunseo Choi', 'Jeong-woo Jang', MEMBERS.juhokim],
     venue: 'TheWebConf 2022',
     year: 2022,
     topics: ['social'],
@@ -867,7 +867,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Understanding Distributed Tutorship in Online Language Tutoring',
-    authors: ['Meng Xia', 'Yankun Zhao', 'Mehmet Hamza Erol', 'Jihyeong Hong', MEMBER.juhokim],
+    authors: ['Meng Xia', 'Yankun Zhao', 'Mehmet Hamza Erol', 'Jihyeong Hong', MEMBERS.juhokim],
     venue: 'LAK 2022',
     year: 2022,
     topics: ['learning'],
@@ -889,7 +889,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'CatchLive: Real-time Summarization of Live Streams with Stream Content and Interaction Data',
-    authors: ['Saelyne Yang', 'Jisu Yim', MEMBER.juhokim, 'Hijung Valentina Shin'],
+    authors: ['Saelyne Yang', 'Jisu Yim', MEMBERS.juhokim, 'Hijung Valentina Shin'],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['learning', 'human-ai-interaction'],
@@ -915,7 +915,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'AlgoSolve: Supporting Subgoal Learning in Algorithmic Problem-Solving with Learnersourced Microtasks',
-    authors: ['Kabdo Choi', 'Hyungyu Shin', 'Meng Xia', MEMBER.juhokim],
+    authors: ['Kabdo Choi', 'Hyungyu Shin', 'Meng Xia', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['learning'],
@@ -937,7 +937,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Cocomix: Utilizing Comments to Improve Non-Visual Webtoon Accessibility',
-    authors: ['Mina Huh', 'Yunjung Lee', 'Dasom Choi', 'Haesoo Kim', 'Uran Oh', MEMBER.juhokim],
+    authors: ['Mina Huh', 'Yunjung Lee', 'Dasom Choi', 'Haesoo Kim', 'Uran Oh', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['crowdsourcing'],
@@ -960,7 +960,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Promptiverse: Scalable Generation of Scaffolding Prompts through Human-AI Hybrid Knowledge Graph Annotation',
-    authors: ['Yoonjoo Lee', 'John Joon Young Chung', 'Tae Soo Kim', 'Jean Y Song', MEMBER.juhokim],
+    authors: ['Yoonjoo Lee', 'John Joon Young Chung', 'Tae Soo Kim', 'Jean Y Song', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['learning', 'human-ai-interaction'],
@@ -986,7 +986,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Stylette: Styling the Web with Natural Language',
-    authors: ['Tae Soo Kim', 'DaEun Choi', 'Yoonseo Choi', MEMBER.juhokim],
+    authors: ['Tae Soo Kim', 'DaEun Choi', 'Yoonseo Choi', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['human-ai-interaction'],
@@ -1013,7 +1013,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'FitVid: Responsive and Flexible Video Content Adaptation',
-    authors: ['Jeongyeon Kim', 'Yubin Choi', 'Minsuk Kahng', MEMBER.juhokim],
+    authors: ['Jeongyeon Kim', 'Yubin Choi', 'Minsuk Kahng', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['learning', 'human-ai-interaction'],
@@ -1039,7 +1039,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Mobile-Friendly Content Design for MOOCs: Challenges, Requirements, and Design Opportunities',
-    authors: ['Jeongyeon Kim', 'Yubin Choi', 'Meng Xia', MEMBER.juhokim],
+    authors: ['Jeongyeon Kim', 'Yubin Choi', 'Meng Xia', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
     topics: ['learning'],
@@ -1066,7 +1066,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'SoftVideo: Improving the Learning Experience of Software Tutorial Videos with Collective Interaction Data',
-    authors: ['Saelyne Yang', 'Jisu Yim', 'Aitolkyn Baigutanova', 'Seoyoung Kim', 'Minsuk Chang', MEMBER.juhokim],
+    authors: ['Saelyne Yang', 'Jisu Yim', 'Aitolkyn Baigutanova', 'Seoyoung Kim', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'IUI 2022',
     year: 2022,
     topics: ['datamining', 'learning'],
@@ -1088,7 +1088,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'XDesign: Integrating Interface Design into Explainable AI Education',
-    authors: ['Hyungyu Shin', 'Nabila Sindi', 'Yoonjoo Lee', 'Jaeryoung Ka', 'Jean Y. Song', MEMBER.juhokim],
+    authors: ['Hyungyu Shin', 'Nabila Sindi', 'Yoonjoo Lee', 'Jaeryoung Ka', 'Jean Y. Song', MEMBERS.juhokim],
     venue: 'SIGCSE TS 2022 Posters',
     year: 2022,
     topics: ['human-ai-interaction', 'learning'],
@@ -1114,7 +1114,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'How Does Netflix "Understand" Me?: Exploring End-user Needs to Design Human-centered Explanations',
-    authors: ['Yoonseo Choi', 'Eun Jeong Kang', MEMBER.juhokim],
+    authors: ['Yoonseo Choi', 'Eun Jeong Kang', MEMBERS.juhokim],
     venue: 'NeurIPS 2021 Workshop on Human Centered AI',
     year: 2021,
     topics: ['human-ai-interaction'],
@@ -1128,7 +1128,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Supporting Dynamic Construction of Datasets through Crowd Suggestions',
-    authors: ['Jeongeon Park', 'Eunyoung Ko', 'Donghoon Han', 'Jinyeong Yim', MEMBER.juhokim],
+    authors: ['Jeongeon Park', 'Eunyoung Ko', 'Donghoon Han', 'Jinyeong Yim', MEMBERS.juhokim],
     venue: 'HCOMP 2021 WiP (Works-in-Progress)',
     year: 2021,
     topics: ['crowdsourcing'],
@@ -1143,7 +1143,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Improving Readers’ Awareness of Divergent Viewpoints by Displaying Agendas of Comments in Online News Discussions',
-    authors: ['Taewook Kim', 'Hyunwoo Kim', MEMBER.juhokim, 'Xiaojuan Ma'],
+    authors: ['Taewook Kim', 'Hyunwoo Kim', MEMBERS.juhokim, 'Xiaojuan Ma'],
     venue: 'CSCW 2021 Posters',
     year: 2021,
     topics: ['social'],
@@ -1157,7 +1157,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Supporting Collaborative Sequencing of Small Groups through Visual Awareness',
-    authors: ['Tae Soo Kim', 'Nitesh Goyal', 'Jeongyeon Kim', MEMBER.juhokim, 'Sungsoo Ray Hong'],
+    authors: ['Tae Soo Kim', 'Nitesh Goyal', 'Jeongyeon Kim', MEMBERS.juhokim, 'Sungsoo Ray Hong'],
     venue: 'CSCW 2021',
     year: 2021,
     topics: ['social', 'visualization'],
@@ -1179,7 +1179,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'StarryThoughts: Facilitating Diverse Opinion Exploration on Social Issues',
-    authors: ['Hyunwoo Kim', 'Haesoo Kim', 'Kyung Je Jo', MEMBER.juhokim],
+    authors: ['Hyunwoo Kim', 'Haesoo Kim', 'Kyung Je Jo', MEMBERS.juhokim],
     venue: 'CSCW 2021',
     year: 2021,
     topics: ['civics'],
@@ -1201,7 +1201,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'RubySlippers: Supporting Content-based Voice Navigation for How-to Videos',
-    authors: ['Minsuk Chang', 'Mina Huh', MEMBER.juhokim],
+    authors: ['Minsuk Chang', 'Mina Huh', MEMBERS.juhokim],
     venue: 'CHI 2021',
     year: 2021,
     topics: ['learning'],
@@ -1228,7 +1228,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Personalizing Ambience and Illusionary Presence: How People Use “Study with me” Videos to Create Effective Studying Environments',
-    authors: ['Yoonjoo Lee', 'John Joon Young Chung', 'Jean Y. Song', 'Minsuk Chang', MEMBER.juhokim],
+    authors: ['Yoonjoo Lee', 'John Joon Young Chung', 'Jean Y. Song', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'CHI 2021',
     year: 2021,
     topics: ['learning'],
@@ -1250,7 +1250,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Winder: Linking Speech and Visual Objects to Support Communication in Asynchronous Collaboration',
-    authors: ['Tae Soo Kim', 'Seungsu Kim', 'Yoonseo Choi', MEMBER.juhokim],
+    authors: ['Tae Soo Kim', 'Seungsu Kim', 'Yoonseo Choi', MEMBERS.juhokim],
     venue: 'CHI 2021',
     year: 2021,
     topics: ['social'],
@@ -1280,7 +1280,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Guideline-Based Evaluation and Design Opportunities for Mobile Video-based Learning',
-    authors: ['Jeongyeon Kim', MEMBER.juhokim],
+    authors: ['Jeongyeon Kim', MEMBERS.juhokim],
     venue: 'CHI 2021 Extended Abstracts (Late Breaking Work)',
     year: 2021,
     topics: ['learning'],
@@ -1306,7 +1306,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'FitVid: Towards Development of Responsive and Fluid Video Content Adaptation',
-    authors: ['Jeongyeon Kim', MEMBER.juhokim],
+    authors: ['Jeongyeon Kim', MEMBERS.juhokim],
     venue: 'AAAI 2021 Workshop on Imagining Post-COVID Education with AI',
     year: 2021,
     topics: ['learning', 'human-ai-interaction'],
@@ -1324,7 +1324,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Reducing Annotation Artifacts in Crowdsourcing Datasets for Natural Language Processing',
-    authors: ['Donghoon Han', MEMBER.juhokim, 'Alice Oh'],
+    authors: ['Donghoon Han', MEMBERS.juhokim, 'Alice Oh'],
     venue: '1st Data Excellence Workshop (DEW 2020) @ HCOMP 2020',
     year: 2020,
     topics: ['crowdsourcing', 'human-ai-interaction'],
@@ -1344,7 +1344,7 @@ export const PUBLICATIONS: Publication[] = [
       'Jeongeon Park',
       'Hyungyu Shin',
       'Nyoungwoo Lee',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CSCW 2020',
     year: 2020,
@@ -1389,7 +1389,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'I Share, You Care: Private Status Sharing and Sender-Controlled Notifications in Mobile Instant Messaging',
-    authors: ['Hyunsung Cho', 'Jinyoung Oh', MEMBER.juhokim, 'Sung-Ju Lee'],
+    authors: ['Hyunsung Cho', 'Jinyoung Oh', MEMBERS.juhokim, 'Sung-Ju Lee'],
     venue: 'CSCW 2020',
     year: 2020,
     topics: ['social'],
@@ -1421,7 +1421,7 @@ export const PUBLICATIONS: Publication[] = [
       'Jeongeon Park',
       'Hyungyu Shin',
       'Nyoungwoo Lee',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CSCW 2020 Demonstrations',
     year: 2020,
@@ -1440,7 +1440,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Messaging Beyond Texts with Real-time Image Suggestions',
-    authors: ['Joon-Gyum Kim', 'Taesik Gong', 'Kyungsik Han', MEMBER.juhokim, 'JeongGil Ko', 'Sung-Ju Lee'],
+    authors: ['Joon-Gyum Kim', 'Taesik Gong', 'Kyungsik Han', MEMBERS.juhokim, 'JeongGil Ko', 'Sung-Ju Lee'],
     venue: 'MobileHCI 2020',
     year: 2020,
     topics: ['social'],
@@ -1458,7 +1458,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Workflow Graphs: A Computational Model of Collective Task Strategies for 3D Design Software',
-    authors: ['Minsuk Chang', 'Ben Lafreniere', MEMBER.juhokim, 'George Fitzmaurice', 'Tovi Grossman'],
+    authors: ['Minsuk Chang', 'Ben Lafreniere', MEMBERS.juhokim, 'George Fitzmaurice', 'Tovi Grossman'],
     venue: 'GI 2020',
     year: 2020,
     topics: ['datamining'],
@@ -1482,7 +1482,7 @@ export const PUBLICATIONS: Publication[] = [
       'Jinhan Choi',
       'Jinsu Eun',
       'Soomin Kim',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Joonhwan Lee',
       'Bongwon Suh',
     ],
@@ -1512,7 +1512,7 @@ export const PUBLICATIONS: Publication[] = [
       'Woojeong Kim',
       'Evey Huang',
       'Kyungsik Han',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'JeongGil Ko',
       'Sung-Ju Lee',
     ],
@@ -1533,7 +1533,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'AlgoPlan: Supporting Planning in Algorithmic Problem-Solving with Subgoal Diagrams',
-    authors: ['Kabdo Choi', 'Sally Chen', 'Hyungyu Shin', 'Jinho Son', MEMBER.juhokim],
+    authors: ['Kabdo Choi', 'Sally Chen', 'Hyungyu Shin', 'Jinho Son', MEMBERS.juhokim],
     venue: 'Learning at Scale 2020 (Work-in-Progress)',
     year: 2020,
     topics: ['learning'],
@@ -1553,7 +1553,7 @@ export const PUBLICATIONS: Publication[] = [
       'Toni-Jan Keith Monserrat',
       'Nyoungwoo Lee',
       'Jeongeon Park',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CHI 2020 Workshop on CUI@CHI: Mapping Grand Challenges for the Conversational User Interface Community',
     year: 2020,
@@ -1578,7 +1578,7 @@ export const PUBLICATIONS: Publication[] = [
       'Toni-Jan Keith Monserrat',
       'Nyoungwoo Lee',
       'Jeongeon Park',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CHI 2020 Extended Abstracts (Late Breaking Work)',
     year: 2020,
@@ -1597,7 +1597,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Consensus Building in Collaborative Sequencing with Visual Awareness',
-    authors: ['Tae Soo Kim', 'Sungsoo (Ray) Hong', 'Nitesh Goyal', 'Jeongyeon Kim', MEMBER.juhokim],
+    authors: ['Tae Soo Kim', 'Sungsoo (Ray) Hong', 'Nitesh Goyal', 'Jeongyeon Kim', MEMBERS.juhokim],
     venue: 'CHI 2020 Extended Abstracts (Late Breaking Work)',
     year: 2020,
     topics: ['visualization', 'social'],
@@ -1611,7 +1611,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'SolutionChat: Real-time Moderator Support for Chat-based Structured Discussion',
-    authors: ['Sung-Chul Lee', 'Jaeyoon Song', 'Eunyoung Ko', 'Seongho Park', 'Jihee Kim', MEMBER.juhokim],
+    authors: ['Sung-Chul Lee', 'Jaeyoon Song', 'Eunyoung Ko', 'Seongho Park', 'Jihee Kim', MEMBERS.juhokim],
     venue: 'CHI 2020',
     year: 2020,
     topics: ['civics', 'social', 'human-ai-interaction'],
@@ -1642,7 +1642,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Understanding Users’ Perception Towards Automated Personality Detection with Group-specific Behavioral Data',
-    authors: ['Seoyoung Kim', 'Arti Thakur', MEMBER.juhokim],
+    authors: ['Seoyoung Kim', 'Arti Thakur', MEMBERS.juhokim],
     venue: 'CHI 2020',
     year: 2020,
     topics: ['datamining', 'human-ai-interaction'],
@@ -1668,7 +1668,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Snapstream: Snapshot-based Interaction in Live Streaming for Visual Art',
-    authors: ['Saelyne Yang', 'Changyoon Lee', 'Hijung Valentina Shin', MEMBER.juhokim],
+    authors: ['Saelyne Yang', 'Changyoon Lee', 'Hijung Valentina Shin', MEMBERS.juhokim],
     venue: 'CHI 2020',
     year: 2020,
     topics: ['learning'],
@@ -1698,7 +1698,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'What Makes It Hard for Users to Follow Software Tutorial Videos?',
-    authors: ['Saelyne Yang', MEMBER.juhokim],
+    authors: ['Saelyne Yang', MEMBERS.juhokim],
     venue: 'HCI Korea 2020',
     year: 2020,
     topics: ['learning'],
@@ -1712,7 +1712,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'You are How You Behave in Your Group: Predicting Personality via Behaviors in a Co-located Group',
-    authors: ['Seoyoung Kim', 'Arti Thakur', MEMBER.juhokim],
+    authors: ['Seoyoung Kim', 'Arti Thakur', MEMBERS.juhokim],
     venue: 'CSCW 2019 Workshop on Learning from Team and Group Diversity',
     year: 2019,
     topics: ['datamining'],
@@ -1726,7 +1726,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Improving Users’ Algorithmic Understandability and Trust in Content Moderation',
-    authors: ['Jibon Naher', 'Taehyeon An', MEMBER.juhokim],
+    authors: ['Jibon Naher', 'Taehyeon An', MEMBERS.juhokim],
     venue: 'CSCW 2019 Workshop on Contestability In Algorithmic Decision Making',
     year: 2019,
     topics: ['visualization'],
@@ -1749,7 +1749,7 @@ export const PUBLICATIONS: Publication[] = [
       'Sang-Wha Sien',
       'Janet Ng',
       'Mark Zachry',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CSCW 2019',
     year: 2019,
@@ -1769,7 +1769,7 @@ export const PUBLICATIONS: Publication[] = [
       'Jean Y. Song',
       'Sindhu Kutty',
       'Sungsoo Ray Hong',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Walter S. Lasecki',
     ],
     venue: 'CSCW 2019',
@@ -1804,7 +1804,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Supporting Instruction of Formulaic Sequences Using Videos at Scale',
-    authors: ['Kyung Je Jo', 'Hyeonggeun Yun', MEMBER.juhokim],
+    authors: ['Kyung Je Jo', 'Hyeonggeun Yun', MEMBERS.juhokim],
     venue: 'Learning at Scale 2019 (Work-in-Progress)',
     year: 2019,
     topics: ['learning'],
@@ -1818,7 +1818,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'User-Centered Graphical Models of Interaction',
-    authors: ['Minsuk Chang', MEMBER.juhokim],
+    authors: ['Minsuk Chang', MEMBERS.juhokim],
     venue: 'CHI 2019 Workshop on Computational Modeling in Human-Computer Interaction',
     year: 2019,
     topics: ['visualization'],
@@ -1833,7 +1833,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Readersourcing an Accurate and Comprehensive Understanding of Health-related Information Represented by Media',
-    authors: ['Eunyoung Ko', 'Ching Liu', 'Hyuntak Cha', MEMBER.juhokim],
+    authors: ['Eunyoung Ko', 'Ching Liu', 'Hyuntak Cha', MEMBERS.juhokim],
     venue: 'CHI 2019 Workshop on HCI for Accurate, Impartial and Transparent Journalism: Challenges and Solutions',
     year: 2019,
     topics: ['crowdsourcing'],
@@ -1847,7 +1847,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'SolveDeep: A System for Supporting Subgoal Learning in Online Math Problem Solving',
-    authors: [MEMBER.hyoungwookjin, 'Minsuk Chang', MEMBER.juhokim],
+    authors: [MEMBERS.hyoungwookjin, 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'CHI 2019 Extended Abstracts (Late Breaking Work)',
     year: 2019,
     topics: ['learning'],
@@ -1868,7 +1868,7 @@ export const PUBLICATIONS: Publication[] = [
       'Sung-chul Lee',
       'Simon Perrault',
       'Jihee Kim',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'CHI 2019 Extended Abstracts (Late Breaking Work)',
     year: 2019,
@@ -1883,7 +1883,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'How to Design Voice Based Navigation for How-To Videos',
-    authors: ['Minsuk Chang', 'Ahn Truong', 'Oliver Wang', 'Maneesh Agrawala', MEMBER.juhokim],
+    authors: ['Minsuk Chang', 'Ahn Truong', 'Oliver Wang', 'Maneesh Agrawala', MEMBERS.juhokim],
     venue: 'CHI 2019',
     year: 2019,
     topics: ['learning'],
@@ -1902,7 +1902,7 @@ export const PUBLICATIONS: Publication[] = [
       'Stephan J. Lemmer',
       'Michael Xieyang Liu',
       'Shiyan Yan',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Jason J. Corso',
       'Walter S. Lasecki',
     ],
@@ -1919,7 +1919,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Personalized Motivation-supportive Messages for Increasing Participation in Crowd-civic Systems',
-    authors: ['Paul Grau', 'Babak Naderi', MEMBER.juhokim],
+    authors: ['Paul Grau', 'Babak Naderi', MEMBERS.juhokim],
     venue: 'CSCW 2018',
     year: 2018,
     topics: ['civics', 'crowdsourcing'],
@@ -1941,7 +1941,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'FourEyes: Leveraging Tool Diversity as a Means to Improve Aggregate Accuracy in Crowdsourcing',
-    authors: ['Jean Y. Song', 'Raymond Fok', MEMBER.juhokim, 'Walter S. Lasecki'],
+    authors: ['Jean Y. Song', 'Raymond Fok', MEMBERS.juhokim, 'Walter S. Lasecki'],
     venue: 'ACM TIIS',
     year: 2018,
     topics: ['crowdsourcing'],
@@ -1950,7 +1950,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'DynamicSlide: Reference-based Interaction Techniques for Slide-based Lecture Videos',
-    authors: ['Hyeungshik Jung', 'Valentina Hijung Shin', MEMBER.juhokim],
+    authors: ['Hyeungshik Jung', 'Valentina Hijung Shin', MEMBERS.juhokim],
     venue: 'UIST 2018 Poster',
     year: 2018,
     topics: ['learning'],
@@ -1967,7 +1967,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'DynamicSlide: Exploring the Design Space of Reference-based Interaction Techniques for Slide-based Lecture Videos',
-    authors: ['Hyeungshik Jung', 'Valentina Hijung Shin', MEMBER.juhokim],
+    authors: ['Hyeungshik Jung', 'Valentina Hijung Shin', MEMBERS.juhokim],
     venue: 'MAHCI 2018 Workshop @ ACM Multimedia 2018',
     year: 2018,
     topics: ['learning'],
@@ -1983,7 +1983,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Facilitating Document Reading by Linking Text and Tables',
-    authors: ['Dae Hyun Kim', 'Enamul Hoque', MEMBER.juhokim, 'Maneesh Agrawala'],
+    authors: ['Dae Hyun Kim', 'Enamul Hoque', MEMBERS.juhokim, 'Maneesh Agrawala'],
     venue: 'UIST 2018',
     year: 2018,
     topics: ['visualization', 'datamining'],
@@ -1995,7 +1995,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Micro-NGO: Tackling Wicked Social Problems with Problem Solving and Action Planning Support in Chat',
-    authors: ['Sung-chul Lee', 'Jihee Kim', MEMBER.juhokim],
+    authors: ['Sung-chul Lee', 'Jihee Kim', MEMBERS.juhokim],
     venue: 'CHI 2018 Extended Abstracts (Late Breaking Work)',
     year: 2018,
     topics: ['civics'],
@@ -2008,7 +2008,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: "Detecting Personality Unobtrusively from Users' Online and Offline Workplace Behaviors",
-    authors: ['Seoyoung Kim', 'Jiyoun Ha', MEMBER.juhokim],
+    authors: ['Seoyoung Kim', 'Jiyoun Ha', MEMBERS.juhokim],
     venue: 'CHI 2018 Extended Abstracts (Late Breaking Work)',
     year: 2018,
     topics: ['datamining'],
@@ -2025,7 +2025,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Exprgram: A Language Learning Interface for Mastering Pragmatic Competence',
-    authors: ['Kyungje Jo', 'John Joon Young Chung', MEMBER.juhokim],
+    authors: ['Kyungje Jo', 'John Joon Young Chung', MEMBERS.juhokim],
     venue: 'CHI 2018 Extended Abstracts (Late Breaking Work)',
     year: 2018,
     topics: ['learning', 'crowdsourcing'],
@@ -2039,7 +2039,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Understanding the Effect of In-Video Prompting on Learners and Instructors',
-    authors: ['Hyungyu Shin', 'Eun Young Ko', 'Joseph Jay Williams', MEMBER.juhokim],
+    authors: ['Hyungyu Shin', 'Eun Young Ko', 'Joseph Jay Williams', MEMBERS.juhokim],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['learning'],
@@ -2053,7 +2053,14 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'RecipeScape: An Interactive Tool for Analyzing Cooking Instructions at Scale',
-    authors: ['Minsuk Chang', 'Leonore Guillain', 'Hyeungshik Jung', 'Vivian Hare', MEMBER.juhokim, 'Maneesh Agrawala'],
+    authors: [
+      'Minsuk Chang',
+      'Leonore Guillain',
+      'Hyeungshik Jung',
+      'Vivian Hare',
+      MEMBERS.juhokim,
+      'Maneesh Agrawala',
+    ],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['datamining', 'human-ai-interaction'],
@@ -2067,7 +2074,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'To Distort or Not to Distort: Distance Cartograms in the Wild',
-    authors: ['Sungsoo (Ray) Hong', 'Minjoon Yoo', 'Bonnie Chinh', 'Amy Han', 'Sarah Battersby', MEMBER.juhokim],
+    authors: ['Sungsoo (Ray) Hong', 'Minjoon Yoo', 'Bonnie Chinh', 'Amy Han', 'Sarah Battersby', MEMBERS.juhokim],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['visualization'],
@@ -2084,7 +2091,7 @@ export const PUBLICATIONS: Publication[] = [
       'Minhyang (Mia) Suh',
       'Nathalie Henry Riche',
       'Jooyoung Lee',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Mark Zachry',
     ],
     venue: 'CHI 2018',
@@ -2099,7 +2106,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'BebeCode: Collaborative Child Development Tracking System',
-    authors: ['Seokwoo Song', MEMBER.juhokim, 'Bumsoo Kang', 'Wonjeong Park', 'John Kim'],
+    authors: ['Seokwoo Song', MEMBERS.juhokim, 'Bumsoo Kang', 'Wonjeong Park', 'John Kim'],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['crowdsourcing'],
@@ -2112,7 +2119,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'ConceptScape: Collaborative Concept Mapping for Video Learning',
-    authors: ['Ching Liu', MEMBER.juhokim, 'Hao-Chuan Wang'],
+    authors: ['Ching Liu', MEMBERS.juhokim, 'Hao-Chuan Wang'],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['crowdsourcing', 'learning'],
@@ -2127,7 +2134,14 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Enhancing Online Problems Through Instructor-Centered Tools for Randomized Experiments',
-    authors: ['Joseph Jay Williams', 'Anna Rafferty', 'Dustin Tingley', 'Andrew Ang', 'Walter Lasecki', MEMBER.juhokim],
+    authors: [
+      'Joseph Jay Williams',
+      'Anna Rafferty',
+      'Dustin Tingley',
+      'Andrew Ang',
+      'Walter Lasecki',
+      MEMBERS.juhokim,
+    ],
     venue: 'CHI 2018',
     year: 2018,
     topics: ['learning'],
@@ -2140,7 +2154,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Two Tools are Better Than One: Tool Diversity as a Means of Improving Aggregate Crowd Performance',
-    authors: ['Jean Y. Song', 'Raymond Fok', 'Alan Lundgard', 'Fan Yang', MEMBER.juhokim, 'Walter S. Lasecki'],
+    authors: ['Jean Y. Song', 'Raymond Fok', 'Alan Lundgard', 'Fan Yang', MEMBERS.juhokim, 'Walter S. Lasecki'],
     venue: 'IUI 2018',
     year: 2018,
     topics: ['crowdsourcing'],
@@ -2155,7 +2169,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Korero: Facilitating Complex Referencing of Visual Materials in Asynchronous Discussion Interface',
-    authors: ['Soon Hau Chua', 'Toni-Jan Keith Monserrat', 'Dongwook Yoon', MEMBER.juhokim, 'Shengdong Zhao'],
+    authors: ['Soon Hau Chua', 'Toni-Jan Keith Monserrat', 'Dongwook Yoon', MEMBERS.juhokim, 'Shengdong Zhao'],
     venue: 'CSCW 2018',
     year: 2018,
     topics: ['crowdsourcing'],
@@ -2164,7 +2178,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Exprgram: A Video-based Language Learning Interface Powered by Learnersourced Video Annotations',
-    authors: ['Kyungje Jo', 'John Joon Young Chung', MEMBER.juhokim],
+    authors: ['Kyungje Jo', 'John Joon Young Chung', MEMBERS.juhokim],
     venue: 'HCOMP 2017 Workshop on Human Computation for Image and Video Analysis',
     year: 2017,
     topics: ['crowdsourcing', 'learning'],
@@ -2177,7 +2191,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'VideoScape: Augmenting Video Learning Experience with Concept Map',
-    authors: ['Ching Liu', 'Hao-Chuan Wang', MEMBER.juhokim],
+    authors: ['Ching Liu', 'Hao-Chuan Wang', MEMBERS.juhokim],
     venue: 'TAICHI 2017',
     year: 2017,
     topics: ['crowdsourcing', 'learning'],
@@ -2186,7 +2200,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'RecipeScape: Mining and Analyzing Diverse Processes in Cooking Recipes',
-    authors: ['Minsuk Chang', 'Vivian Hare', MEMBER.juhokim, 'Maneesh Agrawala'],
+    authors: ['Minsuk Chang', 'Vivian Hare', MEMBERS.juhokim, 'Maneesh Agrawala'],
     venue: 'CHI 2017 Extended Abstracts',
     year: 2017,
     topics: ['datamining'],
@@ -2195,7 +2209,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'PlayBetter: A Phone-based Baby Play Support System for Childcare Bystander Parents',
-    authors: ['Seokwoo Song', MEMBER.juhokim, 'John Kim'],
+    authors: ['Seokwoo Song', MEMBERS.juhokim, 'John Kim'],
     venue: 'CHI 2017 Extended Abstracts',
     year: 2017,
     topics: ['crowdsourcing'],
@@ -2204,7 +2218,14 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Connecting Instructors and Learning Scientists via Collaborative Dynamic Experimentation',
-    authors: ['Joseph Jay Williams', 'Anna Rafferty', 'Andrew Ang', 'Dustin Tingley', 'Walter Lasecki', MEMBER.juhokim],
+    authors: [
+      'Joseph Jay Williams',
+      'Anna Rafferty',
+      'Andrew Ang',
+      'Dustin Tingley',
+      'Walter Lasecki',
+      MEMBERS.juhokim,
+    ],
     venue: 'CHI 2017 Extended Abstracts',
     year: 2017,
     topics: ['learning'],
@@ -2219,7 +2240,7 @@ export const PUBLICATIONS: Publication[] = [
       'Samuel Maldonado',
       'Andrew Ang',
       'Dustin Tingley',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
     ],
     venue: 'Learning at Scale 2017 Work-in-Progress',
     year: 2017,
@@ -2234,7 +2255,7 @@ export const PUBLICATIONS: Publication[] = [
       'Rafal Kocielnik',
       'Min-Joon Yoo',
       'Sarah Battersby',
-      MEMBER.juhokim,
+      MEMBERS.juhokim,
       'Cecilia Aragon',
     ],
     venue: 'PacificVis 2017',
@@ -2245,7 +2266,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Changing News Media Landscape in South Korea',
-    authors: ['Hongjun Lim', 'Choongho Chung', 'Jihee Kim', MEMBER.juhokim, 'Sue Moon', 'Meeyoung Cha'],
+    authors: ['Hongjun Lim', 'Choongho Chung', 'Jihee Kim', MEMBERS.juhokim, 'Sue Moon', 'Meeyoung Cha'],
     venue: 'WWW 2017 Workshop on Social News On the Web',
     year: 2017,
     topics: ['civics'],
@@ -2254,7 +2275,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Micro-NGO: Crowd-Driven Social Activism Via A Chat-Based Online Platform',
-    authors: ['Sungchul Lee', 'Jihee Kim', MEMBER.juhokim],
+    authors: ['Sungchul Lee', 'Jihee Kim', MEMBERS.juhokim],
     venue: 'CSCW 2017 Workshop on Crowdsourcing Law and Policy',
     year: 2017,
     topics: ['civics'],
@@ -2263,7 +2284,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: '"Don’t Bother Me. I’m Socializing!": A Breakpoint-Based Smartphone Notification System',
-    authors: ['Chunjong Park', 'Junsung Lim', MEMBER.juhokim, 'Sung-Ju Lee', 'Dongman Lee'],
+    authors: ['Chunjong Park', 'Junsung Lim', MEMBERS.juhokim, 'Sung-Ju Lee', 'Dongman Lee'],
     venue: 'CSCW 2017',
     year: 2017,
     topics: ['datamining'],
