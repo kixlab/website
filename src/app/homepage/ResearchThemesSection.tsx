@@ -44,39 +44,35 @@ const ResearchTopicsMemberAvatar = styled(Image)`
   height: auto;
 `
 
-const GatherMembersByResearchTopic = () => {
+const GatherStatsByResearchTopic = () => {
   // TODO: Somehow avoid having to define the keys explicitly. Typescript doesn't allow empty definition
-  const membersByResearchTopic: Record<ResearchTopicType, any[]> = {
-    datamining: [],
-    crowdsourcing: [],
-    learning: [],
-    civics: [],
-    visualization: [],
-    social: [],
-    'human-ai-interaction': [],
-  }
+  const statsByResearchTopic: Record<ResearchTopicType, { numPublications: number; authors: IMember[] }> = {} as any
   ResearchTopics.forEach(topic => {
     const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(topic))
-    const authors = filteredPublications.sort((a, b) => b.year - a.year).flatMap(publication => publication.authors)
-    const filteredMembers = Object.values(MEMBERS)
-    const authorMembers = filteredMembers.filter(member => authors.includes(`${member.firstName} ${member.lastName}`))
-    membersByResearchTopic[topic] = authorMembers
+    const numPublications = filteredPublications.length
+    const topicAuthors = filteredPublications
+      .sort((a, b) => b.year - a.year)
+      .flatMap(publication => publication.authors)
+    const filteredAuthors = Object.values(MEMBERS).filter(member =>
+      topicAuthors.includes(`${member.firstName} ${member.lastName}`)
+    )
+    statsByResearchTopic[topic] = { numPublications, authors: filteredAuthors }
   })
-  return membersByResearchTopic
+  return statsByResearchTopic
 }
 
 export const ResearchThemesSection = () => {
-  const [membersByResearchTopic, numVisible] = useMemo(() => {
+  const [statsByResearchTopic, numVisible] = useMemo(() => {
     // TODO: Specify the type of membersByResearchTopic
-    const membersByResearchTopic: Record<string, any[]> = GatherMembersByResearchTopic()
-    return [membersByResearchTopic, 6]
+    const statsByResearchTopic: Record<string, any> = GatherStatsByResearchTopic()
+    return [statsByResearchTopic, 6]
   }, [])
 
   return (
     <Section id="research-section">
       <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
       <ResearchTopicsArea>
-        {Object.entries(membersByResearchTopic).map(([topic, filteredMembers]) => {
+        {Object.entries(statsByResearchTopic).map(([topic, stats]) => {
           return (
             <Link
               href={`/publications/?researchTopic=${topic}`}
@@ -88,11 +84,9 @@ export const ResearchThemesSection = () => {
                   🤖<br></br>
                   {topic}
                 </ResearchTopicItemTitle>
-                <Text style={{ color: 'gray', paddingBottom: '12px' }}>
-                  One or two line description of this project
-                </Text>
+                <Text style={{ color: 'gray', paddingBottom: '12px' }}>{stats.numPublications} publications</Text>
                 <ResearchTopicMembersArea>
-                  {filteredMembers.slice(0, numVisible).map(member => (
+                  {stats.authors.slice(0, numVisible).map((member: IMember) => (
                     <ResearchTopicsMemberAvatar
                       width={36}
                       height={36}
@@ -103,8 +97,8 @@ export const ResearchThemesSection = () => {
                   ))}
 
                   {/* Conditional rendering optimized */}
-                  {filteredMembers.length - numVisible > 0 && (
-                    <span style={{ width: '36px', textAlign: 'center' }}>+{filteredMembers.length - numVisible}</span>
+                  {stats.authors.length - numVisible > 0 && (
+                    <span style={{ width: '36px', textAlign: 'center' }}>+{stats.authors.length - numVisible}</span>
                   )}
                 </ResearchTopicMembersArea>
               </ResearchTopicItem>
