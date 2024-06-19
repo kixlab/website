@@ -6,6 +6,7 @@ import { ResearchTopics, PUBLICATIONS, type ResearchTopicType } from '@/data/pub
 import { SectionHeader } from '@/components/Section'
 import { useMemo } from 'react'
 import { Section, Text } from './Styles'
+import Link from 'next/link'
 
 const ResearchTopicsArea = styled.div`
   display: grid;
@@ -14,11 +15,11 @@ const ResearchTopicsArea = styled.div`
 `
 
 const ResearchTopicItem = styled.div`
-  padding: 26px;
+  padding: 24px 36px;
   border: thin solid;
   border-radius: 15px;
   &:hover {
-    box-shadow: 3px 3px 10px 0px ${Color.orange300};
+    box-shadow: 0px 0px 10px 0px ${Color.orange300};
   }
   transition: box-shadow 0.3s ease-in-out;
 `
@@ -77,29 +78,37 @@ export const ResearchThemesSection = () => {
       <ResearchTopicsArea>
         {Object.entries(membersByResearchTopic).map(([topic, filteredMembers]) => {
           return (
-            <ResearchTopicItem key={topic}>
-              <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
-                🤖<br></br>
-                {topic}
-              </ResearchTopicItemTitle>
-              <Text style={{ color: 'gray', paddingBottom: '12px' }}>One or two line description of this project</Text>
-              <ResearchTopicMembersArea>
-                {filteredMembers.slice(0, numVisible).map((member, j) => (
-                  <ResearchTopicsMemberAvatar
-                    width={36}
-                    height={36}
-                    src={`/images/members/${member.img}`}
-                    alt={`${member.firstName} ${member.lastName}`}
-                    key={member.email}
-                  />
-                ))}
+            <Link
+              href={`/publications/?researchTopic=${topic}`}
+              key={topic}
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <ResearchTopicItem key={topic}>
+                <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
+                  🤖<br></br>
+                  {topic}
+                </ResearchTopicItemTitle>
+                <Text style={{ color: 'gray', paddingBottom: '12px' }}>
+                  One or two line description of this project
+                </Text>
+                <ResearchTopicMembersArea>
+                  {filteredMembers.slice(0, numVisible).map(member => (
+                    <ResearchTopicsMemberAvatar
+                      width={36}
+                      height={36}
+                      src={`/images/members/${member.img}`}
+                      alt={`${member.firstName} ${member.lastName}`}
+                      key={member.email}
+                    />
+                  ))}
 
-                {/* Conditional rendering optimized */}
-                {filteredMembers.length - numVisible > 0 && (
-                  <span style={{ width: '36px', textAlign: 'center' }}>+{filteredMembers.length - numVisible}</span>
-                )}
-              </ResearchTopicMembersArea>
-            </ResearchTopicItem>
+                  {/* Conditional rendering optimized */}
+                  {filteredMembers.length - numVisible > 0 && (
+                    <span style={{ width: '36px', textAlign: 'center' }}>+{filteredMembers.length - numVisible}</span>
+                  )}
+                </ResearchTopicMembersArea>
+              </ResearchTopicItem>
+            </Link>
           )
         })}
       </ResearchTopicsArea>
