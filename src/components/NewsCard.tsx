@@ -20,9 +20,7 @@ const padding = 80
 const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${postWidth}px;
   gap: 4px;
-  margin-bottom: -${padding / 4}px;
   border-radius: 8px;
   border: 1px solid ${Color.gray300};
   padding: 16px;
