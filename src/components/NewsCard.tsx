@@ -3,15 +3,14 @@
 import React from 'react'
 import Markdown from 'react-markdown'
 import styled from '@emotion/styled'
-import { FontVariant, Color } from '@/app/theme'
+import { FontVariant, Color, ScreenSize } from '@/app/theme'
 import Post from '@/data/posts'
-
-// TODO: Responsive when the screen size is smaller than 1088px
 
 export const categoryColors: { [key: string]: string } = {
   publication: Color.orange900,
   award: Color.orange700,
   position: Color.orange600,
+  news: Color.orange500,
 }
 
 const postWidth = 400
@@ -20,9 +19,7 @@ const padding = 80
 const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: ${postWidth}px;
   gap: 4px;
-  margin-bottom: -${padding / 4}px;
   border-radius: 8px;
   border: 1px solid ${Color.gray300};
   padding: 16px;
@@ -35,6 +32,7 @@ const Title = styled.div`
 export const CategoryContainer = styled.div`
   display: flex;
   gap: 8px;
+  margin-bottom: 8px;
 `
 
 export const Category = styled.span`
@@ -53,6 +51,7 @@ export const NewsDate = styled.div`
 
 const Summary = styled.div`
   ${FontVariant.body_md}
+  word-break: break-word;
   color: ${Color.gray700};
 
   a {
@@ -70,28 +69,13 @@ export const ReadMore = styled.div`
   text-decoration: none;
 `
 
-export default function NewsCard({
-  post,
-  position,
-  setModalContent,
-}: {
-  post: Post
-  position: 'left' | 'right'
-  setModalContent: (post: Post | null) => void
-}) {
+export default function NewsCard({ post, setModalContent }: { post: Post; setModalContent: (post: Post) => void }) {
   const currentDate = new Date()
   const open = post.endsAt && post.endsAt > currentDate
   const closed = post.endsAt && post.endsAt < currentDate
 
   return (
-    <PostContainer
-      style={{
-        marginLeft: position === 'left' ? postWidth + padding : 0,
-        marginRight: position === 'right' ? postWidth + padding : 0,
-        alignItems: position === 'left' ? 'flex-start' : 'flex-end',
-        textAlign: position === 'left' ? 'left' : 'right',
-      }}
-    >
+    <PostContainer>
       <CategoryContainer>
         {post.categories.map((category, i) => (
           <Category key={i} style={{ backgroundColor: closed ? Color.gray400 : categoryColors[category] }}>
