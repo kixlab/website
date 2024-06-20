@@ -13,28 +13,49 @@ const FooterContainer = styled.footer`
   padding: 36px 48px;
   background-color: ${Color.gray600};
   margin-top: auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `
 
 const FooterTextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `
 
-const FooterText = styled.p<{ bold?: boolean }>`
+const FooterText = styled.a<{ bold?: boolean }>`
   ${FontVariant.body_lg}
-  font-weight: ${props => (props.bold ? FontWeight.body_lg : FontWeight.body_md)};
-  color: ${Color.white};
-  margin: 0;
-`
-
-const MapLink = styled.a`
-  font-size: ${FontSize.body_lg};
   font-weight: ${FontWeight.body_md};
   color: ${Color.white};
   text-decoration: none;
+  margin: 0;
+
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    margin: 4px 0;
+  }
+`
+
+const FooterTextBold = styled.p`
+  ${FontVariant.body_lg}
+  font-weight: ${FontWeight.body_lg};
+  color: ${Color.white};
+  text-decoration: none;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    margin: 4px 0;
   }
 `
 
@@ -42,6 +63,11 @@ const FooterLogoContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    margin-top: 16px;
+  }
 `
 
 const LogoLink = styled.a`
@@ -52,15 +78,13 @@ export default function Footer() {
   return (
     <FooterContainer>
       <FooterTextContainer>
-        <FooterText bold>Our Bunker</FooterText>
-        <FooterText>KAIST, N1 Room 624,</FooterText>
-        <FooterText>291 Daehak-ro, Yuseong-gu, Daejeon (34141)</FooterText>
-        <FooterText>
-          Republic of Korea (
-          <MapLink href="https://goo.gl/maps/8PG4bhyMoxwS1pXH8" target="_blank">
-            Google Map
-          </MapLink>
-          )
+        <FooterTextBold>Our Bunker</FooterTextBold>
+        <FooterText href="https://goo.gl/maps/8PG4bhyMoxwS1pXH8" target="_blank">
+          KAIST, N1 Room 624,
+          <br />
+          291 Daehak-ro, Yuseong-gu, Daejeon (34141)
+          <br />
+          Republic of Korea
         </FooterText>
       </FooterTextContainer>
       <FooterLogoContainer>
