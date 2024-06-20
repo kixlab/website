@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import styled from '@emotion/styled'
 
@@ -28,7 +27,6 @@ export const Nav = styled.nav`
   z-index: 2;
 
   // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
-  // TODO: Replace the magic constants with a more systematic approach
   padding: 12px 24px 16px
     ${linearlyScaleSize({
       minSizePx: 48,
@@ -101,7 +99,7 @@ export const NavItem: React.FC<NavItemProps> = ({ children, href, selected }) =>
 
 const DropDownMenu = styled.div`
   position: fixed;
-  top: ${NAV_BAR_HEIGHT};
+  top: ${NAV_BAR_HEIGHT}px;
   background-color: ${Color.white};
   width: 100vw;
   z-index: 1;
@@ -113,7 +111,6 @@ const DropDownMenu = styled.div`
   &.closed {
     transform: translateY(-100%);
   }
-  /* Media queries */
   @media (min-width: ${ScreenSize.sm}) {
     display: none;
   }
@@ -139,18 +136,19 @@ const ResponsiveSpan = styled.span`
     display: none;
   }
 `
+// Close the dropdown menu whenever the user clicks outside of the dropdown menu area
+const NavList = [
+  { navItem: 'Home', path: '/' },
+  { navItem: 'People', path: '/people' },
+  { navItem: 'Publications', path: '/publications' },
+  { navItem: 'Courses', path: '/courses' },
+  { navItem: 'News', path: '/news' },
+]
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const dropdownRef = React.useRef<HTMLDivElement>(null)
   const hamburgerRef = React.useRef<HTMLButtonElement>(null)
-  const NavList = [
-    { navItem: 'Home', path: '/' },
-    { navItem: 'People', path: '/people' },
-    { navItem: 'Publications', path: '/publications' },
-    { navItem: 'Courses', path: '/courses' },
-    { navItem: 'News', path: '/news' },
-  ]
   const pathname = usePathname()
 
   // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
