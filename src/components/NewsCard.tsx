@@ -16,7 +16,7 @@ export const categoryColors: { [key: string]: string } = {
 const postWidth = 400
 const padding = 80
 
-const PostContainer = styled.div<{ position: 'left' | 'right' }>`
+const PostContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: ${postWidth}px;
@@ -25,11 +25,6 @@ const PostContainer = styled.div<{ position: 'left' | 'right' }>`
   border-radius: 8px;
   border: 1px solid ${Color.gray300};
   padding: 16px;
-  margin-${props => (props.position === 'left' ? 'right' : 'left')}: ${padding}px;
-  margin-${props => (props.position === 'left' ? 'left' : 'right')}: auto;
-
-  align-items: ${props => (props.position === 'left' ? 'flex-start' : 'flex-end')};
-  text-align: ${props => (props.position === 'left' ? 'left' : 'right')};
 
   @media (max-width: ${ScreenSize.xl}) {
     margin-left: 0px;
@@ -87,11 +82,9 @@ export const ReadMore = styled.div`
 
 export default function NewsCard({
   post,
-  position,
   setModalContent,
 }: {
   post: Post
-  position: 'left' | 'right'
   setModalContent: (post: Post | null) => void
 }) {
   const currentDate = new Date()
@@ -99,7 +92,7 @@ export default function NewsCard({
   const closed = post.endsAt && post.endsAt < currentDate
 
   return (
-    <PostContainer position={position}>
+    <PostContainer>
       <CategoryContainer>
         {post.categories.map((category, i) => (
           <Category key={i} style={{ backgroundColor: closed ? Color.gray400 : categoryColors[category] }}>

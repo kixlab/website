@@ -25,52 +25,6 @@ export const SectionContent = styled.div`
   gap: 24px;
 `
 
-export const NewsSection = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 50px 0;
-  max-width: 1000px;
-  width: 100%;
-
-  @media (max-width: ${ScreenSize.xl}) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    padding: 0;
-  }
-
-  @media (max-width: ${ScreenSize.md}) {
-    grid-template-columns: 1fr;
-  }
-`
-
-export const NewsLine = styled.div`
-  width: 2px;
-  height: 100%;
-  background-color: ${Color.orange900};
-  position: absolute;
-  left: 50%;
-  top: 0;
-
-  &::before {
-    content: '';
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: ${Color.orange900};
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-  }
-
-  @media (max-width: ${ScreenSize.xl}) {
-    display: none;
-  }
-`
-
 const Title = styled.h2`
   ${FontVariant.title_lg}
   display: grid;
