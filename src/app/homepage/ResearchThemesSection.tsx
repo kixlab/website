@@ -41,8 +41,6 @@ const ResearchTopicsMemberAvatar = styled(Image)`
   border-radius: 50%;
   max-width: 36px;
   max-height: 36px;
-  width: auto;
-  height: auto;
 `
 
 const GatherStatsByResearchTopic = () => {
