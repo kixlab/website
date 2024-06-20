@@ -23,7 +23,7 @@ Repo of [Kixlab's redesigned website](https://www.kixlab.org/).
 1. Go to `src/data/posts.ts`
 2. Add a new element object at the top of the list. Follow the format as indicated in lines 1-8.
 3. If you have long text or images, you can create a separate .md file in `public/posts` and enter the path to the `contentMdFilePath` field.
-    * If you need to include pictures, place the file inside `public/images/posts/` and include it in your .md file. (e.g., `2018-06-29-manyideas-report.md`)
+   - If you need to include pictures, place the file inside `public/images/posts/` and include it in your .md file. (e.g., `2018-06-29-manyideas-report.md`)
 
 ### Publications
 
