@@ -15,17 +15,6 @@ const NewsSection = styled.div`
   padding: 50px 0;
   max-width: 1000px;
   width: 100%;
-
-  @media (max-width: ${ScreenSize.xl}) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    padding: 0;
-  }
-
-  @media (max-width: ${ScreenSize.md}) {
-    grid-template-columns: 1fr;
-  }
 `
 
 const NewsLine = styled.div`
@@ -56,17 +45,46 @@ const NewsLine = styled.div`
 const NewsContainer = styled.div`
   width: 100%;
 
+  @media (max-width: ${ScreenSize.xl}) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 0;
+  }
+
+  @media (max-width: ${ScreenSize.md}) {
+    grid-template-columns: 1fr;
+  }
+
   & > div:nth-of-type(odd) {
     margin-right: auto;
     margin-left: 80px;
     align-items: flex-start;
     text-align: left;
+
+    @media (max-width: ${ScreenSize.xl}) {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
   }
   & > div:nth-of-type(even) {
     margin-left: auto;
     margin-right: 80px;
     align-items: flex-end;
     text-align: right;
+
+    @media (max-width: ${ScreenSize.xl}) {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+    }
   }
 `
 

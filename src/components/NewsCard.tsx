@@ -25,15 +25,6 @@ const PostContainer = styled.div`
   border-radius: 8px;
   border: 1px solid ${Color.gray300};
   padding: 16px;
-
-  @media (max-width: ${ScreenSize.xl}) {
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    align-items: flex-start;
-    text-align: left;
-    width: 100%;
-  }
 `
 
 const Title = styled.div`
