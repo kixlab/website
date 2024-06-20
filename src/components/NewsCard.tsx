@@ -80,13 +80,7 @@ export const ReadMore = styled.div`
   text-decoration: none;
 `
 
-export default function NewsCard({
-  post,
-  setModalContent,
-}: {
-  post: Post
-  setModalContent: (post: Post | null) => void
-}) {
+export default function NewsCard({ post, setModalContent }: { post: Post; setModalContent: (post: Post) => void }) {
   const currentDate = new Date()
   const open = post.endsAt && post.endsAt > currentDate
   const closed = post.endsAt && post.endsAt < currentDate

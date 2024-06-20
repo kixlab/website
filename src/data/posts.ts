@@ -1,7 +1,7 @@
 interface Props {
   title: string
   date: Date
-  categories: string[]
+  categories: readonly string[]
   summary: string
   contentMdFilePath?: string // Add path to markdown file if exists
   endsAt?: Date // Add if the post has a deadline
@@ -43,7 +43,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2024-summer-internship-call.html).",
-    endsAt: '2024-04-29T00:00:00.000Z',
+    endsAt: new Date('2024-04-29'),
   },
   facct2024: {
     title: 'A paper accepted to FAccT 2024',
@@ -94,7 +94,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2024-winter-internship-call.html).",
-    endsAt: '2023-10-28T00:00:00.000Z',
+    endsAt: new Date('2023-10-28'),
   },
   ms2023: {
     title: 'KIXLAB has positions for MS students',
@@ -102,7 +102,7 @@ export const POST = {
     categories: ['position'],
     summary:
       'KIXLAB has one or two open positions for MS students in SoC KAIST for Spring 2024. If interested, please follow the instructions in the [MS Student Selection Process](https://juhokim.com/students.html#ms_process) Application deadline: Oct. 20th, 2023.',
-    endsAt: '2023-10-20T00:00:00.000Z',
+    endsAt: new Date('2023-10-20'),
   },
   cscw2024: {
     title: 'Two papers accepted to CSCW 2024',
@@ -138,7 +138,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2023-summer-internship-call.html).",
-    endsAt: '2023-04-30T00:00:00.000Z',
+    endsAt: new Date('2023-04-30'),
   },
   chi2023: {
     title: 'KIXLAB at CHI 2023',
@@ -196,7 +196,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2023-winter-internship-call.html).",
-    endsAt: '2022-11-14T00:00:00.000Z',
+    endsAt: new Date('2022-11-14'),
   },
   internfall2022: {
     title: 'Fall 2022 Undergraduate Research Internship',
@@ -204,7 +204,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this fall. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2022-fall-internship-call.html).",
-    endsAt: '2022-09-07T00:00:00.000Z',
+    endsAt: new Date('2022-09-07'),
   },
   lasworkshop2022: {
     title: 'Two papers accepted to L@S 2022 Workshop',
@@ -226,7 +226,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2022-summer-internship-call.html).",
-    endsAt: '2022-04-30T00:00:00.000Z',
+    endsAt: new Date('2022-04-30'),
   },
   acl2022: {
     title: 'A paper accepted to ACL 2022 Workshop',
@@ -354,7 +354,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2022-winter-internship-call.html).",
-    endsAt: '2021-11-03T00:00:00.000Z',
+    endsAt: new Date('2021-11-03'),
   },
   ms2021: {
     title: 'KIXLAB has positions for MS students',
@@ -362,7 +362,7 @@ export const POST = {
     categories: ['position'],
     summary:
       'KIXLAB has a few open positions for MS students in SoC KAIST for Spring 2022. If interested, please follow the instructions in the <a href="https://juhokim.com/students.html#ms_process">MS Student Selection Process</a> Application deadline: Nov. 2nd, 2021.',
-    endsAt: '2021-11-02T00:00:00.000Z',
+    endsAt: new Date('2021-11-02'),
   },
   kinewsletter2021: {
     title: 'KIXLAB in the 2021 fall issue of the KI news letter',
@@ -406,7 +406,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2021-summer-internship-call.html).",
-    endsAt: '2021-04-30T00:00:00.000Z',
+    endsAt: new Date('2021-04-30'),
   },
   taaward2020fall: {
     title: 'Hyungyu was selected as an Outstanding TA of SoC in fall 2020',
@@ -456,7 +456,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2021-winter-internship-call.html).",
-    endsAt: '2020-11-06T00:00:00.000Z',
+    endsAt: new Date('2020-11-06'),
   },
   hcomp2020: {
     title: 'A paper accepted to DEW 2020 @ HCOMP',
@@ -492,7 +492,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2020-summer-internship-call.html).",
-    endsAt: '2020-04-30T00:00:00.000Z',
+    endsAt: new Date('2020-04-30'),
   },
   chilbw2020: {
     title: 'Two CHI 2020 late-breaking work (LBW) papers accepted',
@@ -529,7 +529,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2020-winter-internship-call.html).",
-    endsAt: '2019-11-03T00:00:00.000Z',
+    endsAt: new Date('2019-11-03'),
   },
   byulbyul2019: {
     title: 'We launched the byulbyul.kr <별별생각> system!',
@@ -608,7 +608,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2019-summer-internship-call.html).",
-    endsAt: '2019-04-14T00:00:00.000Z',
+    endsAt: new Date('2019-04-14'),
   },
   hyeungshik2019: {
     title: 'Hyeungshik & Hyungyu get their MS degrees; Hyungyu gets a thesis award!',
@@ -658,7 +658,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find the details on [Prof. Juho Kim's website](https://juhokim.com/2019-winter-internship-call.html).",
-    endsAt: '2018-10-28T00:00:00.000Z',
+    endsAt: new Date('2018-10-28'),
   },
   adobeintern2018: {
     title: 'Research Internships at Adobe Research',
@@ -717,7 +717,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find the details on [Prof. Juho Kim's website](https://juhokim.com/2018-summer-internship-call.html).",
-    endsAt: '2018-04-29T00:00:00.000Z',
+    endsAt: new Date('2018-04-29'),
   },
   iui2018award: {
     title: 'Our paper wins a Best Student Paper Honorable Mention at IUI 2018',
@@ -795,7 +795,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find the details on [Prof. Juho Kim's website](https://juhokim.com/2017-summer-internship-call.html).",
-    endsAt: '2017-04-30T00:00:00.000Z',
+    endsAt: new Date('2017-04-30'),
   },
   newmember2017: {
     title: 'New lab members',
@@ -824,7 +824,7 @@ export const POST = {
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this spring. You can find the details on [Prof. Juho Kim's website](https://juhokim.com/2017-spring-internship-call.html).",
-    endsAt: '2017-02-20T00:00:00.000Z',
+    endsAt: new Date('2017-02-20'),
   },
   cs4922016: {
     title: 'CS492 Crowdsourcing course finished',

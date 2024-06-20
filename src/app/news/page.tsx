@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import NewsCard from '@/components/NewsCard'
-import Post, { POSTS, POST } from '@/data/posts'
+import Post, { POSTS } from '@/data/posts'
 import NewsModal from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
@@ -79,22 +79,9 @@ export default function Page() {
       <NewsSection>
         <NewsLine />
         <NewsContainer>
-          {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime()).map(
-            ({ title, date, categories, summary, contentMdFilePath, endsAt }, i) => (
-              <NewsCard
-                key={i}
-                post={{
-                  title,
-                  date,
-                  categories,
-                  summary,
-                  contentMdFilePath,
-                  endsAt,
-                }}
-                setModalContent={setModalContent}
-              />
-            )
-          )}
+          {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime()).map((post, index) => (
+            <NewsCard key={index} post={post} setModalContent={setModalContent} />
+          ))}
         </NewsContainer>
       </NewsSection>
       <div
