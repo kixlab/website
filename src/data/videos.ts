@@ -11,7 +11,7 @@ class Video {
   }
 
   get formattedDate() {
-    return this.date.toLocaleDateString('en-us', { year: 'numeric', month: '2-digit', day: '2-digit' })
+    return this.date.toLocaleDateString(navigator.language, { year: 'numeric', month: '2-digit', day: '2-digit' })
   }
 }
 

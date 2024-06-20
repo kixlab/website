@@ -105,7 +105,7 @@ export const HeroSection = () => {
         <HeroImageContainer id="hero-image-container">
           <Image
             id="hero-image"
-            src={'/images/hero-image.webp'}
+            src={'/images/hero-image.png'}
             alt="Kixlab group picture"
             fill={true}
             priority

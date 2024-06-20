@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
-import { Color, FontVariant, ScreenSize } from '@/app/theme'
+import { Color, FontVariant } from '@/app/theme'
 import { Category, CategoryContainer, NewsDate, categoryColors } from './NewsCard'
 import Post from '@/data/posts'
 import Markdown from 'react-markdown'
@@ -27,10 +27,6 @@ const ModalCard = styled.div`
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-
-  @media (max-width: ${ScreenSize.lg}) {
-    width: 90%;
-  }
 `
 
 const Header = styled.div`
@@ -53,21 +49,8 @@ const Close = styled.div`
 const Content = styled.div`
   ${FontVariant.body_md}
   color: ${Color.black};
-  max-height: 60vh;
-  overflow-y: scroll;
-  h1 {
-    ${FontVariant.title_lg}
-    margin-top: 24px;
-  }
-  h2 {
-    ${FontVariant.title_md}
-    margin-top: 16px;
-  }
   img {
     max-width: 100%;
-  }
-  p {
-    margin-top: 8px;
   }
   a {
     color: ${Color.black};
