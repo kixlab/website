@@ -1,4 +1,4 @@
-export const PositionType = [
+export const CareerTypes = [
   'Associate Professor',
   'Postdoc Researcher',
   'Ph.D. Student',
@@ -9,19 +9,20 @@ export const PositionType = [
   'Alumni',
 ] as const
 
-export type PositionType = (typeof PositionType)[number]
+export type CareerType = (typeof CareerTypes)[number]
 
 export interface Member {
   firstName: string
   lastName: string
   email?: string
-  position: PositionType
+  career: CareerType
   img?: string
   site?: string
   thesis?:string
   affiliation?: string
-  alumniCurrentPosition?: string
+  currentPosition?: string
   period?: string
+  education?: string
 }
 
 export const MEMBER = {
@@ -29,7 +30,7 @@ export const MEMBER = {
     firstName: 'Juho',
     lastName: 'Kim',
     email: 'juhokim@kaist.ac.kr',
-    position: 'Associate Professor',
+    career: 'Associate Professor',
     img: 'juhokim.jpg',
     site: 'http://juhokim.com/'
   },
@@ -37,7 +38,7 @@ export const MEMBER = {
     firstName: 'Dae Hyun',
     lastName: 'Kim',
     email: 'dhkim16@cs.stanford.edu',
-    position: 'Postdoc Researcher',
+    career: 'Postdoc Researcher',
     img: 'daehyun.jpg',
     site: 'https://dhkim16.github.io/',
   },
@@ -45,7 +46,7 @@ export const MEMBER = {
     firstName: 'DaEun',
     lastName: 'Choi',
     email: 'daeun.choi@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'daeun.jpg',
     site: 'https://daeunchoi.com/', 
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-daeun.pdf'
@@ -54,7 +55,7 @@ export const MEMBER = {
     firstName: 'Yoonseo',
     lastName: 'Choi',
     email: 'yoon0u0@gmail.com',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'yoonseo.jpeg',
     site: 'https://www.yoonseochoi.com/',
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-yoonseo.pdf'
@@ -63,7 +64,7 @@ export const MEMBER = {
     firstName: 'Hyunwoo',
     lastName: 'Kim',
     email: 'khw0726@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'hyunwoo.png',
     site: 'https://hyunwoo.me/', 
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyunwoo.pdf'
@@ -72,7 +73,7 @@ export const MEMBER = {
     firstName: 'Seyoung',
     lastName: 'Kim',
     email: 'youthskim@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'seoyoung.jpg',
     site: 'https://sites.google.com/view/seoyoung/',
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-seoyoung.pdf'
@@ -81,7 +82,7 @@ export const MEMBER = {
     firstName: 'Tae Soo',
     lastName: 'Kim',
     email: 'kimts0830@gmail.com',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'taesoo.jpg',
     site: 'https://taesookim.com/',
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-taesoo.pdf'
@@ -90,7 +91,7 @@ export const MEMBER = {
     firstName: 'Yoonsu',
     lastName: 'Kim',
     email: 'yoonsu16@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'yoonsu.jpg',
     site: 'https://yoonsu0816.github.io/', 
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-yoonsu.pdf'
@@ -99,7 +100,7 @@ export const MEMBER = {
     firstName: 'Eunyoung',
     lastName: 'Ko',
     email: 'eunyoung4444@gmail.com',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'eunyoung.jpg',
     site: 'https://eunyoungko.com/'
   },
@@ -107,14 +108,14 @@ export const MEMBER = {
     firstName: 'Sung-Chul',
     lastName: 'Lee',
     email: 'leesungchul@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'sclee.png',
   },
   yoonjoolee: {
     firstName: 'Yoonjoo',
     lastName: 'Lee',
     email: 'yjl7436@gmail.com',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'yoonjoo.jpg',
     site: 'https://yoonjoolee.com/'
   },
@@ -122,7 +123,7 @@ export const MEMBER = {
     firstName: 'Hyungyu',
     lastName: 'Shin',
     email: 'hyungyu.sh@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'hyungyu.jpg',
     site: 'https://hyungyu.com/',
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf'
@@ -131,7 +132,7 @@ export const MEMBER = {
     firstName: 'Kihoon',
     lastName: 'Son',
     email: 'kihoon.son@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'kihoon.jpg',
     site: 'https://kihoonson.com/'
   },
@@ -139,7 +140,7 @@ export const MEMBER = {
     firstName: 'Saelyne',
     lastName: 'Yang',
     email: 'saelyne@kaist.ac.kr',
-    position: 'Ph.D. Student',
+    career: 'Ph.D. Student',
     img: 'saelyne.jpg',
     site: 'https://www.saelyne.com/',
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-saelyne.pdf'
@@ -148,7 +149,7 @@ export const MEMBER = {
     firstName: 'Seulgi',
     lastName: 'Choi',
     email: 'igules8925@gmail.com',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'seulgi.jpg',
     site: 'https://csg17.github.io/cv/index.html'
   },
@@ -156,7 +157,7 @@ export const MEMBER = {
     firstName: 'Jihyeong',
     lastName: 'Hong',
     email: 'z.hyeong@kaist.ac.kr',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'jihyeong.jpg',
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a'
   },
@@ -164,7 +165,7 @@ export const MEMBER = {
     firstName: 'Hyoungwook',
     lastName: 'Jin',
     email: 'jinhw@kaist.ac.kr',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'hyoungwook.jpg',
     site: 'https://jhw123.github.io/'
   },
@@ -172,35 +173,35 @@ export const MEMBER = {
     firstName: 'Junho',
     lastName: 'Myung',
     email: 'junho00211@kaist.ac.kr',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'junhomyung.jpg',
   },
   yeonsupark: {
     firstName: 'Yeon Su',
     lastName: 'Park',
     email: 'yeonsupark@kaist.ac.kr',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'yeonsupark.jpg',
   },
   alexsuryapranata: {
     firstName: 'Alex',
     lastName: 'Suryapranata',
     email: 'alextio@kaist.ac.kr',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'alex.webp',
   },
   bekzattilekbay: {
     firstName: 'Bekzat',
     lastName: 'Tilekbay',
     email: 'tlekbay.b@gmail.com',
-    position: 'M.S. Student',
+    career: 'M.S. Student',
     img: 'bekzattilekbay.jpg',
   },
   jiangnanxu: {
     firstName: 'Jiangnan',
     lastName: 'Xu',
     email: 'xnangua@gmail.com',
-    position: 'Visiting Researcher',
+    career: 'Visiting Researcher',
     img: 'jiangnan.jpg',
     site: 'https://www.jiangnanxu.net/',
     affiliation: 'IRT'
@@ -209,14 +210,14 @@ export const MEMBER = {
     firstName: 'Jaesang',
     lastName: 'Yu',
     email: 'jaesangyu22@gmail.com',
-    position: 'Visiting Researcher',
+    career: 'Visiting Researcher',
     img: 'jaesang.jpg',
   },
   daeheonjeong: {
     firstName: 'Daeheon',
     lastName: 'Jeong',
     email: 'neohgeek@gmail.com',
-    position: 'Visiting Researcher',
+    career: 'Visiting Researcher',
     img: 'daeheon.jpg',
     affiliation: 'Sogang'
   },
@@ -224,7 +225,7 @@ export const MEMBER = {
     firstName: 'Haeseul',
     lastName: 'Cha',
     email: 'jjchs1@kaist.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'haeseul.jpg',
     affiliation: 'KAIST'
   },
@@ -232,7 +233,7 @@ export const MEMBER = {
     firstName: 'Dong Yun',
     lastName: 'Jung',
     email: 'djung2023@kaist.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'dongyun.jpeg',
     affiliation: 'KAIST'
   },
@@ -240,7 +241,7 @@ export const MEMBER = {
     firstName: 'Chanyoung',
     lastName: 'Kim',
     email: 'itnoj15@kaist.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'chanyoung.jpg',
     affiliation: 'KAIST'
   },
@@ -248,7 +249,7 @@ export const MEMBER = {
     firstName: 'Jinhyeon',
     lastName: 'Kwon',
     email: 'athexplorer@kaist.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'jhkwon.jpg',
     site: 'https://jinhyeonkwon.github.io/',
     affiliation: 'KAIST'
@@ -257,7 +258,7 @@ export const MEMBER = {
     firstName: 'Yokyung',
     lastName: 'Lee',
     email: 'athexplorer@kaist.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'yokyung.png',
     affiliation: 'KAIST'
   },
@@ -265,7 +266,7 @@ export const MEMBER = {
     firstName: 'Yoonah',
     lastName: 'Park',
     email: 'wisdomsword21@snu.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'yoonah.jpg',
     affiliation: 'SNU'
   },
@@ -273,7 +274,7 @@ export const MEMBER = {
     firstName: 'Shahnoza',
     lastName: 'Yadgarova',
     email: 'yadgarova@kaist.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'noza.jpeg',
     affiliation: 'KAIST'
   },
@@ -281,7 +282,7 @@ export const MEMBER = {
     firstName: 'Taehyun',
     lastName: 'Yang',
     email: '0705danny@snu.ac.kr',
-    position: 'Undergrad Intern',
+    career: 'Undergrad Intern',
     img: 'taehyun.png',
     affiliation: 'SNU'
   },
@@ -289,23 +290,23 @@ export const MEMBER = {
     firstName: 'Oaksil',
     lastName: 'Kim',
     email: 'oksil@kaist.ac.kr',
-    position: 'Staff',
+    career: 'Staff',
     img: 'oaksil.jpg'
   },
   juhoonlee: {
     firstName: 'Juhoon',
     lastName: 'Lee',
-    position: 'Alumni',
+    career: 'Alumni',
     affiliation: 'M.S. Student',
-    alumniCurrentPosition: 'Ph.D. Student at CSTL KAIST',
+    currentPosition: 'Ph.D. Student at CSTL KAIST',
     period: "Spring 2022 - Winter 2024",
     thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2024-juhoon.pdf"
   },
   jeongeonpark: {
     firstName: 'Jeongeon',
     lastName: 'Park',
-    position: 'Alumni',
-    alumniCurrentPosition: 'Researcher at DGIST',
+    career: 'Alumni',
+    currentPosition: 'Researcher at DGIST',
     affiliation: 'M.S. Student', 
     period: "Fall 2019 - Summer 2023",
     site: "https://jeongeonpark.com/",
@@ -314,18 +315,18 @@ export const MEMBER = {
   haesookim: {
     firstName: 'Haesoo',
     lastName: 'Kim',
-    position: 'Alumni',
+    career: 'Alumni',
     period: "Summer 2019 - Winter 2023", 
     affiliation: 'M.S. Student',
     site: "https://haesookim.info/",
     thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2023-haesoo.pdf",
-    alumniCurrentPosition: "Ph.D. Student at Cornell University"
+    currentPosition: "Ph.D. Student at Cornell University"
 
   },
   Hyungkwonko: {
     firstName: 'Hyung-Kwon',
     lastName: 'Ko',
-    position: 'Alumni',
+    career: 'Alumni',
     period: "Summer 2022 - Fall 2022",
     affiliation: 'Visiting Researcher',
   },
@@ -333,49 +334,1067 @@ export const MEMBER = {
   eunjeongkang: {
     firstName: 'Eun Jeong',
     lastName: 'Kang',
-    position: 'Alumni',
-    alumniCurrentPosition: 'Ph.D. Student at Cornell University',
+    career: 'Alumni',
+    currentPosition: 'Ph.D. Student at Cornell University',
     affiliation: 'M.S. Student',
+    site: "https://ejjjjkang.github.io/",
     period: "Summer 2020 - Winter 2022"
   },
   jeongyeonkim: {
     firstName: 'Jeongyeon',
     lastName: 'Kim',
-    position: 'Alumni',
-    alumniCurrentPosition: ' Ph.D. Student at Stanford University', 
+    career: 'Alumni',
+    currentPosition: ' Ph.D. Student at Stanford University', 
     affiliation: 'M.S. Student',
     period: "Summer 2019 - Winter 2022",
+    site: "https://www.jeongyeon.kim/",
     thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2022-jeongyeon.pdf"
 
   },
-  blah7: {
-    firstName: 'Oaksil',
-    lastName: 'Kim',
-    email: 'oksil@kaist.ac.kr',
-    position: 'Alumni',
-    img: 'oaksil.jpg',
-    alumniCurrentPosition: 'something',
+  mengxia: {
+    firstName: 'Meng',
+    lastName: 'Xia',
+    career: 'Alumni',
+    currentPosition: 'Assistant Professor at TAMU',
     affiliation: 'Postdoct Researcher',
-
+    period: "Winter 2021 - Fall 2021",
+    site: "https://www.xiameng.org/"
   },
-  blah8: {
-    firstName: 'Oaksil',
+  minahuh: {
+    firstName: 'Mina',
+    lastName: 'Huh',
+    career: 'Alumni',
+    currentPosition: 'Ph.D. Student at University of Texas, Austin',
+    affiliation: 'Intern',
+    site: "https://minahuh.com/",
+    period: "Winter 2020 - Summer 2021"
+  },
+  kabdochoi: {
+    firstName: 'Kabdo',
+    lastName: 'Choi',
+    career: 'Alumni',
+    currentPosition: 'Software Engineer at Moloco',
+    affiliation: 'M.S. Student',
+    period: "Spring 2019 - Summer 2021",
+    site: "https://www.kabdochoi.com/"
+  },
+  taewookkim: {
+    firstName: 'Taewook',
     lastName: 'Kim',
-    email: 'oksil@kaist.ac.kr',
-    position: 'Alumni',
-    img: 'oaksil.jpg',
-    alumniCurrentPosition: 'something',
-    affiliation: 'Postdoct Researcher',
+    career: 'Alumni',
+    currentPosition: 'Ph.D. Student at Northwestern University',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2020, Winter 2021 - Summer 2021",
+    site: "https://taewookkim.com/"
   },
-  blah9: {
-    firstName: 'Oaksil',
+  jeanyoungsong: {
+    firstName: 'Jean Young',
+    lastName: 'Song',
+    career: 'Alumni',
+    currentPosition: 'Assistant Professor at DGIST',
+    affiliation: 'Visiting Researcher',
+    period: "Winter 2016 - Spring 2021",
+    site: "https://jyskwon.github.io/"
+  },
+  donghoonhan: {
+    firstName: 'Donghoon',
+    lastName: 'Han',
+    career: 'Alumni',
+    currentPosition: 'Machine Learning Engineer at Superb AI',
+    affiliation: 'M.S. Student',
+    period: "Summer 2018 - Winter 2021",
+    thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2021-hoon.pdf"
+  },
+  minsukchang: {
+    firstName: 'Minsuk',
+    lastName: 'Chang',
+    career: 'Alumni',
+    currentPosition: 'Research Scientist at PAIR, Google Research',
+    affiliation: 'Ph.D Student',
+    period: "Summer 2016 - Winter 2021",
+    site: "https://minsukchang.com/",
+    thesis: "http://kixlab.org/files/theses/thesis-phd-2021-minsuk.pdf"
+  },
+  kyungjejo: {
+    firstName: 'Kyung',
+    lastName: 'Je Jo',
+    career: 'Alumni',
+    currentPosition: 'Software Engineer at Peoplefund',
+    affiliation: 'M.S. Student',
+    period: "Spring 2018 - Winter 2021",
+    site: "https://kyungjejo.com/",
+    thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2020-kyungje.pdf"
+  },
+  jibonnaher: {
+    firstName: 'Jibon',
+    lastName: 'Naher',
+    career: 'Alumni',
+    affiliation: 'M.S. Student',
+    period: "Fall 2018 - Summer 2020",
+    site: "https://jibonnaher.github.io/",
+    thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2020-jibon.pdf"
+  },
+  jisoolee: {
+    firstName: 'Jisoo',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2019 - Spring 2020",
+    site: "https://jisoolee0123.github.io/",
+    currentPosition: "UX Lead & ML engineer at Beeble"
+  },
+  artithakur: {
+    firstName: 'Arti',
+    lastName: 'Thakur',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Fall 2017 - Spring 2019",
+    site: "https://sites.google.com/view/artithakur",
+    currentPosition: "Ph.D. Student at UC Davis"
+  },
+  mathiassixtenpedersen: {
+    firstName: 'Mathias Sixten',
+    lastName: 'Pedersen',
+    career: 'Alumni',
+    affiliation: 'M.S. Student',
+    period: "Winter 2019 - Spring 2019",
+    site: "https://sites.google.com/view/artithakur",
+    currentPosition: "Co-founder at CTO @ NordInsight",
+    thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2019-mathias.pdf"
+  },
+  eveyhuang: {
+    firstName: 'Evey',
+    lastName: 'Huang',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2018 - Spring 2019",
+    site: "https://portfolio.adobe.com/missing",
+    currentPosition: "Ph.D. Student at Northwestern University",
+  },
+  hyeungshikjung: {
+    firstName: 'Hyeungshik',
+    lastName: 'Jung',
+    career: 'Alumni',
+    affiliation: 'M.S. Student',
+    period: "Summer 2016 - Winter 2019",
+    site: "https://hyeungshikjung.com/",
+    currentPosition: "Software Engineer at NAVER",
+    thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyeungshik.pdf"
+  },
+  yichinghuang: {
+    firstName: 'Yi-Ching (Janet)',
+    lastName: 'Huang',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2018 - Fall 2018",
+    site: "https://janetyc.github.io/",
+    currentPosition: " Assistant Professor at Eindhoven University of Technology ",
+  },
+  johnchung: {
+    firstName: 'John',
+    lastName: 'Chung',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Spring 2017 - Spring 2018",
+    site: "https://johnr0.github.io/",
+    currentPosition: " Research Scientist at Midjourney",
+  },
+  paulgrau: {
+    firstName: 'Paul',
+    lastName: 'Grau',
+    career: 'Alumni',
+    affiliation: 'M.S. Student',
+    period: "Fall 2016 - Spring 2018",
+    site: "https://graycoding.com/",
+    currentPosition: "Lead Frontend Engineer at Alvin",
+    thesis: "https://kixlab.github.io/website-files/theses/thesis-ms-2018-paul.pdf"
+  },
+  yoojinlim: {
+    firstName: 'Yoo Jin',
+    lastName: 'Lim',
+    career: 'Alumni',
+    affiliation: 'Ph.D Student',
+    period: "Fall 2016 - Winter 2017",
+  },
+  heechankim: {
+    firstName: 'Heechan',
     lastName: 'Kim',
-    email: 'oksil@kaist.ac.kr',
-    position: 'Alumni',
-    img: 'oaksil.jpg',
-    alumniCurrentPosition: 'something',
-    affiliation: 'Postdoct Researcher',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Spring 2023 - Winter 2024",
+    currentPosition: "Ringle"
   },
+  saharadmoni: {
+    firstName: 'Sahar',
+    lastName: 'Admoni',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Winter 2024",
+    currentPosition: "Technion"
+  },
+  yuewenyang: {
+    firstName: 'Yuewen',
+    lastName: 'Yang',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Winter 2024",
+    currentPosition: "Cornell Tech"
+  },
+  gionnievelim: {
+    firstName: 'Gionnieve',
+    lastName: 'Lim',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Winter 2023 - Summer 2023",
+    currentPosition: "Ph.D. Student at SUTD"
+  },
+  tonijankeithmonserrat: {
+    firstName: 'Toni-Jan Keith',
+    lastName: 'Monserrat',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2019",
+    currentPosition: "Ph.D. Researcher at UPLB"
+  },
+  simonperrault: {
+    firstName: 'Simon',
+    lastName: 'Perrault',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2018 - Fall 2018",
+    currentPosition: "Assistant Professor at Singapore University of Technology and Design", 
+    site: "https://istd.sutd.edu.sg/people/faculty/simon-perrault"
+  },
+  rayhong: {
+    firstName: 'Ray',
+    lastName: 'Hong',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2017 - Summer 2018",
+    currentPosition: "Assistant Professor at George Mason University", 
+    site: "http://rayhong.net/?i=1"
+  },
+  mercedeshuertas: {
+    firstName: 'Mercedes',
+    lastName: 'Huertas',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Winter 2018 - Spring 2018",
+    currentPosition: "Ph.D. Researcher at University of Trento", 
+  },
+  lekhanhduy: {
+    firstName: 'Le Khanh',
+    lastName: 'Duy',
+    career: 'Alumni',
+    affiliation: 'Visiting Researcher',
+    period: "Summer 2023",
+    currentPosition: "Researcher at HCMUT", 
+  },
+  yumincho: {
+    firstName: 'Yumin',
+    lastName: 'Cho',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023 - Spring 2024",
+    education: "KAIST", 
+  },
+  suminhong: {
+    firstName: 'Sumin',
+    lastName: 'Hong',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023 - Winter 2024",
+    education: "Seoultech", 
+  },
+  jiwonjang: {
+    firstName: 'Jiwon',
+    lastName: 'Jang',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2024",
+    education: "SKKU", 
+  },
+  hyewonlee: {
+    firstName: 'Hyewon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023 - Fall 2023",
+    education: "KAIST", 
+  },
+  hainam: {
+    firstName: 'Hai',
+    lastName: 'Nam',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023 - Fall 2023",
+    education: "KAIST", 
+  },
+  jueonlee: {
+    firstName: 'Jueon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023 - Fall 2023",
+    education: "SNU", 
+  },
+  bryanmin: {
+    firstName: 'Bryan',
+    lastName: 'Min',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023",
+    education: "UCSD", 
+    site: "https://bryanmin.me/"
+  },
+  seongheelee: {
+    firstName: 'Seonghee',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Summer 2023",
+  },
+  michallewkowicz: {
+    firstName: 'Michal',
+    lastName: 'Lewkowicz',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023",
+    education: "Yale"
+  },
+  nicolelee: {
+    firstName: 'Nicole',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2023 - Summer 2023",
+    education: "KAIST"
+  },
+  jisukim: {
+    firstName: 'Jisu',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2023 - Summer 2023",
+    education: "KAIST"
+  },
+  dakyeomahn: {
+    firstName: 'Dakyeom',
+    lastName: 'Ahn',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2022 - Summer 2023",
+    education: "SNU"
+  },
+  nathanmekuriahaile: {
+    firstName: 'Nathan Mekuria',
+    lastName: 'Haile',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2023 - Spring 2023",
+    education: "KAIST"
+  },
+  yoojinhong: {
+    firstName: 'Yoojin',
+    lastName: 'Hong',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2022 - Spring 2023",
+    education: "KAIST"
+  },
+  soyeongmin: {
+    firstName: 'Soyeong',
+    lastName: 'Min',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2023",
+    education: "KAIST"
+  },
+  arghyasarkar: {
+    firstName: 'Arghya',
+    lastName: 'Sarkar',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2023",
+    education: "NYU"
+  },
+  seunghobaek: {
+    firstName: 'Seungho',
+    lastName: 'Baek',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2022",
+    education: "KAIST",
+    site: "https://thestar.notion.site/e6f6b641bd8f493085e5f044182dcae3"
+  },
+  sangkyungkwak: {
+    firstName: 'Sangkyung',
+    lastName: 'Kwak',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Summer 2022",
+    education: "KAIST",
+  },
+  inhwasong: {
+    firstName: 'Inhwa',
+    lastName: 'Song',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Summer 2022",
+    education: "KAIST",
+    site: "https://greenina.notion.site/Inhwa-Song-0cb769c9a9314e358cf728c0fe3b1e74"
+  },
+  myeongkyuncho: {
+    firstName: 'Myeongkyun',
+    lastName: 'Cho',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2022",
+    education: "KAIST"
+  },
+  heejuchoi: {
+    firstName: 'Heeju',
+    lastName: 'Choi',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2022",
+    education: "KAIST"
+  },
+  honggilee: {
+    firstName: 'Honggi',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2022",
+    education: "KAIST"
+  },
+  yohanyun: {
+    firstName: 'Yohan',
+    lastName: 'Yun',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2021 - Summer 2022",
+    education: "KAIST"
+  },
+  subeenpark: {
+    firstName: 'Subeen',
+    lastName: 'Park',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Spring 2022",
+    education: "SNU",
+    site: "http://subeen.io/"
+  },
+  jeongyoonshin: {
+    firstName: 'JeongYoon',
+    lastName: 'Shin',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2022",
+    education: "KAIST",
+  },
+  junginrhee: {
+    firstName: 'Jung In',
+    lastName: 'Rhee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2022",
+    education: "KAIST",
+  },
+  jeannechoi: {
+    firstName: 'Jeanne',
+    lastName: 'Choi',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Fall 2021",
+    education: "KAIST",
+  },
+  nurlykhankopenov: {
+    firstName: 'Nurlykhan',
+    lastName: 'Kopenov',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Fall 2021",
+    education: "KAIST"
+  },
+  elliotjung: {
+    firstName: 'Elliot',
+    lastName: 'Jung',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Fall 2021",
+    education: "KAIST"
+  },
+  seokhunjeong: {
+    firstName: 'Seokhun',
+    lastName: 'Jeong',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021 - Fall 2021",
+    education: "KAIST"
+  },
+  mehmethamzaerol: {
+    firstName: 'Mehmet Hamza',
+    lastName: 'Erol',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021 - Fall 2021",
+    education: "KAIST"
+  },
+  jaeryoungka: {
+    firstName: 'Jaeryoung',
+    lastName: 'Ka',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021 - Fall 2021",
+    education: "KAIST",
+    site:"https://www.blogger.com/blogin.g?blogspotURL=https://shuloco.blogspot.com/&type=blog&bpli=1&pli=1"
+  },
+  jihyeonghong2: {
+    firstName: 'Jihyeong',
+    lastName: 'Hong',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020 - Fall 2021",
+    education: "KAIST",
+    site:"https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a"
+  },
+  sangwooklee: {
+    firstName: 'Sangwook',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2020 - Summer 2021",
+    education: "POSTECH",
+    site:"https://www.linkedin.com/in/sangwook-lee/"
+  },
+  jisuyim: {
+    firstName: 'Jisu',
+    lastName: 'Yim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021 - Summer 2021"
+  },
+  sanghyeonlee: {
+    firstName: 'Sanghyeon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021 - Summer 2021",
+    education: "KAIST"
+  },
+  euicheonlee: {
+    firstName: 'Euicheon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021 - Summer 2021",
+    education: "KAIST"
+  },
+  nabilasindilistyo: {
+    firstName: 'Nabila Sindi',
+    lastName: 'Listyo',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020 - Summer 2021",
+    education: "KAIST"
+  },
+  junesukchoi: {
+    firstName: 'June Suk',
+    lastName: 'Choi',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021",
+    education: "KAIST"
+  },
+  hyerimlee: {
+    firstName: 'Hyerim',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020 - Summer 2021",
+    education: "KAIST"
+  },
+  seongheelee2: {
+    firstName: 'Seong Hee',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2021",
+    education: "Cornell University"
+  },
+  yubonchoi: {
+    firstName: 'Yubin',
+    lastName: 'Choi',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021 - Summer 2021",
+    education: "UNIST"
+  },
+  intizartashov: {
+    firstName: 'Intizar',
+    lastName: 'Tashov',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Spring 2021",
+    education: "KAIST",
+    site: "https://drive.google.com/file/d/1eRoMy9Urym-LObluYl2PJVmtNYncFZ1c/view"
+  },
+  changgeonko: {
+    firstName: 'Changgeon',
+    lastName: 'Ko',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2020 - Winter 2021",
+    education: "KAIST"
+  },
+  youngjaejang: {
+    firstName: 'Youngjae',
+    lastName: 'Jang',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2020 - Winter 2021",
+    education: "KAIST"
+  },
+  jisuchoi: {
+    firstName: 'Jisu',
+    lastName: 'Choi',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2021",
+    education: "KAIST"
+  },
+  anchittandon: {
+    firstName: 'Anchit',
+    lastName: 'Tandon',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020 - Fall 2020",
+    education: "IIT Delhi",
+  },
+  hyeonjeongha: {
+    firstName: 'HyeonJeong',
+    lastName: 'Ha',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020 - Fall 2020",
+    education: "KAIST"
+  },
+  umartaufiqulhakim: {
+    firstName: 'Umar',
+    lastName: 'Taufiqulhakim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2020",
+    education: "KAIST"
+  },
+  aitolkynbaigutanova: {
+    firstName: 'Aitolkyn',
+    lastName: 'Baigutanova',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020",
+    education: "KAIST"
+  },
+  eunseochoi: {
+    firstName: 'Eunseo',
+    lastName: 'Choi',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020",
+    currentPosition: "M.S. student at MIT"
+  },
+  seungsukim: {
+    firstName: 'Seungsu',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2020",
+    education: "KAIST"
+  },
+  hyunchangoh: {
+    firstName: 'Hyunchang',
+    lastName: 'Oh',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2019 - Spring 2020",
+    education: "KAIST"
+  },
+  changyoonlee: {
+    firstName: 'Changyoon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2018 - Winter 2020",
+    education: "KAIST",
+    currentPosition: "M.S. Student at U&I Lab, KAIST"
+  },
+  sallychen: {
+    firstName: 'Sally',
+    lastName: 'Chen',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2020",
+    education: "Brown University",
+    currentPosition: "M.S. Student at CMU"
+  },
+  minakim: {
+    firstName: 'Min A',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2020",
+    education: "KAIST", 
+    currentPosition: "Software Engineer at Kakao",
+    site: "https://coder-mina.github.io/"
+  },
+  ericdoh: {
+    firstName: 'Eric',
+    lastName: 'Doh',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2020",
+    education: "University of Sydney", 
+    site: "https://www.ericsunwoodoh.myportfolio.com/"
+  },
+  nikhilprakash: {
+    firstName: 'Nikhil',
+    lastName: 'Prakash',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2019 - Winter 2020",
+    education: "R V College of Engineering, India",
+    site: "https://nix07.github.io/"
+  },
+  taehyeonan: {
+    firstName: 'Taehyeon',
+    lastName: 'An',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2019 - Fall 2020",
+    education: "KAIST"
+  },
+  yejunkim: {
+    firstName: 'Yejun',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2019",
+    education: "KAIST", 
+    currentPosition: "Software Engineer at Scatter Lab"
+  },
+  nyoungwoolee: {
+    firstName: 'Nyoungwoo',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2018 - Summer 2019",
+    education: "KAIST",
+    currentPosition: "M.S. Student at KAIST "
+  },
+  yeonsukim: {
+    firstName: 'Yeonsu',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2019",
+    education: "KAIST",
+    currentPosition: "M.S. Student at HCI Lab, KAIST"
+  },
+  jaeyoonsong: {
+    firstName: 'Jaeyoon',
+    lastName: 'Song',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2019 - Summer 2019",
+    education: "SNU",
+    currentPosition: "Ph.D. Student at MIT",
+    site: "https://jaeyoon.io/#/"
+  },
+  hyeonggeunyun: {
+    firstName: 'Hyeonggeun',
+    lastName: 'Yun',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2019 - Summer 2019",
+    education: "DGIST",
+    site: "https://www.harooo.com/terminal"
+  },
+  jimmywei: {
+    firstName: 'Jimmy',
+    lastName: 'Wei',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2019",
+    education: "Bucknell University",
+    currentPosition: "M.S. Student at Cornell Tech"
+  },
+  cheoljuncho: {
+    firstName: 'Cheoljun',
+    lastName: 'Cho',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2019",
+    education: "SNU",
+    currentPosition: "Ph.D. Student at UC Berkeley"
+  },
+  sunwookwon: {
+    firstName: 'Sunwoo',
+    lastName: 'Kwon',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2019 - Spring 2019",
+    education: "CAU",
+    currentPosition: "M.S. Student at KAIST Graduate School of AI"
+  },
+  juanlee: {
+    firstName: 'Juan',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2019 - Spring 2019",
+    education: "KAIST",
+    site: "https://juanlee.kr/"
+  },
+  keonlee: {
+    firstName: 'Keon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2019",
+    education: "KAIST",
+    currentPosition: " M.S. Student at KAIST"
+  },
+  seonghopark: {
+    firstName: 'Seongho',
+    lastName: 'Park',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2018 - Fall 2018",
+    education: "KAIST"
+  },
+  hyuntakcha: {
+    firstName: 'Hyuntak',
+    lastName: 'Cha',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2018",
+    education: "SNU", 
+    currentPosition: "M.S. Student at KAIST Graduate School of AI", 
+    site: "http://hyuntak.com/"
+  },
+  rachelkwak: {
+    firstName: 'Rachel',
+    lastName: 'Kwak',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2018",
+    education: "MIT"
+  },
+  manavrao: {
+    firstName: 'Manav',
+    lastName: 'Rao',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2018",
+    education: "IIT Delhi",
+    site: "https://www.cse.iitd.ac.in/~cs1160523/"
+  },
+  hyunjonglee: {
+    firstName: 'Hyunjong',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2018 - Spring 2018",
+    education: "KAIST",
+    currentPosition: "M.S. Student at KAIST",
+    site: "https://www.leehyunjong.com/"
+  },
+  jiyounha: {
+    firstName: 'Jiyoun',
+    lastName: 'Ha',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2018 - Spring 2018",
+    education: "KAIST",
+    currentPosition: "Software Engineer at Google",
+    site: "http://jiyounha.com/"
+  },
+  seayeonlee: {
+    firstName: 'Seayeon',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2018",
+    education: "KAIST",
+  },
+  inaryu: {
+    firstName: 'Ina',
+    lastName: 'Ryu',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017 - Fall 2017",
+    education: "KAIST",
+    currentPosition: "Software Engineer at NAVER",
+  },
+  beomsukim: {
+    firstName: 'Beomsu',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017 - Fall 2017",
+    education: "KAIST"
+  },
+  jooyounglee: {
+    firstName: 'Jooyoung',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017 - Fall 2017",
+    education: "KAIST",
+  },
+  jonghyukjung: {
+    firstName: 'Jonghyuk',
+    lastName: 'Jung',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Spring 2017 - Fall 2017",
+    education: "KAIST",
+    currentPosition: "UX Designer at Devisters",
+    site: "https://jonghyuk.info/"
+  },
+  hyunsukshin: {
+    firstName: 'Hyunsuk',
+    lastName: 'Shin',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017",
+    education: "KAIST",
+  },
+  suhwanlee: {
+    firstName: 'Suhwan',
+    lastName: 'Lee',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017",
+    education: "KAIST",
+    site: "https://suhwan.dev/"
+  },
+  amyhan: {
+    firstName: 'Amy',
+    lastName: 'Han',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017",
+    education: "Swarthmore College",
+    currentPosition: "Data Engineer at Capital One"
+  },
+  wookjaebyun: {
+    firstName: 'Wookjae',
+    lastName: 'Byun',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017",
+    education: "KAIST"
+  },
+  leonoreguillain: {
+    firstName: 'Leonore',
+    lastName: 'Guillain',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2017",
+    education: "EPFL",
+    currentPosition: "M.S. Student at EPFL"
+  },
+  chingliu: {
+    firstName: 'Ching',
+    lastName: 'Liu',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2016 - Spring 2017",
+    education: "NTHU",
+    currentPosition: "M.S. Student at NTHU"
+  },
+  hyungwookim: {
+    firstName: 'Hyungwoo',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Spring 2017",
+    education: "KAIST"
+  },
+  soyapark: {
+    firstName: 'Soya',
+    lastName: 'Park',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2016 - Winter 2017",
+    education: "KAIST",
+    currentPosition: "Ph.D. Student at MIT",
+    site: "https://people.csail.mit.edu/soya/"
+  },
+  deokseongkim: {
+    firstName: 'Deokseong',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2017",
+    education: "KAIST"
+  },
+  jaesunghuh: {
+    firstName: 'Jaesung',
+    lastName: 'Huh',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Winter 2017",
+    education: "SNU",
+    currentPosition: "Ph.D. Student at Oxford"
+  },
+  hyunsungcho: {
+    firstName: 'Hyunsung',
+    lastName: 'Cho',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2016 - Winter 2017",
+    education: "KAIST",
+    currentPosition: "M.S. Student at NMSL, KAIST",
+  },
+  juhosun: {
+    firstName: 'Juho',
+    lastName: 'Sun',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Fall 2016",
+    education: "KAIST",
+    currentPosition: "Founder at Meanlt"
+  },
+  jiwoopark: {
+    firstName: 'Jiwoo',
+    lastName: 'Park',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2016 - Fall 2016",
+    education: "KAIST",
+    currentPosition: "M.S. Student at KAIST Business School",
+  },
+  dongkwankim: {
+    firstName: 'Dongkwan',
+    lastName: 'Kim',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2016 - Fall 2016",
+    education: "KAIST",
+    currentPosition: "M.S. Student at U&I Lab, KAIST"
+  },
+  taekyungpark: {
+    firstName: 'Taekyung',
+    lastName: 'Park',
+    career: 'Alumni',
+    affiliation: 'Intern',
+    period: "Summer 2016",
+    education: "SNU"
+  },
+  
 } as const satisfies Record<string, Member>
 
 export const MEMBERS_KEY = Object.keys(MEMBER)

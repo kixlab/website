@@ -10,6 +10,7 @@ const AlumniCardContainer = styled.div`
     display: flex;
     gap: 16px;
     align-items: center;
+    flex-direction: column;
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -74,7 +75,18 @@ const Period = styled.div`
   font-size: 0.9rem;
   color: ${Color.gray700};
 `
+const Education = styled.div`
+  font-size: 0.9rem;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  color: ${Color.gray700};
 
+  &::before {
+    content: '🏫';
+  }
+`
 
 const AlumniCard = ({ mem }: { mem: Member }) => {
     return (
@@ -96,8 +108,13 @@ const AlumniCard = ({ mem }: { mem: Member }) => {
           </ThesisLink>
         )}
             <Period>{mem.period}</Period>
-            {mem.alumniCurrentPosition && (
-          <CurrentPosition>{mem.alumniCurrentPosition}</CurrentPosition>
+            {mem.currentPosition && (
+          <CurrentPosition>{mem.currentPosition}</CurrentPosition>
+        )}
+        {mem.education && (
+          <Education>
+            {mem.education}
+          </Education>
         )}
           </TextRow>
         </Text>

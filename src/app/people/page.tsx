@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { useState, useEffect } from 'react'
 //import { usePathname, useSearchParams } from 'next/navigation'
 
-import { MEMBERS_KEY, MEMBERS, PositionType } from '@/data/members'
+import { MEMBERS_KEY, MEMBERS, CareerTypes } from '@/data/members'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import MemberCard from '@/components/MemberCard'
 import AlumniCard from '@/components/AlumniCard'
@@ -47,13 +47,44 @@ const Anchor = styled.a<{ selected?: boolean }>`
   color: ${props => (props.selected ? Color.orange900 : Color.gray900)};
 
   &:hover {
-    cursor: pointer;
-    color: ${Color.gray900};
+    color: ${Color.orange900};
   }
 `
 
 const SubCategoryTitle = styled.h2`
   font-size: 1rem;
+`
+
+const SpecialThanksSection = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`
+const SpecialThanksTitle = styled.h2`
+  font-size: 1.5rem;
+  color: ${Color.gray900};
+`
+const SpecialThanksImage = styled.img`
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+`
+
+const SpecialThanksText = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const SpecialThanksSubtitle = styled.h3`
+   font-size: 1.25rem;
+  color: ${Color.orange900};
+  margin: 0;
+`
+
+const SpecialThanksDescription = styled.p`
+  font-size: 1rem;
+  color: ${Color.gray700};
+  margin: 0.5rem 0 0 0;
 `
 
 
@@ -74,7 +105,7 @@ export default function Page() {
 
       const io = new IntersectionObserver(myObserverCallback, { threshold: 0.1 })
 
-      PositionType.map(career => {
+      CareerTypes.map(career => {
         const element = document.querySelector(`#${career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}`)
         if (element) {
           io.observe(element)
@@ -92,15 +123,15 @@ export default function Page() {
       <h1>People</h1>
       <MainInner>
         <Sections>
-          {PositionType.filter(career => career !== 'Alumni').map(
+          {CareerTypes.filter(career => career !== 'Alumni').map(
             (career, i) =>
-              MEMBERS_KEY.filter(key => MEMBERS[key].position === career && career !== 'Alumni').length >= 1 && (
+              MEMBERS_KEY.filter(key => MEMBERS[key].career === career && career !== 'Alumni').length >= 1 && (
                 <Section key={career}>
                   <SectionTitle id={career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}>
                     {career}
                   </SectionTitle>
                   <SectionContent>
-                    {MEMBERS_KEY.filter(key => MEMBERS[key].position == career && career != 'Alumni').map(key =>(
+                    {MEMBERS_KEY.filter(key => MEMBERS[key].career == career && career != 'Alumni').map(key =>(
                       <MemberCard key={key} mem={MEMBERS[key]} />
                     ))}
                   </SectionContent>
@@ -113,17 +144,30 @@ export default function Page() {
               <div key={alumniCareer}>
                 <SubCategoryTitle>{alumniCareer}</SubCategoryTitle>
                 <AlumniSectionContent>
-                  {MEMBERS_KEY.filter(key => MEMBERS[key].position === 'Alumni' && MEMBERS[key].affiliation === alumniCareer).map(key => (
+                  {MEMBERS_KEY.filter(key => MEMBERS[key].career === 'Alumni' && MEMBERS[key].affiliation === alumniCareer).map(key => (
                     <AlumniCard key={key} mem={MEMBERS[key]}/>
                   ))}
                   </AlumniSectionContent>
                 </div>
             ))}
             </Section>
-          </Sections>
+            <SpecialThanksTitle>Special Thanks</SpecialThanksTitle>
+          <SpecialThanksSection>
+              <SpecialThanksImage src="images/jura.jpeg" alt="Jura Coffee Machine" />
+              <SpecialThanksText>
+                <SpecialThanksSubtitle>Jura</SpecialThanksSubtitle>
+                <SpecialThanksDescription>
+                  Coffee Machine
+                </SpecialThanksDescription>
+                <SpecialThanksDescription>
+                  “Thank you for your steadfast warmth and the delightful brews that kickstart my mornings”
+                </SpecialThanksDescription>
+              </SpecialThanksText>
+            </SpecialThanksSection>
+            </Sections>
         <nav>
           <TableOfContents>
-            {PositionType.filter(career => career !== 'Alumni').map((career, i) => (
+            {CareerTypes.filter(career => career !== 'Alumni').map((career, i) => (
               <AnchorLi key={`toc-${career}`}>
                 <Anchor
                   href={`#${career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}`}
