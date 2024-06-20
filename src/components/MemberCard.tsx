@@ -6,7 +6,7 @@ import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
 
-import type { Member } from '@/data/members'
+import type { IMember } from '@/data/members'
 
 const Card = styled.div`
   display: flex;
@@ -72,7 +72,7 @@ const Affiliation = styled.div`
   }
 `
 
-export default function MemberCard({ mem }: { mem: Member }) {
+export default function MemberCard({ mem }: { mem: IMember }) {
   return (
     <Card>
       <MemberImage
@@ -96,15 +96,16 @@ export default function MemberCard({ mem }: { mem: Member }) {
         )}
         <span>{mem.email}</span>
         {mem.thesis && (
-          <ThesisLink href={mem.thesis} target="_blank" rel="noopener noreferrer" aria-label={`Read ${mem.firstName} ${mem.lastName}'s M.S. thesis`}>
+          <ThesisLink
+            href={mem.thesis}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Read ${mem.firstName} ${mem.lastName}'s M.S. thesis`}
+          >
             M.S. thesis
           </ThesisLink>
         )}
-        {mem.affiliation && (
-          <Affiliation>
-            {mem.affiliation}
-          </Affiliation>
-        )}
+        {mem.affiliation && <Affiliation>{mem.affiliation}</Affiliation>}
       </Info>
     </Card>
   )
