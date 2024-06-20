@@ -7,6 +7,9 @@ import NewsModal from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
 
+const padding = 80
+const postWidth = 400
+
 const NewsSection = styled.div`
   position: relative;
   display: flex;
@@ -56,6 +59,16 @@ const NewsContainer = styled.div`
     grid-template-columns: 1fr;
   }
 
+  & > div {
+    width: ${postWidth}px;
+    margin-bottom: -${padding / 2}px;
+
+    @media (max-width: ${ScreenSize.xl}) {
+      width: 100%;
+      margin-bottom: 0px;
+    }
+  }
+
   & > div:nth-of-type(odd) {
     margin-right: auto;
     margin-left: 80px;
@@ -65,10 +78,8 @@ const NewsContainer = styled.div`
     @media (max-width: ${ScreenSize.xl}) {
       margin-left: 0px;
       margin-right: 0px;
-      margin-bottom: 0px;
       align-items: flex-start;
       text-align: left;
-      width: 100%;
     }
   }
   & > div:nth-of-type(even) {
@@ -80,10 +91,8 @@ const NewsContainer = styled.div`
     @media (max-width: ${ScreenSize.xl}) {
       margin-left: 0px;
       margin-right: 0px;
-      margin-bottom: 0px;
       align-items: flex-start;
       text-align: left;
-      width: 100%;
     }
   }
 `
