@@ -8,15 +8,17 @@ import { SectionHeader } from '@/components/Section'
 import { useMemo } from 'react'
 import { Section, Text } from './Styles'
 import Link from 'next/link'
+import { uniq } from 'lodash'
 
 const ResearchTopicsArea = styled.div`
   display: grid;
   gap: 48px;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 45%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(330px, 46%), 1fr)); // empirically, this works well
 `
 
 const ResearchTopicItem = styled.div`
   padding: 24px 36px;
+  min-width: 300px;
   border: thin solid ${Color.gray500};
   border-radius: 15px;
   &:hover {
@@ -46,14 +48,21 @@ const GatherStatsByResearchTopic = () => {
   const statsByResearchTopic: Record<ResearchTopicType, { numPublications: number; authors: IMember[] }> = {} as any
   Object.keys(ResearchTopics).forEach(topic => {
     const researchTopicKey = topic as ResearchTopicType
-    const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(researchTopicKey))
-    const numPublications = filteredPublications.length
-    const topicAuthors = filteredPublications
-      .sort((a, b) => b.year - a.year)
-      .flatMap(publication => publication.authors)
-    const filteredAuthors = Object.values(MEMBERS).filter(member =>
-      topicAuthors.includes(`${member.firstName} ${member.lastName}`)
+    const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(researchTopicKey)).sort(
+      (a, b) => b.year - a.year
     )
+    const numPublications = filteredPublications.length
+    // TODO: Change the MEMBERS data structure. The current structure is not optimized for this sort of filtering algorithm.
+    // Algorithm: First authors are shown first with most recent publication, then the rest of the authors
+    const topicAuthors = uniq(
+      filteredPublications
+        .flatMap(publication => publication.authors[0])
+        .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
+    )
+    const filteredAuthors: IMember[] = topicAuthors.flatMap(author => {
+      return Object.values(MEMBERS).filter(member => member.img && `${member.firstName} ${member.lastName}` === author)
+    })
+
     statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
   })
   return statsByResearchTopic
@@ -63,7 +72,7 @@ export const ResearchThemesSection = () => {
   const [statsByResearchTopic, numVisible] = useMemo(() => {
     // TODO: Specify the type of membersByResearchTopic
     const statsByResearchTopic: Record<ResearchTopicType, any> = GatherStatsByResearchTopic()
-    return [statsByResearchTopic, 6]
+    return [statsByResearchTopic, 5]
   }, [])
 
   return (
@@ -83,7 +92,9 @@ export const ResearchThemesSection = () => {
                   <br />
                   {topic}
                 </ResearchTopicItemTitle>
-                <Text style={{ color: 'gray', paddingBottom: '12px' }}>{stats.numPublications} publications</Text>
+                <Text style={{ color: 'gray', paddingBottom: '12px' }}>
+                  <span style={{ fontWeight: 'bold' }}>{stats.numPublications}</span> publications
+                </Text>
                 <ResearchTopicMembersArea>
                   {stats.authors.slice(0, numVisible).map((member: IMember) => (
                     <ResearchTopicsMemberAvatar

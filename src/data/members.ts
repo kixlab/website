@@ -69,7 +69,7 @@ export const MEMBER = {
     thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyunwoo.pdf',
   },
   seoyoungkim: {
-    firstName: 'Seyoung',
+    firstName: 'Seoyoung',
     lastName: 'Kim',
     email: 'youthskim@kaist.ac.kr',
     career: 'Ph.D. Student',
