@@ -32,7 +32,7 @@ export const HeroSection = () => {
     justify-content: center;
     align-items: start;
     padding: ${linearlyScaleSize({
-        minSizePx: 24,
+        minSizePx: 48,
         maxSizePx: 96,
         minScreenSizePx: parseInt(ScreenSize.md),
         maxScreenSizePx: parseInt(ScreenSize.lg),
