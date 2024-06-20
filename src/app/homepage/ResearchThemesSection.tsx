@@ -16,10 +16,11 @@ const ResearchTopicsArea = styled.div`
 
 const ResearchTopicItem = styled.div`
   padding: 24px 36px;
-  border: thin solid;
+  border: thin solid ${Color.gray500};
   border-radius: 15px;
   &:hover {
-    box-shadow: 0px 0px 10px 0px ${Color.orange300};
+    box-shadow: 0px 0px 10px 0px ${Color.orange700};
+    border: thin solid ${Color.orange700};
   }
   transition: box-shadow 0.3s ease-in-out;
 `
