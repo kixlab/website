@@ -3,16 +3,16 @@ import { IMember, MEMBERS } from './members'
 export const PublicationTypes = ['conference', 'poster', 'workshop', 'journal', 'preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
 
-export const ResearchTopics = [
-  'datamining',
-  'crowdsourcing',
-  'learning',
-  'civics',
-  'visualization',
-  'social',
-  'human-ai-interaction',
-] as const
-export type ResearchTopicType = (typeof ResearchTopics)[number]
+export const ResearchTopics = {
+  datamining: { emoji: '⛏️' },
+  crowdsourcing: { emoji: '👥' },
+  learning: { emoji: '📚' },
+  civics: { emoji: '🏛️' },
+  visualization: { emoji: '📊' },
+  social: { emoji: '🗣️' },
+  'human-ai-interaction': { emoji: '🤖' },
+} as const
+export type ResearchTopicType = keyof typeof ResearchTopics
 
 export enum PublicationLinkType {
   PDF = 'PDF',

@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import { NewsSection } from './homepage/NewsSection'
 import { HeroSection } from './homepage/HeroSection'

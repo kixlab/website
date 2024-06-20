@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
@@ -39,15 +40,13 @@ const ResearchTopicMembersArea = styled.div`
 
 const ResearchTopicsMemberAvatar = styled(Image)`
   border-radius: 50%;
-  max-width: 36px;
-  max-height: 36px;
 `
 
 const GatherStatsByResearchTopic = () => {
-  // TODO: Somehow avoid having to define the keys explicitly. Typescript doesn't allow empty definition
   const statsByResearchTopic: Record<ResearchTopicType, { numPublications: number; authors: IMember[] }> = {} as any
-  ResearchTopics.forEach(topic => {
-    const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(topic))
+  Object.keys(ResearchTopics).forEach(topic => {
+    const researchTopicKey = topic as ResearchTopicType
+    const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(researchTopicKey))
     const numPublications = filteredPublications.length
     const topicAuthors = filteredPublications
       .sort((a, b) => b.year - a.year)
@@ -55,7 +54,7 @@ const GatherStatsByResearchTopic = () => {
     const filteredAuthors = Object.values(MEMBERS).filter(member =>
       topicAuthors.includes(`${member.firstName} ${member.lastName}`)
     )
-    statsByResearchTopic[topic] = { numPublications, authors: filteredAuthors }
+    statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
   })
   return statsByResearchTopic
 }
@@ -63,7 +62,7 @@ const GatherStatsByResearchTopic = () => {
 export const ResearchThemesSection = () => {
   const [statsByResearchTopic, numVisible] = useMemo(() => {
     // TODO: Specify the type of membersByResearchTopic
-    const statsByResearchTopic: Record<string, any> = GatherStatsByResearchTopic()
+    const statsByResearchTopic: Record<ResearchTopicType, any> = GatherStatsByResearchTopic()
     return [statsByResearchTopic, 6]
   }, [])
 
@@ -80,7 +79,8 @@ export const ResearchThemesSection = () => {
             >
               <ResearchTopicItem key={topic}>
                 <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
-                  🤖<br></br>
+                  {ResearchTopics[topic as ResearchTopicType].emoji}
+                  <br />
                   {topic}
                 </ResearchTopicItemTitle>
                 <Text style={{ color: 'gray', paddingBottom: '12px' }}>{stats.numPublications} publications</Text>
