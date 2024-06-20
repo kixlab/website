@@ -16,9 +16,12 @@ export type ResearchTopicType = (typeof ResearchTopics)[number]
 
 export enum PublicationLinkType {
   PDF = 'PDF',
+  SLI = 'Slides',
+  POS = 'Poster',
   ACM = 'ACM DL',
   WEB = 'Website',
   VID = 'Video',
+  TRA = 'Trailer',
   ARX = 'arXiv',
 }
 
@@ -379,7 +382,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'conference',
     links: [
       {
-        url: 'https://doi.org/10.1145/3640543.3645157',
+        url: 'https://dl.acm.org/doi/10.1145/3640543.3645157',
         type: PublicationLinkType.ACM,
       },
       {
@@ -496,18 +499,6 @@ export const PUBLICATIONS: Publication[] = [
     links: [
       {
         url: 'https://dhkim16.github.io/emphasis-checker/',
-        type: PublicationLinkType.WEB,
-      },
-      {
-        url: 'https://dhkim16.github.io/emphasis-checker/pdf/supplemental.zip',
-        type: PublicationLinkType.WEB,
-      },
-      {
-        url: 'https://dhkim16.github.io/emphasis-checker/mp4/usage-scenario.mp4',
-        type: PublicationLinkType.WEB,
-      },
-      {
-        url: 'https://github.com/dhkim16/EmphasisChecker-release',
         type: PublicationLinkType.WEB,
       },
       {
@@ -869,10 +860,6 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'http://13.124.5.10:3000/',
-        type: PublicationLinkType.WEB,
-      },
-      {
         url: 'https://kixlab.github.io/website-files/2022/www2022-user-generated-labels-paper.pdf',
         type: PublicationLinkType.PDF,
       },
@@ -1230,7 +1217,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://www.youtube.com/watch?v=j_nPsnYq56s',
-        type: PublicationLinkType.VID,
+        type: PublicationLinkType.TRA,
       },
       {
         url: 'https://kixlab.github.io/website-files/2021/chi2021-RubySlippers-paper.pdf',
@@ -1279,7 +1266,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://www.youtube.com/watch?v=eLczDRjKC5o',
-        type: PublicationLinkType.VID,
+        type: PublicationLinkType.TRA,
       },
       {
         url: 'https://winder.kixlab.org/',
@@ -1305,7 +1292,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://www.kixlab.org/files/2021/chi2021-lbw-MobileGuideline-poster.pdf',
-        type: PublicationLinkType.WEB,
+        type: PublicationLinkType.POS,
       },
       {
         url: 'https://youtu.be/UFmspprrtlg',
@@ -1640,7 +1627,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://www.youtube.com/watch?v=MzUJzGOQXLI',
-        type: PublicationLinkType.VID,
+        type: PublicationLinkType.TRA,
       },
       {
         url: 'http://solutionchat.kixlab.org/',
@@ -1671,7 +1658,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://youtu.be/zLDqTBXRUbs',
-        type: PublicationLinkType.VID,
+        type: PublicationLinkType.TRA,
       },
       {
         url: 'https://www.kixlab.org/files/2020/chi2020-APA-paper.pdf',
@@ -1697,7 +1684,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://youtu.be/x62vzVBD4N4',
-        type: PublicationLinkType.VID,
+        type: PublicationLinkType.TRA,
       },
       {
         url: 'https://snapstream.kixlab.org/',
@@ -1944,7 +1931,7 @@ export const PUBLICATIONS: Publication[] = [
       },
       {
         url: 'https://www.kixlab.org/files/2018/cscw2018-Motivation-slides.pdf',
-        type: PublicationLinkType.WEB,
+        type: PublicationLinkType.SLI,
       },
       {
         url: 'https://juhokim.com/files/CSCW2018-ManyIdeas.pdf',
@@ -1989,7 +1976,7 @@ export const PUBLICATIONS: Publication[] = [
       { url: 'https://dl.acm.org/citation.cfm?id=3264861', type: PublicationLinkType.ACM },
       {
         url: 'https://www.kixlab.org/files/2018/mm2018-workshop-DynamicSlide-slides.pdf',
-        type: PublicationLinkType.PDF,
+        type: PublicationLinkType.SLI,
       },
       { url: 'https://juhokim.com/files/MM2018-Workshop-DynamicSlide.pdf', type: PublicationLinkType.PDF },
     ],
@@ -2015,7 +2002,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'poster',
     links: [
       { url: 'https://dl.acm.org/citation.cfm?id=3188564', type: PublicationLinkType.ACM },
-      { url: 'https://www.kixlab.org/files/2018/chi2018-lbw-MicroNGO-poster.pdf', type: PublicationLinkType.PDF },
+      { url: 'https://www.kixlab.org/files/2018/chi2018-lbw-MicroNGO-poster.pdf', type: PublicationLinkType.POS },
       { url: 'http://juhokim.com/files/CHI2018-LBW-MicroNGO.pdf', type: PublicationLinkType.PDF },
     ],
   },
@@ -2031,7 +2018,7 @@ export const PUBLICATIONS: Publication[] = [
       { url: 'https://youtu.be/MZ1kx3_S5Bk', type: PublicationLinkType.VID },
       {
         url: 'https://www.kixlab.org/files/2018/chi2018-lbw-PersonalityDetection-poster.pdf',
-        type: PublicationLinkType.PDF,
+        type: PublicationLinkType.POS,
       },
       { url: 'http://juhokim.com/files/CHI2018-LBW-Personality.pdf', type: PublicationLinkType.PDF },
     ],
@@ -2046,7 +2033,7 @@ export const PUBLICATIONS: Publication[] = [
     links: [
       { url: 'https://dl.acm.org/citation.cfm?id=3188582', type: PublicationLinkType.ACM },
       { url: 'https://www.youtube.com/watch?v=Cs8CSz3-MK0', type: PublicationLinkType.VID },
-      { url: 'https://www.kixlab.org/files/2018/chi2018-lbw-Exprgram-poster.pdf', type: PublicationLinkType.PDF },
+      { url: 'https://www.kixlab.org/files/2018/chi2018-lbw-Exprgram-poster.pdf', type: PublicationLinkType.POS },
       { url: 'http://juhokim.com/files/CHI2018-LBW-Exprgram.pdf', type: PublicationLinkType.PDF },
     ],
   },
@@ -2060,7 +2047,7 @@ export const PUBLICATIONS: Publication[] = [
     links: [
       { url: 'https://dl.acm.org/citation.cfm?id=3173893', type: PublicationLinkType.ACM },
       { url: 'https://www.youtube.com/watch?v=BLiR8jL8abA', type: PublicationLinkType.VID },
-      { url: 'https://hyungyu.com/slides/CHI18-prompting-slide.pdf', type: PublicationLinkType.PDF },
+      { url: 'https://hyungyu.com/slides/CHI18-prompting-slide.pdf', type: PublicationLinkType.SLI },
       { url: 'http://juhokim.com/files/CHI2018-Prompting.pdf', type: PublicationLinkType.PDF },
     ],
   },
@@ -2087,7 +2074,6 @@ export const PUBLICATIONS: Publication[] = [
     type: 'conference',
     links: [
       { url: 'https://dl.acm.org/citation.cfm?id=3174202', type: PublicationLinkType.ACM },
-      { url: 'https://www.youtube.com/watch?v=kEJurLv86Vw', type: PublicationLinkType.VID },
       { url: 'http://juhokim.com/files/CHI2018-DC.pdf', type: PublicationLinkType.PDF },
     ],
   },
@@ -2162,7 +2148,7 @@ export const PUBLICATIONS: Publication[] = [
     links: [
       { url: 'https://dl.acm.org/citation.cfm?id=3172944.3172948', type: PublicationLinkType.ACM },
       { url: 'https://humancomputation.com/blog/?p=9874', type: PublicationLinkType.WEB },
-      { url: 'https://www.kixlab.org/files/2018/iui2018-ToolDiversity-slides.pdf', type: PublicationLinkType.PDF },
+      { url: 'https://www.kixlab.org/files/2018/iui2018-ToolDiversity-slides.pdf', type: PublicationLinkType.SLI },
       { url: 'http://juhokim.com/files/IUI2018-FourEyes.pdf', type: PublicationLinkType.PDF },
     ],
     award: 'Best Student Paper Honorable Mention',
