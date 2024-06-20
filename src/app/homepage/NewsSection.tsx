@@ -1,4 +1,3 @@
-'use client'
 import Link from 'next/link'
 import Markdown from 'react-markdown'
 import { POSTS } from '@/data/posts'
@@ -22,6 +21,11 @@ const NewsItemsArea = styled.div`
   @media (max-width: ${ScreenSize.md}) {
     grid-template-columns: 1fr;
   }
+`
+
+const NewsItemText = styled(Text)`
+  ${FontVariant.body_md}
+  color: ${Color.gray700};
 `
 
 export const NewsSection = () => {
