@@ -1,4 +1,3 @@
-'use client'
 import Link from 'next/link'
 import Markdown from 'react-markdown'
 import { POSTS } from '@/data/posts'
@@ -42,6 +41,11 @@ const NewsItemTextArea = styled.div`
   row-gap: 10px;
 `
 
+const NewsItemText = styled(Text)`
+  ${FontVariant.body_md}
+  color: ${Color.gray700};
+`
+
 export const NewsSection = () => {
   return (
     <Section id="news-section" altBackground={true}>
@@ -59,10 +63,10 @@ export const NewsSection = () => {
                 </NewsItemLabelsArea>
                 <NewsItemTextArea>
                   <NewsItemTitle>{post.title}</NewsItemTitle>
-                  <Text>{post.date.toDateString()}</Text>
-                  <Text>
+                  <NewsItemText>{post.date.toDateString()}</NewsItemText>
+                  <NewsItemText>
                     <Markdown>{post.summary}</Markdown>
-                  </Text>
+                  </NewsItemText>
                 </NewsItemTextArea>
               </NewsItem>
             ))}
