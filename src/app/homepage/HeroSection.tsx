@@ -72,8 +72,10 @@ export const HeroSection = () => {
   const HeroMessage = styled.p`
     ${FontVariant.body_md}
     color: ${Color.gray700};
-    text-align: justify;
+    text-align: left;
     max-width: 100%;
+    @media (max-width: ${ScreenSize.md}) {
+      text-align: center;
   `
 
   const HeroImageContainer = styled.div`
