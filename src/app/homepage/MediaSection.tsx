@@ -1,4 +1,3 @@
-'use client'
 import { FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
 import { SectionHeader } from '@/components/Section'
