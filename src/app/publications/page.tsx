@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 
@@ -8,43 +8,37 @@ import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publicati
 import type { PublicationType, ResearchTopicType } from '@/data/publications'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
-import { FontVariant, Color } from '@/app/theme'
-import { uniq } from 'lodash'
 import Filter from '@/components/Filter'
+import { uniq } from 'lodash'
+import { FontVariant, Color } from '@/app/theme'
 import Divider from '@/components/Divider'
-
-const Filters = styled.div`
-  display: flex;
-  gap: 12px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-`
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
 `
 
-const SubContainer = styled.div`
-  width: 80%;
-  padding: 40px;
-  padding-left: 96px;
+const SubContainer = styled.main`
+  width: 85%;
+`
+
+const Filters = styled.div`
+  display: flex;
+  gap: 12px;
 `
 
 const SideBar = styled.div`
-  width: 20%;
+  width: 15%;
   position: sticky;
   padding: 96px;
-  padding-left: 10px;
+  padding-left: 0px;
   top: 0;
   height: 100vh;
-  overflow-y: scroll;
 `
 
 const SidebarLink = styled.a`
   display: block;
   text-decoration: none;
-  text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   padding-left: 10px;
@@ -52,15 +46,14 @@ const SidebarLink = styled.a`
   color: ${Color.gray700};
   ${FontVariant.body_md}
 
-  &:hover {
+  &.active {
     color: ${Color.orange900};
   }
-`
 
-const NavTitle = styled.div`
-  padding-bottom: 5px;
-  color: ${Color.gray700};
-  ${FontVariant.body_md}
+  &:hover {
+    color: ${Color.orange900};
+    text-decoration: underline;
+  }
 `
 
 export default function Page() {
@@ -70,6 +63,9 @@ export default function Page() {
   const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
 
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+  const ignoreObserver = useRef(false)
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   const handleResearchTopicChange = (topic: string) => {
     router.push(`/publications/?researchTopic=${topic}&publicationType=${publicationType}`)
@@ -89,9 +85,44 @@ export default function Page() {
     )
   }, [researchTopic, publicationType])
 
-  const publicationYears = Array.from(new Set(publicationList.map(p => p.year)))
-    .sort()
-    .reverse()
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        if (ignoreObserver.current) return
+
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    const sections = Object.values(sectionRefs.current)
+    sections.forEach(section => {
+      if (section) {
+        observer.observe(section)
+      }
+    })
+
+    return () => {
+      sections.forEach(section => {
+        if (section) {
+          observer.unobserve(section)
+        }
+      })
+    }
+  }, [])
+
+  const handleLinkClick = (sectionId: string) => {
+    setActiveSection(sectionId)
+    ignoreObserver.current = true
+
+    setTimeout(() => {
+      ignoreObserver.current = false
+    }, 2000)
+  }
 
   return (
     <Container>
@@ -112,16 +143,19 @@ export default function Page() {
           />
         </Filters>
         <Sections>
-          {publicationList.filter(pub => pub.type === 'preprint').length > 0 && (
-            <Section>
+          {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
+            <Section
+              id="preprints"
+              ref={el => {
+                sectionRefs.current['preprints'] = el
+              }}
+            >
               <SectionTitle>Preprints</SectionTitle>
               <SectionContent>
                 {publicationList
                   .filter(pub => pub.type === 'preprint')
                   .map(pub => (
-                    <div id={pub.title.replace(/\s+/g, '-').toLowerCase()} key={pub.title}>
-                      <PublicationCard pub={pub} />
-                    </div>
+                    <PublicationCard key={pub.title} pub={pub} />
                   ))}
               </SectionContent>
             </Section>
@@ -131,16 +165,20 @@ export default function Page() {
             .reverse()
             .map((year, i) => (
               <>
-                <Divider />
-                <Section key={i}>
+                <Divider key={`divider-${i}`} />
+                <Section
+                  id={`year-${year}`}
+                  ref={el => {
+                    sectionRefs.current[`year-${year}`] = el
+                  }}
+                  key={i}
+                >
                   <SectionTitle>{year}</SectionTitle>
                   <SectionContent>
                     {publicationList
                       .filter(({ year: y }) => y === year)
                       .map(pub => (
-                        <div id={pub.title.replace(/\s+/g, '-').toLowerCase()} key={pub.title}>
-                          <PublicationCard key={pub.title} pub={pub} />
-                        </div>
+                        <PublicationCard key={pub.title} pub={pub} />
                       ))}
                   </SectionContent>
                 </Section>
@@ -149,28 +187,26 @@ export default function Page() {
         </Sections>
       </SubContainer>
       <SideBar>
-        <div>
-          <NavTitle>Preprints</NavTitle>
-          {publicationList
-            .filter(pub => pub.type === 'preprint')
-            .map(pub => (
-              <SidebarLink key={pub.title} href={`#${pub.title.replace(/\s+/g, '-').toLowerCase()}`}>
-                {pub.title}
-              </SidebarLink>
-            ))}
-        </div>
-        {publicationYears.map(year => (
-          <div key={year}>
-            <NavTitle>{year}</NavTitle>
-            {publicationList
-              .filter(pub => pub.year === year)
-              .map(pub => (
-                <SidebarLink key={pub.title} href={`#${pub.title.replace(/\s+/g, '-').toLowerCase()}`}>
-                  {pub.title}
-                </SidebarLink>
-              ))}
-          </div>
-        ))}
+        <SidebarLink
+          href="#preprints"
+          className={activeSection === 'preprints' ? 'active' : ''}
+          onClick={() => handleLinkClick('preprints')}
+        >
+          Preprints
+        </SidebarLink>
+        {uniq(publicationList.map(p => p.year))
+          .sort()
+          .reverse()
+          .map(year => (
+            <SidebarLink
+              key={year}
+              href={`#year-${year}`}
+              className={activeSection === `year-${year}` ? 'active' : ''}
+              onClick={() => handleLinkClick(`year-${year}`)}
+            >
+              {year}
+            </SidebarLink>
+          ))}
       </SideBar>
     </Container>
   )
