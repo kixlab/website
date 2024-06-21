@@ -40,7 +40,7 @@ export const Nav = styled.nav`
 `
 
 const NavContainer = styled.div`
-  position: 'sticky';
+  position: sticky;
   top: 0;
   z-index: 2;
   border-bottom: 1px solid ${Color.gray300};
