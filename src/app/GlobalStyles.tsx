@@ -1,7 +1,7 @@
 'use client'
 
 import { Global, css } from '@emotion/react'
-import { FontVariant, Color } from '@/app/theme'
+import { FontVariant, Color, ScreenSize } from '@/app/theme'
 import { NAV_BAR_HEIGHT } from '@/components/NavBar'
 
 export default function GlobalStyles() {
@@ -28,6 +28,11 @@ export default function GlobalStyles() {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
+        }
+
+        main {
+          max-width: ${ScreenSize.max};
+          margin: 0 auto;
         }
 
         /* Prevent media from overflowing and make them not inline elements */

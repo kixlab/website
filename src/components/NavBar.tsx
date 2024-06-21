@@ -15,16 +15,12 @@ interface NavItemProps {
 export const NAV_BAR_HEIGHT = 56
 
 export const Nav = styled.nav`
-  position: sticky;
-  top: 0px;
   display: flex;
-  border-bottom: 1px solid ${Color.gray300};
   box-sizing: border-box;
   height: ${NAV_BAR_HEIGHT}px;
   background-color: ${Color.white};
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
 
   // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
   padding: 12px 24px 16px
@@ -37,6 +33,17 @@ export const Nav = styled.nav`
   @media (max-width: ${ScreenSize.sm}) {
     padding-right: 48px; // Make the padding on the sides equivalent when the hamburger button appears
   }
+  @media (min-width: ${ScreenSize.max}) {
+    width: ${ScreenSize.max};
+    margin: 0 auto;
+  }
+`
+
+const NavContainer = styled.div`
+  position: 'sticky';
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid ${Color.gray300};
 `
 
 export const Logo = styled.a`
@@ -136,6 +143,7 @@ const ResponsiveSpan = styled.span`
     display: none;
   }
 `
+
 // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
 const NavList = [
   { navItem: 'Home', path: '/' },
@@ -169,28 +177,29 @@ export default function NavBar() {
 
   return (
     <>
-      <Nav>
-        <Logo href="/">
-          <Image src="/images/logo.png" width={100} height={26} alt="KIXLAB Logo" />
-          <ResponsiveSpan>KAIST Interaction Lab</ResponsiveSpan>
-        </Logo>
+      <NavContainer>
+        <Nav>
+          <Logo href="/">
+            <Image src="/images/logo.png" width={100} height={26} alt="KIXLAB Logo" />
+            <ResponsiveSpan>KAIST Interaction Lab</ResponsiveSpan>
+          </Logo>
 
-        <NavRow>
-          <NavUl>
-            {NavList.map((item, i) => (
-              <li key={item.path}>
-                <NavItem href={item.path} selected={pathname == item.path}>
-                  {item.navItem}
-                </NavItem>
-              </li>
-            ))}
-          </NavUl>
-        </NavRow>
-
-        <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
-          <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
-        </HamburgerButton>
-      </Nav>
+          <NavRow>
+            <NavUl>
+              {NavList.map((item, i) => (
+                <li key={item.path}>
+                  <NavItem href={item.path} selected={pathname == item.path}>
+                    {item.navItem}
+                  </NavItem>
+                </li>
+              ))}
+            </NavUl>
+          </NavRow>
+          <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
+            <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
+          </HamburgerButton>
+        </Nav>
+      </NavContainer>
       {
         <DropDownMenu ref={dropdownRef} className={isOpen ? 'open' : 'closed'}>
           <NavUl>
