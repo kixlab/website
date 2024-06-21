@@ -1,92 +1,86 @@
+'use client'
 import Image from 'next/image'
 import { Color, ScreenSize, linearlyScaleSize, FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
 import { Section } from './Styles'
 
-export const HeroSection = () => {
-  const RespFontSize = {
-    title_xl: '2.25rem',
-    title_lg: '1.75rem',
-    title_md: '1.375rem',
-    title_sm: '1rem',
-  } as const
+const HeroContainer = styled.div`
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  // TODO: Decide whether to keep gap
+  // gap: 24px;
 
-  const HeroContainer = styled.div`
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    // TODO: Decide whether to keep gap
-    // gap: 24px;
-
-    @media (max-width: ${ScreenSize.md}) {
-      flex-direction: column;
-      gap: 0px;
-    }
-  `
-
-  const HeroTextArea = styled.div`
-    flex-basis: 50%;
-    display: flex;
+  @media (max-width: ${ScreenSize.md}) {
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: ${linearlyScaleSize({
-        minSizePx: 48,
-        maxSizePx: 96,
-        minScreenSizePx: parseInt(ScreenSize.md),
-        maxScreenSizePx: parseInt(ScreenSize.lg),
-      })}
-      ${linearlyScaleSize({
-        minSizePx: 48,
-        maxSizePx: 96,
-        minScreenSizePx: parseInt(ScreenSize.md),
-        maxScreenSizePx: parseInt(ScreenSize.lg),
-      })};
-  `
+    gap: 0px;
+  }
+`
 
-  const HeroTitle = styled.h1`
-    // TODO: Try to make the responsive font-size more systematic. This is a temporary fix.
-    ${FontVariant.title_xl}
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-bottom: 24px;
-    text-align: left;
+const HeroTextArea = styled.div`
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: ${linearlyScaleSize({
+      minSizePx: 48,
+      maxSizePx: 96,
+      minScreenSizePx: parseInt(ScreenSize.md),
+      maxScreenSizePx: parseInt(ScreenSize.lg),
+    })}
+    ${linearlyScaleSize({
+      minSizePx: 48,
+      maxSizePx: 96,
+      minScreenSizePx: parseInt(ScreenSize.md),
+      maxScreenSizePx: parseInt(ScreenSize.lg),
+    })};
+`
 
-    @media (max-width: ${ScreenSize.md}) {
-      align-self: center;
-      text-align: center;
-    }
-  `
+const HeroTitle = styled.h1`
+  // TODO: Try to make the responsive font-size more systematic. This is a temporary fix.
+  ${FontVariant.title_xl}
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  text-align: left;
 
-  const HeroSubtitle = styled.h2`
-    font-size: 1.375rem;
-    font-weight: 300;
-    margin-bottom: 8px;
+  @media (max-width: ${ScreenSize.md}) {
+    align-self: center;
+    text-align: center;
+  }
+`
 
-    @media (max-width: ${ScreenSize.md}) {
-      align-self: center;
-      text-align: center;
-    }
-  `
-  const HeroMessage = styled.p`
-    ${FontVariant.body_md}
-    color: ${Color.gray700};
-    text-align: left;
-    max-width: 100%;
-    @media (max-width: ${ScreenSize.md}) {
-      text-align: center;
-  `
+const HeroSubtitle = styled.h2`
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-bottom: 8px;
 
-  const HeroImageContainer = styled.div`
-    flex-basis: 50%;
-    position: relative;
-    z-index: 0;
-    @media (max-width: ${ScreenSize.md}) {
-      // TODO: Set the min-height more systematically. This is a temporary fix.
-      min-height: 30vh;
-    }
-  `
+  @media (max-width: ${ScreenSize.md}) {
+    align-self: center;
+    text-align: center;
+  }
+`
+const HeroMessage = styled.p`
+${FontVariant.body_md}
+color: ${Color.gray700};
+text-align: left;
+max-width: 100%;
+@media (max-width: ${ScreenSize.md}) {
+  text-align: center;
+`
+
+const HeroImageContainer = styled.div`
+  flex-basis: 50%;
+  position: relative;
+  z-index: 0;
+  @media (max-width: ${ScreenSize.md}) {
+    // TODO: Set the min-height more systematically. This is a temporary fix.
+    min-height: 30vh;
+  }
+`
+export const HeroSection = () => {
   return (
     <Section id="hero-section" style={{ padding: '0' }}>
       {/* padding: 0 is to allow image to stretch to the right side of the webpage*/}
