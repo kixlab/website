@@ -1,4 +1,3 @@
-'use client'
 import Image from 'next/image'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'

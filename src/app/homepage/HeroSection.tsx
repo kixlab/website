@@ -1,6 +1,5 @@
-'use client'
 import Image from 'next/image'
-import { Color, ScreenSize, linearlyScaleSize } from '@/app/theme'
+import { Color, ScreenSize, linearlyScaleSize, FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
 import { Section } from './Styles'
@@ -9,6 +8,7 @@ export const HeroSection = () => {
   const RespFontSize = {
     title_xl: '2.25rem',
     title_lg: '1.75rem',
+    title_md: '1.375rem',
     title_sm: '1rem',
   } as const
 
@@ -47,7 +47,7 @@ export const HeroSection = () => {
 
   const HeroTitle = styled.h1`
     // TODO: Try to make the responsive font-size more systematic. This is a temporary fix.
-    font-size: clamp(2rem, 1vw + 2rem, 3.5rem);
+    ${FontVariant.title_xl}
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: 24px;
@@ -60,9 +60,9 @@ export const HeroSection = () => {
   `
 
   const HeroSubtitle = styled.h2`
-    font-size: clamp(1.25rem, 0.3125 + 4.17vw, 2.5rem);
+    font-size: 1.375rem;
     font-weight: 300;
-    margin-bottom: 32px;
+    margin-bottom: 8px;
 
     @media (max-width: ${ScreenSize.md}) {
       align-self: center;
@@ -70,10 +70,12 @@ export const HeroSection = () => {
     }
   `
   const HeroMessage = styled.p`
-    font-size: clamp(1rem, 0.65vw + 0.5rem, 2rem);
+    ${FontVariant.body_md}
     color: ${Color.gray700};
-    text-align: justify;
+    text-align: left;
     max-width: 100%;
+    @media (max-width: ${ScreenSize.md}) {
+      text-align: center;
   `
 
   const HeroImageContainer = styled.div`

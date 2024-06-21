@@ -67,6 +67,10 @@ export default function GlobalStyles() {
           flex-direction: column;
           padding: 40px 96px;
           gap: 32px;
+
+          @media (max-width: ${ScreenSize.md}) {
+            padding: 40px 24px;
+          }
         }
         ,
         h1 {
