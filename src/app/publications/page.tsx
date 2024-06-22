@@ -3,14 +3,13 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
-
+import { uniq } from 'lodash'
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
 import type { PublicationType, ResearchTopicType } from '@/data/publications'
-import PublicationCard from '@/components/Publication/PublicationCard'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
+import PublicationCard from '@/components/Publication/PublicationCard'
 import Filter from '@/components/Filter'
-import { uniq } from 'lodash'
-import { FontVariant, Color } from '@/app/theme'
+import Sidebar from '@/components/SideBar'
 import Divider from '@/components/Divider'
 
 const Container = styled.div`
@@ -25,35 +24,6 @@ const SubContainer = styled.main`
 const Filters = styled.div`
   display: flex;
   gap: 12px;
-`
-
-const SideBar = styled.div`
-  width: 15%;
-  position: sticky;
-  padding: 96px;
-  padding-left: 0px;
-  top: 0;
-  height: 100vh;
-`
-
-const SidebarLink = styled.a`
-  display: block;
-  text-decoration: none;
-  overflow: hidden;
-  white-space: nowrap;
-  padding-left: 10px;
-  padding-bottom: 5px;
-  color: ${Color.gray700};
-  ${FontVariant.body_md}
-
-  &.active {
-    color: ${Color.orange900};
-  }
-
-  &:hover {
-    color: ${Color.orange900};
-    text-decoration: underline;
-  }
 `
 
 export default function Page() {
@@ -186,28 +156,11 @@ export default function Page() {
             ))}
         </Sections>
       </SubContainer>
-      <SideBar>
-        <SidebarLink
-          href="#preprints"
-          className={activeSection === 'preprints' ? 'active' : ''}
-          onClick={() => handleLinkClick('preprints')}
-        >
-          Preprints
-        </SidebarLink>
-        {uniq(publicationList.map(p => p.year))
-          .sort()
-          .reverse()
-          .map(year => (
-            <SidebarLink
-              key={year}
-              href={`#year-${year}`}
-              className={activeSection === `year-${year}` ? 'active' : ''}
-              onClick={() => handleLinkClick(`year-${year}`)}
-            >
-              {year}
-            </SidebarLink>
-          ))}
-      </SideBar>
+      <Sidebar
+        activeSection={activeSection}
+        handleLinkClick={handleLinkClick}
+        publicationList={publicationList.map(pub => pub.year)}
+      />
     </Container>
   )
 }
