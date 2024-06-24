@@ -26,6 +26,7 @@ const VideoContainer = styled.div`
   max-height: 300px;
   min-width: 300px;
   aspect-ratio: 16 / 9;
+  margin-bottom: 8px;
 `
 
 const VideoTitle = styled.h3`
