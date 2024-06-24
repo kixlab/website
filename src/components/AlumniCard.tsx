@@ -3,7 +3,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
-
 import type { IMember } from '@/data/members'
 
 const AlumniCardContainer = styled.div`

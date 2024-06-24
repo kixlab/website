@@ -3,7 +3,6 @@
 import styled from '@emotion/styled'
 import { useState, useEffect } from 'react'
 //import { usePathname, useSearchParams } from 'next/navigation'
-
 import { MEMBERS_KEY, MEMBERS, CareerTypes } from '@/data/members'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import MemberCard from '@/components/MemberCard'

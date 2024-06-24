@@ -8,7 +8,6 @@ export const CareerTypes = [
   'Staff',
   'Alumni',
 ] as const
-
 export type CareerType = (typeof CareerTypes)[number]
 
 export interface IMember {
