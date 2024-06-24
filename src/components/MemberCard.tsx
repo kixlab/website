@@ -25,19 +25,20 @@ const Info = styled.div`
 
   width: fit-content;
 `
-
+const Email = styled.span`
+  color: ${Color.gray700};
+  ${FontVariant.body_md}
+`
 const NameWithWebsite = styled.a`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
-
-  &::before {
-    content: '🔗';
-    margin-right: 6px;
-  }
 `
 
 const MemberImage = styled(ImageWithFallback)`
   border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
 `
 
 const Name = styled.span`
@@ -45,28 +46,11 @@ const Name = styled.span`
   color: ${Color.gray900};
 `
 
-const ThesisLink = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: ${Color.gray900};
-  text-decoration: none;
-  &::before {
-    content: '📖';
-  }
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
 const Affiliation = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
-  color: ${Color.gray900};
-
-  &::before {
-    content: '🏫';
+  color: ${Color.gray700};
   }
 `
 
@@ -92,17 +76,7 @@ export default function MemberCard({ mem }: { mem: IMember }) {
             {mem.firstName} {mem.lastName}
           </Name>
         )}
-        <span>{mem.email}</span>
-        {mem.thesis && (
-          <ThesisLink
-            href={mem.thesis}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Read ${mem.firstName} ${mem.lastName}'s M.S. thesis`}
-          >
-            M.S. thesis
-          </ThesisLink>
-        )}
+        <Email>{mem.email}</Email>
         {mem.affiliation && <Affiliation>{mem.affiliation}</Affiliation>}
       </Info>
     </Card>

@@ -37,37 +37,13 @@ const Name = styled.span`
 const NameWithWebsite = styled.a`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
-
-  &::before {
-    content: '🔗';
-    margin-right: 6px;
-  }
 `
 
 const CurrentPosition = styled.div`
   font-size: 0.9rem;
   color: ${Color.gray700};
-
-  &::before {
-    content: '📍';
-  }
 `
 
-const ThesisLink = styled.a`
-  font-size: 0.9rem;
-  display: flex;
-  gap: 6px;
-  justify-content: center;
-  align-items: center;
-  color: ${Color.gray700};
-  text-decoration: none;
-  &::before {
-    content: '📖';
-  }
-  &:hover {
-    text-decoration: underline;
-  }
-`
 
 const Period = styled.div`
   font-size: 0.9rem;
@@ -80,9 +56,6 @@ const Education = styled.div`
   justify-content: center;
   align-items: center;
   color: ${Color.gray700};
-
-  &::before {
-    content: '🏫';
   }
 `
 
@@ -99,16 +72,6 @@ const AlumniCard = ({ mem }: { mem: IMember }) => {
             <Name>
               {mem.firstName} {mem.lastName}
             </Name>
-          )}
-          {mem.thesis && (
-            <ThesisLink
-              href={mem.thesis}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Read ${mem.firstName} ${mem.lastName}'s M.S. thesis`}
-            >
-              M.S. thesis
-            </ThesisLink>
           )}
           <Period>{mem.period}</Period>
           {mem.currentPosition && <CurrentPosition>{mem.currentPosition}</CurrentPosition>}

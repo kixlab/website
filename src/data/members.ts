@@ -17,7 +17,6 @@ export interface IMember {
   career: CareerType
   img?: string
   site?: string
-  thesis?: string
   affiliation?: string
   currentPosition?: string
   period?: string
@@ -48,7 +47,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'daeun.jpg',
     site: 'https://daeunchoi.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-daeun.pdf',
   },
   yoonseochoi: {
     firstName: 'Yoonseo',
@@ -57,7 +55,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'yoonseo.jpeg',
     site: 'https://www.yoonseochoi.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-yoonseo.pdf',
   },
   hyunwookim: {
     firstName: 'Hyunwoo',
@@ -66,7 +63,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'hyunwoo.png',
     site: 'https://hyunwoo.me/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyunwoo.pdf',
   },
   seoyoungkim: {
     firstName: 'Seyoung',
@@ -75,7 +71,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'seoyoung.jpg',
     site: 'https://sites.google.com/view/seoyoung/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-seoyoung.pdf',
   },
   taesookim: {
     firstName: 'Tae Soo',
@@ -84,7 +79,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'taesoo.jpg',
     site: 'https://taesookim.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-taesoo.pdf',
   },
   yoonsukim: {
     firstName: 'Yoonsu',
@@ -93,7 +87,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'yoonsu.jpg',
     site: 'https://yoonsu0816.github.io/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-yoonsu.pdf',
   },
   eunyoungko: {
     firstName: 'Eunyoung',
@@ -125,7 +118,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'hyungyu.jpg',
     site: 'https://hyungyu.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
   kihoonson: {
     firstName: 'Kihoon',
@@ -142,7 +134,6 @@ export const MEMBER = {
     career: 'Ph.D. Student',
     img: 'saelyne.jpg',
     site: 'https://www.saelyne.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-saelyne.pdf',
   },
   seulgichoi: {
     firstName: 'Seulgi',
@@ -299,7 +290,6 @@ export const MEMBER = {
     affiliation: 'M.S. Student',
     currentPosition: 'Ph.D. Student at CSTL KAIST',
     period: 'Spring 2022 - Winter 2024',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-juhoon.pdf',
   },
   jeongeonpark: {
     firstName: 'Jeongeon',
@@ -309,7 +299,6 @@ export const MEMBER = {
     affiliation: 'M.S. Student',
     period: 'Fall 2019 - Summer 2023',
     site: 'https://jeongeonpark.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2023-jeongeon.pdf',
   },
   haesookim: {
     firstName: 'Haesoo',
@@ -318,7 +307,6 @@ export const MEMBER = {
     period: 'Summer 2019 - Winter 2023',
     affiliation: 'M.S. Student',
     site: 'https://haesookim.info/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2023-haesoo.pdf',
     currentPosition: 'Ph.D. Student at Cornell University',
   },
   Hyungkwonko: {
@@ -346,7 +334,6 @@ export const MEMBER = {
     affiliation: 'M.S. Student',
     period: 'Summer 2019 - Winter 2022',
     site: 'https://www.jeongyeon.kim/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-jeongyeon.pdf',
   },
   mengxia: {
     firstName: 'Meng',
@@ -400,7 +387,6 @@ export const MEMBER = {
     currentPosition: 'Machine Learning Engineer at Superb AI',
     affiliation: 'M.S. Student',
     period: 'Summer 2018 - Winter 2021',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-hoon.pdf',
   },
   minsukchang: {
     firstName: 'Minsuk',
@@ -410,7 +396,6 @@ export const MEMBER = {
     affiliation: 'Ph.D Student',
     period: 'Summer 2016 - Winter 2021',
     site: 'https://minsukchang.com/',
-    thesis: 'http://kixlab.org/files/theses/thesis-phd-2021-minsuk.pdf',
   },
   kyungjejo: {
     firstName: 'Kyung',
@@ -420,7 +405,6 @@ export const MEMBER = {
     affiliation: 'M.S. Student',
     period: 'Spring 2018 - Winter 2021',
     site: 'https://kyungjejo.com/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2020-kyungje.pdf',
   },
   jibonnaher: {
     firstName: 'Jibon',
@@ -429,7 +413,6 @@ export const MEMBER = {
     affiliation: 'M.S. Student',
     period: 'Fall 2018 - Summer 2020',
     site: 'https://jibonnaher.github.io/',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2020-jibon.pdf',
   },
   jisoolee: {
     firstName: 'Jisoo',
@@ -457,7 +440,6 @@ export const MEMBER = {
     period: 'Winter 2019 - Spring 2019',
     site: 'https://sites.google.com/view/artithakur',
     currentPosition: 'Co-founder at CTO @ NordInsight',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-mathias.pdf',
   },
   eveyhuang: {
     firstName: 'Evey',
@@ -476,7 +458,6 @@ export const MEMBER = {
     period: 'Summer 2016 - Winter 2019',
     site: 'https://hyeungshikjung.com/',
     currentPosition: 'Software Engineer at NAVER',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyeungshik.pdf',
   },
   yichinghuang: {
     firstName: 'Yi-Ching (Janet)',
@@ -504,14 +485,6 @@ export const MEMBER = {
     period: 'Fall 2016 - Spring 2018',
     site: 'https://graycoding.com/',
     currentPosition: 'Lead Frontend Engineer at Alvin',
-    thesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-paul.pdf',
-  },
-  yoojinlim: {
-    firstName: 'Yoo Jin',
-    lastName: 'Lim',
-    career: 'Alumni',
-    affiliation: 'Ph.D Student',
-    period: 'Fall 2016 - Winter 2017',
   },
   heechankim: {
     firstName: 'Heechan',

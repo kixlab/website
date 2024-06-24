@@ -10,9 +10,13 @@ import AlumniCard from '@/components/AlumniCard'
 import { Color } from '@/app/theme'
 
 const SectionContent = styled.div`
-  display: flex;
+   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 36px;
-  flex-wrap: wrap;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `
 const MainInner = styled.div`
   display: flex;
@@ -20,8 +24,12 @@ const MainInner = styled.div`
 
 const AlumniSectionContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1px;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 `
 
 const TableOfContents = styled.ul`
@@ -52,6 +60,7 @@ const Anchor = styled.a<{ selected?: boolean }>`
 
 const SubCategoryTitle = styled.h2`
   font-size: 1rem;
+  font-weight: bold;
 `
 
 const SpecialThanksSection = styled.div`
