@@ -79,7 +79,7 @@ export const ScreenSize = {
   md: '784px', // Navbar looks weird below 784px
   lg: '992px',
   xl: '1200px',
-  max: '1920px',
+  max: '1400px',
 } as const
 
 interface LinearlyScaleSizeParams {

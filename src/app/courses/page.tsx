@@ -6,38 +6,6 @@ import { COURSES } from '@/data/courses'
 import { FontVariant, Color } from '@/app/theme'
 import { chunk } from 'lodash'
 
-export default function Page() {
-  return (
-    <main>
-      <h1>Courses</h1>
-      <Sections>
-        {COURSES.map(({ code, title, description, editions }, i) => (
-          <React.Fragment key={i}>
-            <Section key={i}>
-              <SectionTitle>
-                {code} {title}
-              </SectionTitle>
-              <SectionContent>{description}</SectionContent>
-              <SectionGroup>
-                {chunk(editions, 3).map((editionGroup: any, j: any) => (
-                  <SectionEditions key={j}>
-                    {editionGroup.map((edition: any, k: any) => (
-                      <SectionEdition key={k} href={edition.url}>
-                        • {edition.semester}
-                      </SectionEdition>
-                    ))}
-                  </SectionEditions>
-                ))}
-              </SectionGroup>
-            </Section>
-            {i < COURSES.length - 1 && <HorizontalLine />}
-          </React.Fragment>
-        ))}
-      </Sections>
-    </main>
-  )
-}
-
 const Sections = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,3 +60,34 @@ const HorizontalLine = styled.hr`
   background-color: ${Color.gray300};
   width: 100%;
 `
+export default function Page() {
+  return (
+    <main>
+      <h1>Courses</h1>
+      <Sections>
+        {COURSES.map(({ code, title, description, editions }, i) => (
+          <React.Fragment key={i}>
+            <Section key={i}>
+              <SectionTitle>
+                {code} {title}
+              </SectionTitle>
+              <SectionContent>{description}</SectionContent>
+              <SectionGroup>
+                {chunk(editions, 3).map((editionGroup: any, j: any) => (
+                  <SectionEditions key={j}>
+                    {editionGroup.map((edition: any, k: any) => (
+                      <SectionEdition key={k} href={edition.url}>
+                        • {edition.semester}
+                      </SectionEdition>
+                    ))}
+                  </SectionEditions>
+                ))}
+              </SectionGroup>
+            </Section>
+            {i < COURSES.length - 1 && <HorizontalLine />}
+          </React.Fragment>
+        ))}
+      </Sections>
+    </main>
+  )
+}

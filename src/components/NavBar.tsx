@@ -25,7 +25,7 @@ export const Nav = styled.nav`
   // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
   padding: 12px 24px 16px
     ${linearlyScaleSize({
-      minSizePx: 48,
+      minSizePx: 24,
       maxSizePx: 96,
       minScreenSizePx: parseInt(ScreenSize.md),
       maxScreenSizePx: parseInt(ScreenSize.lg),

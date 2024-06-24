@@ -1,9 +1,8 @@
 'use client'
 import { FontSize, FontWeight } from '@/app/theme'
 import styled from '@emotion/styled'
-import { SectionHeader } from '@/components/Section'
 import React from 'react'
-import { Section } from './Styles'
+import { Section, SectionHeader, FullWidthContainer } from './Styles'
 import VIDEOS from '@/data/videos'
 import LinkButton from '@/components/LinkButton'
 
@@ -14,7 +13,6 @@ const MediaArea = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 32px;
-  padding: 32px 0px;
 `
 
 const VideoCard = styled.div`
@@ -44,39 +42,41 @@ const VideoDate = styled.h4`
 
 export const MediaSection = () => {
   return (
-    <Section id="media-section" altBackground={true}>
-      <SectionHeader title="KIXLAB on Media" subtitle="Explore KIXLAB’s media realm" />
-      <MediaArea>
-        {VIDEOS.map(video => (
-          <VideoCard key={video.url}>
-            <VideoContainer>
-              <iframe
-                width="100%"
-                height="100%"
-                src={video.url}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </VideoContainer>
-            <VideoTitle>{video.title}</VideoTitle>
-            <VideoDate>{video.formattedDate}</VideoDate>
-          </VideoCard>
-        ))}
-      </MediaArea>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          gap: '12px',
-          justifyContent: 'center',
-        }}
-      >
-        <LinkButton href="https://www.youtube.com/@kixlabkaist5732" image="/images/youtube.svg" text="KIXLAB KAIST" />
-        <LinkButton href="https://x.com/kixlab_kaist" image="/images/twitter-x.svg" text="@kixlab_kaist" />
-      </div>
-    </Section>
+    <FullWidthContainer>
+      <Section id="media-section">
+        <SectionHeader title="KIXLAB on Media" subtitle="Explore KIXLAB’s media realm" />
+        <MediaArea>
+          {VIDEOS.map(video => (
+            <VideoCard key={video.url}>
+              <VideoContainer>
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={video.url}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </VideoContainer>
+              <VideoTitle>{video.title}</VideoTitle>
+              <VideoDate>{video.formattedDate}</VideoDate>
+            </VideoCard>
+          ))}
+        </MediaArea>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '12px',
+            justifyContent: 'center',
+          }}
+        >
+          <LinkButton href="https://www.youtube.com/@kixlabkaist5732" image="/images/youtube.svg" text="KIXLAB KAIST" />
+          <LinkButton href="https://x.com/kixlab_kaist" image="/images/twitter-x.svg" text="@kixlab_kaist" />
+        </div>
+      </Section>
+    </FullWidthContainer>
   )
 }
