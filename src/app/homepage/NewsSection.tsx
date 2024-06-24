@@ -32,7 +32,7 @@ export const NewsSection = () => {
           {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime())
             .slice(0, 4)
             .map((post, index) => (
-              <NewsCard key={index} post={post} setModalContent={redirectToNewsPage} />
+              <NewsCard key={index} post={post} setModalContent={redirectToNewsPage} labelsOnLeft={true} />
             ))}
         </NewsItemsArea>
         <LinkButton href="/news" text="See More" style={{ alignSelf: 'center' }} />
