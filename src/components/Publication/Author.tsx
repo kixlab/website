@@ -1,4 +1,4 @@
-import Member from '@/data/members'
+import { IMember } from '@/data/members'
 import styled from '@emotion/styled'
 import { Color } from '@/app/theme'
 
@@ -14,14 +14,16 @@ const NotLabMember = styled.span`
   color: ${Color.gray500};
 `
 
-export default function Author({ authors }: { authors: (Member | string)[] }) {
+export default function Author({ authors }: { authors: (IMember | string)[] }) {
   return (
     <AuthorList>
       {authors.map(author =>
-        author instanceof Member ? (
-          <LabMember key={author.fullName}>{author.fullName}</LabMember>
-        ) : (
+        typeof author === 'string' ? (
           <NotLabMember key={author}>{author}</NotLabMember>
+        ) : (
+          <LabMember key={author.email}>
+            {author.firstName} {author.lastName}
+          </LabMember>
         )
       )}
     </AuthorList>

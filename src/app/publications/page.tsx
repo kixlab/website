@@ -49,7 +49,7 @@ export default function Page() {
       <Filters>
         <Filter
           filterName="Research Topic"
-          optionSet={['All', ...ResearchTopics]}
+          optionSet={['All', ...Object.keys(ResearchTopics)]}
           optionSelected={researchTopic}
           handleOptionChange={handleResearchTopicChange}
         />

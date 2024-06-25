@@ -16,7 +16,6 @@ const NewsSection = styled.div`
   flex-direction: column;
   margin: 0 auto;
   padding: 50px 0;
-  max-width: 1000px;
   width: 100%;
 `
 
@@ -47,6 +46,8 @@ const NewsLine = styled.div`
 
 const NewsContainer = styled.div`
   width: 100%;
+  display: grid;
+  grid-template-colums: 1fr 1fr;
 
   @media (max-width: ${ScreenSize.xl}) {
     display: grid;
@@ -60,7 +61,7 @@ const NewsContainer = styled.div`
   }
 
   & > div {
-    width: ${postWidth}px;
+    width: 47%; // needs to be <50% to show gap between cards and vertical line
     margin-bottom: -${padding / 2}px;
 
     @media (max-width: ${ScreenSize.xl}) {
@@ -71,9 +72,7 @@ const NewsContainer = styled.div`
 
   & > div:nth-of-type(odd) {
     margin-right: auto;
-    margin-left: 80px;
-    align-items: flex-start;
-    text-align: left;
+    text-align: right;
 
     @media (max-width: ${ScreenSize.xl}) {
       margin-left: 0px;
@@ -84,9 +83,7 @@ const NewsContainer = styled.div`
   }
   & > div:nth-of-type(even) {
     margin-left: auto;
-    margin-right: 80px;
-    align-items: flex-end;
-    text-align: right;
+    text-align: left;
 
     @media (max-width: ${ScreenSize.xl}) {
       margin-left: 0px;
@@ -103,11 +100,11 @@ export default function Page() {
   return (
     <main>
       <h1 style={{ textAlign: 'center' }}>News</h1>
-      <NewsSection>
+      <NewsSection id="new section">
         <NewsLine />
-        <NewsContainer>
+        <NewsContainer id="news container">
           {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime()).map((post, index) => (
-            <NewsCard key={index} post={post} setModalContent={setModalContent} />
+            <NewsCard key={index} post={post} setModalContent={setModalContent} labelsOnLeft={index % 2 === 1} />
           ))}
         </NewsContainer>
       </NewsSection>

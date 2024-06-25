@@ -29,8 +29,9 @@ const Title = styled.div`
   ${FontVariant.body_lg}
 `
 
-export const CategoryContainer = styled.div`
+export const CategoryContainer = styled.div<{ labelsOnLeft?: boolean }>`
   display: flex;
+  justify-content: ${props => (props.labelsOnLeft ? 'flex-start' : 'flex-end')};
   gap: 8px;
   margin-bottom: 8px;
 `
@@ -69,14 +70,22 @@ export const ReadMore = styled.div`
   text-decoration: none;
 `
 
-export default function NewsCard({ post, setModalContent }: { post: Post; setModalContent: (post: Post) => void }) {
+export default function NewsCard({
+  post,
+  setModalContent,
+  labelsOnLeft: labelsOnLeft,
+}: {
+  post: Post
+  setModalContent: (post: Post) => void
+  labelsOnLeft?: boolean
+}) {
   const currentDate = new Date()
   const open = post.endsAt && post.endsAt > currentDate
   const closed = post.endsAt && post.endsAt < currentDate
 
   return (
     <PostContainer>
-      <CategoryContainer>
+      <CategoryContainer labelsOnLeft={labelsOnLeft}>
         {post.categories.map((category, i) => (
           <Category key={i} style={{ backgroundColor: closed ? Color.gray400 : categoryColors[category] }}>
             {category}
