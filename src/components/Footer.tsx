@@ -31,9 +31,8 @@ const FooterTextContainer = styled.div`
   }
 `
 
-const FooterText = styled.a<{ bold?: boolean }>`
-  ${FontVariant.body_lg}
-  font-weight: ${FontWeight.body_md};
+const FooterText = styled.a`
+  ${FontVariant.body_md}
   color: ${Color.white};
   text-decoration: none;
   margin: 0;
@@ -48,7 +47,7 @@ const FooterText = styled.a<{ bold?: boolean }>`
 `
 
 const FooterTextBold = styled.p`
-  ${FontVariant.body_lg}
+  font-size: ${FontSize.body_md};
   font-weight: ${FontWeight.body_lg};
   color: ${Color.white};
   text-decoration: none;
