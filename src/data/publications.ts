@@ -1414,7 +1414,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'ProtoChat: Supporting the Conversation Design Process with Crowd Feedback',
+    title: 'ProtoChat: Supporting the Conversation Design Process with Crowd Feedback (Demo)',
     authors: [
       'Yoonseo Choi',
       'Toni-Jan Keith Monserrat',

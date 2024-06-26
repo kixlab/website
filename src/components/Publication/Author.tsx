@@ -2,7 +2,8 @@ import { IMember } from '@/data/members'
 import styled from '@emotion/styled'
 import { Color } from '@/app/theme'
 
-const AuthorList = styled.div`
+const AuthorList = styled.span`
+  overflow-wrap: break-word;
   & > *:not(:last-child)::after {
     content: ', ';
   }
