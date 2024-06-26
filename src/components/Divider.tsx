@@ -1,6 +1,11 @@
 import { Color } from '@/app/theme'
+import React from 'react'
 
-export default function Divider() {
+interface DividerProps {
+  style?: React.CSSProperties
+}
+
+export default function Divider({ style }: DividerProps) {
   return (
     <hr
       style={{
@@ -8,6 +13,7 @@ export default function Divider() {
         height: '1px',
         border: 'none',
         backgroundColor: Color.gray200,
+        ...style,
       }}
     />
   )
