@@ -30,6 +30,11 @@ export default function GlobalStyles() {
           min-height: 100vh;
         }
 
+        main {
+          max-width: ${ScreenSize.max};
+          margin: 0 auto;
+        }
+
         /* Prevent media from overflowing and make them not inline elements */
         img,
         picture,

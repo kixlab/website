@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import styled from '@emotion/styled'
 
@@ -16,22 +15,17 @@ interface NavItemProps {
 export const NAV_BAR_HEIGHT = 56
 
 export const Nav = styled.nav`
-  position: sticky;
-  top: 0px;
   display: flex;
-  border-bottom: 1px solid ${Color.gray300};
   box-sizing: border-box;
   height: ${NAV_BAR_HEIGHT}px;
   background-color: ${Color.white};
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
 
   // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
-  // TODO: Replace the magic constants with a more systematic approach
   padding: 12px 24px 16px
     ${linearlyScaleSize({
-      minSizePx: 48,
+      minSizePx: 24,
       maxSizePx: 96,
       minScreenSizePx: parseInt(ScreenSize.md),
       maxScreenSizePx: parseInt(ScreenSize.lg),
@@ -39,6 +33,17 @@ export const Nav = styled.nav`
   @media (max-width: ${ScreenSize.sm}) {
     padding-right: 48px; // Make the padding on the sides equivalent when the hamburger button appears
   }
+  @media (min-width: ${ScreenSize.max}) {
+    width: ${ScreenSize.max};
+    margin: 0 auto;
+  }
+`
+
+const NavContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom: 1px solid ${Color.gray300};
 `
 
 export const Logo = styled.a`
@@ -101,7 +106,7 @@ export const NavItem: React.FC<NavItemProps> = ({ children, href, selected }) =>
 
 const DropDownMenu = styled.div`
   position: fixed;
-  top: ${NAV_BAR_HEIGHT};
+  top: ${NAV_BAR_HEIGHT}px;
   background-color: ${Color.white};
   width: 100vw;
   z-index: 1;
@@ -113,7 +118,6 @@ const DropDownMenu = styled.div`
   &.closed {
     transform: translateY(-100%);
   }
-  /* Media queries */
   @media (min-width: ${ScreenSize.sm}) {
     display: none;
   }
@@ -140,17 +144,19 @@ const ResponsiveSpan = styled.span`
   }
 `
 
+// Close the dropdown menu whenever the user clicks outside of the dropdown menu area
+const NavList = [
+  { navItem: 'Home', path: '/' },
+  { navItem: 'People', path: '/people' },
+  { navItem: 'Publications', path: '/publications' },
+  { navItem: 'Courses', path: '/courses' },
+  { navItem: 'News', path: '/news' },
+]
+
 export default function NavBar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const dropdownRef = React.useRef<HTMLDivElement>(null)
   const hamburgerRef = React.useRef<HTMLButtonElement>(null)
-  const NavList = [
-    { navItem: 'Home', path: '/' },
-    { navItem: 'People', path: '/people' },
-    { navItem: 'Publications', path: '/publications' },
-    { navItem: 'Courses', path: '/courses' },
-    { navItem: 'News', path: '/news' },
-  ]
   const pathname = usePathname()
 
   // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
@@ -171,28 +177,29 @@ export default function NavBar() {
 
   return (
     <>
-      <Nav>
-        <Logo href="/">
-          <Image src="/images/logo.png" width={100} height={26} alt="KIXLAB Logo" />
-          <ResponsiveSpan>KAIST Interaction Lab</ResponsiveSpan>
-        </Logo>
+      <NavContainer>
+        <Nav>
+          <Logo href="/">
+            <Image src="/images/logo.png" width={100} height={26} alt="KIXLAB Logo" />
+            <ResponsiveSpan>KAIST Interaction Lab</ResponsiveSpan>
+          </Logo>
 
-        <NavRow>
-          <NavUl>
-            {NavList.map((item, i) => (
-              <li key={item.path}>
-                <NavItem href={item.path} selected={pathname == item.path}>
-                  {item.navItem}
-                </NavItem>
-              </li>
-            ))}
-          </NavUl>
-        </NavRow>
-
-        <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
-          <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
-        </HamburgerButton>
-      </Nav>
+          <NavRow>
+            <NavUl>
+              {NavList.map((item, i) => (
+                <li key={item.path}>
+                  <NavItem href={item.path} selected={pathname == item.path}>
+                    {item.navItem}
+                  </NavItem>
+                </li>
+              ))}
+            </NavUl>
+          </NavRow>
+          <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
+            <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
+          </HamburgerButton>
+        </Nav>
+      </NavContainer>
       {
         <DropDownMenu ref={dropdownRef} className={isOpen ? 'open' : 'closed'}>
           <NavUl>
