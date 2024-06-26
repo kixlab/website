@@ -11,9 +11,16 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  & > * {
+    word-wrap: break-word;
+    display: block;
+    max-width: 100%;
+  }
 `
 
-const Title = styled.a`
+const Title = styled.h3`
+  overflow-wrap: break-word;
   ${FontVariant.body_lg}
   text-decoration: none;
   color: ${Color.gray900};
@@ -24,24 +31,28 @@ const Title = styled.a`
 `
 
 const Info = styled.div`
-  display: flex;
-  gap: 12px;
   ${FontVariant.body_md}
   color: ${Color.gray700};
+
+  & > span {
+    padding-right: 16px;
+  }
 `
 
 const SubInfo = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
 `
 
-const Venue = styled.div`
+const Venue = styled.span`
   font-style: italic;
 `
 
 const URLs = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 `
 

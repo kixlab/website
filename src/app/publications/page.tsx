@@ -11,14 +11,24 @@ import PublicationCard from '@/components/Publication/PublicationCard'
 import Filter from '@/components/Filter'
 import Sidebar from '@/components/SideBar'
 import Divider from '@/components/Divider'
+import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding: 40px
+    ${linearlyScaleSize({
+      minSizePx: 48,
+      maxSizePx: 96,
+      minScreenSizePx: parseInt(ScreenSize.md),
+      maxScreenSizePx: parseInt(ScreenSize.lg),
+    })};
+  gap: 16px;
 `
 
-const SubContainer = styled.main`
-  width: 85%;
+const SideContainer = styled.div`
+  padding-top: 96px;
 `
 
 const Filters = styled.div`
@@ -96,7 +106,7 @@ export default function Page() {
 
   return (
     <Container>
-      <SubContainer>
+      <main style={{ padding: '0px' }}>
         <h1>Publications</h1>
         <Filters>
           <Filter
@@ -155,12 +165,14 @@ export default function Page() {
               </>
             ))}
         </Sections>
-      </SubContainer>
-      <Sidebar
-        activeSection={activeSection}
-        handleLinkClick={handleLinkClick}
-        publicationList={publicationList.map(pub => pub.year)}
-      />
+      </main>
+      <SideContainer>
+        <Sidebar
+          activeSection={activeSection}
+          handleLinkClick={handleLinkClick}
+          publicationList={publicationList.map(pub => pub.year)}
+        />
+      </SideContainer>
     </Container>
   )
 }
