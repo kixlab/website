@@ -13,6 +13,12 @@ import Sidebar from '@/components/SideBar'
 import Divider from '@/components/Divider'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
+const CenteredContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -35,6 +41,10 @@ const Container = styled.div`
   @media (min-width: ${ScreenSize.max}) {
     width: ${ScreenSize.max};
     margin: 0 auto;
+  }
+
+  & > main {
+    width: 85%;
   }
 `
 
@@ -123,7 +133,7 @@ export default function Page() {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <CenteredContainer>
       <Container>
         <main style={{ padding: '0px', margin: '0px' }}>
           <h1>Publications</h1>
@@ -142,7 +152,7 @@ export default function Page() {
             />
           </Filters>
           <Sections>
-            {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
+            {publicationList.filter(pub => pub.type === 'preprint').length > 0 && (
               <Section
                 id="preprints"
                 ref={el => {
@@ -159,7 +169,7 @@ export default function Page() {
                 </SectionContent>
               </Section>
             )}
-            {uniq(PUBLICATIONS.map(p => p.year))
+            {uniq(publicationList.map(p => p.year))
               .sort()
               .reverse()
               .map((year, i) => (
@@ -193,6 +203,6 @@ export default function Page() {
           />
         </SideContainer>
       </Container>
-    </div>
+    </CenteredContainer>
   )
 }
