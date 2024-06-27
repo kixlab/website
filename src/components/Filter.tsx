@@ -7,6 +7,7 @@ const Select = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
 `
 
 const SelectName = styled.span<{ filtered: boolean }>`
@@ -20,7 +21,6 @@ const SelectName = styled.span<{ filtered: boolean }>`
 
 const SelectBody = styled.div`
   position: relative;
-  min-width: 25vw;
 
   ${FontVariant.body_md}
 

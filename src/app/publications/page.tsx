@@ -19,12 +19,17 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 40px
     ${linearlyScaleSize({
-      minSizePx: 48,
+      minSizePx: 24,
       maxSizePx: 96,
       minScreenSizePx: parseInt(ScreenSize.md),
       maxScreenSizePx: parseInt(ScreenSize.lg),
     })};
+  padding-right: 8px; // this is to prevent the 'preprint' from getting cut off on small screens
   gap: 16px;
+  @media (min-width: ${ScreenSize.max}) {
+    width: ${ScreenSize.max};
+    margin: 0 auto;
+  }
 `
 
 const SideContainer = styled.div`
@@ -105,74 +110,76 @@ export default function Page() {
   }
 
   return (
-    <Container>
-      <main style={{ padding: '0px' }}>
-        <h1>Publications</h1>
-        <Filters>
-          <Filter
-            filterName="Research Topic"
-            optionSet={['All', ...Object.keys(ResearchTopics)]}
-            optionSelected={researchTopic}
-            handleOptionChange={handleResearchTopicChange}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Container>
+        <main style={{ padding: '0px', margin: '0px', width: '85%' }}>
+          <h1>Publications</h1>
+          <Filters>
+            <Filter
+              filterName="Research Topic"
+              optionSet={['All', ...Object.keys(ResearchTopics)]}
+              optionSelected={researchTopic}
+              handleOptionChange={handleResearchTopicChange}
+            />
+            <Filter
+              filterName="Publication Type"
+              optionSet={['All', ...PublicationTypes]}
+              optionSelected={publicationType}
+              handleOptionChange={handlePublicationTypeChange}
+            />
+          </Filters>
+          <Sections>
+            {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
+              <Section
+                id="preprints"
+                ref={el => {
+                  sectionRefs.current['preprints'] = el
+                }}
+              >
+                <SectionTitle>Preprints</SectionTitle>
+                <SectionContent>
+                  {publicationList
+                    .filter(pub => pub.type === 'preprint')
+                    .map(pub => (
+                      <PublicationCard key={pub.title} pub={pub} />
+                    ))}
+                </SectionContent>
+              </Section>
+            )}
+            {uniq(PUBLICATIONS.map(p => p.year))
+              .sort()
+              .reverse()
+              .map((year, i) => (
+                <>
+                  <Divider key={`divider-${i}`} />
+                  <Section
+                    id={`year-${year}`}
+                    ref={el => {
+                      sectionRefs.current[`year-${year}`] = el
+                    }}
+                    key={i}
+                  >
+                    <SectionTitle>{year}</SectionTitle>
+                    <SectionContent>
+                      {publicationList
+                        .filter(({ year: y }) => y === year)
+                        .map(pub => (
+                          <PublicationCard key={pub.title} pub={pub} />
+                        ))}
+                    </SectionContent>
+                  </Section>
+                </>
+              ))}
+          </Sections>
+        </main>
+        <SideContainer>
+          <Sidebar
+            activeSection={activeSection}
+            handleLinkClick={handleLinkClick}
+            publicationList={publicationList.map(pub => pub.year)}
           />
-          <Filter
-            filterName="Publication Type"
-            optionSet={['All', ...PublicationTypes]}
-            optionSelected={publicationType}
-            handleOptionChange={handlePublicationTypeChange}
-          />
-        </Filters>
-        <Sections>
-          {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
-            <Section
-              id="preprints"
-              ref={el => {
-                sectionRefs.current['preprints'] = el
-              }}
-            >
-              <SectionTitle>Preprints</SectionTitle>
-              <SectionContent>
-                {publicationList
-                  .filter(pub => pub.type === 'preprint')
-                  .map(pub => (
-                    <PublicationCard key={pub.title} pub={pub} />
-                  ))}
-              </SectionContent>
-            </Section>
-          )}
-          {uniq(PUBLICATIONS.map(p => p.year))
-            .sort()
-            .reverse()
-            .map((year, i) => (
-              <>
-                <Divider key={`divider-${i}`} />
-                <Section
-                  id={`year-${year}`}
-                  ref={el => {
-                    sectionRefs.current[`year-${year}`] = el
-                  }}
-                  key={i}
-                >
-                  <SectionTitle>{year}</SectionTitle>
-                  <SectionContent>
-                    {publicationList
-                      .filter(({ year: y }) => y === year)
-                      .map(pub => (
-                        <PublicationCard key={pub.title} pub={pub} />
-                      ))}
-                  </SectionContent>
-                </Section>
-              </>
-            ))}
-        </Sections>
-      </main>
-      <SideContainer>
-        <Sidebar
-          activeSection={activeSection}
-          handleLinkClick={handleLinkClick}
-          publicationList={publicationList.map(pub => pub.year)}
-        />
-      </SideContainer>
-    </Container>
+        </SideContainer>
+      </Container>
+    </div>
   )
 }
