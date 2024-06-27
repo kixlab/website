@@ -34,6 +34,7 @@ const Value = styled.span<{ filtered: boolean }>`
   cursor: pointer;
   vertical-align: middle;
   justify-content: space-between;
+  text-transform: capitalize;
   color: ${props => (props.filtered ? Color.orange900 : Color.gray700)};
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -67,6 +68,7 @@ const FilterOption = styled.li`
   display: block;
   padding: 6px 12px;
   cursor: pointer;
+  text-transform: capitalize;
 
   &:hover {
     background-color: ${Color.gray100};
