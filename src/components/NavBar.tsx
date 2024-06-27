@@ -18,7 +18,6 @@ export const Nav = styled.nav`
   display: flex;
   box-sizing: border-box;
   height: ${NAV_BAR_HEIGHT}px;
-  background-color: ${Color.white};
   justify-content: space-between;
   align-items: center;
 
@@ -44,6 +43,7 @@ const NavContainer = styled.div`
   top: 0;
   z-index: 2;
   border-bottom: 1px solid ${Color.gray300};
+  background-color: ${Color.white};
 `
 
 export const Logo = styled.a`
