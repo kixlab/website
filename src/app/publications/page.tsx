@@ -24,7 +24,13 @@ const Container = styled.div`
       minScreenSizePx: parseInt(ScreenSize.md),
       maxScreenSizePx: parseInt(ScreenSize.lg),
     })};
-  padding-right: 8px; // this is to prevent the 'preprint' from getting cut off on small screens
+  padding-right: ${linearlyScaleSize({
+    minSizePx: 24,
+    maxSizePx: 8,
+    minScreenSizePx: parseInt(ScreenSize.sm),
+    maxScreenSizePx: parseInt(ScreenSize.md),
+  })};
+
   gap: 16px;
   @media (min-width: ${ScreenSize.max}) {
     width: ${ScreenSize.max};
@@ -34,6 +40,13 @@ const Container = styled.div`
 
 const SideContainer = styled.div`
   padding-top: 96px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @media (max-width: ${ScreenSize.sm}) {
+    display: none;
+  }
 `
 
 const Filters = styled.div`
@@ -112,7 +125,7 @@ export default function Page() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Container>
-        <main style={{ padding: '0px', margin: '0px', width: '85%' }}>
+        <main style={{ padding: '0px', margin: '0px' }}>
           <h1>Publications</h1>
           <Filters>
             <Filter
