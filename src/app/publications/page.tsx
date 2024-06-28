@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import React from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 import { uniq } from 'lodash'
@@ -173,14 +174,16 @@ export default function Page() {
               .sort()
               .reverse()
               .map((year, i) => (
-                <>
-                  <Divider key={`divider-${i}`} />
+                <React.Fragment key={year}>
+                  {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
+                    <Divider key={`divider-${i}`} />
+                  )}
                   <Section
                     id={`year-${year}`}
                     ref={el => {
                       sectionRefs.current[`year-${year}`] = el
                     }}
-                    key={i}
+                    key={year}
                   >
                     <SectionTitle>{year}</SectionTitle>
                     <SectionContent>
@@ -191,7 +194,7 @@ export default function Page() {
                         ))}
                     </SectionContent>
                   </Section>
-                </>
+                </React.Fragment>
               ))}
           </Sections>
         </main>
@@ -199,7 +202,7 @@ export default function Page() {
           <Sidebar
             activeSection={activeSection}
             handleLinkClick={handleLinkClick}
-            publicationList={publicationList.map(pub => pub.year)}
+            publicationList={publicationList.map(pub => ({ year: pub.year, type: pub.type }))}
           />
         </SideContainer>
       </Container>

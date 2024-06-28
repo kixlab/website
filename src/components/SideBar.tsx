@@ -35,35 +35,38 @@ const SidebarLink = styled.a`
 interface Props {
   activeSection: string | null
   handleLinkClick: (sectionId: string) => void
-  publicationList: number[]
+  publicationList: { year: number; type: string }[]
 }
 
 const Sidebar = ({ activeSection, handleLinkClick, publicationList }: Props) => {
+  const uniqueYears = uniq(publicationList.map(pub => pub.year))
+    .sort()
+    .reverse()
+  const hasPreprints = publicationList.some(pub => pub.type === 'preprint')
+
   return (
     <SideBarContainer>
-      <SidebarLink
-        // TODO: Make this more modular by having href take a prop instead of hardcoded value
-        href="#preprints"
-        className={activeSection === 'preprints' ? 'active' : ''}
-        onClick={() => handleLinkClick('preprints')}
-      >
-        Preprints
-      </SidebarLink>
+      {hasPreprints && (
+        <SidebarLink
+          // TODO: Make this more modular by having href take a prop instead of hardcoded value
+          href="#preprints"
+          className={activeSection === 'preprints' ? 'active' : ''}
+          onClick={() => handleLinkClick('preprints')}
+        >
+          Preprints
+        </SidebarLink>
+      )}
       {/* TODO: Make this more modular by replacing publicationList with a prop */}
-      {uniq(publicationList)
-        .sort()
-        .reverse()
-        .map(year => (
-          <SidebarLink
-            key={year}
-            // TODO: Replace hardcoded values
-            href={`#year-${year}`}
-            className={activeSection === `year-${year}` ? 'active' : ''}
-            onClick={() => handleLinkClick(`year-${year}`)}
-          >
-            {year}
-          </SidebarLink>
-        ))}
+      {uniqueYears.map(year => (
+        <SidebarLink
+          key={year}
+          href={`#year-${year}`}
+          className={activeSection === `year-${year}` ? 'active' : ''}
+          onClick={() => handleLinkClick(`year-${year}`)}
+        >
+          {year}
+        </SidebarLink>
+      ))}
     </SideBarContainer>
   )
 }
