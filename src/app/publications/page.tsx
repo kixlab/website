@@ -37,7 +37,7 @@ const Container = styled.div`
     minScreenSizePx: parseInt(ScreenSize.sm),
     maxScreenSizePx: parseInt(ScreenSize.md),
   })};
-
+  width: 100%;
   gap: 16px;
   @media (min-width: ${ScreenSize.max}) {
     width: ${ScreenSize.max};
