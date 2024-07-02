@@ -11,8 +11,7 @@ const Card = styled.div`
   flex-direction: column;
   gap: 16px;
   align-items: center;
-
-  width: fit-content;
+  width: 200px;
 `
 
 const Info = styled.div`
@@ -20,24 +19,34 @@ const Info = styled.div`
   flex-direction: column;
   gap: 6px;
   align-items: center;
-
   ${FontVariant.body_md}
-
   width: fit-content;
 `
+
 const Email = styled.span`
   color: ${Color.gray700};
   ${FontVariant.body_md}
 `
+
 const NameWithWebsite = styled.a`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
 `
 
-const MemberImage = styled(ImageWithFallback)`
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
   border-radius: 50%;
-  width: 180px;
-  height: 180px;
+  overflow: hidden;
+`
+
+const MemberImage = styled(ImageWithFallback)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 `
 
@@ -57,15 +66,17 @@ const Affiliation = styled.div`
 export default function MemberCard({ mem }: { mem: IMember }) {
   return (
     <Card>
-      <MemberImage
-        placeholder="blur"
-        blurDataURL="/members/default.png"
-        fallbackSrc="/members/default.png"
-        width={180}
-        height={180}
-        src={`/members/${mem.img}`}
-        alt={mem.firstName}
-      />
+      <ImageContainer>
+        <MemberImage
+          placeholder="blur"
+          blurDataURL="/members/default.png"
+          fallbackSrc="/members/default.png"
+          width={180}
+          height={180}
+          src={`/members/${mem.img}`}
+          alt={mem.firstName}
+        />
+      </ImageContainer>
       <Info>
         {mem.site ? (
           <NameWithWebsite href={mem.site}>
