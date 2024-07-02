@@ -2,18 +2,18 @@
 
 import styled from '@emotion/styled'
 import { useState, useEffect } from 'react'
-//import { usePathname, useSearchParams } from 'next/navigation'
 import { MEMBERS_KEY, MEMBERS, CareerTypes } from '@/data/members'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import MemberCard from '@/components/MemberCard'
 import AlumniCard from '@/components/AlumniCard'
-import { Color } from '@/app/theme'
+import { FontVariant, Color } from '@/app/theme'
+import Image from 'next/image'
+import Divider from '@/components/Divider'
 
 const SectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 36px;
-
   @media (min-width: 1200px) {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -26,7 +26,6 @@ const AlumniSectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1px;
-
   @media (min-width: 1200px) {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -38,9 +37,7 @@ const TableOfContents = styled.ul`
   gap: 12px;
   display: flex;
   flex-direction: column;
-
   margin: 0;
-
   width: fit-content;
   height: fit-content;
 `
@@ -52,15 +49,13 @@ const AnchorLi = styled.li`
 const Anchor = styled.a<{ selected?: boolean }>`
   text-decoration: none;
   color: ${props => (props.selected ? Color.orange900 : Color.gray900)};
-
   &:hover {
     color: ${Color.orange900};
   }
 `
 
 const SubCategoryTitle = styled.h2`
-  font-size: 1rem;
-  font-weight: bold;
+  ${FontVariant.title_sm}
 `
 
 const SpecialThanksSection = styled.div`
@@ -72,11 +67,6 @@ const SpecialThanksTitle = styled.h2`
   font-size: 1.5rem;
   color: ${Color.gray900};
 `
-const SpecialThanksImage = styled.img`
-  width: 200px;
-  height: auto;
-  border-radius: 8px;
-`
 
 const SpecialThanksText = styled.div`
   display: flex;
@@ -84,15 +74,15 @@ const SpecialThanksText = styled.div`
 `
 
 const SpecialThanksSubtitle = styled.h3`
-  font-size: 1.25rem;
-  color: ${Color.orange900};
+  ${FontVariant.body_lg}
+  color: ${Color.gray900};
   margin: 0;
 `
 
 const SpecialThanksDescription = styled.p`
-  font-size: 1rem;
+  ${FontVariant.body_md}
   color: ${Color.gray700};
-  margin: 0.5rem 0 0 0;
+  gap: 4px;
 `
 
 export default function Page() {
@@ -133,16 +123,19 @@ export default function Page() {
           {CareerTypes.filter(career => career !== 'Alumni').map(
             (career, i) =>
               MEMBERS_KEY.filter(key => MEMBERS[key].career === career && career !== 'Alumni').length >= 1 && (
-                <Section key={career}>
-                  <SectionTitle id={career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}>
-                    {career}
-                  </SectionTitle>
-                  <SectionContent>
-                    {MEMBERS_KEY.filter(key => MEMBERS[key].career == career && career != 'Alumni').map(key => (
-                      <MemberCard key={key} mem={MEMBERS[key]} />
-                    ))}
-                  </SectionContent>
-                </Section>
+                <>
+                  <Section key={career}>
+                    <SectionTitle id={career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}>
+                      {career}
+                    </SectionTitle>
+                    <SectionContent>
+                      {MEMBERS_KEY.filter(key => MEMBERS[key].career == career && career != 'Alumni').map(key => (
+                        <MemberCard key={key} mem={MEMBERS[key]} />
+                      ))}
+                    </SectionContent>
+                  </Section>
+                  <Divider />
+                </>
               )
           )}
           <Section key="alumni">
@@ -162,17 +155,20 @@ export default function Page() {
               )
             )}
           </Section>
-          <SpecialThanksTitle>Special Thanks</SpecialThanksTitle>
-          <SpecialThanksSection>
-            <SpecialThanksImage src="images/jura.jpeg" alt="Jura Coffee Machine" />
-            <SpecialThanksText>
-              <SpecialThanksSubtitle>Jura</SpecialThanksSubtitle>
-              <SpecialThanksDescription>Coffee Machine</SpecialThanksDescription>
-              <SpecialThanksDescription>
-                “Thank you for your steadfast warmth and the delightful brews that kickstart my mornings”
-              </SpecialThanksDescription>
-            </SpecialThanksText>
-          </SpecialThanksSection>
+          <Divider />
+          <Section key="thanks">
+            <SpecialThanksTitle id="thanks">Special Thanks</SpecialThanksTitle>
+            <SpecialThanksSection>
+              <Image src="/images/jura.jpeg" alt="Jura Coffee Machine" width={200} height={200} />
+              <SpecialThanksText>
+                <SpecialThanksSubtitle>Jura</SpecialThanksSubtitle>
+                <SpecialThanksDescription>Coffee Machine</SpecialThanksDescription>
+                <SpecialThanksDescription>
+                  <i>“Thank you for your steadfast warmth and the delightful brews that kickstart my mornings”</i>
+                </SpecialThanksDescription>
+              </SpecialThanksText>
+            </SpecialThanksSection>
+          </Section>
         </Sections>
         <nav>
           <TableOfContents>
