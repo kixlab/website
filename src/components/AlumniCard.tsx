@@ -58,7 +58,7 @@ const Education = styled.div`
   }
 `
 
-const AlumniCard = ({ mem }: { mem: IMember }) => {
+export default function AlumniCard({ mem }: { mem: IMember }) {
   return (
     <AlumniCardContainer>
       <Text>
@@ -80,5 +80,3 @@ const AlumniCard = ({ mem }: { mem: IMember }) => {
     </AlumniCardContainer>
   )
 }
-
-export default AlumniCard

@@ -65,7 +65,7 @@ export const MEMBER = {
     site: 'https://hyunwoo.me/',
   },
   seoyoungkim: {
-    firstName: 'Seyoung',
+    firstName: 'Seoyoung',
     lastName: 'Kim',
     email: 'youthskim@kaist.ac.kr',
     career: 'Ph.D. Student',
@@ -194,7 +194,7 @@ export const MEMBER = {
     career: 'Visiting Researcher',
     img: 'jiangnan.jpg',
     site: 'https://www.jiangnanxu.net/',
-    affiliation: 'IRT',
+    affiliation: 'RIT',
   },
   jaesangyu: {
     firstName: 'Jaesang',
