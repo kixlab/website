@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import React from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
@@ -133,6 +133,12 @@ export default function Page() {
     }, 2000)
   }
 
+  const sortedYears = useMemo(() => {
+    return uniq(publicationList.map(p => p.year))
+      .sort()
+      .reverse()
+  }, [publicationList])
+
   return (
     <CenteredContainer>
       <Container>
@@ -170,40 +176,33 @@ export default function Page() {
                 </SectionContent>
               </Section>
             )}
-            {uniq(publicationList.map(p => p.year))
-              .sort()
-              .reverse()
-              .map((year, i) => (
-                <React.Fragment key={year}>
-                  {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
-                    <Divider key={`divider-${i}`} />
-                  )}
-                  <Section
-                    id={`year-${year}`}
-                    ref={el => {
-                      sectionRefs.current[`year-${year}`] = el
-                    }}
-                    key={year}
-                  >
-                    <SectionTitle>{year}</SectionTitle>
-                    <SectionContent>
-                      {publicationList
-                        .filter(({ year: y }) => y === year)
-                        .map(pub => (
-                          <PublicationCard key={pub.title} pub={pub} />
-                        ))}
-                    </SectionContent>
-                  </Section>
-                </React.Fragment>
-              ))}
+            {sortedYears.map((year, i) => (
+              <React.Fragment key={year}>
+                {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
+                  <Divider key={`divider-${i}`} />
+                )}
+                <Section
+                  id={`year-${year}`}
+                  ref={el => {
+                    sectionRefs.current[`year-${year}`] = el
+                  }}
+                  key={year}
+                >
+                  <SectionTitle>{year}</SectionTitle>
+                  <SectionContent>
+                    {publicationList
+                      .filter(({ year: y }) => y === year)
+                      .map(pub => (
+                        <PublicationCard key={pub.title} pub={pub} />
+                      ))}
+                  </SectionContent>
+                </Section>
+              </React.Fragment>
+            ))}
           </Sections>
         </main>
         <SideContainer>
-          <Sidebar
-            activeSection={activeSection}
-            handleLinkClick={handleLinkClick}
-            publicationList={publicationList.map(pub => ({ year: pub.year, type: pub.type }))}
-          />
+          <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} publicationList={publicationList} />
         </SideContainer>
       </Container>
     </CenteredContainer>
