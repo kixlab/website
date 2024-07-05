@@ -14,12 +14,6 @@ import Sidebar from '@/components/SideBar'
 import Divider from '@/components/Divider'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
-const CenteredContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -45,6 +39,7 @@ const Container = styled.div`
   }
 
   & > main {
+    // make the main content (publications list) take up 85% and the Sidebar component 15%
     width: 85%;
   }
 `
@@ -140,71 +135,69 @@ export default function Page() {
   }, [publicationList])
 
   return (
-    <CenteredContainer>
-      <Container>
-        <main style={{ padding: '0px', margin: '0px' }}>
-          <h1>Publications</h1>
-          <Filters>
-            <Filter
-              filterName="Research Topic"
-              optionSet={['All', ...Object.keys(ResearchTopics)]}
-              optionSelected={researchTopic}
-              handleOptionChange={handleResearchTopicChange}
-            />
-            <Filter
-              filterName="Publication Type"
-              optionSet={['All', ...PublicationTypes]}
-              optionSelected={publicationType}
-              handleOptionChange={handlePublicationTypeChange}
-            />
-          </Filters>
-          <Sections>
-            {publicationList.filter(pub => pub.type === 'preprint').length > 0 && (
+    <Container>
+      <main style={{ padding: '0px', margin: '0px' }}>
+        <h1>Publications</h1>
+        <Filters>
+          <Filter
+            filterName="Research Topic"
+            optionSet={['All', ...Object.keys(ResearchTopics)]}
+            optionSelected={researchTopic}
+            handleOptionChange={handleResearchTopicChange}
+          />
+          <Filter
+            filterName="Publication Type"
+            optionSet={['All', ...PublicationTypes]}
+            optionSelected={publicationType}
+            handleOptionChange={handlePublicationTypeChange}
+          />
+        </Filters>
+        <Sections>
+          {publicationList.filter(pub => pub.type === 'preprint').length > 0 && (
+            <Section
+              id="preprints"
+              ref={el => {
+                sectionRefs.current['preprints'] = el
+              }}
+            >
+              <SectionTitle>Preprints</SectionTitle>
+              <SectionContent>
+                {publicationList
+                  .filter(pub => pub.type === 'preprint')
+                  .map(pub => (
+                    <PublicationCard key={pub.title} pub={pub} />
+                  ))}
+              </SectionContent>
+            </Section>
+          )}
+          {sortedYears.map((year, i) => (
+            <React.Fragment key={year}>
+              {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
+                <Divider key={`divider-${i}`} />
+              )}
               <Section
-                id="preprints"
+                id={`year-${year}`}
                 ref={el => {
-                  sectionRefs.current['preprints'] = el
+                  sectionRefs.current[`year-${year}`] = el
                 }}
+                key={year}
               >
-                <SectionTitle>Preprints</SectionTitle>
+                <SectionTitle>{year}</SectionTitle>
                 <SectionContent>
                   {publicationList
-                    .filter(pub => pub.type === 'preprint')
+                    .filter(({ year: y }) => y === year)
                     .map(pub => (
                       <PublicationCard key={pub.title} pub={pub} />
                     ))}
                 </SectionContent>
               </Section>
-            )}
-            {sortedYears.map((year, i) => (
-              <React.Fragment key={year}>
-                {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
-                  <Divider key={`divider-${i}`} />
-                )}
-                <Section
-                  id={`year-${year}`}
-                  ref={el => {
-                    sectionRefs.current[`year-${year}`] = el
-                  }}
-                  key={year}
-                >
-                  <SectionTitle>{year}</SectionTitle>
-                  <SectionContent>
-                    {publicationList
-                      .filter(({ year: y }) => y === year)
-                      .map(pub => (
-                        <PublicationCard key={pub.title} pub={pub} />
-                      ))}
-                  </SectionContent>
-                </Section>
-              </React.Fragment>
-            ))}
-          </Sections>
-        </main>
-        <SideContainer>
-          <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} publicationList={publicationList} />
-        </SideContainer>
-      </Container>
-    </CenteredContainer>
+            </React.Fragment>
+          ))}
+        </Sections>
+      </main>
+      <SideContainer>
+        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} publicationList={publicationList} />
+      </SideContainer>
+    </Container>
   )
 }
