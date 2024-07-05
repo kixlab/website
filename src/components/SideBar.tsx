@@ -7,7 +7,6 @@ import { NAV_BAR_HEIGHT } from './NavBar'
 
 const SideBarContainer = styled.div`
   position: sticky;
-  // TODO: make this more modular by having top take a prop
   top: ${NAV_BAR_HEIGHT + 40}px;
   height: 100vh;
 `
@@ -35,36 +34,24 @@ const SidebarLink = styled.a`
 interface Props {
   activeSection: string | null
   handleLinkClick: (sectionId: string) => void
-  publicationList: { year: number; type: string }[]
+  sidebarList: string[]
 }
 
-const Sidebar = ({ activeSection, handleLinkClick, publicationList }: Props) => {
-  const uniqueYears = uniq(publicationList.map(pub => pub.year))
-    .sort()
-    .reverse()
-  const hasPreprints = publicationList.some(pub => pub.type === 'preprint')
+const capitalizeWords = (s: string) => {
+  return s.replace(/\b\w/g, char => char.toUpperCase())
+}
 
+const Sidebar = ({ activeSection, handleLinkClick, sidebarList }: Props) => {
   return (
     <SideBarContainer>
-      {hasPreprints && (
+      {sidebarList.map(section => (
         <SidebarLink
-          // TODO: Make this more modular by having href take a prop instead of hardcoded value
-          href="#preprints"
-          className={activeSection === 'preprints' ? 'active' : ''}
-          onClick={() => handleLinkClick('preprints')}
+          key={section}
+          href={`#${section}`}
+          className={activeSection === section ? 'active' : ''}
+          onClick={() => handleLinkClick(section)}
         >
-          Preprints
-        </SidebarLink>
-      )}
-      {/* TODO: Make this more modular by replacing publicationList with a prop */}
-      {uniqueYears.map(year => (
-        <SidebarLink
-          key={year}
-          href={`#year-${year}`}
-          className={activeSection === `year-${year}` ? 'active' : ''}
-          onClick={() => handleLinkClick(`year-${year}`)}
-        >
-          {year}
+          {capitalizeWords(section)}
         </SidebarLink>
       ))}
     </SideBarContainer>

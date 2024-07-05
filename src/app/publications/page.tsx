@@ -6,7 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 import { uniq } from 'lodash'
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
-import type { PublicationType, ResearchTopicType } from '@/data/publications'
+import type { PublicationType, ResearchTopicType, Publication } from '@/data/publications'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import Filter from '@/components/Filter'
@@ -68,6 +68,7 @@ export default function Page() {
 
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
   const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [sidebarList, setSidebarList] = useState<string[]>([])
   const ignoreObserver = useRef(false)
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -80,14 +81,29 @@ export default function Page() {
   }
 
   useEffect(() => {
-    setPublicationList(
-      PUBLICATIONS.filter(
-        pub =>
-          (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
-          (publicationType === 'All' || pub.type === publicationType)
-      )
+    const filteredList = PUBLICATIONS.filter(
+      pub =>
+        (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
+        (publicationType === 'All' || pub.type === publicationType)
     )
+
+    setPublicationList(filteredList)
   }, [researchTopic, publicationType])
+
+  useEffect(() => {
+    handleSidebarList(publicationList)
+  }, [publicationList])
+
+  const handleSidebarList = (list: Publication[]) => {
+    const sections = []
+    if (list.filter(pub => pub.type === 'preprint').length > 0) {
+      sections.push('preprints')
+    }
+    const years = uniq(list.map(p => p.year))
+      .sort()
+      .reverse()
+    setSidebarList([...sections, ...years.map(year => year.toString())])
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -176,9 +192,9 @@ export default function Page() {
                 <Divider key={`divider-${i}`} />
               )}
               <Section
-                id={`year-${year}`}
+                id={`${year}`}
                 ref={el => {
-                  sectionRefs.current[`year-${year}`] = el
+                  sectionRefs.current[`${year}`] = el
                 }}
                 key={year}
               >
@@ -196,7 +212,7 @@ export default function Page() {
         </Sections>
       </main>
       <SideContainer>
-        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} publicationList={publicationList} />
+        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} sidebarList={sidebarList} />
       </SideContainer>
     </Container>
   )
