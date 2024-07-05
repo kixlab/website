@@ -55,9 +55,9 @@ export const PUBLICATIONS: Publication[] = [
     title: 'CReHate: Cross-cultural Re-annotation of English Hate Speech Dataset',
     authors: ['Nayeon Lee', 'Chani Jung', 'Junho Myung', 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
     year: 2024,
-    venue: 'arXiv preprint',
+    venue: 'NAACL 2024',
     topics: ['social'],
-    type: 'preprint',
+    type: 'conference',
     links: [
       {
         url: 'https://arxiv.org/abs/2308.16705',
@@ -289,7 +289,7 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'ICLR 2024 (Spotlight)',
     year: 2024,
     topics: ['human-ai-interaction'],
-    type: 'preprint',
+    type: 'conference',
     links: [
       {
         url: 'https://arxiv.org/abs/2307.10928',
