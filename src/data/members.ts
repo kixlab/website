@@ -247,7 +247,7 @@ export const MEMBER = {
   yokyunglee: {
     firstName: 'Yokyung',
     lastName: 'Lee',
-    email: 'athexplorer@kaist.ac.kr',
+    email: 'ykleeee@kaist.ac.kr',
     career: 'Undergrad Intern',
     img: 'yokyung.png',
     affiliation: 'KAIST',
