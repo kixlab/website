@@ -99,7 +99,7 @@ export const ResearchThemesSection = () => {
                     <ResearchTopicsMemberAvatar
                       width={36}
                       height={36}
-                      src={`/images/members/${member.img}`}
+                      src={`/members/${member.img}`}
                       alt={`${member.firstName} ${member.lastName}`}
                       key={member.email}
                     />
