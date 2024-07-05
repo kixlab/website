@@ -46,10 +46,12 @@ const Container = styled.div`
 
 const SideContainer = styled.div`
   padding-top: 96px;
+  padding-left: 30px;
+  padding-right: 30px;
   width: 15%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   @media (max-width: ${ScreenSize.sm}) {
     display: none;
   }
