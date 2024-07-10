@@ -7,12 +7,13 @@ const Select = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
+  min-width: 0;
 `
 
 const SelectName = styled.span<{ filtered: boolean }>`
   margin-left: 4px;
   ${FontVariant.body_sm}
-  width: fit-content;
   margin-right: 6px;
   color: ${props => (props.filtered ? Color.orange900 : Color.gray700)};
   white-space: nowrap;
@@ -20,28 +21,21 @@ const SelectName = styled.span<{ filtered: boolean }>`
 
 const SelectBody = styled.div`
   position: relative;
-  min-width: 25vw;
-
   ${FontVariant.body_md}
-
   box-sizing: border-box;
 `
 
 const Value = styled.span<{ filtered: boolean }>`
   display: flex;
-
   overflow: hidden;
-
   border: 1px solid ${props => (props.filtered ? Color.orange900 : Color.gray300)};
   border-radius: ${Radius.md};
   padding: 6px 16px 6px 12px;
-
   cursor: pointer;
-
   vertical-align: middle;
   justify-content: space-between;
+  text-transform: capitalize;
   color: ${props => (props.filtered ? Color.orange900 : Color.gray700)};
-
   white-space: nowrap;
   text-overflow: ellipsis;
 
@@ -56,13 +50,10 @@ const OptList = styled.ul`
   list-style: none;
   margin-top: 12px;
   padding: 0;
-
   box-sizing: border-box;
   min-width: 100%;
-
   overflow-y: auto;
   overflow-x: hidden;
-
   border: 1px solid ${Color.gray200};
   border-radius: ${Radius.md};
   background-color: ${Color.white};
@@ -77,6 +68,7 @@ const FilterOption = styled.li`
   display: block;
   padding: 6px 12px;
   cursor: pointer;
+  text-transform: capitalize;
 
   &:hover {
     background-color: ${Color.gray100};

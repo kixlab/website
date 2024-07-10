@@ -10,7 +10,7 @@ export const ResearchTopics = {
   civics: { emoji: '🏛️' },
   visualization: { emoji: '📊' },
   social: { emoji: '🗣️' },
-  'human-ai-interaction': { emoji: '🤖' },
+  'human-AI interaction': { emoji: '🤖' },
 } as const
 export type ResearchTopicType = keyof typeof ResearchTopics
 
@@ -42,7 +42,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Jeongeon Park', 'Bryan Min', 'Xiaojuan Ma', MEMBERS.juhokim],
     venue: 'arXiv preprint',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'preprint',
     links: [
       {
@@ -55,9 +55,9 @@ export const PUBLICATIONS: Publication[] = [
     title: 'CReHate: Cross-cultural Re-annotation of English Hate Speech Dataset',
     authors: ['Nayeon Lee', 'Chani Jung', 'Junho Myung', 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
     year: 2024,
-    venue: 'arXiv preprint',
+    venue: 'NAACL 2024',
     topics: ['social'],
-    type: 'preprint',
+    type: 'conference',
     links: [
       {
         url: 'https://arxiv.org/abs/2308.16705',
@@ -105,7 +105,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'FAccT 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [],
   },
@@ -124,7 +124,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Seulgi Choi', 'Hyewon Lee', 'Yoonjoo Lee', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'conference',
     links: [
       {
@@ -147,7 +147,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -161,7 +161,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['DaEun Choi', 'Sumin Hong', 'Jeongeon Park', 'John Joon Young Chung', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -179,7 +179,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Kihoon Son', 'DaEun Choi', 'Tae Soo Kim', 'Young-Ho Kim', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -215,7 +215,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: [MEMBERS.hyoungwookjin, 'Seonghee Lee', 'Hyungyu Shin', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'conference',
     links: [
       {
@@ -229,7 +229,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Tae Soo Kim', 'Yoonjoo Lee', 'Jamin Shin', 'Young-Ho Kim', MEMBERS.juhokim],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -255,7 +255,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction', 'visualization'],
+    topics: ['human-AI interaction', 'visualization'],
     type: 'conference',
     links: [
       {
@@ -269,7 +269,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Saelyne Yang', 'Jo Vermeulen', 'George Fitzmaurice', 'Justin Matejka'],
     venue: 'CHI 2024',
     year: 2024,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'conference',
     links: [],
   },
@@ -288,8 +288,8 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'ICLR 2024 (Spotlight)',
     year: 2024,
-    topics: ['human-ai-interaction'],
-    type: 'preprint',
+    topics: ['human-AI interaction'],
+    type: 'conference',
     links: [
       {
         url: 'https://arxiv.org/abs/2307.10928',
@@ -302,7 +302,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Saelyne Yang', 'Sunghyun Park', 'Yunseok Jang', 'Moontae Lee'],
     venue: 'AAAI 2024',
     year: 2024,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'conference',
     links: [],
   },
@@ -312,7 +312,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Yoonsu Kim', 'Jueon Lee', 'Seoyoung Kim', 'Jaehyuk Park', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -334,7 +334,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Bekzat Tilekbay', 'Saelyne Yang', 'Michal A Lewkowicz', 'Alex Suryapranata', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -356,7 +356,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Hyunwoo Kim', 'Khanh Duy Le', 'Gionnieve Lim', 'Dae Hyun Kim', 'Yoo Jin Hong', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
-    topics: ['crowdsourcing', 'human-ai-interaction', 'civics'],
+    topics: ['crowdsourcing', 'human-AI interaction', 'civics'],
     type: 'conference',
     links: [
       {
@@ -378,7 +378,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Jeongeon Park', 'Eunyoung Ko', 'Yeon Su Park', 'Jinyeong Yim', MEMBERS.juhokim],
     venue: 'IUI 2024',
     year: 2024,
-    topics: ['crowdsourcing', 'human-ai-interaction'],
+    topics: ['crowdsourcing', 'human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -401,7 +401,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Seoyoung Kim', 'Yeon Su Park', 'Dakyeom Ahn', 'Jin Myung Kwak', MEMBERS.juhokim],
     venue: 'CSCW 2024',
     year: 2024,
-    topics: ['human-ai-interaction', 'social'],
+    topics: ['human-AI interaction', 'social'],
     type: 'conference',
     links: [],
   },
@@ -428,7 +428,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Tae Soo Kim', 'Yoonjoo Lee', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'UIST 2023',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -450,7 +450,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Tae Soo Kim', 'Matt Latzke', 'Jonathan Bragg', 'Amy X. Zhang', 'Joseph Chee Chang'],
     venue: 'UIST 2023',
     year: 2023,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'conference',
     links: [
       {
@@ -480,7 +480,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'ICML 2023',
     year: 2023,
-    topics: ['human-ai-interaction', 'datamining'], // check
+    topics: ['human-AI interaction', 'datamining'], // check
     type: 'conference',
     links: [
       {
@@ -525,7 +525,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'CSCW SIG',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'poster',
     links: [
       {
@@ -595,7 +595,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Hyung-Kwon Ko', 'Kihoon Son', MEMBERS.hyoungwookjin, 'Yoonseo Choi', 'Xiang ‘Anthony’ Chen'],
     venue: 'CHI 2023 Workshop on Generative AI and HCI',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'workshop',
     links: [
       {
@@ -609,7 +609,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Tae Soo Kim', 'Arghya Sarkar', 'Yoonjoo Lee', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'CHI 2023 Workshop on Generative AI and HCI',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'workshop',
     links: [
       {
@@ -627,7 +627,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Yoonseo Choi', 'Eun Jeong Kang', 'Min Kyung Lee', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -669,7 +669,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Yoonjoo Lee', 'Tae Soo Kim', 'Sungdong Kim', 'Yohan Yun', MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'conference',
     links: [
       {
@@ -720,7 +720,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Hyung-Kwon Ko', 'Gwanmo Park', 'Hyeon Jeon', 'Jaemin Jo', MEMBERS.juhokim, 'Jinwook Seo'],
     venue: 'IUI 2023',
     year: 2023,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -776,7 +776,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Yoonjoo Lee', 'Tae Soo Kim', 'Minsuk Chang', MEMBERS.juhokim],
     venue: 'ACL 2022 Workshop on Intelligent and Interactive Writing Assistants',
     year: 2022,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'workshop',
     links: [
       {
@@ -892,7 +892,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Saelyne Yang', 'Jisu Yim', MEMBERS.juhokim, 'Hijung Valentina Shin'],
     venue: 'CHI 2022',
     year: 2022,
-    topics: ['learning', 'human-ai-interaction'],
+    topics: ['learning', 'human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -963,7 +963,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Yoonjoo Lee', 'John Joon Young Chung', 'Tae Soo Kim', 'Jean Y Song', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
-    topics: ['learning', 'human-ai-interaction'],
+    topics: ['learning', 'human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -989,7 +989,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Tae Soo Kim', 'DaEun Choi', 'Yoonseo Choi', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     award: 'Honorable Mention Award',
     links: [
@@ -1016,7 +1016,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Jeongyeon Kim', 'Yubin Choi', 'Minsuk Kahng', MEMBERS.juhokim],
     venue: 'CHI 2022',
     year: 2022,
-    topics: ['learning', 'human-ai-interaction'],
+    topics: ['learning', 'human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -1091,7 +1091,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Hyungyu Shin', 'Nabila Sindi', 'Yoonjoo Lee', 'Jaeryoung Ka', 'Jean Y. Song', MEMBERS.juhokim],
     venue: 'SIGCSE TS 2022 Posters',
     year: 2022,
-    topics: ['human-ai-interaction', 'learning'],
+    topics: ['human-AI interaction', 'learning'],
     type: 'poster',
     links: [
       {
@@ -1117,7 +1117,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Yoonseo Choi', 'Eun Jeong Kang', MEMBERS.juhokim],
     venue: 'NeurIPS 2021 Workshop on Human Centered AI',
     year: 2021,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'workshop',
     links: [
       {
@@ -1309,7 +1309,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Jeongyeon Kim', MEMBERS.juhokim],
     venue: 'AAAI 2021 Workshop on Imagining Post-COVID Education with AI',
     year: 2021,
-    topics: ['learning', 'human-ai-interaction'],
+    topics: ['learning', 'human-AI interaction'],
     type: 'workshop',
     links: [
       {
@@ -1327,7 +1327,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Donghoon Han', MEMBERS.juhokim, 'Alice Oh'],
     venue: '1st Data Excellence Workshop (DEW 2020) @ HCOMP 2020',
     year: 2020,
-    topics: ['crowdsourcing', 'human-ai-interaction'],
+    topics: ['crowdsourcing', 'human-AI interaction'],
     type: 'workshop',
     links: [
       {
@@ -1488,7 +1488,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'DIS 2020',
     year: 2020,
-    topics: ['human-ai-interaction'],
+    topics: ['human-AI interaction'],
     type: 'conference',
     award: 'Honorable Mention',
     links: [
@@ -1614,7 +1614,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Sung-Chul Lee', 'Jaeyoon Song', 'Eunyoung Ko', 'Seongho Park', 'Jihee Kim', MEMBERS.juhokim],
     venue: 'CHI 2020',
     year: 2020,
-    topics: ['civics', 'social', 'human-ai-interaction'],
+    topics: ['civics', 'social', 'human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -1645,7 +1645,7 @@ export const PUBLICATIONS: Publication[] = [
     authors: ['Seoyoung Kim', 'Arti Thakur', MEMBERS.juhokim],
     venue: 'CHI 2020',
     year: 2020,
-    topics: ['datamining', 'human-ai-interaction'],
+    topics: ['datamining', 'human-AI interaction'],
     type: 'conference',
     links: [
       {
@@ -2063,7 +2063,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'CHI 2018',
     year: 2018,
-    topics: ['datamining', 'human-ai-interaction'],
+    topics: ['datamining', 'human-AI interaction'],
     type: 'conference',
     links: [
       { url: 'https://dl.acm.org/citation.cfm?id=3174025', type: PublicationLinkType.ACM },

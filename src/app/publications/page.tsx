@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
+import React from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 import { uniq } from 'lodash'
 import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
-import type { PublicationType, ResearchTopicType } from '@/data/publications'
+import type { PublicationType, ResearchTopicType, Publication } from '@/data/publications'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import Filter from '@/components/Filter'
@@ -19,16 +20,41 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 40px
     ${linearlyScaleSize({
-      minSizePx: 48,
+      minSizePx: 24,
       maxSizePx: 96,
       minScreenSizePx: parseInt(ScreenSize.md),
       maxScreenSizePx: parseInt(ScreenSize.lg),
     })};
+  padding-right: ${linearlyScaleSize({
+    minSizePx: 24,
+    maxSizePx: 8,
+    minScreenSizePx: parseInt(ScreenSize.sm),
+    maxScreenSizePx: parseInt(ScreenSize.md),
+  })};
+  width: 100%;
   gap: 16px;
+  @media (min-width: ${ScreenSize.max}) {
+    width: ${ScreenSize.max};
+    margin: 0 auto;
+  }
+
+  & > main {
+    // make the main content (publications list) take up 85% and the Sidebar component 15%
+    width: 85%;
+  }
 `
 
 const SideContainer = styled.div`
   padding-top: 96px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media (max-width: ${ScreenSize.sm}) {
+    display: none;
+  }
 `
 
 const Filters = styled.div`
@@ -44,6 +70,7 @@ export default function Page() {
 
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
   const [activeSection, setActiveSection] = useState<string | null>(null)
+  const [sidebarList, setSidebarList] = useState<string[]>([])
   const ignoreObserver = useRef(false)
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -56,14 +83,29 @@ export default function Page() {
   }
 
   useEffect(() => {
-    setPublicationList(
-      PUBLICATIONS.filter(
-        pub =>
-          (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
-          (publicationType === 'All' || pub.type === publicationType)
-      )
+    const filteredList = PUBLICATIONS.filter(
+      pub =>
+        (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
+        (publicationType === 'All' || pub.type === publicationType)
     )
+
+    setPublicationList(filteredList)
   }, [researchTopic, publicationType])
+
+  useEffect(() => {
+    handleSidebarList(publicationList)
+  }, [publicationList])
+
+  const handleSidebarList = (list: Publication[]) => {
+    const sections = []
+    if (list.filter(pub => pub.type === 'preprint').length > 0) {
+      sections.push('preprints')
+    }
+    const years = uniq(list.map(p => p.year))
+      .sort()
+      .reverse()
+    setSidebarList([...sections, ...years.map(year => year.toString())])
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -104,9 +146,15 @@ export default function Page() {
     }, 2000)
   }
 
+  const sortedYears = useMemo(() => {
+    return uniq(publicationList.map(p => p.year))
+      .sort()
+      .reverse()
+  }, [publicationList])
+
   return (
     <Container>
-      <main style={{ padding: '0px' }}>
+      <main style={{ padding: '0px', margin: '0px' }}>
         <h1>Publications</h1>
         <Filters>
           <Filter
@@ -123,7 +171,7 @@ export default function Page() {
           />
         </Filters>
         <Sections>
-          {PUBLICATIONS.filter(pub => pub.type === 'preprint').length > 0 && (
+          {publicationList.filter(pub => pub.type === 'preprint').length > 0 && (
             <Section
               id="preprints"
               ref={el => {
@@ -140,38 +188,33 @@ export default function Page() {
               </SectionContent>
             </Section>
           )}
-          {uniq(PUBLICATIONS.map(p => p.year))
-            .sort()
-            .reverse()
-            .map((year, i) => (
-              <>
+          {sortedYears.map((year, i) => (
+            <React.Fragment key={year}>
+              {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
                 <Divider key={`divider-${i}`} />
-                <Section
-                  id={`year-${year}`}
-                  ref={el => {
-                    sectionRefs.current[`year-${year}`] = el
-                  }}
-                  key={i}
-                >
-                  <SectionTitle>{year}</SectionTitle>
-                  <SectionContent>
-                    {publicationList
-                      .filter(({ year: y }) => y === year)
-                      .map(pub => (
-                        <PublicationCard key={pub.title} pub={pub} />
-                      ))}
-                  </SectionContent>
-                </Section>
-              </>
-            ))}
+              )}
+              <Section
+                id={`${year}`}
+                ref={el => {
+                  sectionRefs.current[`${year}`] = el
+                }}
+                key={year}
+              >
+                <SectionTitle>{year}</SectionTitle>
+                <SectionContent>
+                  {publicationList
+                    .filter(({ year: y }) => y === year)
+                    .map(pub => (
+                      <PublicationCard key={pub.title} pub={pub} />
+                    ))}
+                </SectionContent>
+              </Section>
+            </React.Fragment>
+          ))}
         </Sections>
       </main>
       <SideContainer>
-        <Sidebar
-          activeSection={activeSection}
-          handleLinkClick={handleLinkClick}
-          publicationList={publicationList.map(pub => pub.year)}
-        />
+        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} sidebarList={sidebarList} />
       </SideContainer>
     </Container>
   )
