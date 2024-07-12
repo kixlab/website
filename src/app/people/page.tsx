@@ -1,7 +1,6 @@
 'use client'
-
 import styled from '@emotion/styled'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { MEMBERS_KEY, MEMBERS, CareerTypes } from '@/data/members'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import MemberCard from '@/components/MemberCard'
@@ -9,48 +8,62 @@ import AlumniCard from '@/components/AlumniCard'
 import { FontVariant, Color } from '@/app/theme'
 import Image from 'next/image'
 import Divider from '@/components/Divider'
+import Sidebar from '@/components/SideBar'
+import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const SectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 36px;
-  @media (min-width: 1200px) {
-    grid-template-columns: repeat(5, 1fr);
-  }
-`
-const MainInner = styled.div`
-  display: flex;
+  gap: 25px;
 `
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px
+    ${linearlyScaleSize({
+      minSizePx: 24,
+      maxSizePx: 96,
+      minScreenSizePx: parseInt(ScreenSize.md),
+      maxScreenSizePx: parseInt(ScreenSize.lg),
+    })};
+  padding-right: ${linearlyScaleSize({
+    minSizePx: 24,
+    maxSizePx: 8,
+    minScreenSizePx: parseInt(ScreenSize.sm),
+    maxScreenSizePx: parseInt(ScreenSize.md),
+  })};
+  width: 100%;
+  gap: 16px;
+  @media (min-width: ${ScreenSize.max}) {
+    width: ${ScreenSize.max};
+    margin: 0 auto;
+  }
+
+  & > main {
+    // make the main content (publications list) take up 85% and the Sidebar component 15%
+    width: 85%;
+  }
+`
+const SideContainer = styled.div`
+  padding-top: 96px;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @media (max-width: ${ScreenSize.sm}) {
+    display: none;
+  }
+`
 const AlumniSectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1px;
   @media (min-width: 1200px) {
     grid-template-columns: repeat(5, 1fr);
-  }
-`
-
-const TableOfContents = styled.ul`
-  position: sticky;
-  top: 100px;
-  gap: 12px;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  width: fit-content;
-  height: fit-content;
-`
-
-const AnchorLi = styled.li`
-  list-style-type: none;
-`
-
-const Anchor = styled.a<{ selected?: boolean }>`
-  text-decoration: none;
-  color: ${props => (props.selected ? Color.orange900 : Color.gray900)};
-  &:hover {
-    color: ${Color.orange900};
   }
 `
 
@@ -87,47 +100,78 @@ const SpecialThanksDescription = styled.p`
 
 export default function Page() {
   const [selected, setSelected] = useState('')
+  const [sidebarList, setSidebarList] = useState<string[]>([])
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+  const ignoreObserver = useRef(false)
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-      const myObserverCallback = (entries: IntersectionObserverEntry[]) => {
-        entries.reverse().forEach(entry => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0) {
-            if (entry.target.id) {
-              setSelected(entry.target.id)
-            }
-          }
-        })
-      }
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      if (ignoreObserver.current) return
 
-      const io = new IntersectionObserver(myObserverCallback, { threshold: 0.1 })
-
-      CareerTypes.map(career => {
-        const element = document.querySelector(`#${career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}`)
-        if (element) {
-          io.observe(element)
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setSelected(entry.target.id)
+          setActiveSection(entry.target.id)
         }
       })
+    }
 
-      return () => {
-        io.disconnect()
+    const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 })
+    const sections = Object.values(sectionRefs.current)
+    sections.forEach(section => {
+      if (section) {
+        observer.observe(section)
       }
+    })
+
+    return () => {
+      sections.forEach(section => {
+        if (section) {
+          observer.unobserve(section)
+        }
+      })
     }
   }, [])
 
+  useEffect(() => {
+    handleSidebarList(MEMBERS_KEY)
+  }, [MEMBERS_KEY])
+
+  const handleSidebarList = (list: string[]) => {
+    const sections = CareerTypes.filter(career => career !== 'Alumni').map(career =>
+      career.replace(/\s+/g, '').replace('.', '')
+    )
+    sections.push('alumni')
+    setSidebarList(sections)
+  }
+
+  const handleLinkClick = (sectionId: string) => {
+    setActiveSection(sectionId)
+    ignoreObserver.current = true
+
+    setTimeout(() => {
+      ignoreObserver.current = false
+    }, 2000)
+  }
+
   return (
-    <main>
-      <h1>People</h1>
-      <MainInner>
+    <Container>
+      <main style={{ padding: '0px', margin: '0px' }}>
+        <h1>People</h1>
         <Sections>
           {CareerTypes.filter(career => career !== 'Alumni').map(
             (career, i) =>
               MEMBERS_KEY.filter(key => MEMBERS[key].career === career && career !== 'Alumni').length >= 1 && (
                 <>
-                  <Section key={career}>
-                    <SectionTitle id={career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}>
-                      {career}
-                    </SectionTitle>
+                  <Section
+                    key={career}
+                    id={career.replace(/\s+/g, '').replace('.', '')}
+                    ref={el => {
+                      sectionRefs.current[career] = el
+                    }}
+                  >
+                    <SectionTitle id={career.replace(/\s+/g, '').replace('.', '')}>{career}</SectionTitle>
                     <SectionContent>
                       {MEMBERS_KEY.filter(key => MEMBERS[key].career == career && career != 'Alumni').map(key => (
                         <MemberCard key={key} mem={MEMBERS[key]} />
@@ -138,7 +182,13 @@ export default function Page() {
                 </>
               )
           )}
-          <Section key="alumni">
+          <Section
+            key="alumni"
+            id="alumni"
+            ref={el => {
+              sectionRefs.current['alumni'] = el
+            }}
+          >
             <SectionTitle id="alumni">Alumni</SectionTitle>
             {['Postdoct Researcher', 'Ph.D Student', 'M.S. Student', 'Visiting Researcher', 'Intern'].map(
               alumniCareer => (
@@ -170,27 +220,10 @@ export default function Page() {
             </SpecialThanksSection>
           </Section>
         </Sections>
-        <nav>
-          <TableOfContents>
-            {CareerTypes.filter(career => career !== 'Alumni').map((career, i) => (
-              <AnchorLi key={`toc-${career}`}>
-                <Anchor
-                  href={`#${career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}`}
-                  selected={selected === career.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}
-                  onClick={() => setSelected(career.toLowerCase().replaceAll(' ', '-').replaceAll('.', ''))}
-                >
-                  {career}
-                </Anchor>
-              </AnchorLi>
-            ))}
-            <AnchorLi key="toc-alumni">
-              <Anchor href="#alumni" selected={selected === 'alumni'} onClick={() => setSelected('alumni')}>
-                Alumni
-              </Anchor>
-            </AnchorLi>
-          </TableOfContents>
-        </nav>
-      </MainInner>
-    </main>
+      </main>
+      <SideContainer>
+        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} sidebarList={sidebarList} />
+      </SideContainer>
+    </Container>
   )
 }
