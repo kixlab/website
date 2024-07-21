@@ -38,7 +38,13 @@ interface Props {
 }
 
 const capitalizeWords = (s: string) => {
-  return s.replace(/\b\w/g, char => char.toUpperCase())
+  return (
+    s
+      // Insert a space between words in a camelcase string and capitalize the first letter of each word
+      // Note: This is a bandaid fix for the People page. Will probably need to refactor Sidebar further in the future
+      .replace(/([A-Z])/g, ' $1')
+      .replace(/^./, str => str.toUpperCase())
+  )
 }
 
 const Sidebar = ({ activeSection, handleLinkClick, sidebarList }: Props) => {
