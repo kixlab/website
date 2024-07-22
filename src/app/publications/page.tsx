@@ -115,8 +115,8 @@ export default function Page() {
         entries.forEach(entry => entry.isIntersecting && setActiveSection(entry.target.id))
       },
       {
-        // when a section passes the area that is 20% from the top and 70% from the bottom of the viewport, it will be considered intersecting
-        rootMargin: '-20% 0px -80% 0px',
+        // when a section passes an area near the top (either from below or above), the IntersectionObserver will fire
+        rootMargin: '-25% 0px -75% 0px',
       }
     )
 
@@ -140,7 +140,7 @@ export default function Page() {
 
     setTimeout(() => {
       ignoreObserver.current = false
-    }, 2000)
+    }, 1000)
   }
 
   const sortedYears = useMemo(() => {
