@@ -10,7 +10,7 @@ import type { PublicationType, ResearchTopicType, Publication } from '@/data/pub
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import Filter from '@/components/Filter'
-import Sidebar from '@/components/SideBar'
+import { Sidebar } from '@/components/SideBar'
 import Divider from '@/components/Divider'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
@@ -112,20 +112,17 @@ export default function Page() {
       entries => {
         if (ignoreObserver.current) return
 
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
+        entries.forEach(entry => entry.isIntersecting && setActiveSection(entry.target.id))
       },
-      { threshold: 0.1 }
+      {
+        // when a section passes the area that is 20% from the top and 70% from the bottom of the viewport, it will be considered intersecting
+        rootMargin: '-20% 0px -80% 0px',
+      }
     )
 
     const sections = Object.values(sectionRefs.current)
     sections.forEach(section => {
-      if (section) {
-        observer.observe(section)
-      }
+      section && observer.observe(section)
     })
 
     return () => {
@@ -135,7 +132,7 @@ export default function Page() {
         }
       })
     }
-  }, [])
+  }, [publicationList])
 
   const handleLinkClick = (sectionId: string) => {
     setActiveSection(sectionId)
