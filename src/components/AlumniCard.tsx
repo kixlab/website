@@ -3,7 +3,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
-import type { IMember } from '@/data/members'
+import { IMember } from '@/data/members'
+import { IAlumnus } from '@/data/alumni'
 
 const AlumniCardContainer = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ const Education = styled.div`
   }
 `
 
-export default function AlumniCard({ mem }: { mem: IMember }) {
+export default function AlumniCard({ mem }: { mem: IAlumnus }) {
   return (
     <AlumniCardContainer>
       <Text>
@@ -72,9 +73,11 @@ export default function AlumniCard({ mem }: { mem: IMember }) {
               {mem.firstName} {mem.lastName}
             </Name>
           )}
-          <Period>{mem.period}</Period>
+          <Period>
+            {mem.startSeason} {mem.startYear} {mem.endSeason && mem.endYear ? ` - ${mem.endSeason} ${mem.endYear}` : ''}
+          </Period>
           {mem.currentPosition && <CurrentPosition>{mem.currentPosition}</CurrentPosition>}
-          {mem.education && <Education>{mem.education}</Education>}
+          {mem.affiliation && <Education>{mem.affiliation}</Education>}
         </TextRow>
       </Text>
     </AlumniCardContainer>

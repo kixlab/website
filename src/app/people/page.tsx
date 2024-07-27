@@ -1,7 +1,8 @@
 'use client'
 import styled from '@emotion/styled'
 import React, { useState, useEffect, useRef } from 'react'
-import { MEMBERS_KEY, MEMBERS, CareerTypes } from '@/data/members'
+import { MEMBERS, MEMBERS_VALUES, KixlabPositionTypes, SeasonTypes } from '@/data/members'
+import { ALUMNI_VALUES } from '@/data/alumni'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import MemberCard from '@/components/MemberCard'
 import AlumniCard from '@/components/AlumniCard'
@@ -68,7 +69,7 @@ const AlumniSectionContent = styled.div`
 `
 
 const SubCategoryTitle = styled.h2`
-  ${FontVariant.title_sm}
+  ${FontVariant.title_md}
 `
 
 const SpecialThanksSection = styled.div`
@@ -132,13 +133,11 @@ export default function Page() {
   }, [])
 
   useEffect(() => {
-    handleSidebarList(MEMBERS_KEY)
+    handleSidebarList()
   }, [])
 
-  const handleSidebarList = (list: string[]) => {
-    const sections = CareerTypes.filter(career => career !== 'Alumni').map(career =>
-      career.replace(/\s+/g, '').replace('.', '')
-    )
+  const handleSidebarList = () => {
+    const sections = KixlabPositionTypes.map(career => career.replace(/\s+/g, '').replace('.', ''))
     sections.push('alumni')
     setSidebarList(sections)
   }
@@ -157,28 +156,41 @@ export default function Page() {
       <main style={{ padding: '0px', margin: '0px' }}>
         <h1>People</h1>
         <Sections>
-          {CareerTypes.filter(career => career !== 'Alumni').map(
-            (career, i) =>
-              MEMBERS_KEY.filter(key => MEMBERS[key].career === career && career !== 'Alumni').length >= 1 && (
-                <React.Fragment key={career}>
+          {KixlabPositionTypes.map(kixlabPosition => {
+            const filteredMembers = MEMBERS_VALUES.filter(member => member.kixlabPosition === kixlabPosition)
+            return (
+              filteredMembers.length > 0 && (
+                <React.Fragment key={kixlabPosition}>
                   <Section
-                    key={career}
-                    id={career.replace(/\s+/g, '').replace('.', '')}
+                    key={kixlabPosition}
+                    id={kixlabPosition.replace(/\s+/g, '').replace('.', '')}
                     ref={el => {
-                      sectionRefs.current[career] = el
+                      sectionRefs.current[kixlabPosition] = el
                     }}
                   >
-                    <SectionTitle id={career.replace(/\s+/g, '').replace('.', '')}>{career}</SectionTitle>
+                    <SectionTitle id={kixlabPosition.replace(/\s+/g, '').replace('.', '')}>
+                      {kixlabPosition}
+                    </SectionTitle>
                     <SectionContent>
-                      {MEMBERS_KEY.filter(key => MEMBERS[key].career == career && career != 'Alumni').map(key => (
-                        <MemberCard key={key} mem={MEMBERS[key]} />
-                      ))}
+                      {filteredMembers
+                        .sort((memberA, memberB) => {
+                          if (memberA.lastName === memberB.lastName) {
+                            // sort by first name if last name is the same
+                            return memberA.firstName.localeCompare(memberB.firstName)
+                          } else {
+                            return memberA.lastName.localeCompare(memberB.lastName)
+                          }
+                        })
+                        .map(member => (
+                          <MemberCard key={member.email} mem={member} />
+                        ))}
                     </SectionContent>
                   </Section>
                   <Divider />
                 </React.Fragment>
               )
-          )}
+            )
+          })}
           <Section
             key="alumni"
             id="alumni"
@@ -187,20 +199,30 @@ export default function Page() {
             }}
           >
             <SectionTitle id="alumni">Alumni</SectionTitle>
-            {['Postdoc Researcher', 'Ph.D Student', 'M.S. Student', 'Visiting Researcher', 'Intern'].map(
-              alumniCareer => (
-                <div key={alumniCareer}>
-                  <SubCategoryTitle>{alumniCareer}</SubCategoryTitle>
+            {KixlabPositionTypes.map(kixlabPosition => {
+              const filteredMembers = ALUMNI_VALUES.filter(alumnus => alumnus.kixlabPosition === kixlabPosition)
+              return filteredMembers.length > 0 ? (
+                <div key={kixlabPosition}>
+                  <SubCategoryTitle>{kixlabPosition}</SubCategoryTitle>
                   <AlumniSectionContent>
-                    {MEMBERS_KEY.filter(
-                      key => MEMBERS[key].career === 'Alumni' && MEMBERS[key].affiliation === alumniCareer
-                    ).map(key => (
-                      <AlumniCard key={key} mem={MEMBERS[key]} />
-                    ))}
+                    {filteredMembers
+                      .sort((memberA, memberB) => {
+                        // sort first by startYear and startSeason
+                        if (memberA.startYear === memberB.startYear) {
+                          // TODO: sort by endYear and endSeason if startYear and startSeason are the same
+                          return SeasonTypes.indexOf(memberB.startSeason) - SeasonTypes.indexOf(memberA.startSeason)
+                        } else {
+                          return memberB.startYear - memberA.startYear
+                        }
+                      })
+                      .map((alumnus, i) => (
+                        // TODO: add proper key to the AlumniCard component
+                        <AlumniCard key={i} mem={alumnus} />
+                      ))}
                   </AlumniSectionContent>
                 </div>
-              )
-            )}
+              ) : null
+            })}
           </Section>
           <Divider />
           <Section key="thanks">
