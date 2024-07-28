@@ -67,11 +67,8 @@ export default function Page() {
   const params = useSearchParams()
   const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
   const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
-
   const [publicationList, setPublicationList] = useState(PUBLICATIONS)
-  const [activeSection, setActiveSection] = useState<string | null>(null)
   const [sidebarList, setSidebarList] = useState<string[]>([])
-  const ignoreObserver = useRef(false)
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   const handleResearchTopicChange = (topic: string) => {
@@ -105,42 +102,6 @@ export default function Page() {
       .sort()
       .reverse()
     setSidebarList([...sections, ...years.map(year => year.toString())])
-  }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (ignoreObserver.current) return
-
-        entries.forEach(entry => entry.isIntersecting && setActiveSection(entry.target.id))
-      },
-      {
-        // when a section passes an area near the top (either from below or above), the IntersectionObserver will fire
-        rootMargin: '-25% 0px -75% 0px',
-      }
-    )
-
-    const sections = Object.values(sectionRefs.current)
-    sections.forEach(section => {
-      section && observer.observe(section)
-    })
-
-    return () => {
-      sections.forEach(section => {
-        if (section) {
-          observer.unobserve(section)
-        }
-      })
-    }
-  }, [publicationList])
-
-  const handleLinkClick = (sectionId: string) => {
-    setActiveSection(sectionId)
-    ignoreObserver.current = true
-
-    setTimeout(() => {
-      ignoreObserver.current = false
-    }, 1000)
   }
 
   const sortedYears = useMemo(() => {
@@ -211,7 +172,7 @@ export default function Page() {
         </Sections>
       </main>
       <SideContainer>
-        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} sidebarList={sidebarList} />
+        <Sidebar sidebarList={sidebarList} sectionRefs={sectionRefs} />
       </SideContainer>
     </Container>
   )

@@ -1,6 +1,6 @@
 'use client'
 import styled from '@emotion/styled'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import { MEMBERS, MEMBERS_VALUES, KixlabPositionTypes, SeasonTypes } from '@/data/members'
 import { ALUMNI_VALUES } from '@/data/alumni'
 import { Sections, Section, SectionTitle } from '@/components/Section'
@@ -100,56 +100,7 @@ const SpecialThanksDescription = styled.p`
 `
 
 export default function Page() {
-  const [sidebarList, setSidebarList] = useState<string[]>([])
-  const [activeSection, setActiveSection] = useState<string | null>(null)
-  const ignoreObserver = useRef(false)
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (ignoreObserver.current) return
-
-        entries.forEach(entry => entry.isIntersecting && setActiveSection(entry.target.id))
-      },
-      {
-        // when a section passes the area that is 10% from the top and 80% from the bottom of the viewport, it will be considered intersecting
-        rootMargin: '-20% 0px -80% 0px',
-      }
-    )
-
-    const sections = Object.values(sectionRefs.current)
-    sections.forEach(section => {
-      section && observer.observe(section)
-    })
-
-    return () => {
-      sections.forEach(section => {
-        if (section) {
-          observer.unobserve(section)
-        }
-      })
-    }
-  }, [])
-
-  useEffect(() => {
-    handleSidebarList()
-  }, [])
-
-  const handleSidebarList = () => {
-    const sections = KixlabPositionTypes.map(career => career.replace(/\s+/g, '').replace('.', ''))
-    sections.push('alumni')
-    setSidebarList(sections)
-  }
-
-  const handleLinkClick = (sectionId: string) => {
-    setActiveSection(sectionId)
-    ignoreObserver.current = true
-
-    setTimeout(() => {
-      ignoreObserver.current = false
-    }, 1000)
-  }
 
   return (
     <Container>
@@ -174,6 +125,7 @@ export default function Page() {
                     <SectionContent>
                       {filteredMembers
                         .sort((memberA, memberB) => {
+                          // sort by last name in ascending order
                           if (memberA.lastName === memberB.lastName) {
                             // sort by first name if last name is the same
                             return memberA.firstName.localeCompare(memberB.firstName)
@@ -201,27 +153,29 @@ export default function Page() {
             <SectionTitle id="alumni">Alumni</SectionTitle>
             {KixlabPositionTypes.map(kixlabPosition => {
               const filteredMembers = ALUMNI_VALUES.filter(alumnus => alumnus.kixlabPosition === kixlabPosition)
-              return filteredMembers.length > 0 ? (
-                <div key={kixlabPosition}>
-                  <SubCategoryTitle>{kixlabPosition}</SubCategoryTitle>
-                  <AlumniSectionContent>
-                    {filteredMembers
-                      .sort((memberA, memberB) => {
-                        // sort first by startYear and startSeason
-                        if (memberA.startYear === memberB.startYear) {
-                          // TODO: sort by endYear and endSeason if startYear and startSeason are the same
-                          return SeasonTypes.indexOf(memberB.startSeason) - SeasonTypes.indexOf(memberA.startSeason)
-                        } else {
-                          return memberB.startYear - memberA.startYear
-                        }
-                      })
-                      .map((alumnus, i) => (
-                        // TODO: add proper key to the AlumniCard component
-                        <AlumniCard key={i} mem={alumnus} />
-                      ))}
-                  </AlumniSectionContent>
-                </div>
-              ) : null
+              return (
+                filteredMembers.length > 0 && (
+                  <React.Fragment key={kixlabPosition}>
+                    <SubCategoryTitle>{kixlabPosition}</SubCategoryTitle>
+                    <AlumniSectionContent>
+                      {filteredMembers
+                        .sort((memberA, memberB) => {
+                          // sort first by startYear and startSeason in descending order
+                          if (memberA.startYear === memberB.startYear) {
+                            // TODO: sort by endYear and endSeason if startYear and startSeason are the same
+                            return SeasonTypes.indexOf(memberB.startSeason) - SeasonTypes.indexOf(memberA.startSeason)
+                          } else {
+                            return memberB.startYear - memberA.startYear
+                          }
+                        })
+                        .map((alumnus, i) => (
+                          // TODO: populate alumni data with email field and use email as key
+                          <AlumniCard key={i} mem={alumnus} />
+                        ))}
+                    </AlumniSectionContent>
+                  </React.Fragment>
+                )
+              )
             })}
           </Section>
           <Divider />
@@ -241,7 +195,14 @@ export default function Page() {
         </Sections>
       </main>
       <SideContainer>
-        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} sidebarList={sidebarList} />
+        <Sidebar
+          // activeSection={activeSection}
+          sidebarList={[
+            ...KixlabPositionTypes.map(kixlabPosition => kixlabPosition.replace(/\s+/g, '').replace('.', '')),
+            'alumni',
+          ]}
+          sectionRefs={sectionRefs}
+        />
       </SideContainer>
     </Container>
   )
