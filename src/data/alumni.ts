@@ -9,7 +9,7 @@ export interface IAlumnus extends IMember {
   currentPosition?: string
 }
 
-export const ALUMNI = [
+export const ALUMNI: IAlumnus[] = [
   {
     firstName: 'Sung-Chul',
     lastName: 'Lee',

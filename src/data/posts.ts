@@ -7,7 +7,7 @@ export interface IPost {
   endsAt?: Date // Add if the post has a deadline
 }
 
-export const POSTS = [
+export const POSTS: IPost[] = [
   {
     title: 'A paper accepted to Interspeech 2024',
     date: new Date('2024-06-04'),

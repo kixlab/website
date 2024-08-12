@@ -7,7 +7,7 @@ export interface ICourse {
   editions: { semester: string; url: string }[]
 }
 
-export const COURSES = [
+export const COURSES: ICourse[] = [
   {
     title: 'Introduction to Human-Computer Interaction',
     code: 'CS374',

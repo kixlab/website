@@ -25,7 +25,7 @@ export interface IMember {
   startSeason?: SeasonType
 }
 
-export const MEMBERS = [
+export const MEMBERS: IMember[] = [
   {
     firstName: 'Juho',
     lastName: 'Kim',
