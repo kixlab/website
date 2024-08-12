@@ -5,7 +5,7 @@ interface DividerProps {
   style?: React.CSSProperties
 }
 
-export default function Divider({ style }: DividerProps) {
+export const Divider = ({ style }: DividerProps) => {
   return (
     <hr
       style={{

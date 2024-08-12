@@ -74,7 +74,12 @@ const Content = styled.div`
   }
 `
 
-export default function NewsModal({ post, onClose }: { post: IPost | null; onClose: () => void }) {
+interface NewsModalProps {
+  post: IPost | null
+  onClose: () => void
+}
+
+export const NewsModal = ({ post, onClose }: NewsModalProps) => {
   const [mdContent, setMdContent] = React.useState<string | null>(null)
   if (!post) {
     return null

@@ -73,7 +73,7 @@ const LogoLink = styled(Link)`
   display: inline-block;
 `
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <FooterContainer>
       <FooterTextContainer>

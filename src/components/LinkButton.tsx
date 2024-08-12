@@ -12,7 +12,7 @@ interface LinkButtonProps {
   style?: React.CSSProperties
 }
 
-export default function LinkButton({ href, text, image, style }: LinkButtonProps) {
+export const LinkButton = ({ href, text, image, style }: LinkButtonProps) => {
   return (
     <Link
       href={href}

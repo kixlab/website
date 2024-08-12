@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { Section, SectionHeader, FullWidthContainer } from './Styles'
 import { VIDEOS } from '@/data/videos'
-import LinkButton from '@/components/LinkButton'
+import { LinkButton } from '@/components/LinkButton'
 
 const MediaArea = styled.div`
   display: flex;

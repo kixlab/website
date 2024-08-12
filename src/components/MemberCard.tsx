@@ -4,7 +4,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
-import type { IMember } from '@/data/members'
+import { IMember } from '@/data/members'
 import Link from 'next/link'
 
 const Card = styled.div`
@@ -20,7 +20,7 @@ const Info = styled.div`
   flex-direction: column;
   gap: 6px;
   align-items: center;
-  ${FontVariant.body_md}// width: fit-content;
+  ${FontVariant.body_md}
 `
 
 const Email = styled.span`
@@ -65,7 +65,11 @@ const Affiliation = styled.div`
   }
 `
 
-export default function MemberCard({ mem }: { mem: IMember }) {
+interface MemberCardProps {
+  member: IMember
+}
+
+export const MemberCard = ({ member }: MemberCardProps) => {
   return (
     <Card>
       <ImageContainer>
@@ -75,22 +79,22 @@ export default function MemberCard({ mem }: { mem: IMember }) {
           fallbackSrc="/members/default.png"
           width={180}
           height={180}
-          src={`/members/${mem.img}`}
-          alt={mem.firstName}
+          src={`/members/${member.img}`}
+          alt={member.firstName}
         />
       </ImageContainer>
       <Info>
-        {mem.site ? (
-          <NameWithWebsite href={mem.site}>
-            {mem.firstName} {mem.lastName}
+        {member.site ? (
+          <NameWithWebsite href={member.site}>
+            {member.firstName} {member.lastName}
           </NameWithWebsite>
         ) : (
           <Name>
-            {mem.firstName} {mem.lastName}
+            {member.firstName} {member.lastName}
           </Name>
         )}
-        <Email>{mem.email}</Email>
-        {mem.affiliation && <Affiliation>{mem.affiliation}</Affiliation>}
+        <Email>{member.email}</Email>
+        {member.affiliation && <Affiliation>{member.affiliation}</Affiliation>}
       </Info>
     </Card>
   )

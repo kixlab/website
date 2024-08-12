@@ -8,10 +8,10 @@ import { uniq } from 'lodash'
 import { PUBLICATIONS, PublicationTypes, ResearchTopics, IPublication } from '@/data/publications'
 import type { PublicationType, ResearchTopicType } from '@/data/publications'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
-import PublicationCard from '@/components/Publication/PublicationCard'
-import Filter from '@/components/Filter'
+import { PublicationCard } from '@/components/Publication/PublicationCard'
+import { Filter } from '@/components/Filter'
 import { Sidebar } from '@/components/SideBar'
-import Divider from '@/components/Divider'
+import { Divider } from '@/components/Divider'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const Container = styled.div`

@@ -15,7 +15,7 @@ const NotLabMember = styled.span`
   color: ${Color.gray500};
 `
 
-export default function Author({ authors }: { authors: (IMember | string)[] }) {
+export const Author = ({ authors }: { authors: (IMember | string)[] }) => {
   return (
     <AuthorList>
       {authors.map(author =>

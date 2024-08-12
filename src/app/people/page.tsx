@@ -4,11 +4,11 @@ import React, { useRef } from 'react'
 import { MEMBERS, KixlabPositionTypes, SeasonTypes } from '@/data/members'
 import { ALUMNI } from '@/data/alumni'
 import { Sections, Section, SectionTitle } from '@/components/Section'
-import MemberCard from '@/components/MemberCard'
-import AlumniCard from '@/components/AlumniCard'
+import { MemberCard } from '@/components/MemberCard'
+import { AlumniCard } from '@/components/AlumniCard'
 import { FontVariant, Color } from '@/app/theme'
 import Image from 'next/image'
-import Divider from '@/components/Divider'
+import { Divider } from '@/components/Divider'
 import { Sidebar } from '@/components/SideBar'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
@@ -134,7 +134,7 @@ export default function Page() {
                           }
                         })
                         .map(member => (
-                          <MemberCard key={member.email} mem={member} />
+                          <MemberCard key={member.email} member={member} />
                         ))}
                     </SectionContent>
                   </Section>

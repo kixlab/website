@@ -153,7 +153,7 @@ const NavList = [
   { navItem: 'News', path: '/news' },
 ]
 
-export default function NavBar() {
+export const NavBar = () => {
   const [isOpen, setIsOpen] = React.useState(false)
   const dropdownRef = React.useRef<HTMLDivElement>(null)
   const hamburgerRef = React.useRef<HTMLButtonElement>(null)

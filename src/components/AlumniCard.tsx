@@ -58,7 +58,7 @@ const Education = styled.div`
   color: ${Color.gray700};
 `
 
-export default function AlumniCard({ mem }: { mem: IAlumnus }) {
+export const AlumniCard = ({ mem }: { mem: IAlumnus }) => {
   return (
     <AlumniCardContainer>
       <Text>
