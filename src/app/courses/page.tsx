@@ -4,7 +4,6 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { COURSES } from '@/data/courses'
 import { FontVariant, Color } from '@/app/theme'
-import { chunk } from 'lodash'
 
 const Sections = styled.div`
   display: flex;
@@ -32,23 +31,19 @@ const SectionContent = styled.div`
   color: ${Color.gray700}
 `
 
-const SectionGroup = styled.div`
-  display: flex;
-  flex-direction: column;
+const PreviousEditionsContainer = styled.div`
+  display: grid;
+  // TODO: number of links on one row is hard-coded to 3. Can we make this more flexible?
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 10px;
+  width: 50%; // Make the links closer to each other. Can we remove this hard-coded width in favor of more flexible template columns?
 `
 
-const SectionEditions = styled.div`
-  display: flex;
-  flex-direction: row;
-`
-
-const SectionEdition = styled.a`
+const PreviousEditionLink = styled.a`
   ${FontVariant.body_md}
   color: ${Color.orange900};
   text-decoration: none;
-  flex-basis: 170px;
-
+  width: fit-content;
   &:hover {
     text-decoration: underline;
   }
@@ -65,24 +60,20 @@ export default function Page() {
     <main>
       <h1>Courses</h1>
       <Sections>
-        {COURSES.map(({ code, title, description, editions }, i) => (
-          <React.Fragment key={i}>
-            <Section key={i}>
+        {COURSES.map((course, i) => (
+          <React.Fragment key={course.code}>
+            <Section key={course.code}>
               <SectionTitle>
-                {code} {title}
+                {course.code} {course.title}
               </SectionTitle>
-              <SectionContent>{description}</SectionContent>
-              <SectionGroup>
-                {chunk(editions, 3).map((editionGroup: any, j: any) => (
-                  <SectionEditions key={j}>
-                    {editionGroup.map((edition: any, k: any) => (
-                      <SectionEdition key={k} href={edition.url}>
-                        • {edition.semester}
-                      </SectionEdition>
-                    ))}
-                  </SectionEditions>
+              <SectionContent>{course.description}</SectionContent>
+              <PreviousEditionsContainer>
+                {course.editions.map(edition => (
+                  <PreviousEditionLink key={edition.url} href={edition.url}>
+                    • {edition.semester}
+                  </PreviousEditionLink>
                 ))}
-              </SectionGroup>
+              </PreviousEditionsContainer>
             </Section>
             {i < COURSES.length - 1 && <HorizontalLine />}
           </React.Fragment>

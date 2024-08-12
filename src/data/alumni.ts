@@ -9,8 +9,8 @@ export interface IAlumnus extends IMember {
   currentPosition?: string
 }
 
-export const ALUMNI = {
-  sungchullee: {
+export const ALUMNI = [
+  {
     firstName: 'Sung-Chul',
     lastName: 'Lee',
     email: 'leesungchul@kaist.ac.kr',
@@ -20,7 +20,7 @@ export const ALUMNI = {
     startSeason: 'Summer',
     // TODO: add endYear and endSeason. When did Sung-chuil graduate?
   },
-  jinhyeonkwon: {
+  {
     firstName: 'Jinhyeon',
     lastName: 'Kwon',
     email: 'athexplorer@kaist.ac.kr',
@@ -31,7 +31,7 @@ export const ALUMNI = {
     startYear: 2024,
     startSeason: 'Winter',
   },
-  yokyunglee: {
+  {
     firstName: 'Yokyung',
     lastName: 'Lee',
     email: 'ykleeee@kaist.ac.kr',
@@ -41,7 +41,7 @@ export const ALUMNI = {
     startYear: 2023,
     startSeason: 'Summer',
   },
-  yoonahpark: {
+  {
     firstName: 'Yoonah',
     lastName: 'Park',
     email: 'wisdomsword21@snu.ac.kr',
@@ -53,7 +53,7 @@ export const ALUMNI = {
     endYear: 2024,
     endSeason: 'Summer',
   },
-  taehyunyang: {
+  {
     firstName: 'Taehyun',
     lastName: 'Yang',
     email: '0705danny@snu.ac.kr',
@@ -65,7 +65,7 @@ export const ALUMNI = {
     endYear: 2024,
     endSeason: 'Summer',
   },
-  juhoonlee: {
+  {
     firstName: 'Juhoon',
     lastName: 'Lee',
 
@@ -76,7 +76,7 @@ export const ALUMNI = {
     endYear: 2024,
     endSeason: 'Winter',
   },
-  jeongeonpark: {
+  {
     firstName: 'Jeongeon',
     lastName: 'Park',
 
@@ -88,7 +88,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     site: 'https://jeongeonpark.com/',
   },
-  haesookim: {
+  {
     firstName: 'Haesoo',
     lastName: 'Kim',
 
@@ -100,7 +100,7 @@ export const ALUMNI = {
     site: 'https://haesookim.info/',
     currentPosition: 'Ph.D. Student at Cornell University',
   },
-  Hyungkwonko: {
+  {
     firstName: 'Hyung-Kwon',
     lastName: 'Ko',
 
@@ -111,7 +111,7 @@ export const ALUMNI = {
     kixlabPosition: 'Visiting Researcher',
   },
 
-  eunjeongkang: {
+  {
     firstName: 'Eun Jeong',
     lastName: 'Kang',
 
@@ -123,7 +123,7 @@ export const ALUMNI = {
     endYear: 2022,
     endSeason: 'Winter',
   },
-  jeongyeonkim: {
+  {
     firstName: 'Jeongyeon',
     lastName: 'Kim',
 
@@ -135,7 +135,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     site: 'https://www.jeongyeon.kim/',
   },
-  mengxia: {
+  {
     firstName: 'Meng',
     lastName: 'Xia',
 
@@ -147,7 +147,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     site: 'https://www.xiameng.org/',
   },
-  minahuh: {
+  {
     firstName: 'Mina',
     lastName: 'Huh',
 
@@ -159,7 +159,7 @@ export const ALUMNI = {
     endYear: 2021,
     endSeason: 'Summer',
   },
-  kabdochoi: {
+  {
     firstName: 'Kabdo',
     lastName: 'Choi',
 
@@ -171,7 +171,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     site: 'https://www.kabdochoi.com/',
   },
-  taewookkim: {
+  {
     firstName: 'Taewook',
     lastName: 'Kim',
 
@@ -183,7 +183,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     site: 'https://taewookkim.com/',
   },
-  jeanyoungsong: {
+  {
     firstName: 'Jean Young',
     lastName: 'Song',
 
@@ -195,7 +195,7 @@ export const ALUMNI = {
     endSeason: 'Spring',
     site: 'https://jyskwon.github.io/',
   },
-  donghoonhan: {
+  {
     firstName: 'Donghoon',
     lastName: 'Han',
 
@@ -206,7 +206,7 @@ export const ALUMNI = {
     endYear: 2021,
     endSeason: 'Winter',
   },
-  minsukchang: {
+  {
     firstName: 'Minsuk',
     lastName: 'Chang',
 
@@ -218,7 +218,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     site: 'https://minsukchang.com/',
   },
-  kyungjejo: {
+  {
     firstName: 'Kyung',
     lastName: 'Je Jo',
 
@@ -230,7 +230,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     site: 'https://kyungjejo.com/',
   },
-  jibonnaher: {
+  {
     firstName: 'Jibon',
     lastName: 'Naher',
 
@@ -241,7 +241,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     site: 'https://jibonnaher.github.io/',
   },
-  jisoolee: {
+  {
     firstName: 'Jisoo',
     lastName: 'Lee',
 
@@ -253,7 +253,7 @@ export const ALUMNI = {
     site: 'https://jisoolee0123.github.io/',
     currentPosition: 'UX Lead & ML engineer at Beeble',
   },
-  artithakur: {
+  {
     firstName: 'Arti',
     lastName: 'Thakur',
 
@@ -265,7 +265,7 @@ export const ALUMNI = {
     site: 'https://sites.google.com/view/artithakur',
     currentPosition: 'Ph.D. Student at UC Davis',
   },
-  mathiassixtenpedersen: {
+  {
     firstName: 'Mathias Sixten',
     lastName: 'Pedersen',
 
@@ -277,7 +277,7 @@ export const ALUMNI = {
     site: 'https://sites.google.com/view/artithakur',
     currentPosition: 'Co-founder at CTO @ NordInsight',
   },
-  eveyhuang: {
+  {
     firstName: 'Evey',
     lastName: 'Huang',
 
@@ -289,7 +289,7 @@ export const ALUMNI = {
     site: 'https://portfolio.adobe.com/missing',
     currentPosition: 'Ph.D. Student at Northwestern University',
   },
-  hyeungshikjung: {
+  {
     firstName: 'Hyeungshik',
     lastName: 'Jung',
 
@@ -301,7 +301,7 @@ export const ALUMNI = {
     site: 'https://hyeungshikjung.com/',
     currentPosition: 'Software Engineer at NAVER',
   },
-  yichinghuang: {
+  {
     firstName: 'Yi-Ching (Janet)',
     lastName: 'Huang',
 
@@ -313,7 +313,7 @@ export const ALUMNI = {
     site: 'https://janetyc.github.io/',
     currentPosition: ' Assistant Professor at Eindhoven University of Technology ',
   },
-  johnchung: {
+  {
     firstName: 'John',
     lastName: 'Chung',
 
@@ -325,7 +325,7 @@ export const ALUMNI = {
     site: 'https://johnr0.github.io/',
     currentPosition: ' Research Scientist at Midjourney',
   },
-  paulgrau: {
+  {
     firstName: 'Paul',
     lastName: 'Grau',
 
@@ -337,7 +337,7 @@ export const ALUMNI = {
     site: 'https://graycoding.com/',
     currentPosition: 'Lead Frontend Engineer at Alvin',
   },
-  heechankim: {
+  {
     firstName: 'Heechan',
     lastName: 'Kim',
 
@@ -348,7 +348,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     currentPosition: 'Ringle',
   },
-  saharadmoni: {
+  {
     firstName: 'Sahar',
     lastName: 'Admoni',
     kixlabPosition: 'Visiting Researcher',
@@ -356,7 +356,7 @@ export const ALUMNI = {
     startYear: 2024,
     currentPosition: 'Technion',
   },
-  yuewenyang: {
+  {
     firstName: 'Yuewen',
     lastName: 'Yang',
 
@@ -365,7 +365,7 @@ export const ALUMNI = {
     startYear: 2024,
     currentPosition: 'Cornell Tech',
   },
-  gionnievelim: {
+  {
     firstName: 'Gionnieve',
     lastName: 'Lim',
 
@@ -376,7 +376,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     currentPosition: 'Ph.D. Student at SUTD',
   },
-  tonijankeithmonserrat: {
+  {
     firstName: 'Toni-Jan Keith',
     lastName: 'Monserrat',
 
@@ -385,7 +385,7 @@ export const ALUMNI = {
     startYear: 2019,
     currentPosition: 'Ph.D. Researcher at UPLB',
   },
-  simonperrault: {
+  {
     firstName: 'Simon',
     lastName: 'Perrault',
 
@@ -397,7 +397,7 @@ export const ALUMNI = {
     currentPosition: 'Assistant Professor at Singapore University of Technology and Design',
     site: 'https://istd.sutd.edu.sg/people/faculty/simon-perrault',
   },
-  rayhong: {
+  {
     firstName: 'Ray',
     lastName: 'Hong',
 
@@ -409,7 +409,7 @@ export const ALUMNI = {
     currentPosition: 'Assistant Professor at George Mason University',
     site: 'http://rayhong.net/?i=1',
   },
-  mercedeshuertas: {
+  {
     firstName: 'Mercedes',
     lastName: 'Huertas',
 
@@ -420,7 +420,7 @@ export const ALUMNI = {
     endSeason: 'Spring',
     currentPosition: 'Ph.D. Researcher at University of Trento',
   },
-  lekhanhduy: {
+  {
     firstName: 'Le Khanh',
     lastName: 'Duy',
 
@@ -429,7 +429,7 @@ export const ALUMNI = {
     startYear: 2023,
     currentPosition: 'Researcher at HCMUT',
   },
-  yumincho: {
+  {
     firstName: 'Yumin',
     lastName: 'Cho',
 
@@ -440,7 +440,7 @@ export const ALUMNI = {
     endSeason: 'Spring',
     affiliation: 'KAIST',
   },
-  suminhong: {
+  {
     firstName: 'Sumin',
     lastName: 'Hong',
 
@@ -451,7 +451,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     affiliation: 'Seoultech',
   },
-  jiwonjang: {
+  {
     firstName: 'Jiwon',
     lastName: 'Jang',
 
@@ -460,7 +460,7 @@ export const ALUMNI = {
     startYear: 2024,
     affiliation: 'SKKU',
   },
-  hyewonlee: {
+  {
     firstName: 'Hyewon',
     lastName: 'Lee',
 
@@ -471,7 +471,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  hainam: {
+  {
     firstName: 'Hai',
     lastName: 'Nam',
 
@@ -482,7 +482,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  jueonlee: {
+  {
     firstName: 'Jueon',
     lastName: 'Lee',
 
@@ -493,7 +493,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'SNU',
   },
-  bryanmin: {
+  {
     firstName: 'Bryan',
     lastName: 'Min',
 
@@ -503,7 +503,7 @@ export const ALUMNI = {
     affiliation: 'UCSD',
     site: 'https://bryanmin.me/',
   },
-  seongheelee: {
+  {
     firstName: 'Seonghee',
     lastName: 'Lee',
 
@@ -513,7 +513,7 @@ export const ALUMNI = {
     endYear: 2023,
     endSeason: 'Summer',
   },
-  michallewkowicz: {
+  {
     firstName: 'Michal',
     lastName: 'Lewkowicz',
 
@@ -522,7 +522,7 @@ export const ALUMNI = {
     startYear: 2023,
     affiliation: 'Yale',
   },
-  nicolelee: {
+  {
     firstName: 'Nicole',
     lastName: 'Lee',
 
@@ -531,7 +531,7 @@ export const ALUMNI = {
     startSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  jisukim: {
+  {
     firstName: 'Jisu',
     lastName: 'Kim',
 
@@ -542,7 +542,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  dakyeomahn: {
+  {
     firstName: 'Dakyeom',
     lastName: 'Ahn',
 
@@ -553,7 +553,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'SNU',
   },
-  nathanmekuriahaile: {
+  {
     firstName: 'Nathan Mekuria',
     lastName: 'Haile',
 
@@ -564,7 +564,7 @@ export const ALUMNI = {
     endSeason: 'Spring',
     affiliation: 'KAIST',
   },
-  yoojinhong: {
+  {
     firstName: 'Yoojin',
     lastName: 'Hong',
 
@@ -575,7 +575,7 @@ export const ALUMNI = {
     endSeason: 'Spring',
     affiliation: 'KAIST',
   },
-  soyeongmin: {
+  {
     firstName: 'Soyeong',
     lastName: 'Min',
 
@@ -584,7 +584,7 @@ export const ALUMNI = {
     startYear: 2023,
     affiliation: 'KAIST',
   },
-  arghyasarkar: {
+  {
     firstName: 'Arghya',
     lastName: 'Sarkar',
 
@@ -593,7 +593,7 @@ export const ALUMNI = {
     startYear: 2023,
     affiliation: 'NYU',
   },
-  seunghobaek: {
+  {
     firstName: 'Seungho',
     lastName: 'Baek',
 
@@ -603,7 +603,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://thestar.notion.site/e6f6b641bd8f493085e5f044182dcae3',
   },
-  sangkyungkwak: {
+  {
     firstName: 'Sangkyung',
     lastName: 'Kwak',
 
@@ -614,7 +614,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  inhwasong: {
+  {
     firstName: 'Inhwa',
     lastName: 'Song',
 
@@ -626,7 +626,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://greenina.notion.site/Inhwa-Song-0cb769c9a9314e358cf728c0fe3b1e74',
   },
-  myeongkyuncho: {
+  {
     firstName: 'Myeongkyun',
     lastName: 'Cho',
 
@@ -635,7 +635,7 @@ export const ALUMNI = {
     startYear: 2022,
     affiliation: 'KAIST',
   },
-  heejuchoi: {
+  {
     firstName: 'Heeju',
     lastName: 'Choi',
 
@@ -644,7 +644,7 @@ export const ALUMNI = {
     startYear: 2022,
     affiliation: 'KAIST',
   },
-  honggilee: {
+  {
     firstName: 'Honggi',
     lastName: 'Lee',
 
@@ -653,7 +653,7 @@ export const ALUMNI = {
     startYear: 2022,
     affiliation: 'KAIST',
   },
-  yohanyun: {
+  {
     firstName: 'Yohan',
     lastName: 'Yun',
 
@@ -664,7 +664,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  subeenpark: {
+  {
     firstName: 'Subeen',
     lastName: 'Park',
 
@@ -676,7 +676,7 @@ export const ALUMNI = {
     affiliation: 'SNU',
     site: 'http://subeen.io/',
   },
-  jeongyoonshin: {
+  {
     firstName: 'JeongYoon',
     lastName: 'Shin',
 
@@ -685,7 +685,7 @@ export const ALUMNI = {
     startYear: 2022,
     affiliation: 'KAIST',
   },
-  junginrhee: {
+  {
     firstName: 'Jung In',
     lastName: 'Rhee',
 
@@ -694,7 +694,7 @@ export const ALUMNI = {
     startYear: 2022,
     affiliation: 'KAIST',
   },
-  jeannechoi: {
+  {
     firstName: 'Jeanne',
     lastName: 'Choi',
 
@@ -705,7 +705,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  nurlykhankopenov: {
+  {
     firstName: 'Nurlykhan',
     lastName: 'Kopenov',
 
@@ -716,7 +716,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  elliotjung: {
+  {
     firstName: 'Elliot',
     lastName: 'Jung',
 
@@ -727,7 +727,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  seokhunjeong: {
+  {
     firstName: 'Seokhun',
     lastName: 'Jeong',
 
@@ -738,7 +738,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  mehmethamzaerol: {
+  {
     firstName: 'Mehmet Hamza',
     lastName: 'Erol',
 
@@ -749,7 +749,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  jaeryoungka: {
+  {
     firstName: 'Jaeryoung',
     lastName: 'Ka',
 
@@ -761,7 +761,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://www.blogger.com/blogin.g?blogspotURL=https://shuloco.blogspot.com/&type=blog&bpli=1&pli=1',
   },
-  jihyeonghong2: {
+  {
     firstName: 'Jihyeong',
     lastName: 'Hong',
 
@@ -773,7 +773,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a',
   },
-  sangwooklee: {
+  {
     firstName: 'Sangwook',
     lastName: 'Lee',
 
@@ -785,7 +785,7 @@ export const ALUMNI = {
     affiliation: 'POSTECH',
     site: 'https://www.linkedin.com/in/sangwook-lee/',
   },
-  jisuyim: {
+  {
     firstName: 'Jisu',
     lastName: 'Yim',
 
@@ -795,7 +795,7 @@ export const ALUMNI = {
     endYear: 2021,
     endSeason: 'Summer',
   },
-  sanghyeonlee: {
+  {
     firstName: 'Sanghyeon',
     lastName: 'Lee',
 
@@ -806,7 +806,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  euicheonlee: {
+  {
     firstName: 'Euicheon',
     lastName: 'Lee',
 
@@ -817,7 +817,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  nabilasindilistyo: {
+  {
     firstName: 'Nabila Sindi',
     lastName: 'Listyo',
 
@@ -828,7 +828,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  junesukchoi: {
+  {
     firstName: 'June Suk',
     lastName: 'Choi',
 
@@ -837,7 +837,7 @@ export const ALUMNI = {
     startYear: 2021,
     affiliation: 'KAIST',
   },
-  hyerimlee: {
+  {
     firstName: 'Hyerim',
     lastName: 'Lee',
 
@@ -848,7 +848,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'KAIST',
   },
-  seongheelee2: {
+  {
     firstName: 'Seong Hee',
     lastName: 'Lee',
 
@@ -857,7 +857,7 @@ export const ALUMNI = {
     startYear: 2021,
     affiliation: 'Cornell University',
   },
-  yubonchoi: {
+  {
     firstName: 'Yubin',
     lastName: 'Choi',
 
@@ -868,7 +868,7 @@ export const ALUMNI = {
     endSeason: 'Summer',
     affiliation: 'UNIST',
   },
-  intizartashov: {
+  {
     firstName: 'Intizar',
     lastName: 'Tashov',
 
@@ -878,7 +878,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://drive.google.com/file/d/1eRoMy9Urym-LObluYl2PJVmtNYncFZ1c/view',
   },
-  changgeonko: {
+  {
     firstName: 'Changgeon',
     lastName: 'Ko',
 
@@ -889,7 +889,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     affiliation: 'KAIST',
   },
-  youngjaejang: {
+  {
     firstName: 'Youngjae',
     lastName: 'Jang',
 
@@ -900,7 +900,7 @@ export const ALUMNI = {
     endSeason: 'Winter',
     affiliation: 'KAIST',
   },
-  jisuchoi: {
+  {
     firstName: 'Jisu',
     lastName: 'Choi',
 
@@ -909,7 +909,7 @@ export const ALUMNI = {
     startYear: 2021,
     affiliation: 'KAIST',
   },
-  anchittandon: {
+  {
     firstName: 'Anchit',
     lastName: 'Tandon',
 
@@ -920,7 +920,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'IIT Delhi',
   },
-  hyeonjeongha: {
+  {
     firstName: 'HyeonJeong',
     lastName: 'Ha',
 
@@ -931,7 +931,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  umartaufiqulhakim: {
+  {
     firstName: 'Umar',
     lastName: 'Taufiqulhakim',
 
@@ -940,7 +940,7 @@ export const ALUMNI = {
     startYear: 2020,
     affiliation: 'KAIST',
   },
-  aitolkynbaigutanova: {
+  {
     firstName: 'Aitolkyn',
     lastName: 'Baigutanova',
 
@@ -949,7 +949,7 @@ export const ALUMNI = {
     startYear: 2020,
     affiliation: 'KAIST',
   },
-  eunseochoi: {
+  {
     firstName: 'Eunseo',
     lastName: 'Choi',
 
@@ -958,7 +958,7 @@ export const ALUMNI = {
     startYear: 2020,
     currentPosition: 'M.S. student at MIT',
   },
-  seungsukim: {
+  {
     firstName: 'Seungsu',
     lastName: 'Kim',
 
@@ -967,7 +967,7 @@ export const ALUMNI = {
     startYear: 2020,
     affiliation: 'KAIST',
   },
-  hyunchangoh: {
+  {
     firstName: 'Hyunchang',
     lastName: 'Oh',
 
@@ -978,7 +978,7 @@ export const ALUMNI = {
     endSeason: 'Spring',
     affiliation: 'KAIST',
   },
-  changyoonlee: {
+  {
     firstName: 'Changyoon',
     lastName: 'Lee',
 
@@ -990,7 +990,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'M.S. Student at U&I Lab, KAIST',
   },
-  sallychen: {
+  {
     firstName: 'Sally',
     lastName: 'Chen',
 
@@ -1000,7 +1000,7 @@ export const ALUMNI = {
     affiliation: 'Brown University',
     currentPosition: 'M.S. Student at CMU',
   },
-  minakim: {
+  {
     firstName: 'Min A',
     lastName: 'Kim',
 
@@ -1011,7 +1011,7 @@ export const ALUMNI = {
     currentPosition: 'Software Engineer at Kakao',
     site: 'https://coder-mina.github.io/',
   },
-  ericdoh: {
+  {
     firstName: 'Eric',
     lastName: 'Doh',
 
@@ -1021,7 +1021,7 @@ export const ALUMNI = {
     affiliation: 'University of Sydney',
     site: 'https://www.ericsunwoodoh.myportfolio.com/',
   },
-  nikhilprakash: {
+  {
     firstName: 'Nikhil',
     lastName: 'Prakash',
 
@@ -1033,7 +1033,7 @@ export const ALUMNI = {
     affiliation: 'R V College of Engineering, India',
     site: 'https://nix07.github.io/',
   },
-  taehyeonan: {
+  {
     firstName: 'Taehyeon',
     lastName: 'An',
 
@@ -1044,7 +1044,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  yejunkim: {
+  {
     firstName: 'Yejun',
     lastName: 'Kim',
 
@@ -1054,7 +1054,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'Software Engineer at Scatter Lab',
   },
-  nyoungwoolee: {
+  {
     firstName: 'Nyoungwoo',
     lastName: 'Lee',
 
@@ -1066,7 +1066,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'M.S. Student at KAIST ',
   },
-  yeonsukim: {
+  {
     firstName: 'Yeonsu',
     lastName: 'Kim',
 
@@ -1076,7 +1076,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'M.S. Student at HCI Lab, KAIST',
   },
-  jaeyoonsong: {
+  {
     firstName: 'Jaeyoon',
     lastName: 'Song',
 
@@ -1089,7 +1089,7 @@ export const ALUMNI = {
     currentPosition: 'Ph.D. Student at MIT',
     site: 'https://jaeyoon.io/#/',
   },
-  hyeonggeunyun: {
+  {
     firstName: 'Hyeonggeun',
     lastName: 'Yun',
 
@@ -1101,7 +1101,7 @@ export const ALUMNI = {
     affiliation: 'DGIST',
     site: 'https://www.harooo.com/terminal',
   },
-  jimmywei: {
+  {
     firstName: 'Jimmy',
     lastName: 'Wei',
 
@@ -1111,7 +1111,7 @@ export const ALUMNI = {
     affiliation: 'Bucknell University',
     currentPosition: 'M.S. Student at Cornell Tech',
   },
-  cheoljuncho: {
+  {
     firstName: 'Cheoljun',
     lastName: 'Cho',
 
@@ -1121,7 +1121,7 @@ export const ALUMNI = {
     affiliation: 'SNU',
     currentPosition: 'Ph.D. Student at UC Berkeley',
   },
-  sunwookwon: {
+  {
     firstName: 'Sunwoo',
     lastName: 'Kwon',
 
@@ -1133,7 +1133,7 @@ export const ALUMNI = {
     affiliation: 'CAU',
     currentPosition: 'M.S. Student at KAIST Graduate School of AI',
   },
-  juanlee: {
+  {
     firstName: 'Juan',
     lastName: 'Lee',
 
@@ -1145,7 +1145,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://juanlee.kr/',
   },
-  keonlee: {
+  {
     firstName: 'Keon',
     lastName: 'Lee',
 
@@ -1155,7 +1155,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: ' M.S. Student at KAIST',
   },
-  seonghopark: {
+  {
     firstName: 'Seongho',
     lastName: 'Park',
 
@@ -1166,7 +1166,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  hyuntakcha: {
+  {
     firstName: 'Hyuntak',
     lastName: 'Cha',
 
@@ -1177,7 +1177,7 @@ export const ALUMNI = {
     currentPosition: 'M.S. Student at KAIST Graduate School of AI',
     site: 'http://hyuntak.com/',
   },
-  rachelkwak: {
+  {
     firstName: 'Rachel',
     lastName: 'Kwak',
 
@@ -1186,7 +1186,7 @@ export const ALUMNI = {
     startYear: 2018,
     affiliation: 'MIT',
   },
-  manavrao: {
+  {
     firstName: 'Manav',
     lastName: 'Rao',
 
@@ -1196,7 +1196,7 @@ export const ALUMNI = {
     affiliation: 'IIT Delhi',
     site: 'https://www.cse.iitd.ac.in/~cs1160523/',
   },
-  hyunjonglee: {
+  {
     firstName: 'Hyunjong',
     lastName: 'Lee',
 
@@ -1209,7 +1209,7 @@ export const ALUMNI = {
     currentPosition: 'M.S. Student at KAIST',
     site: 'https://www.leehyunjong.com/',
   },
-  jiyounha: {
+  {
     firstName: 'Jiyoun',
     lastName: 'Ha',
 
@@ -1222,7 +1222,7 @@ export const ALUMNI = {
     currentPosition: 'Software Engineer at Google',
     site: 'http://jiyounha.com/',
   },
-  seayeonlee: {
+  {
     firstName: 'Seayeon',
     lastName: 'Lee',
 
@@ -1231,7 +1231,7 @@ export const ALUMNI = {
     startYear: 2018,
     affiliation: 'KAIST',
   },
-  inaryu: {
+  {
     firstName: 'Ina',
     lastName: 'Ryu',
 
@@ -1243,7 +1243,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'Software Engineer at NAVER',
   },
-  beomsukim: {
+  {
     firstName: 'Beomsu',
     lastName: 'Kim',
 
@@ -1254,7 +1254,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  jooyounglee: {
+  {
     firstName: 'Jooyoung',
     lastName: 'Lee',
 
@@ -1265,7 +1265,7 @@ export const ALUMNI = {
     endSeason: 'Fall',
     affiliation: 'KAIST',
   },
-  jonghyukjung: {
+  {
     firstName: 'Jonghyuk',
     lastName: 'Jung',
 
@@ -1278,7 +1278,7 @@ export const ALUMNI = {
     currentPosition: 'UX Designer at Devisters',
     site: 'https://jonghyuk.info/',
   },
-  hyunsukshin: {
+  {
     firstName: 'Hyunsuk',
     lastName: 'Shin',
 
@@ -1287,7 +1287,7 @@ export const ALUMNI = {
     startYear: 2017,
     affiliation: 'KAIST',
   },
-  suhwanlee: {
+  {
     firstName: 'Suhwan',
     lastName: 'Lee',
 
@@ -1297,7 +1297,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     site: 'https://suhwan.dev/',
   },
-  amyhan: {
+  {
     firstName: 'Amy',
     lastName: 'Han',
 
@@ -1307,7 +1307,7 @@ export const ALUMNI = {
     affiliation: 'Swarthmore College',
     currentPosition: 'Data Engineer at Capital One',
   },
-  wookjaebyun: {
+  {
     firstName: 'Wookjae',
     lastName: 'Byun',
 
@@ -1316,7 +1316,7 @@ export const ALUMNI = {
     startYear: 2017,
     affiliation: 'KAIST',
   },
-  leonoreguillain: {
+  {
     firstName: 'Leonore',
     lastName: 'Guillain',
 
@@ -1326,7 +1326,7 @@ export const ALUMNI = {
     affiliation: 'EPFL',
     currentPosition: 'M.S. Student at EPFL',
   },
-  chingliu: {
+  {
     firstName: 'Ching',
     lastName: 'Liu',
 
@@ -1338,7 +1338,7 @@ export const ALUMNI = {
     affiliation: 'NTHU',
     currentPosition: 'M.S. Student at NTHU',
   },
-  hyungwookim: {
+  {
     firstName: 'Hyungwoo',
     lastName: 'Kim',
 
@@ -1347,7 +1347,7 @@ export const ALUMNI = {
     startYear: 2017,
     affiliation: 'KAIST',
   },
-  soyapark: {
+  {
     firstName: 'Soya',
     lastName: 'Park',
 
@@ -1360,7 +1360,7 @@ export const ALUMNI = {
     currentPosition: 'Ph.D. Student at MIT',
     site: 'https://people.csail.mit.edu/soya/',
   },
-  deokseongkim: {
+  {
     firstName: 'Deokseong',
     lastName: 'Kim',
 
@@ -1369,7 +1369,7 @@ export const ALUMNI = {
     startYear: 2017,
     affiliation: 'KAIST',
   },
-  jaesunghuh: {
+  {
     firstName: 'Jaesung',
     lastName: 'Huh',
 
@@ -1379,7 +1379,7 @@ export const ALUMNI = {
     affiliation: 'SNU',
     currentPosition: 'Ph.D. Student at Oxford',
   },
-  hyunsungcho: {
+  {
     firstName: 'Hyunsung',
     lastName: 'Cho',
 
@@ -1391,7 +1391,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'M.S. Student at NMSL',
   },
-  juhosun: {
+  {
     firstName: 'Juho',
     lastName: 'Sun',
 
@@ -1401,7 +1401,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'Founder at Meanlt',
   },
-  jiwoopark: {
+  {
     firstName: 'Jiwoo',
     lastName: 'Park',
 
@@ -1413,7 +1413,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'M.S. Student at KAIST Business School',
   },
-  dongkwankim: {
+  {
     firstName: 'Dongkwan',
     lastName: 'Kim',
 
@@ -1425,7 +1425,7 @@ export const ALUMNI = {
     affiliation: 'KAIST',
     currentPosition: 'M.S. Student at U&I Lab',
   },
-  taekyungpark: {
+  {
     firstName: 'Taekyung',
     lastName: 'Park',
 
@@ -1434,6 +1434,4 @@ export const ALUMNI = {
     startYear: 2016,
     affiliation: 'SNU',
   },
-} as const satisfies Record<string, IAlumnus>
-
-export const ALUMNI_VALUES = Object.values(ALUMNI)
+] as const satisfies IAlumnus[]

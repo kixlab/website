@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import { Category, CategoryContainer, NewsDate, categoryColors } from './NewsCard'
-import Post from '@/data/posts'
+import { IPost } from '@/data/posts'
 import Markdown from 'react-markdown'
 
 const ModalContainer = styled.div`
@@ -74,7 +74,7 @@ const Content = styled.div`
   }
 `
 
-export default function NewsModal({ post, onClose }: { post: Post | null; onClose: () => void }) {
+export default function NewsModal({ post, onClose }: { post: IPost | null; onClose: () => void }) {
   const [mdContent, setMdContent] = React.useState<string | null>(null)
   if (!post) {
     return null

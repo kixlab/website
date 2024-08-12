@@ -5,8 +5,8 @@ import React from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 import { uniq } from 'lodash'
-import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
-import type { PublicationType, ResearchTopicType, Publication } from '@/data/publications'
+import { PUBLICATIONS, PublicationTypes, ResearchTopics, IPublication } from '@/data/publications'
+import type { PublicationType, ResearchTopicType } from '@/data/publications'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
 import PublicationCard from '@/components/Publication/PublicationCard'
 import Filter from '@/components/Filter'
@@ -67,7 +67,7 @@ export default function Page() {
   const params = useSearchParams()
   const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
   const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
-  const [publicationList, setPublicationList] = useState(PUBLICATIONS)
+  const [publicationList, setPublicationList] = useState<IPublication[]>(PUBLICATIONS)
   const [sidebarList, setSidebarList] = useState<string[]>([])
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -80,7 +80,7 @@ export default function Page() {
   }
 
   useEffect(() => {
-    const filteredList = PUBLICATIONS.filter(
+    const filteredList: IPublication[] = PUBLICATIONS.filter(
       pub =>
         (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
         (publicationType === 'All' || pub.type === publicationType)
@@ -93,7 +93,7 @@ export default function Page() {
     handleSidebarList(publicationList)
   }, [publicationList])
 
-  const handleSidebarList = (list: Publication[]) => {
+  const handleSidebarList = (list: IPublication[]) => {
     const sections = []
     if (list.filter(pub => pub.type === 'preprint').length > 0) {
       sections.push('preprints')

@@ -1,4 +1,4 @@
-interface Props {
+export interface ICourse {
   title: string
   code: string
   image: string
@@ -7,15 +7,8 @@ interface Props {
   editions: { semester: string; url: string }[]
 }
 
-interface Course extends Props {}
-class Course {
-  constructor(attrs: Props) {
-    Object.assign(this, attrs)
-  }
-}
-
-export const COURSE = {
-  cs374: new Course({
+export const COURSES = [
+  {
     title: 'Introduction to Human-Computer Interaction',
     code: 'CS374',
     image: 'cs374.png',
@@ -29,9 +22,9 @@ export const COURSE = {
       { semester: 'Spring 2018', url: 'https://kixlab.org/courses/cs374-spring-2018/' },
       { semester: 'Spring 2017', url: 'https://kixlab.org/courses/cs374-spring-2017/' },
     ],
-  }),
+  },
 
-  cs474: new Course({
+  {
     title: 'Introduction to Social Computing',
     code: 'CS474',
     image: 'cs374.png',
@@ -46,9 +39,9 @@ export const COURSE = {
       { semester: 'Fall 2017', url: 'https://kixlab.org/courses/cs473-fall-2017/' },
       { semester: 'Fall 2016', url: 'https://kixlab.org/courses/cs473-fall-2016/' },
     ],
-  }),
+  },
 
-  cs492: new Course({
+  {
     title: 'Human-AI Interaction',
     code: 'CS492',
     image: 'cs374.png',
@@ -59,9 +52,9 @@ export const COURSE = {
       { semester: 'Spring 2021', url: 'https://human-ai.kixlab.org/' },
       { semester: 'Fall 2020', url: 'https://www.kixlab.org/courses/cs492-fall-2020/' },
     ],
-  }),
+  },
 
-  cs492d: new Course({
+  {
     title: 'Introduction to Research',
     code: 'CS492D',
     image: 'cs374.png',
@@ -73,8 +66,5 @@ export const COURSE = {
       { semester: 'Spring 2019', url: 'https://nmsl.kaist.ac.kr/courses/i2r/' },
       { semester: 'Spring 2018', url: 'https://www.kixlab.org/courses/cs492c-fall-2018/' },
     ],
-  }),
-} as const
-
-export const COURSES = Object.values(COURSE)
-export default Course
+  },
+] as const satisfies ICourse[]

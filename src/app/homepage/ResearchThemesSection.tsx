@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
 import { MEMBERS, IMember } from '@/data/members'
-import { ResearchTopics, PUBLICATIONS, type ResearchTopicType } from '@/data/publications'
+import { ResearchTopics, PUBLICATIONS, type ResearchTopicType, IPublication } from '@/data/publications'
 import { useMemo } from 'react'
 import { Section, SectionHeader, Text } from './Styles'
 import Link from 'next/link'
@@ -47,9 +47,9 @@ const GatherStatsByResearchTopic = () => {
   const statsByResearchTopic: Record<ResearchTopicType, { numPublications: number; authors: IMember[] }> = {} as any
   Object.keys(ResearchTopics).forEach(topic => {
     const researchTopicKey = topic as ResearchTopicType
-    const filteredPublications = PUBLICATIONS.filter(publication => publication.topics.includes(researchTopicKey)).sort(
-      (a, b) => b.year - a.year
-    )
+    const filteredPublications: IPublication[] = PUBLICATIONS.filter(publication =>
+      publication.topics.includes(researchTopicKey)
+    ).sort((a, b) => b.year - a.year)
     const numPublications = filteredPublications.length
     // TODO: Change the MEMBERS data structure. The current structure is not optimized for this sort of filtering algorithm.
     // Algorithm: First authors are shown first with most recent publication, then the rest of the authors

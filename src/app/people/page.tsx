@@ -1,8 +1,8 @@
 'use client'
 import styled from '@emotion/styled'
 import React, { useState, useEffect, useRef, useMemo } from 'react'
-import { MEMBERS, MEMBERS_VALUES, KixlabPositionTypes, SeasonTypes } from '@/data/members'
-import { ALUMNI_VALUES } from '@/data/alumni'
+import { MEMBERS, KixlabPositionTypes, SeasonTypes } from '@/data/members'
+import { ALUMNI } from '@/data/alumni'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import MemberCard from '@/components/MemberCard'
 import AlumniCard from '@/components/AlumniCard'
@@ -108,7 +108,7 @@ export default function Page() {
         <h1>People</h1>
         <Sections>
           {KixlabPositionTypes.map(kixlabPosition => {
-            const filteredMembers = MEMBERS_VALUES.filter(member => member.kixlabPosition === kixlabPosition)
+            const filteredMembers = MEMBERS.filter(member => member.kixlabPosition === kixlabPosition)
             return (
               filteredMembers.length > 0 && (
                 <React.Fragment key={kixlabPosition}>
@@ -152,7 +152,7 @@ export default function Page() {
           >
             <SectionTitle id="alumni">Alumni</SectionTitle>
             {KixlabPositionTypes.map(kixlabPosition => {
-              const filteredMembers = ALUMNI_VALUES.filter(alumnus => alumnus.kixlabPosition === kixlabPosition)
+              const filteredMembers = ALUMNI.filter(alumnus => alumnus.kixlabPosition === kixlabPosition)
               return (
                 filteredMembers.length > 0 && (
                   <React.Fragment key={kixlabPosition}>

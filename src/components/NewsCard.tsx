@@ -4,7 +4,7 @@ import React from 'react'
 import Markdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { FontVariant, Color, ScreenSize } from '@/app/theme'
-import Post from '@/data/posts'
+import { IPost } from '@/data/posts'
 
 export const categoryColors: { [key: string]: string } = {
   publication: Color.orange900,
@@ -75,8 +75,8 @@ export default function NewsCard({
   setModalContent,
   labelsOnLeft: labelsOnLeft,
 }: {
-  post: Post
-  setModalContent: (post: Post) => void
+  post: IPost
+  setModalContent: (post: IPost) => void
   labelsOnLeft?: boolean
 }) {
   const currentDate = new Date()
