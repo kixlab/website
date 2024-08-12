@@ -19,6 +19,7 @@ export interface IMember {
   kixlabPosition: KixlabPositionTypes
   img?: string
   site?: string
+  msThesis?: string
   affiliation?: string
   // TODO: combine startYear and startSeason into a single Date field: startDate
   startYear?: number
@@ -26,6 +27,16 @@ export interface IMember {
 }
 
 export const MEMBERS: IMember[] = [
+  {
+    firstName: 'Sung-Chul',
+    lastName: 'Lee',
+    email: 'leesungchul@kaist.ac.kr',
+    kixlabPosition: 'Ph.D. Student',
+    img: 'sclee.png',
+    startYear: 2016,
+    startSeason: 'Summer',
+    // TODO: add endYear and endSeason. When did Sung-chuil graduate?
+  },
   {
     firstName: 'Juho',
     lastName: 'Kim',
@@ -51,6 +62,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'daeun.jpg',
     site: 'https://daeunchoi.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-daeun.pdf',
   },
   {
     firstName: 'Yoonseo',
@@ -59,6 +71,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'yoonseo.jpeg',
     site: 'https://www.yoonseochoi.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-yoonseo.pdf',
   },
   {
     firstName: 'Hyunwoo',
@@ -67,6 +80,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'hyunwoo.png',
     site: 'https://hyunwoo.me/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyunwoo.pdf',
   },
   {
     firstName: 'Seoyoung',
@@ -75,6 +89,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'seoyoung.jpg',
     site: 'https://sites.google.com/view/seoyoung/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-seoyoung.pdf',
   },
   {
     firstName: 'Tae Soo',
@@ -83,6 +98,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'taesoo.jpg',
     site: 'https://taesookim.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-taesoo.pdf',
   },
   {
     firstName: 'Yoonsu',
@@ -91,6 +107,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'yoonsu.jpg',
     site: 'https://yoonsu0816.github.io/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-yoonsu.pdf',
   },
   {
     firstName: 'Eunyoung',
@@ -115,6 +132,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'hyungyu.jpg',
     site: 'https://hyungyu.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
   {
     firstName: 'Kihoon',
@@ -131,6 +149,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Ph.D. Student',
     img: 'saelyne.jpg',
     site: 'https://www.saelyne.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-saelyne.pdf',
   },
   {
     firstName: 'Seulgi',

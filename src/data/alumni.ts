@@ -11,16 +11,6 @@ export interface IAlumnus extends IMember {
 
 export const ALUMNI: IAlumnus[] = [
   {
-    firstName: 'Sung-Chul',
-    lastName: 'Lee',
-    email: 'leesungchul@kaist.ac.kr',
-    kixlabPosition: 'Ph.D. Student',
-    img: 'sclee.png',
-    startYear: 2016,
-    startSeason: 'Summer',
-    // TODO: add endYear and endSeason. When did Sung-chuil graduate?
-  },
-  {
     firstName: 'Jinhyeon',
     lastName: 'Kwon',
     email: 'athexplorer@kaist.ac.kr',
@@ -68,7 +58,7 @@ export const ALUMNI: IAlumnus[] = [
   {
     firstName: 'Juhoon',
     lastName: 'Lee',
-
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-juhoon.pdf',
     kixlabPosition: 'M.S. Student',
     currentPosition: 'Ph.D. Student at CSTL KAIST',
     startYear: 2022,
@@ -79,7 +69,7 @@ export const ALUMNI: IAlumnus[] = [
   {
     firstName: 'Jeongeon',
     lastName: 'Park',
-
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2023-jeongeon.pdf',
     currentPosition: 'Researcher at DGIST',
     kixlabPosition: 'M.S. Student',
     startYear: 2019,
@@ -91,7 +81,7 @@ export const ALUMNI: IAlumnus[] = [
   {
     firstName: 'Haesoo',
     lastName: 'Kim',
-
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2023-haesoo.pdf',
     startYear: 2019,
     startSeason: 'Summer',
     endYear: 2023,
@@ -126,7 +116,7 @@ export const ALUMNI: IAlumnus[] = [
   {
     firstName: 'Jeongyeon',
     lastName: 'Kim',
-
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-jeongyeon.pdf',
     currentPosition: ' Ph.D. Student at Stanford University',
     kixlabPosition: 'M.S. Student',
     startYear: 2019,
