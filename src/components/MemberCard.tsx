@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
 import type { IMember } from '@/data/members'
+import Link from 'next/link'
 
 const Card = styled.div`
   display: flex;
@@ -19,8 +20,7 @@ const Info = styled.div`
   flex-direction: column;
   gap: 6px;
   align-items: center;
-  ${FontVariant.body_md}
-  width: fit-content;
+  ${FontVariant.body_md}// width: fit-content;
 `
 
 const Email = styled.span`
@@ -28,9 +28,10 @@ const Email = styled.span`
   ${FontVariant.body_md}
 `
 
-const NameWithWebsite = styled.a`
+const NameWithWebsite = styled(Link)`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
+  text-align: center;
 `
 
 const ImageContainer = styled.div`
@@ -53,6 +54,7 @@ const MemberImage = styled(ImageWithFallback)`
 const Name = styled.span`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
+  text-align: center;
 `
 
 const Affiliation = styled.div`

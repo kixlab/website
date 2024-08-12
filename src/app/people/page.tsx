@@ -144,7 +144,6 @@ export default function Page() {
             )
           })}
           <Section
-            key="alumni"
             id="alumni"
             ref={el => {
               sectionRefs.current['alumni'] = el
@@ -182,7 +181,7 @@ export default function Page() {
           <Section key="thanks">
             <SpecialThanksTitle id="thanks">Special Thanks</SpecialThanksTitle>
             <SpecialThanksSection>
-              <Image src="/images/jura.jpeg" alt="Jura Coffee Machine" width={200} height={200} />
+              <Image src="/images/jura.png" alt="Jura Coffee Machine" width={200} height={200} />
               <SpecialThanksText>
                 <SpecialThanksSubtitle>Jura</SpecialThanksSubtitle>
                 <SpecialThanksDescription>Coffee Machine</SpecialThanksDescription>
