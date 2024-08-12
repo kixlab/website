@@ -2,8 +2,9 @@
 
 import styled from '@emotion/styled'
 import { FontVariant, Color, Padding, Radius } from '@/app/theme'
+import Link from 'next/link'
 
-export const URL = styled.a`
+export const URL = styled(Link)`
   display: flex;
   align-items: center;
   background-color: ${Color.orange100};

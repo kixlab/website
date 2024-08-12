@@ -46,7 +46,7 @@ const NavContainer = styled.div`
   background-color: ${Color.white};
 `
 
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   text-decoration: none;
   ${FontVariant.title_sm}
   color: ${Color.gray900};

@@ -1,6 +1,6 @@
 'use client'
 import styled from '@emotion/styled'
-import React, { useState, useEffect, useRef, useMemo } from 'react'
+import React, { useRef } from 'react'
 import { MEMBERS, KixlabPositionTypes, SeasonTypes } from '@/data/members'
 import { ALUMNI } from '@/data/alumni'
 import { Sections, Section, SectionTitle } from '@/components/Section'
@@ -195,7 +195,6 @@ export default function Page() {
       </main>
       <SideContainer>
         <Sidebar
-          // activeSection={activeSection}
           sidebarList={[
             ...KixlabPositionTypes.map(kixlabPosition => kixlabPosition.replace(/\s+/g, '').replace('.', '')),
             'alumni',

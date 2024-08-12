@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { COURSES } from '@/data/courses'
 import { FontVariant, Color } from '@/app/theme'
+import Link from 'next/link'
 
 const Sections = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ const PreviousEditionsContainer = styled.div`
   width: 50%; // Make the links closer to each other. Can we remove this hard-coded width in favor of more flexible template columns?
 `
 
-const PreviousEditionLink = styled.a`
+const PreviousEditionLink = styled(Link)`
   ${FontVariant.body_md}
   color: ${Color.orange900};
   text-decoration: none;

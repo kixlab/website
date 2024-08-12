@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Color, FontVariant } from '@/app/theme'
 import { NAV_BAR_HEIGHT } from './NavBar'
-import { setConfig } from 'next/config'
+import Link from 'next/link'
 
 const SideBarContainer = styled.div`
   position: sticky;
@@ -11,7 +11,7 @@ const SideBarContainer = styled.div`
   height: 100vh;
 `
 
-const SidebarLink = styled.a`
+const SidebarLink = styled(Link)`
   display: block;
   text-decoration: none;
   overflow: hidden;

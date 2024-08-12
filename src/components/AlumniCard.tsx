@@ -3,7 +3,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
-import { IMember } from '@/data/members'
+import Link from 'next/link'
 import { IAlumnus } from '@/data/alumni'
 
 const AlumniCardContainer = styled.div`
@@ -35,7 +35,7 @@ const Name = styled.span`
   color: ${Color.gray900};
 `
 
-const NameWithWebsite = styled.a`
+const NameWithWebsite = styled(Link)`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
 `
@@ -56,7 +56,6 @@ const Education = styled.div`
   justify-content: center;
   align-items: center;
   color: ${Color.gray700};
-  }
 `
 
 export default function AlumniCard({ mem }: { mem: IAlumnus }) {
