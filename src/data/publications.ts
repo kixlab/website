@@ -200,6 +200,7 @@ export const PUBLICATIONS: IPublication[] = [
     year: 2024,
     topics: ['learning'],
     type: 'conference',
+    award: 'Honorable Mention Award',
     links: [
       {
         url: 'https://arxiv.org/abs/2403.06252',
@@ -218,6 +219,7 @@ export const PUBLICATIONS: IPublication[] = [
     year: 2024,
     topics: ['human-AI interaction', 'learning'],
     type: 'conference',
+    award: 'Honorable Mention Award',
     links: [
       {
         url: 'https://arxiv.org/abs/2309.14534',
@@ -279,10 +281,11 @@ export const PUBLICATIONS: IPublication[] = [
       'Juho Kim',
       'Minjoon Seo',
     ],
-    venue: 'ICLR 2024 (Spotlight)',
+    venue: 'ICLR 2024',
     year: 2024,
     topics: ['human-AI interaction'],
     type: 'conference',
+    award: 'Spotlight',
     links: [
       {
         url: 'https://arxiv.org/abs/2307.10928',
@@ -1741,7 +1744,7 @@ export const PUBLICATIONS: IPublication[] = [
     year: 2019,
     topics: ['crowdsourcing'],
     type: 'conference',
-    award: 'Best Paper Honorable Mention Award',
+    award: 'Honorable Mention Award',
     links: [
       {
         url: 'https://medium.com/acm-cscw/efficient-elicitation-approaches-to-estimate-collective-crowd-answers-bd4c9adddb18',
@@ -2080,7 +2083,7 @@ export const PUBLICATIONS: IPublication[] = [
       { url: 'https://humancomputation.com/blog/?p=9802', type: PublicationLinkType.WEB },
       { url: 'http://juhokim.com/files/CHI2018-ConceptScape.pdf', type: PublicationLinkType.PDF },
     ],
-    award: 'Honourable Mention Award',
+    award: 'Honorable Mention Award',
   },
   {
     title: 'Enhancing Online Problems Through Instructor-Centered Tools for Randomized Experiments',
