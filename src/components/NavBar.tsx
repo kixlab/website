@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface NavItemProps {
+interface Props {
   children: string
   href: string
   selected: boolean
@@ -98,7 +98,7 @@ const Anchor = styled(Link)<{ selected: boolean }>`
   }
 `
 
-export const NavItem: React.FC<NavItemProps> = ({ children, href, selected }) => (
+export const NavItem: React.FC<Props> = ({ children, href, selected }) => (
   <Anchor href={href} selected={selected}>
     {children}
   </Anchor>

@@ -65,11 +65,11 @@ const Affiliation = styled.div`
   }
 `
 
-interface MemberCardProps {
+interface Props {
   member: IMember
 }
 
-export const MemberCard = ({ member }: MemberCardProps) => {
+export const MemberCard = ({ member }: Props) => {
   return (
     <Card>
       <ImageContainer>

@@ -74,12 +74,12 @@ const Content = styled.div`
   }
 `
 
-interface NewsModalProps {
+interface Props {
   post: IPost | null
   onClose: () => void
 }
 
-export const NewsModal = ({ post, onClose }: NewsModalProps) => {
+export const NewsModal = ({ post, onClose }: Props) => {
   const [mdContent, setMdContent] = React.useState<string | null>(null)
   if (!post) {
     return null

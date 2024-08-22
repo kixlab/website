@@ -1,11 +1,11 @@
 import { Color } from '@/app/theme'
 import React from 'react'
 
-interface DividerProps {
+interface Props {
   style?: React.CSSProperties
 }
 
-export const Divider = ({ style }: DividerProps) => {
+export const Divider = ({ style }: Props) => {
   return (
     <hr
       style={{

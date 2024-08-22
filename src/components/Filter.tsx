@@ -75,7 +75,7 @@ const FilterOption = styled.li`
   }
 `
 
-interface FilterProps {
+interface Props {
   filterName: string
   optionSet: string[]
   optionSelected: string
@@ -84,7 +84,7 @@ interface FilterProps {
 
 const isOptionExist = (optionSelected: string) => optionSelected !== 'All'
 
-export const Filter = ({ filterName, optionSet, optionSelected, handleOptionChange }: FilterProps) => {
+export const Filter = ({ filterName, optionSet, optionSelected, handleOptionChange }: Props) => {
   const [optionOpen, setOptionOpen] = useState(false)
   const toggleList = () => setOptionOpen(!optionOpen)
   const onBlur = () => setOptionOpen(false)
