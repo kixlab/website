@@ -1,4 +1,4 @@
-import { IMember, MEMBERS } from './members'
+import { Member, MEMBERS } from './members'
 
 export const PublicationTypes = ['conference', 'poster', 'workshop', 'journal', 'preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
@@ -26,9 +26,9 @@ export enum PublicationLinkType {
   ARX = 'arXiv',
 }
 
-export interface IPublication {
+interface Props {
   title: string
-  authors: (IMember | string)[]
+  authors: (Member | string)[]
   year: number
   venue: string
   topics: ResearchTopicType[]
@@ -37,7 +37,14 @@ export interface IPublication {
   links?: { url: string; type: PublicationLinkType }[]
 }
 
-export const PUBLICATIONS: IPublication[] = [
+export interface Publication extends Props {}
+export class Publication {
+  constructor(attrs: Props) {
+    Object.assign(this, attrs)
+  }
+}
+
+export const PUBLICATIONS: Publication[] = [
   {
     title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
     authors: ['Jeongeon Park', 'Bryan Min', 'Xiaojuan Ma', 'Juho Kim'],
@@ -2216,4 +2223,4 @@ export const PUBLICATIONS: IPublication[] = [
     type: 'conference',
     links: [{ url: 'https://juhokim.com/files/CSCW2017-SCAN.pdf', type: PublicationLinkType.PDF }],
   },
-] as const satisfies IPublication[]
+] as const satisfies Publication[]

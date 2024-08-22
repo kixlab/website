@@ -2,8 +2,8 @@
 import Image from 'next/image'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
-import { MEMBERS, IMember } from '@/data/members'
-import { ResearchTopics, PUBLICATIONS, type ResearchTopicType, IPublication } from '@/data/publications'
+import { MEMBERS, Member } from '@/data/members'
+import { ResearchTopics, PUBLICATIONS, type ResearchTopicType, Publication } from '@/data/publications'
 import { useMemo } from 'react'
 import { Section, SectionHeader, Text } from './Styles'
 import Link from 'next/link'
@@ -44,10 +44,10 @@ const ResearchTopicsMemberAvatar = styled(Image)`
 `
 
 const GatherStatsByResearchTopic = () => {
-  const statsByResearchTopic: Record<ResearchTopicType, { numPublications: number; authors: IMember[] }> = {} as any
+  const statsByResearchTopic: Record<ResearchTopicType, { numPublications: number; authors: Member[] }> = {} as any
   Object.keys(ResearchTopics).forEach(topic => {
     const researchTopicKey = topic as ResearchTopicType
-    const filteredPublications: IPublication[] = PUBLICATIONS.filter(publication =>
+    const filteredPublications: Publication[] = PUBLICATIONS.filter(publication =>
       publication.topics.includes(researchTopicKey)
     ).sort((a, b) => b.year - a.year)
     const numPublications = filteredPublications.length
@@ -58,8 +58,8 @@ const GatherStatsByResearchTopic = () => {
         .flatMap(publication => publication.authors[0])
         .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
     )
-    const filteredAuthors: IMember[] = topicAuthors.flatMap(author => {
-      return Object.values(MEMBERS).filter(member => member.img && `${member.firstName} ${member.lastName}` === author)
+    const filteredAuthors: Member[] = topicAuthors.flatMap(author => {
+      return MEMBERS.filter(member => member.img && `${member.firstName} ${member.lastName}` === author)
     })
 
     statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
@@ -95,7 +95,7 @@ export const ResearchThemesSection = () => {
                   <span style={{ fontWeight: 'bold' }}>{stats.numPublications}</span> publications
                 </Text>
                 <ResearchTopicMembersArea>
-                  {stats.authors.slice(0, numVisible).map((member: IMember) => (
+                  {stats.authors.slice(0, numVisible).map((member: Member) => (
                     <ResearchTopicsMemberAvatar
                       width={36}
                       height={36}

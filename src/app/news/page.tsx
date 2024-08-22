@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { NewsCard } from '@/components/NewsCard'
-import { POSTS, IPost } from '@/data/posts'
+import { POSTS, Post } from '@/data/posts'
 import { NewsModal } from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
@@ -95,7 +95,7 @@ const NewsContainer = styled.div`
 `
 
 export default function Page() {
-  const [modalContent, setModalContent] = useState<IPost | null>(null)
+  const [modalContent, setModalContent] = useState<Post | null>(null)
 
   return (
     <main>

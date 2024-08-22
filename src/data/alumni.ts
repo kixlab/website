@@ -1,6 +1,6 @@
-import { IMember, SeasonType } from './members'
+import { Member, SeasonType } from './members'
 
-export interface IAlumnus extends IMember {
+export interface IAlumnus extends Member {
   startYear: number
   startSeason: SeasonType
   // TODO: combine endYear and endSeason into a single Date field: endDate

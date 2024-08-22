@@ -1,4 +1,4 @@
-export interface ICourse {
+interface Props {
   title: string
   code: string
   image: string
@@ -7,7 +7,14 @@ export interface ICourse {
   editions: { semester: string; url: string }[]
 }
 
-export const COURSES: ICourse[] = [
+export interface Course extends Props {}
+export class Course {
+  constructor(attrs: Props) {
+    Object.assign(this, attrs)
+  }
+}
+
+export const COURSES: Course[] = [
   {
     title: 'Introduction to Human-Computer Interaction',
     code: 'CS374',
@@ -67,4 +74,4 @@ export const COURSES: ICourse[] = [
       { semester: 'Spring 2018', url: 'https://www.kixlab.org/courses/cs492c-fall-2018/' },
     ],
   },
-] as const satisfies ICourse[]
+] as const satisfies Course[]

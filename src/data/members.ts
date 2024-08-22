@@ -12,7 +12,7 @@ export type KixlabPositionTypes = (typeof KixlabPositionTypes)[number]
 export const SeasonTypes = ['Winter', 'Spring', 'Summer', 'Fall'] as const
 export type SeasonType = (typeof SeasonTypes)[number]
 
-export interface IMember {
+interface Props {
   firstName: string
   lastName: string
   email?: string
@@ -26,7 +26,14 @@ export interface IMember {
   startSeason?: SeasonType
 }
 
-export const MEMBERS: IMember[] = [
+export interface Member extends Props {}
+export class Member {
+  constructor(attrs: Props) {
+    Object.assign(this, attrs)
+  }
+}
+
+export const MEMBERS: Member[] = [
   {
     firstName: 'Sung-Chul',
     lastName: 'Lee',
@@ -383,7 +390,7 @@ export const MEMBERS: IMember[] = [
     kixlabPosition: 'Staff',
     img: 'oaksil.jpg',
   },
-] as const satisfies IMember[]
+] as const satisfies Member[]
 
 // export const MEMBERS_VALUES = Object.values(MEMBERS)
-// export const MEMBERS = MEMBER as Record<string, IMember>
+// export const MEMBERS = MEMBER as Record<string, Member>

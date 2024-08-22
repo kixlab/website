@@ -1,4 +1,4 @@
-export interface IPost {
+interface Props {
   title: string
   date: Date
   categories: readonly string[]
@@ -7,7 +7,14 @@ export interface IPost {
   endsAt?: Date // Add if the post has a deadline
 }
 
-export const POSTS: IPost[] = [
+export interface Post extends Props {}
+export class Post {
+  constructor(attrs: Props) {
+    Object.assign(this, attrs)
+  }
+}
+
+export const POSTS: Post[] = [
   {
     title: 'A paper accepted to Interspeech 2024',
     date: new Date('2024-06-04'),
@@ -833,4 +840,4 @@ export const POSTS: IPost[] = [
     summary:
       'The new KAIST Interaction Lab has officially opened. We are kicking off with one Ph.D. student and five summer undergrad interns.',
   },
-] as const satisfies IPost[]
+] as const satisfies Post[]

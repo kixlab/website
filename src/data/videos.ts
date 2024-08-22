@@ -1,10 +1,17 @@
-export interface IVideo {
+interface Props {
   url: string
   title: string
   date: Date
 }
 
-export const VIDEOS: IVideo[] = [
+export interface Video extends Props {}
+export class Video {
+  constructor(attrs: Props) {
+    Object.assign(this, attrs)
+  }
+}
+
+export const VIDEOS: Video[] = [
   {
     url: 'https://www.youtube.com/embed/j0v1Cr74kN8?si=tp_blkpKqN4FP9te',
     title: 'What is Interaction-centric AI?',
@@ -20,4 +27,4 @@ export const VIDEOS: IVideo[] = [
     title: 'Open KAIST',
     date: new Date('2022-01-10'),
   },
-] as const satisfies IVideo[]
+] as const satisfies Video[]

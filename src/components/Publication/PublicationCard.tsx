@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { FontVariant, Color } from '@/app/theme'
-import { IPublication } from '@/data/publications'
+import { Publication } from '@/data/publications'
 import { URL } from '@/components/URL'
 import { Author } from './Author'
 import styled from '@emotion/styled'
@@ -69,7 +69,7 @@ const Tags = styled.span`
   color: ${Color.gray700};
 `
 
-export const PublicationCard = ({ pub }: { pub: IPublication }) => {
+export const PublicationCard = ({ pub }: { pub: Publication }) => {
   return (
     <Card>
       <Title>{pub.title}</Title>

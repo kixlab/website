@@ -4,7 +4,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
-import { IMember } from '@/data/members'
+import { Member } from '@/data/members'
 import Link from 'next/link'
 
 const Card = styled.div`
@@ -66,7 +66,7 @@ const Affiliation = styled.div`
 `
 
 interface Props {
-  member: IMember
+  member: Member
 }
 
 export const MemberCard = ({ member }: Props) => {

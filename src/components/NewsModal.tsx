@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styled from '@emotion/styled'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import { Category, CategoryContainer, NewsDate, categoryColors } from './NewsCard'
-import { IPost } from '@/data/posts'
+import { Post } from '@/data/posts'
 import Markdown from 'react-markdown'
 
 const ModalContainer = styled.div`
@@ -75,7 +75,7 @@ const Content = styled.div`
 `
 
 interface Props {
-  post: IPost | null
+  post: Post | null
   onClose: () => void
 }
 
