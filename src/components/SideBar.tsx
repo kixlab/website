@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import { Color, FontVariant } from '@/app/theme'
 import { NAV_BAR_HEIGHT } from './NavBar'
 import Link from 'next/link'
+import _ from 'lodash'
 
 const SideBarContainer = styled.div`
   position: sticky;
@@ -52,9 +53,7 @@ interface ISidebar {
 }
 
 const capitalizeWords = (s: string) => {
-  // Insert a space between words in a camelcase string and capitalize the first letter of each word
-  // Note: This is a bandaid fix for the People page. Will probably need to refactor Sidebar further in the future
-  return s.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())
+  return _.startCase(s)
 }
 
 export const Sidebar = React.forwardRef(
