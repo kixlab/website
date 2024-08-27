@@ -1,13 +1,13 @@
 'use client'
 import styled from '@emotion/styled'
 import React, { useRef } from 'react'
-import { MEMBERS, KixlabPositionTypes, SeasonTypes } from '@/data/members'
-import { ALUMNI } from '@/data/alumni'
+import { CURRENT_MEMBERS_BY_POSITION, ALUMNI_MEMBERS_BY_POSITION, KixlabPositions } from '@/data/members'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import { MemberCard } from '@/components/MemberCard'
 import { AlumniCard } from '@/components/AlumniCard'
 import { FontVariant, Color } from '@/app/theme'
 import Image from 'next/image'
+import _ from 'lodash'
 import { Divider } from '@/components/Divider'
 import { Sidebar } from '@/components/SideBar'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
@@ -99,6 +99,8 @@ const SpecialThanksDescription = styled.p`
   gap: 4px;
 `
 
+const kixlabPositions = KixlabPositions // change this if you want to re-order the sections in the page.
+
 export default function Page() {
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -107,35 +109,23 @@ export default function Page() {
       <main style={{ padding: '0px', margin: '0px' }}>
         <h1>People</h1>
         <Sections>
-          {KixlabPositionTypes.map(kixlabPosition => {
-            const filteredMembers = MEMBERS.filter(member => member.kixlabPosition === kixlabPosition)
+          {kixlabPositions.map(position => {
             return (
-              filteredMembers.length > 0 && (
-                <React.Fragment key={kixlabPosition}>
+              CURRENT_MEMBERS_BY_POSITION[position] &&
+              CURRENT_MEMBERS_BY_POSITION[position].length > 0 && (
+                <React.Fragment key={position}>
                   <Section
-                    key={kixlabPosition}
-                    id={kixlabPosition.replace(/\s+/g, '').replace('.', '')}
+                    key={position}
+                    id={_.startCase(position)}
                     ref={el => {
-                      sectionRefs.current[kixlabPosition] = el
+                      sectionRefs.current[position] = el
                     }}
                   >
-                    <SectionTitle id={kixlabPosition.replace(/\s+/g, '').replace('.', '')}>
-                      {kixlabPosition}
-                    </SectionTitle>
+                    <SectionTitle>{position}</SectionTitle>
                     <SectionContent>
-                      {filteredMembers
-                        .sort((memberA, memberB) => {
-                          // sort by last name in ascending order
-                          if (memberA.lastName === memberB.lastName) {
-                            // sort by first name if last name is the same
-                            return memberA.firstName.localeCompare(memberB.firstName)
-                          } else {
-                            return memberA.lastName.localeCompare(memberB.lastName)
-                          }
-                        })
-                        .map(member => (
-                          <MemberCard key={member.email} member={member} />
-                        ))}
+                      {CURRENT_MEMBERS_BY_POSITION[position].map(member => (
+                        <MemberCard key={member.email} member={member} />
+                      ))}
                     </SectionContent>
                   </Section>
                   <Divider />
@@ -145,32 +135,23 @@ export default function Page() {
           })}
           <Section
             id="alumni"
+            key="alumni"
             ref={el => {
               sectionRefs.current['alumni'] = el
             }}
           >
             <SectionTitle id="alumni">Alumni</SectionTitle>
-            {KixlabPositionTypes.map(kixlabPosition => {
-              const filteredMembers = ALUMNI.filter(alumnus => alumnus.kixlabPosition === kixlabPosition)
+            {KixlabPositions.map(position => {
               return (
-                filteredMembers.length > 0 && (
-                  <React.Fragment key={kixlabPosition}>
-                    <SubCategoryTitle>{kixlabPosition}</SubCategoryTitle>
+                ALUMNI_MEMBERS_BY_POSITION[position] &&
+                ALUMNI_MEMBERS_BY_POSITION[position].length > 0 && (
+                  <React.Fragment key={position}>
+                    <SubCategoryTitle>{position}</SubCategoryTitle>
                     <AlumniSectionContent>
-                      {filteredMembers
-                        .sort((memberA, memberB) => {
-                          // sort first by startYear and startSeason in descending order
-                          if (memberA.startYear === memberB.startYear) {
-                            // TODO: sort by endYear and endSeason if startYear and startSeason are the same
-                            return SeasonTypes.indexOf(memberB.startSeason) - SeasonTypes.indexOf(memberA.startSeason)
-                          } else {
-                            return memberB.startYear - memberA.startYear
-                          }
-                        })
-                        .map((alumnus, i) => (
-                          // TODO: populate alumni data with email field and use email as key
-                          <AlumniCard key={i} mem={alumnus} />
-                        ))}
+                      {ALUMNI_MEMBERS_BY_POSITION[position].map((alumnus, i) => (
+                        // TODO: populate alumni data with email field and use email as key
+                        <AlumniCard key={i} mem={alumnus} />
+                      ))}
                     </AlumniSectionContent>
                   </React.Fragment>
                 )
@@ -195,10 +176,7 @@ export default function Page() {
       </main>
       <SideContainer>
         <Sidebar
-          sidebarList={[
-            ...KixlabPositionTypes.map(kixlabPosition => kixlabPosition.replace(/\s+/g, '').replace('.', '')),
-            'alumni',
-          ]}
+          sidebarList={[...kixlabPositions.map(position => _.startCase(position)), 'alumni']}
           sectionRefs={sectionRefs}
         />
       </SideContainer>

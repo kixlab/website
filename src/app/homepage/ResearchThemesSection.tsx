@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import { Color, FontVariant, ScreenSize } from '@/app/theme'
 import styled from '@emotion/styled'
-import { MEMBERS, Member } from '@/data/members'
+import { CURRENT_MEMBERS as MEMBERS, Member } from '@/data/members'
 import { ResearchTopics, PUBLICATIONS, type ResearchTopicType, Publication } from '@/data/publications'
 import { useMemo } from 'react'
 import { Section, SectionHeader, Text } from './Styles'
@@ -59,7 +59,7 @@ const GatherStatsByResearchTopic = () => {
         .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
     )
     const filteredAuthors: Member[] = topicAuthors.flatMap(author => {
-      return MEMBERS.filter(member => member.img && `${member.firstName} ${member.lastName}` === author)
+      return Object.values(MEMBERS).filter(member => member.img && `${member.firstName} ${member.lastName}` === author)
     })
 
     statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }

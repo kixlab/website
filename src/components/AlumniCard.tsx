@@ -4,7 +4,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import Link from 'next/link'
-import { IAlumnus } from '@/data/alumni'
+import { Member } from '@/data/members'
 
 const AlumniCardContainer = styled.div`
   display: flex;
@@ -58,7 +58,7 @@ const Education = styled.div`
   color: ${Color.gray700};
 `
 
-export const AlumniCard = ({ mem }: { mem: IAlumnus }) => {
+export const AlumniCard = ({ mem }: { mem: Member }) => {
   return (
     <AlumniCardContainer>
       <Text>
