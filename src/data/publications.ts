@@ -12,7 +12,6 @@ export const ResearchTopics = {
   social: { emoji: '🗣️' },
   'human-AI interaction': { emoji: '🤖' },
 } as const
-
 export type ResearchTopicType = keyof typeof ResearchTopics
 
 export enum PublicationLinkType {
@@ -2224,3 +2223,15 @@ export const PUBLICATIONS: Publication[] = [
     links: [{ url: 'https://juhokim.com/files/CSCW2017-SCAN.pdf', type: PublicationLinkType.PDF }],
   },
 ] as const satisfies Publication[]
+
+export const PREPRINTS: Publication[] = PUBLICATIONS.filter(p => p.type === 'preprint')
+export const PUBLICATIONS_BY_YEAR: Record<string, Publication[]> = PUBLICATIONS.reduce(
+  (acc, publication) => {
+    if (publication.type === 'preprint') return acc // skip preprints
+    const yearKey = publication.year
+    if (!acc[yearKey]) acc[yearKey] = [] as Publication[]
+    acc[yearKey].push(publication)
+    return acc
+  },
+  {} as Record<number, Publication[]>
+)
