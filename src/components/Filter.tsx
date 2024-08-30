@@ -84,7 +84,7 @@ interface Props {
 
 const isOptionExist = (optionSelected: string) => optionSelected !== 'All'
 
-export default function Filter({ filterName, optionSet, optionSelected, handleOptionChange }: Props) {
+export const Filter = ({ filterName, optionSet, optionSelected, handleOptionChange }: Props) => {
   const [optionOpen, setOptionOpen] = useState(false)
   const toggleList = () => setOptionOpen(!optionOpen)
   const onBlur = () => setOptionOpen(false)

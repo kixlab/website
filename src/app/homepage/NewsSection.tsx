@@ -3,8 +3,8 @@ import { POSTS } from '@/data/posts'
 import React from 'react'
 import { Section, SectionHeader, FullWidthContainer } from './Styles'
 import styled from '@emotion/styled'
-import LinkButton from '@/components/LinkButton'
-import NewsCard from '@/components/NewsCard'
+import { LinkButton } from '@/components/LinkButton'
+import { NewsCard } from '@/components/NewsCard'
 
 const NewsItemsArea = styled.div`
   display: flex;

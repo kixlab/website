@@ -2,9 +2,9 @@
 
 import React from 'react'
 import { FontVariant, Color } from '@/app/theme'
-import type { Publication } from '@/data/publications'
+import { Publication } from '@/data/publications'
 import { URL } from '@/components/URL'
-import Author from './Author'
+import { Author } from './Author'
 import styled from '@emotion/styled'
 
 const Card = styled.div`
@@ -69,7 +69,7 @@ const Tags = styled.span`
   color: ${Color.gray700};
 `
 
-export default function PublicationCard({ pub }: { pub: Publication }) {
+export const PublicationCard = ({ pub }: { pub: Publication }) => {
   return (
     <Card>
       <Title>{pub.title}</Title>

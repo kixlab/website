@@ -1,17 +1,17 @@
 'use client'
 
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import React from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
-import { uniq } from 'lodash'
-import { PUBLICATIONS, PublicationTypes, ResearchTopics } from '@/data/publications'
-import type { PublicationType, ResearchTopicType, Publication } from '@/data/publications'
+import { PUBLICATIONS_BY_YEAR, PREPRINTS, PublicationTypes, ResearchTopics, Publication } from '@/data/publications'
+import type { PublicationType, ResearchTopicType } from '@/data/publications'
 import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
-import PublicationCard from '@/components/Publication/PublicationCard'
-import Filter from '@/components/Filter'
-import Sidebar from '@/components/SideBar'
-import Divider from '@/components/Divider'
+import { PublicationCard } from '@/components/Publication/PublicationCard'
+import { Filter } from '@/components/Filter'
+import { Sidebar } from '@/components/SideBar'
+import { Divider } from '@/components/Divider'
+import _ from 'lodash'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const Container = styled.div`
@@ -62,94 +62,54 @@ const Filters = styled.div`
   gap: 12px;
 `
 
+const preprintKey = 'Preprint'
+const PUBLICATIONS_BY_SECTION = {
+  [preprintKey]: PREPRINTS,
+  ...PUBLICATIONS_BY_YEAR,
+}
+const sortSections = (sections: string[]) => {
+  return sections.sort((a, b) => {
+    if (a === preprintKey) return -1
+    if (b === preprintKey) return 1
+    return b.localeCompare(a)
+  })
+}
+
 export default function Page() {
   const router = useRouter()
   const params = useSearchParams()
   const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
   const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
-
-  const [publicationList, setPublicationList] = useState(PUBLICATIONS)
-  const [activeSection, setActiveSection] = useState<string | null>(null)
-  const [sidebarList, setSidebarList] = useState<string[]>([])
-  const ignoreObserver = useRef(false)
+  const [publicationList, setPublicationList] = useState<Record<string, Publication[]>>(PUBLICATIONS_BY_SECTION)
+  const [sectionList, setSectionList] = useState<string[]>(sortSections(Object.keys(PUBLICATIONS_BY_SECTION)))
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
   const handleResearchTopicChange = (topic: string) => {
     router.push(`/publications/?researchTopic=${topic}&publicationType=${publicationType}`)
   }
-
   const handlePublicationTypeChange = (type: string) => {
     router.push(`/publications/?researchTopic=${researchTopic}&publicationType=${type}`)
   }
-
   useEffect(() => {
-    const filteredList = PUBLICATIONS.filter(
-      pub =>
-        (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
-        (publicationType === 'All' || pub.type === publicationType)
+    const filteredList: Record<string, Publication[]> = Object.entries(PUBLICATIONS_BY_SECTION).reduce(
+      (acc, [year, publications]) => {
+        const filteredPublications = publications.filter(
+          pub =>
+            (researchTopic === 'All' || pub.topics.includes(researchTopic)) &&
+            (publicationType === 'All' || pub.type === publicationType)
+        )
+        if (filteredPublications.length > 0) {
+          acc[year] = filteredPublications
+        }
+        return acc
+      },
+      {} as Record<string, Publication[]>
     )
 
     setPublicationList(filteredList)
   }, [researchTopic, publicationType])
-
   useEffect(() => {
-    handleSidebarList(publicationList)
-  }, [publicationList])
-
-  const handleSidebarList = (list: Publication[]) => {
-    const sections = []
-    if (list.filter(pub => pub.type === 'preprint').length > 0) {
-      sections.push('preprints')
-    }
-    const years = uniq(list.map(p => p.year))
-      .sort()
-      .reverse()
-    setSidebarList([...sections, ...years.map(year => year.toString())])
-  }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        if (ignoreObserver.current) return
-
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const sections = Object.values(sectionRefs.current)
-    sections.forEach(section => {
-      if (section) {
-        observer.observe(section)
-      }
-    })
-
-    return () => {
-      sections.forEach(section => {
-        if (section) {
-          observer.unobserve(section)
-        }
-      })
-    }
-  }, [])
-
-  const handleLinkClick = (sectionId: string) => {
-    setActiveSection(sectionId)
-    ignoreObserver.current = true
-
-    setTimeout(() => {
-      ignoreObserver.current = false
-    }, 2000)
-  }
-
-  const sortedYears = useMemo(() => {
-    return uniq(publicationList.map(p => p.year))
-      .sort()
-      .reverse()
+    setSectionList(sortSections(Object.keys(publicationList)))
   }, [publicationList])
 
   return (
@@ -171,50 +131,34 @@ export default function Page() {
           />
         </Filters>
         <Sections>
-          {publicationList.filter(pub => pub.type === 'preprint').length > 0 && (
-            <Section
-              id="preprints"
-              ref={el => {
-                sectionRefs.current['preprints'] = el
-              }}
-            >
-              <SectionTitle>Preprints</SectionTitle>
-              <SectionContent>
-                {publicationList
-                  .filter(pub => pub.type === 'preprint')
-                  .map(pub => (
-                    <PublicationCard key={pub.title} pub={pub} />
-                  ))}
-              </SectionContent>
-            </Section>
-          )}
-          {sortedYears.map((year, i) => (
-            <React.Fragment key={year}>
-              {i === 0 && publicationList.filter(pub => pub.type === 'preprint').length === 0 ? null : (
-                <Divider key={`divider-${i}`} />
-              )}
-              <Section
-                id={`${year}`}
-                ref={el => {
-                  sectionRefs.current[`${year}`] = el
-                }}
-                key={year}
-              >
-                <SectionTitle>{year}</SectionTitle>
-                <SectionContent>
-                  {publicationList
-                    .filter(({ year: y }) => y === year)
-                    .map(pub => (
-                      <PublicationCard key={pub.title} pub={pub} />
-                    ))}
-                </SectionContent>
-              </Section>
-            </React.Fragment>
-          ))}
+          {sectionList.map(sectionName => {
+            return (
+              publicationList[sectionName] &&
+              publicationList[sectionName].length > 0 && (
+                <React.Fragment key={sectionName}>
+                  <Section
+                    key={sectionName}
+                    id={_.startCase(sectionName)}
+                    ref={el => {
+                      sectionRefs.current[sectionName] = el
+                    }}
+                  >
+                    <SectionTitle>{sectionName}</SectionTitle>
+                    <SectionContent>
+                      {publicationList[sectionName].map(pub => (
+                        <PublicationCard key={pub.title} pub={pub} />
+                      ))}
+                    </SectionContent>
+                  </Section>
+                  <Divider />
+                </React.Fragment>
+              )
+            )
+          })}
         </Sections>
       </main>
       <SideContainer>
-        <Sidebar activeSection={activeSection} handleLinkClick={handleLinkClick} sidebarList={sidebarList} />
+        <Sidebar sidebarList={sectionList} sectionRefs={sectionRefs} />
       </SideContainer>
     </Container>
   )

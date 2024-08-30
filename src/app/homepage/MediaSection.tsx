@@ -3,8 +3,8 @@ import { FontSize, FontWeight } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
 import { Section, SectionHeader, FullWidthContainer } from './Styles'
-import VIDEOS from '@/data/videos'
-import LinkButton from '@/components/LinkButton'
+import { VIDEOS } from '@/data/videos'
+import { LinkButton } from '@/components/LinkButton'
 
 const MediaArea = styled.div`
   display: flex;
@@ -41,6 +41,11 @@ const VideoDate = styled.h4`
   text-align: center;
 `
 
+const formatDate = (date: Date) => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' }
+  return new Intl.DateTimeFormat('en-US', options).format(date)
+}
+
 export const MediaSection = () => {
   return (
     <FullWidthContainer>
@@ -62,7 +67,7 @@ export const MediaSection = () => {
                 ></iframe>
               </VideoContainer>
               <VideoTitle>{video.title}</VideoTitle>
-              <VideoDate>{video.formattedDate}</VideoDate>
+              <VideoDate>{formatDate(video.date)}</VideoDate>
             </VideoCard>
           ))}
         </MediaArea>
