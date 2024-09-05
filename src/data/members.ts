@@ -38,15 +38,6 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
-  sungchullee: {
-    firstName: 'Sung-Chul',
-    lastName: 'Lee',
-    email: 'leesungchul@kaist.ac.kr',
-    kixlabPosition: 'Ph.D. Student',
-    img: 'sclee.png',
-    startYear: 2016,
-    startSeason: 'Summer',
-  },
   juhokim: {
     firstName: 'Juho',
     lastName: 'Kim',
@@ -168,6 +159,11 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'M.S. Student',
     img: 'seulgi.jpg',
     site: 'https://csg17.github.io/cv/index.html',
+    isAlumni: true,
+    startSeason: 'Winter',
+    startYear: 2022,
+    endSeason: 'Summer',
+    endYear: 2024,
   },
   jihyeonghong: {
     firstName: 'Jihyeong',
@@ -237,9 +233,11 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Daeheon',
     lastName: 'Jeong',
     email: 'neohgeek@gmail.com',
-    kixlabPosition: 'Visiting Researcher',
+    kixlabPosition: 'M.S. Student',
     img: 'daeheon.jpg',
     affiliation: 'Sogang',
+    startSeason: 'Fall',
+    startYear: 2024,
   },
   haeseulcha: {
     firstName: 'Haeseul',
@@ -358,10 +356,12 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Hyehyun',
     lastName: 'Chu',
     email: 'ded06031@snu.ac.kr',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'M.S. Student',
     img: 'hyehyun.png',
     site: 'https://hyehyunchu.vercel.app/',
-    affiliation: 'SNU',
+    affiliation: 'KAIST',
+    startSeason: 'Fall',
+    startYear: 2024,
   },
   minjuyoo: {
     firstName: 'Minju',
@@ -1790,6 +1790,15 @@ export const MEMBERS: Record<string, Member> = {
     startYear: 2016,
     affiliation: 'SNU',
   },
+  // sungchullee: {
+  //   firstName: 'Sung-Chul',
+  //   lastName: 'Lee',
+  //   email: 'leesungchul@kaist.ac.kr',
+  //   kixlabPosition: 'Ph.D. Student',
+  //   img: 'sclee.png',
+  //   startYear: 2016,
+  //   startSeason: 'Summer',
+  // },
   oaksilkim: {
     firstName: 'Oaksil',
     lastName: 'Kim',
