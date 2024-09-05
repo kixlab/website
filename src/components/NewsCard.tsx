@@ -1,10 +1,8 @@
-'use client'
-
 import React from 'react'
 import Markdown from 'react-markdown'
 import styled from '@emotion/styled'
 import { FontVariant, Color, ScreenSize } from '@/app/theme'
-import Post from '@/data/posts'
+import { Post } from '@/data/posts'
 
 export const categoryColors: { [key: string]: string } = {
   publication: Color.orange900,
@@ -70,7 +68,7 @@ export const ReadMore = styled.div`
   text-decoration: none;
 `
 
-export default function NewsCard({
+export const NewsCard = ({
   post,
   setModalContent,
   labelsOnLeft: labelsOnLeft,
@@ -78,7 +76,7 @@ export default function NewsCard({
   post: Post
   setModalContent: (post: Post) => void
   labelsOnLeft?: boolean
-}) {
+}) => {
   const currentDate = new Date()
   const open = post.endsAt && post.endsAt > currentDate
   const closed = post.endsAt && post.endsAt < currentDate

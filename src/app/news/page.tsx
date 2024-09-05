@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import NewsCard from '@/components/NewsCard'
-import Post, { POSTS } from '@/data/posts'
-import NewsModal from '@/components/NewsModal'
+import { NewsCard } from '@/components/NewsCard'
+import { POSTS, Post } from '@/data/posts'
+import { NewsModal } from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
 

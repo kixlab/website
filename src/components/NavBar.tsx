@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface NavItemProps {
+interface Props {
   children: string
   href: string
   selected: boolean
@@ -18,7 +18,6 @@ export const Nav = styled.nav`
   display: flex;
   box-sizing: border-box;
   height: ${NAV_BAR_HEIGHT}px;
-  background-color: ${Color.white};
   justify-content: space-between;
   align-items: center;
 
@@ -44,9 +43,10 @@ const NavContainer = styled.div`
   top: 0;
   z-index: 2;
   border-bottom: 1px solid ${Color.gray300};
+  background-color: ${Color.white};
 `
 
-export const Logo = styled.a`
+export const Logo = styled(Link)`
   text-decoration: none;
   ${FontVariant.title_sm}
   color: ${Color.gray900};
@@ -98,7 +98,7 @@ const Anchor = styled(Link)<{ selected: boolean }>`
   }
 `
 
-export const NavItem: React.FC<NavItemProps> = ({ children, href, selected }) => (
+export const NavItem: React.FC<Props> = ({ children, href, selected }) => (
   <Anchor href={href} selected={selected}>
     {children}
   </Anchor>
@@ -153,7 +153,7 @@ const NavList = [
   { navItem: 'News', path: '/news' },
 ]
 
-export default function NavBar() {
+export const NavBar = () => {
   const [isOpen, setIsOpen] = React.useState(false)
   const dropdownRef = React.useRef<HTMLDivElement>(null)
   const hamburgerRef = React.useRef<HTMLButtonElement>(null)

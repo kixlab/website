@@ -74,12 +74,12 @@ export const SectionHeader: React.FC<{ title: string; subtitle: string }> = ({ t
   )
 }
 
-interface ContainerProps {
+interface Props {
   style?: React.CSSProperties
   children: React.ReactNode
 }
 
-export const FullWidthContainer: React.FC<ContainerProps> = ({ style, children }) => {
+export const FullWidthContainer: React.FC<Props> = ({ style, children }) => {
   // Use for custom background colors (default: light gray) that span the full width of the viewport
   return (
     <div
@@ -94,7 +94,7 @@ export const FullWidthContainer: React.FC<ContainerProps> = ({ style, children }
   )
 }
 
-export const ResponsiveContainer: React.FC<ContainerProps> = ({ style, children }) => {
+export const ResponsiveContainer: React.FC<Props> = ({ style, children }) => {
   return (
     <div
       style={{

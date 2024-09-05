@@ -3,7 +3,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import Image from 'next/image'
-
+import Link from 'next/link'
 import { Color, FontVariant, FontSize, FontWeight } from '@/app/theme'
 
 const FooterContainer = styled.footer`
@@ -31,7 +31,7 @@ const FooterTextContainer = styled.div`
   }
 `
 
-const FooterText = styled.a`
+const FooterText = styled(Link)`
   ${FontVariant.body_md}
   color: ${Color.white};
   text-decoration: none;
@@ -69,11 +69,11 @@ const FooterLogoContainer = styled.div`
   }
 `
 
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
   display: inline-block;
 `
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <FooterContainer>
       <FooterTextContainer>

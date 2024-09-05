@@ -5,14 +5,14 @@ import { Color, FontSize, FontWeight } from '@/app/theme'
 import { FaArrowRight } from 'react-icons/fa'
 import React from 'react'
 
-interface LinkButtonProps {
+interface Props {
   href: string
   text: string
   image?: string
   style?: React.CSSProperties
 }
 
-export default function LinkButton({ href, text, image, style }: LinkButtonProps) {
+export const LinkButton = ({ href, text, image, style }: Props) => {
   return (
     <Link
       href={href}

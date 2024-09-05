@@ -1,18 +1,18 @@
 // Sidebar.js
-import React from 'react'
-import { uniq } from 'lodash'
+import React, { useState, useRef, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Color, FontVariant } from '@/app/theme'
 import { NAV_BAR_HEIGHT } from './NavBar'
+import Link from 'next/link'
+import _ from 'lodash'
 
 const SideBarContainer = styled.div`
   position: sticky;
-  // TODO: make this more modular by having top take a prop
   top: ${NAV_BAR_HEIGHT + 40}px;
   height: 100vh;
 `
 
-const SidebarLink = styled.a`
+const SidebarLink = styled(Link)`
   display: block;
   text-decoration: none;
   overflow: hidden;
@@ -32,40 +32,71 @@ const SidebarLink = styled.a`
   }
 `
 
-interface Props {
-  activeSection: string | null
-  handleLinkClick: (sectionId: string) => void
-  publicationList: number[]
+interface IobserverOptions {
+  root: HTMLElement | null
+  rootMargin: string
+  threshold: number | number[]
 }
 
-const Sidebar = ({ activeSection, handleLinkClick, publicationList }: Props) => {
-  return (
-    <SideBarContainer>
-      <SidebarLink
-        // TODO: Make this more modular by having href take a prop instead of hardcoded value
-        href="#preprints"
-        className={activeSection === 'preprints' ? 'active' : ''}
-        onClick={() => handleLinkClick('preprints')}
-      >
-        Preprints
-      </SidebarLink>
-      {/* TODO: Make this more modular by replacing publicationList with a prop */}
-      {uniq(publicationList)
-        .sort()
-        .reverse()
-        .map(year => (
+const defaultObserverOptions: IobserverOptions = {
+  root: null,
+  // when a section passes the area that is 10% from the top and 80% from the bottom of the viewport, it will be considered intersecting
+  rootMargin: '-20% 0px -80% 0px',
+  threshold: 0.0,
+}
+
+interface ISidebar {
+  handleLinkClick?: () => void
+  sidebarList: string[]
+  sectionRefs: React.RefObject<Record<string, HTMLElement | null>>
+  observerOptions?: IobserverOptions
+}
+
+const capitalizeWords = (s: string) => {
+  return _.startCase(s)
+}
+
+export const Sidebar = React.forwardRef(
+  ({ handleLinkClick, sidebarList, sectionRefs, observerOptions = defaultObserverOptions }: ISidebar) => {
+    const [activeSection, setActiveSection] = useState<string | null>(null)
+    const ignoreObserver = useRef(false)
+    useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+        if (ignoreObserver.current) return
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id)
+          }
+        })
+      }, observerOptions)
+
+      if (sectionRefs.current !== null) {
+        const sections = Object.values(sectionRefs.current)
+        sections.forEach(section => {
+          section && observer.observe(section)
+        })
+
+        return () => {
+          observer.disconnect()
+        }
+      }
+    }, [sectionRefs, observerOptions])
+
+    return (
+      <SideBarContainer>
+        {/* TODO: replace sideBarList with sectionRefs */}
+        {sidebarList.map(section => (
           <SidebarLink
-            key={year}
-            // TODO: Replace hardcoded values
-            href={`#year-${year}`}
-            className={activeSection === `year-${year}` ? 'active' : ''}
-            onClick={() => handleLinkClick(`year-${year}`)}
+            key={section}
+            href={`#${section}`}
+            className={activeSection === section ? 'active' : ''}
+            onClick={() => handleLinkClick && handleLinkClick()}
           >
-            {year}
+            {capitalizeWords(section)}
           </SidebarLink>
         ))}
-    </SideBarContainer>
-  )
-}
-
-export default Sidebar
+      </SideBarContainer>
+    )
+  }
+)
+Sidebar.displayName = 'Sidebar'
