@@ -5,6 +5,7 @@ import React from 'react'
 import { Section, SectionHeader, FullWidthContainer } from './Styles'
 import { VIDEOS } from '@/data/videos'
 import { LinkButton } from '@/components/LinkButton'
+import { YouTubeEmbed } from '@next/third-parties/google'
 
 const MediaArea = styled.div`
   display: flex;
@@ -55,16 +56,7 @@ export const MediaSection = () => {
           {VIDEOS.map(video => (
             <VideoCard key={video.url}>
               <VideoContainer>
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={video.url}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                ></iframe>
+                <YouTubeEmbed videoid={video.id}></YouTubeEmbed>
               </VideoContainer>
               <VideoTitle>{video.title}</VideoTitle>
               <VideoDate>{formatDate(video.date)}</VideoDate>

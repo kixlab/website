@@ -10,6 +10,10 @@ const notoSans = Noto_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 export const metadata: Metadata = {
   title: 'KIXLAB',
   description: 'KIXLAB is a human-computer interaction research group in the School of Computing at KAIST.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
