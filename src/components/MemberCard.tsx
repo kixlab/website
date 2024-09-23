@@ -12,7 +12,6 @@ const Card = styled.div`
   flex-direction: column;
   gap: 16px;
   align-items: center;
-  width: 200px;
 `
 
 const Info = styled.div`
