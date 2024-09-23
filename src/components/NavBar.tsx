@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from '@emotion/styled'
 
 import { FontVariant, Color, ScreenSize, linearlyScaleSize } from '@/app/theme'
@@ -111,7 +111,7 @@ const DropDownMenu = styled.div`
   width: 100vw;
   z-index: 1;
   /* Animation */
-  transition: transform 0.2s;
+  transition: transform 0.25s;
   &.open {
     transform: translateY(0px);
   }
@@ -127,12 +127,34 @@ const DropDownMenu = styled.div`
   }
 `
 
-const HamburgerButton = styled.button`
+const HamburgerButton = styled.input`
   display: none;
-  width: 30px;
+
+  &:checked + label > span {
+    background: ${Color.orange800};
+  }
+`
+
+const HamburgerButtonLabel = styled.label`
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 8px 0px;
   background-color: white;
   border: none;
   cursor: pointer;
+
+  & > span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 0 auto;
+    margin-bottom: 6px;
+    background: ${Color.gray700};
+    border-radius: 3px;
+    z-index: 1;
+  }
   @media (max-width: ${ScreenSize.sm}) {
     display: block;
   }
@@ -154,9 +176,9 @@ const NavList = [
 ]
 
 export const NavBar = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const dropdownRef = React.useRef<HTMLDivElement>(null)
-  const hamburgerRef = React.useRef<HTMLButtonElement>(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const hamburgerRef = useRef<HTMLLabelElement>(null)
   const pathname = usePathname()
 
   // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
@@ -171,8 +193,17 @@ export const NavBar = () => {
         setIsOpen(false)
       }
     }
+
+    const handleScroll = () => {
+      setIsOpen(false)
+    }
     document.addEventListener('mousedown', handleClickOutsideDropDownMenu)
-    return () => document.removeEventListener('mousedown', handleClickOutsideDropDownMenu)
+    document.addEventListener('scroll', handleScroll)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideDropDownMenu)
+      document.removeEventListener('scroll', handleScroll)
+    }
   }, [dropdownRef])
 
   useEffect(() => {
@@ -199,9 +230,12 @@ export const NavBar = () => {
               ))}
             </NavUl>
           </NavRow>
-          <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
-            <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
-          </HamburgerButton>
+          <HamburgerButton type="checkbox" id="hamburger-checkbox" checked={isOpen} />
+          <HamburgerButtonLabel htmlFor="hamburger-checkbox" ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
+            <span />
+            <span />
+            <span />
+          </HamburgerButtonLabel>
         </Nav>
       </NavContainer>
       {
