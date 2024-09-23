@@ -168,12 +168,9 @@ export const MEMBERS: Record<string, Member> = {
   jihyeonghong: {
     firstName: 'Jihyeong',
     lastName: 'Hong',
-    kixlabPosition: 'Undergrad Intern',
-    isAlumni: true,
+    kixlabPosition: 'M.S. Student',
     startYear: 2020,
     startSeason: 'Summer',
-    endYear: 2021,
-    endSeason: 'Fall',
     affiliation: 'KAIST',
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a',
   },
@@ -389,6 +386,9 @@ export const MEMBERS: Record<string, Member> = {
     img: 'nayoung.jpg',
     site: 'https://github.com/skdud727',
     affiliation: 'DGIST',
+    startSeason: 'Summer',
+    startYear: 2024,
+    isAlumni: true,
   },
   jinhyeonkwon: {
     firstName: 'Jinhyeon',
