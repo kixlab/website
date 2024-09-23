@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import styled from '@emotion/styled'
 import { PUBLICATIONS_BY_YEAR, PREPRINTS, PublicationTypes, ResearchTopics, Publication } from '@/data/publications'
@@ -13,6 +12,7 @@ import { Sidebar } from '@/components/SideBar'
 import { Divider } from '@/components/Divider'
 import _ from 'lodash'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
+import { ViewportList } from 'react-viewport-list'
 
 const Container = styled.div`
   display: flex;
@@ -41,6 +41,10 @@ const Container = styled.div`
   & > main {
     // make the main content (publications list) take up 85% and the Sidebar component 15%
     width: 85%;
+
+    @media (max-width: ${ScreenSize.sm}) {
+      width: 100%;
+    }
   }
 `
 
@@ -145,9 +149,12 @@ export default function Page() {
                   >
                     <SectionTitle>{sectionName}</SectionTitle>
                     <SectionContent>
-                      {publicationList[sectionName].map(pub => (
+                      {/* {publicationList[sectionName].map(pub => (
                         <PublicationCard key={pub.title} pub={pub} />
-                      ))}
+                      ))} */}
+                      <ViewportList items={publicationList[sectionName]}>
+                        {(pub, index) => <PublicationCard key={pub.title} pub={pub} />}
+                      </ViewportList>
                     </SectionContent>
                   </Section>
                   <Divider />
