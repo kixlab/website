@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from '@emotion/styled'
 
 import { FontVariant, Color, ScreenSize, linearlyScaleSize } from '@/app/theme'
@@ -160,7 +160,7 @@ export const NavBar = () => {
   const pathname = usePathname()
 
   // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClickOutsideDropDownMenu = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
@@ -174,6 +174,10 @@ export const NavBar = () => {
     document.addEventListener('mousedown', handleClickOutsideDropDownMenu)
     return () => document.removeEventListener('mousedown', handleClickOutsideDropDownMenu)
   }, [dropdownRef])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <>
