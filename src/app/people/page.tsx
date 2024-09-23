@@ -16,6 +16,9 @@ const SectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 25px;
+  @media (max-width: ${ScreenSize.sm}) {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
 `
 
 const Container = styled.div`
@@ -45,6 +48,10 @@ const Container = styled.div`
   & > main {
     // make the main content (publications list) take up 85% and the Sidebar component 15%
     width: 85%;
+
+    @media (max-width: ${ScreenSize.sm}) {
+      width: 100%;
+    }
   }
 `
 const SideContainer = styled.div`
@@ -63,7 +70,7 @@ const AlumniSectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1px;
-  @media (min-width: 1200px) {
+  @media (min-width: ${ScreenSize.xl}) {
     grid-template-columns: repeat(5, 1fr);
   }
 `
