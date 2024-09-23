@@ -14,7 +14,7 @@ import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const SectionContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 225px));
   gap: 25px;
   @media (max-width: ${ScreenSize.sm}) {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -56,8 +56,6 @@ const Container = styled.div`
 `
 const SideContainer = styled.div`
   padding-top: 96px;
-  padding-left: 30px;
-  padding-right: 30px;
   width: 15%;
   display: flex;
   flex-direction: column;
