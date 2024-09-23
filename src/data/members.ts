@@ -169,6 +169,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Jihyeong',
     lastName: 'Hong',
     kixlabPosition: 'M.S. Student',
+    img: 'jihyeong.jpg',
     startYear: 2020,
     startSeason: 'Summer',
     affiliation: 'KAIST',
