@@ -841,3 +841,5 @@ export const POSTS: Post[] = [
       'The new KAIST Interaction Lab has officially opened. We are kicking off with one Ph.D. student and five summer undergrad interns.',
   },
 ] as const satisfies Post[]
+
+POSTS.sort((a, b) => b.date.getTime() - a.date.getTime())

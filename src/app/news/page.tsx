@@ -6,6 +6,7 @@ import { POSTS, Post } from '@/data/posts'
 import { NewsModal } from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
+import { ViewportList } from 'react-viewport-list'
 
 const padding = 80
 const postWidth = 400
@@ -15,8 +16,13 @@ const NewsSection = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 50px 0;
+  padding: 50px 0px;
   width: 100%;
+
+  @media (max-width: ${ScreenSize.sm}) {
+    padding: 0px 0px;
+  } 
+}
 `
 
 const NewsLine = styled.div`
@@ -39,7 +45,7 @@ const NewsLine = styled.div`
     transform: translate(-50%, -50%);
   }
 
-  @media (max-width: ${ScreenSize.xl}) {
+  @media (max-width: ${ScreenSize.md}) {
     display: none;
   }
 `
@@ -49,14 +55,14 @@ const NewsContainer = styled.div`
   display: grid;
   grid-template-colums: 1fr 1fr;
 
-  @media (max-width: ${ScreenSize.xl}) {
+  @media (max-width: ${ScreenSize.md}) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
     padding: 0;
   }
 
-  @media (max-width: ${ScreenSize.md}) {
+  @media (max-width: ${ScreenSize.sm}) {
     grid-template-columns: 1fr;
   }
 
@@ -64,7 +70,7 @@ const NewsContainer = styled.div`
     width: 47%; // needs to be <50% to show gap between cards and vertical line
     margin-bottom: -${padding / 2}px;
 
-    @media (max-width: ${ScreenSize.xl}) {
+    @media (max-width: ${ScreenSize.md}) {
       width: 100%;
       margin-bottom: 0px;
     }
@@ -74,7 +80,7 @@ const NewsContainer = styled.div`
     margin-right: auto;
     text-align: right;
 
-    @media (max-width: ${ScreenSize.xl}) {
+    @media (max-width: ${ScreenSize.md}) {
       margin-left: 0px;
       margin-right: 0px;
       align-items: flex-start;
@@ -85,7 +91,7 @@ const NewsContainer = styled.div`
     margin-left: auto;
     text-align: left;
 
-    @media (max-width: ${ScreenSize.xl}) {
+    @media (max-width: ${ScreenSize.md}) {
       margin-left: 0px;
       margin-right: 0px;
       align-items: flex-start;
@@ -99,27 +105,23 @@ export default function Page() {
 
   return (
     <main>
-      <h1 style={{ textAlign: 'center' }}>News</h1>
+      <h1>News</h1>
       <NewsSection id="new section">
         <NewsLine />
         <NewsContainer id="news container">
-          {POSTS.sort((a, b) => b.date.getTime() - a.date.getTime()).map((post, index) => (
+          {POSTS.map((post, index) => (
             <NewsCard key={index} post={post} setModalContent={setModalContent} labelsOnLeft={index % 2 === 1} />
           ))}
         </NewsContainer>
       </NewsSection>
-      <div
-        style={{
-          display: modalContent ? 'block' : 'none',
-        }}
-      >
+      {modalContent && (
         <NewsModal
           post={modalContent}
           onClose={() => {
             setModalContent(null)
           }}
         />
-      </div>
+      )}
     </main>
   )
 }
