@@ -149,9 +149,6 @@ export default function Page() {
                   >
                     <SectionTitle>{sectionName}</SectionTitle>
                     <SectionContent>
-                      {/* {publicationList[sectionName].map(pub => (
-                        <PublicationCard key={pub.title} pub={pub} />
-                      ))} */}
                       <ViewportList items={publicationList[sectionName]}>
                         {(pub, index) => <PublicationCard key={pub.title} pub={pub} />}
                       </ViewportList>

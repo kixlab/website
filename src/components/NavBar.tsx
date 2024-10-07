@@ -22,7 +22,7 @@ export const Nav = styled.nav`
   align-items: center;
 
   // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
-  padding: 12px 24px 16px
+  padding: 12px 24px 12px
     ${linearlyScaleSize({
       minSizePx: 24,
       maxSizePx: 96,
@@ -145,19 +145,20 @@ const HamburgerButtonLabel = styled.label`
   border: none;
   cursor: pointer;
 
-  & > span {
-    display: block;
-    width: 28px;
-    height: 4px;
-    margin: 0 auto;
-    margin-bottom: 6px;
-    background: ${Color.gray700};
-    border-radius: 3px;
-    z-index: 1;
-  }
   @media (max-width: ${ScreenSize.sm}) {
     display: block;
   }
+`
+
+const HamburgerLine = styled.span`
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 0 auto;
+  margin-bottom: 6px;
+  background: ${Color.gray700};
+  border-radius: 3px;
+  z-index: 1;
 `
 
 const ResponsiveSpan = styled.span`
@@ -230,11 +231,11 @@ export const NavBar = () => {
               ))}
             </NavUl>
           </NavRow>
-          <HamburgerButton type="checkbox" id="hamburger-checkbox" checked={isOpen} />
+          <HamburgerButton type="checkbox" id="hamburger-checkbox" checked={isOpen} readOnly />
           <HamburgerButtonLabel htmlFor="hamburger-checkbox" ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
-            <span />
-            <span />
-            <span />
+            <HamburgerLine />
+            <HamburgerLine />
+            <HamburgerLine />
           </HamburgerButtonLabel>
         </Nav>
       </NavContainer>
