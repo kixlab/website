@@ -6,7 +6,6 @@ import { POSTS, Post } from '@/data/posts'
 import { NewsModal } from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
-import { ViewportList } from 'react-viewport-list'
 
 const padding = 80
 const postWidth = 400
