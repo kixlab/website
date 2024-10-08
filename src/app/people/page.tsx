@@ -14,8 +14,8 @@ import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const SectionContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 225px));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
   @media (max-width: ${ScreenSize.sm}) {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
