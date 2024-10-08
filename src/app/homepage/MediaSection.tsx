@@ -71,7 +71,7 @@ export const MediaSection = () => {
             justifyContent: 'center',
           }}
         >
-          <LinkButton href="https://www.youtube.com/@kixlabkaist5732" image="/images/youtube.svg" text="KIXLAB KAIST" />
+          <LinkButton href="https://www.youtube.com/@kixlabkaist5732" image="/images/youtube.svg" text="KIXLAB_KAIST" />
           <LinkButton href="https://x.com/kixlab_kaist" image="/images/twitter-x.svg" text="@kixlab_kaist" />
         </div>
       </Section>

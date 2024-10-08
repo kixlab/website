@@ -76,6 +76,7 @@ export default function GlobalStyles() {
         h1 {
           margin: 0;
           ${FontVariant.title_lg}
+          text-align: center;
         }
         ,
         *:focus-visible {

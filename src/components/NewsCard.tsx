@@ -61,36 +61,46 @@ const Summary = styled.div`
   }
 `
 
-export const ReadMore = styled.div`
+export const ReadMoreButton = styled.button`
   ${FontVariant.body_md}
   color: ${Color.orange900};
   cursor: pointer;
   text-decoration: none;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  margin-top: 8px;
+  padding: 0px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
-export const NewsCard = ({
-  post,
-  setModalContent,
-  labelsOnLeft: labelsOnLeft,
-}: {
+interface Props {
   post: Post
   setModalContent: (post: Post) => void
   labelsOnLeft?: boolean
-}) => {
+}
+
+export const NewsCard = ({ post, setModalContent, labelsOnLeft: labelsOnLeft }: Props) => {
   const currentDate = new Date()
-  const open = post.endsAt && post.endsAt > currentDate
-  const closed = post.endsAt && post.endsAt < currentDate
+  const expired = post.endsAt && post.endsAt < currentDate
 
   return (
     <PostContainer>
       <CategoryContainer labelsOnLeft={labelsOnLeft}>
         {post.categories.map((category, i) => (
-          <Category key={i} style={{ backgroundColor: closed ? Color.gray400 : categoryColors[category] }}>
+          <Category key={i} style={{ backgroundColor: expired ? Color.gray400 : categoryColors[category] }}>
             {category}
           </Category>
         ))}
-        {closed && <Category style={{ backgroundColor: Color.gray400 }}>Closed</Category>}
-        {open && <Category style={{ backgroundColor: Color.green300 }}>Open</Category>}
+        {expired !== undefined &&
+          (expired ? (
+            <Category style={{ backgroundColor: Color.gray400 }}>Closed</Category>
+          ) : (
+            <Category style={{ backgroundColor: Color.green300 }}>Open</Category>
+          ))}
       </CategoryContainer>
       <Title>{post.title}</Title>
       <NewsDate>{post.date.toDateString()}</NewsDate>
@@ -98,14 +108,14 @@ export const NewsCard = ({
         <Markdown>{post.summary}</Markdown>
       </Summary>
       {post.contentMdFilePath && (
-        <ReadMore
+        <ReadMoreButton
           onClick={e => {
             e.preventDefault()
             setModalContent(post)
           }}
         >
-          Click here to see the details →
-        </ReadMore>
+          Read More →
+        </ReadMoreButton>
       )}
     </PostContainer>
   )

@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import styled from '@emotion/styled'
 
 import { FontVariant, Color, ScreenSize, linearlyScaleSize } from '@/app/theme'
@@ -22,7 +22,7 @@ export const Nav = styled.nav`
   align-items: center;
 
   // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
-  padding: 12px 24px 16px
+  padding: 12px 24px 12px
     ${linearlyScaleSize({
       minSizePx: 24,
       maxSizePx: 96,
@@ -111,7 +111,7 @@ const DropDownMenu = styled.div`
   width: 100vw;
   z-index: 1;
   /* Animation */
-  transition: transform 0.2s;
+  transition: transform 0.25s;
   &.open {
     transform: translateY(0px);
   }
@@ -127,15 +127,38 @@ const DropDownMenu = styled.div`
   }
 `
 
-const HamburgerButton = styled.button`
+const HamburgerButton = styled.input`
   display: none;
-  width: 30px;
+
+  &:checked + label > span {
+    background: ${Color.orange800};
+  }
+`
+
+const HamburgerButtonLabel = styled.label`
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 8px 0px;
   background-color: white;
   border: none;
   cursor: pointer;
+
   @media (max-width: ${ScreenSize.sm}) {
     display: block;
   }
+`
+
+const HamburgerLine = styled.span`
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 0 auto;
+  margin-bottom: 6px;
+  background: ${Color.gray700};
+  border-radius: 3px;
+  z-index: 1;
 `
 
 const ResponsiveSpan = styled.span`
@@ -154,13 +177,13 @@ const NavList = [
 ]
 
 export const NavBar = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
-  const dropdownRef = React.useRef<HTMLDivElement>(null)
-  const hamburgerRef = React.useRef<HTMLButtonElement>(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+  const hamburgerRef = useRef<HTMLLabelElement>(null)
   const pathname = usePathname()
 
   // Close the dropdown menu whenever the user clicks outside of the dropdown menu area
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClickOutsideDropDownMenu = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
@@ -171,9 +194,22 @@ export const NavBar = () => {
         setIsOpen(false)
       }
     }
+
+    const handleScroll = () => {
+      setIsOpen(false)
+    }
     document.addEventListener('mousedown', handleClickOutsideDropDownMenu)
-    return () => document.removeEventListener('mousedown', handleClickOutsideDropDownMenu)
+    document.addEventListener('scroll', handleScroll)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutsideDropDownMenu)
+      document.removeEventListener('scroll', handleScroll)
+    }
   }, [dropdownRef])
+
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
     <>
@@ -195,9 +231,12 @@ export const NavBar = () => {
               ))}
             </NavUl>
           </NavRow>
-          <HamburgerButton ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
-            <Image src="/images/hamburger-icon.png" width={32} height={18} alt="Navigation Menu" />
-          </HamburgerButton>
+          <HamburgerButton type="checkbox" id="hamburger-checkbox" checked={isOpen} readOnly />
+          <HamburgerButtonLabel htmlFor="hamburger-checkbox" ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)}>
+            <HamburgerLine />
+            <HamburgerLine />
+            <HamburgerLine />
+          </HamburgerButtonLabel>
         </Nav>
       </NavContainer>
       {
