@@ -38,6 +38,15 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  eunjooKim : {
+    firstName: 'Eunjoo',
+    lastName: 'Kim',
+    email: 'ejkim96@yuhs.ac',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'default.png',
+    startYear: 2024,
+    startSeason: 'Fall',
+  },
   juhokim: {
     firstName: 'Juho',
     lastName: 'Kim',
