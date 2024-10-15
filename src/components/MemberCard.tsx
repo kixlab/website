@@ -8,6 +8,7 @@ import { Member } from '@/data/members'
 import Link from 'next/link'
 
 const Card = styled.div`
+  max-width: 250px;
   display: flex;
   flex-direction: column;
   gap: 16px;

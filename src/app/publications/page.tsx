@@ -83,7 +83,7 @@ export default function Page() {
   const router = useRouter()
   const params = useSearchParams()
   const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
-  const publicationType = (params.get('publicationType') as PublicationType | null) ?? 'All'
+  const publicationType = _.capitalize((params.get('publicationType') as PublicationType | null) ?? 'All')
   const [publicationList, setPublicationList] = useState<Record<string, Publication[]>>(PUBLICATIONS_BY_SECTION)
   const [sectionList, setSectionList] = useState<string[]>(sortSections(Object.keys(PUBLICATIONS_BY_SECTION)))
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})

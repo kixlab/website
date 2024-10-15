@@ -38,7 +38,7 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
-  eunjooKim : {
+  eunjooKim: {
     firstName: 'Eunjoo',
     lastName: 'Kim',
     email: 'ejkim96@yuhs.ac',
@@ -700,8 +700,8 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://janetyc.github.io/',
     currentPosition: ' Assistant Professor at Eindhoven University of Technology ',
   },
-  johnchung: {
-    firstName: 'John',
+  johnjoonyoungchung: {
+    firstName: 'John Joon Young',
     lastName: 'Chung',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
@@ -808,9 +808,9 @@ export const MEMBERS: Record<string, Member> = {
     endSeason: 'Spring',
     currentPosition: 'Ph.D. Researcher at University of Trento',
   },
-  lekhanhduy: {
-    firstName: 'Le Khanh',
-    lastName: 'Duy',
+  khanhduyle: {
+    firstName: 'Khanh Duy',
+    lastName: 'Le',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
     startSeason: 'Summer',
