@@ -45,6 +45,273 @@ export class Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
+   {
+    title: 'ARXIVDIGESTABLES: Synthesizing Scientific Literature into Tables using Language Models',
+    authors: ['Benjamin Newman', MEMBERS.yoonjoolee, 'Aakanksha Naik', 'Pao Siangliulue', 'Raymond Fok', MEMBERS.juhokim, 'Daniel S. Weld', 'Joseph Chee Chang', 'Kyle Lo'],
+    venue: 'EMNLP 2024 Main Track',
+    year: 2024,  
+    topics: ['human-AI interaction', 'datamining'],
+    type: 'Conference',
+    links: [
+    ],
+  },
+
+  {
+    title: 'Enhancing How People Learn Procedural Tasks Through How-to Videos',
+    authors: [MEMBERS.saelyneyang],
+    venue: 'UIST 2024 Doctoral Symposium',
+    year: 2024,  
+    topics: ['learning'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/uist2024-dc-saelyne.pdf',
+        type: PublicationLinkType.PDF
+      },
+    ],
+  },
+
+  {
+    title: 'KUIZ: Encouraging Modular Learnersourcing of Multiple Choice Questions through LLM Interventions',
+    authors: [MEMBERS.hyoungwookjin, MEMBERS.haesookim, 'Nathan Mekuria Haile', 'Soyeong Min', MEMBERS.juhokim],
+    venue: 'L@S 2024 Workshop on Learnersourcing: Student-generated Content @ Scale',
+    year: 2024,  
+    topics: ['learning'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://drive.google.com/file/d/1zElYwT-VJ9LRm6to1IVy59_uAitqwZ6h/view?usp=sharing',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: 'Using Large Language Models To Diagnose Math Problem-solving Skills At Scale',
+    authors: [MEMBERS.hyoungwookjin, MEMBERS.yoonsukim, MEMBERS.yeonsupark, MEMBERS.bekzattilekbay, MEMBERS.juhokim],
+    venue: 'L@S 2024 (Work-in-Progress)',
+    year: 2024,  
+    topics: ['learning'],
+    type: 'Poster',
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3657604.3664697',
+        type: PublicationLinkType.ACM  
+      },
+    ],
+  },
+
+  {
+    title: 'Learnersourcing: Student-generated Content @ Scale: 2nd Annual Workshop',
+    authors: ['Steven Moore', 'Anjali Singh', 'Xinyi Lu', MEMBERS.hyoungwookjin, 'Hassan Khosravi', 'Paul Denny', 'Christopher Brooks', 'Xu Wang', MEMBERS.juhokim, 'John Stamper'],
+    venue: 'L@S 2024 Workshop Proposal',
+    year: 2024,  
+    topics: ['learning'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3657604.3664643',
+        type: PublicationLinkType.ACM  
+      },
+    ],
+  },
+
+  {
+    title: 'Using LLMs to Investigate Correlations of Conversational Follow-up Queries with User Satisfaction',
+    authors: [MEMBERS.hyunwookim, MEMBERS.yoonseochoi, MEMBERS.taehyunyang, 'Honggu Lee', 'Chaneon Park', 'Yongju Lee', 'Jin Young Kim', MEMBERS.juhokim],
+    venue: 'SIGIR 2024 Workshop on Large Language Models for Evaluation in Information Retrieval',
+    year: 2024,  
+    topics: ['human-AI interaction', 'datamining'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/sigir2024-workshop-searchgpt.pdf',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: 'Fine-Grained Action Understanding with Tools in Instructional Videos',
+    authors: [MEMBERS.saelyneyang, MEMBERS.jaesangyu, 'Jae Won Cho', MEMBERS.juhokim],
+    venue: 'CVPR 2024 Workshop on Learning from Procedural Videos and Language',
+    year: 2024,  
+    topics: ['learning', 'datamining'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/cvpr2024-finegrained-workshop.pdf',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: 'LearnerVoice: A Dataset of Non-Native English Learners’ Spontaneous Speech',
+    authors: [MEMBERS.haechankim, MEMBERS.junhomyung, MEMBERS.seoyoungkim, 'Sungpah Lee', 'Dongyeop Kang', MEMBERS.juhokim],
+    venue: 'Interspeech 2024',
+    year: 2024,  
+    topics: ['learning'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2407.04280',
+        type: PublicationLinkType.ARX  
+      },
+    ],
+  },
+
+  {
+    title: 'A Context-Aware Onboarding Agent for Metaverse Powered by Large Language Models',
+    authors: [MEMBERS.jihyeonghong, MEMBERS.yokyunglee, MEMBERS.daehyunkim, MEMBERS.daeunchoi, 'Yeo-Jin Yoon', 'Gyu-cheol Lee', 'Zucheul Lee', MEMBERS.juhokim],
+    venue: 'DIS 2024',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/dis2024-pican-paper.pdf',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: 'AINeedsPlanner: A Workbook to Support Effective Collaboration Between AI Experts and Clients',
+    authors: [MEMBERS.daehyunkim, MEMBERS.hyungyushin, MEMBERS.shakhnozakhonyadgarova, 'Jinho Son', 'Hariharan Subramonyam', MEMBERS.juhokim],
+    venue: 'DIS 2024',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/dis2024-aineedsplanner-paper.pdf',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: 'Co-Creating Question-and-Answer Style Articles with Large Language Models for Research Promotion',
+    authors: ['Hyunseung Lim', 'Ji Yong Cho', 'Taewan Kim', MEMBERS.jeongeonpark, MEMBERS.hyungyushin, MEMBERS.seulgichoi, 'Sunghyun Park', 'Kyungjae Lee', MEMBERS.juhokim, 'Moontae Lee', 'Hwajung Hong '],
+    venue: 'DIS 2024',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/dis2024-podcast-paper.pdf',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: 'Exploring Cross-Cultural Differences in English Hate Speech Annotations: From Dataset Construction to Analysis',
+    authors: ['Nayeon Lee', 'Chani Jung', MEMBERS.junhomyung, 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
+    venue: 'NAACL 2024',
+    year: 2024,  
+    topics: ['social'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2308.16705',
+        type: PublicationLinkType.ARX  
+      },
+    ],
+  },
+
+  {
+    title: 'One vs. Many: Comprehending Accurate Information from Multiple Erroneous and Inconsistent AI Generations',
+    authors: [MEMBERS.yoonjoolee, MEMBERS.kihoonson, MEMBERS.taesookim, MEMBERS.jisukim, 'John Joon Young Chung', 'Eytan Adar', MEMBERS.juhokim],
+    venue: 'FAccT 2024',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2405.05581',
+        type: PublicationLinkType.ARX  
+      },
+    ],
+  },
+
+  {
+    title: 'Beyond Prompts: Learning from Human Communication for Enhanced AI Intent Alignment',
+    authors: [MEMBERS.yoonsukim, MEMBERS.kihoonson, MEMBERS.seoyoungkim, MEMBERS.juhokim],
+    venue: 'CHI 2024 Workshop on Getting Back Together: HCI and Human Factors Joining Forces to Meet the AI Interaction Challenge',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2405.05678',
+        type: PublicationLinkType.ARX  
+      },
+    ],
+  },
+
+  {
+    title: 'Unveiling Disparities in Web Task Handling Between Human and Web Agent',
+    authors: [MEMBERS.kihoonson, MEMBERS.jinhyeonkwon, MEMBERS.daeunchoi, MEMBERS.taesookim, 'Young-Ho Kim', 'Sangdoo Yun', MEMBERS.juhokim],
+    venue: 'CHI 2024 Workshop on Computational Methodologies for Understanding, Automating, and Evaluating User Interfaces',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2405.04497',
+        type: PublicationLinkType.ARX  
+      },
+    ],
+  },
+
+  {
+    title: 'How do multiple LLM-powered conversational agents assist sensemaking and decision-making in an unfamiliar domain?',
+    authors: [MEMBERS.jeongeonpark, 'Bryan Min', 'Jean Y. Song', 'Xiaojuan Ma', MEMBERS.juhokim],
+    venue: 'CHI 2024 Workshop on Sensemaking: What is it today?',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://kixlab.github.io/website-files/2024/chi2024-workshop-sensemaking-paper.pdf',
+        type: PublicationLinkType.PDF  
+      },
+    ],
+  },
+
+  {
+    title: "How to Reflect Diverse People's Perspectives in Large-Scale LLM-based Evaluations?",
+    authors: [MEMBERS.yoonjoolee, MEMBERS.taesookim, MEMBERS.juhokim],
+    venue: 'CHI 2024 Workshop on Human Centered Evaluation and Auditing of Large Language Models',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://heal-workshop.github.io/papers/34_how_to_reflect_diverse_people_.pdf',
+        type: PublicationLinkType.PDF 
+      },
+    ],
+  },
+
+  {
+    title: 'Towards an Evaluation of LLM-Generated Inspiration by Developing and Validating Inspiration Scale',
+    authors: [MEMBERS.hyungyushin, MEMBERS.seulgichoi, 'Ji Yong Cho', MEMBERS.saharadmoni, 'Hyunseung Lim', 'Taewan Kim', 'Hwajung Hong', 'Moontae Lee', MEMBERS.juhokim],
+    venue: 'CHI 2024 Workshop on Human Centered Evaluation and Auditing of Large Language Models',
+    year: 2024,  
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://heal-workshop.github.io/papers/30_towards_an_evaluation_of_llm_g.pdf',
+        type: PublicationLinkType.PDF 
+      },
+    ],
+  },
+
+
   {
     title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
     authors: [MEMBERS.jeongeonpark, MEMBERS.bryanmin, 'Xiaojuan Ma', MEMBERS.juhokim],
