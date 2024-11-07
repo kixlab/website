@@ -38,6 +38,7 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  bobo: {},
   eunjooKim: {
     firstName: 'Eunjoo',
     lastName: 'Kim',
@@ -1841,10 +1842,10 @@ const categorizeByPosition = (members: Record<string, Member>): Record<KixlabPos
       const bIsAlumni = b.isAlumni ?? false
 
       // Set endYear and endSeason with default values to ensure they are not undefined
-      const aEndYear = aIsAlumni ? (a.endYear ?? a.startYear ?? 3000) : 3000
-      const bEndYear = bIsAlumni ? (b.endYear ?? b.startYear ?? 3000) : 3000
-      const aEndSeason = aIsAlumni ? (a.endSeason ?? a.startSeason ?? 'Winter') : 'Winter'
-      const bEndSeason = bIsAlumni ? (b.endSeason ?? b.startSeason ?? 'Winter') : 'Winter'
+      const aEndYear = aIsAlumni ? a.endYear ?? a.startYear ?? 3000 : 3000
+      const bEndYear = bIsAlumni ? b.endYear ?? b.startYear ?? 3000 : 3000
+      const aEndSeason = aIsAlumni ? a.endSeason ?? a.startSeason ?? 'Winter' : 'Winter'
+      const bEndSeason = bIsAlumni ? b.endSeason ?? b.startSeason ?? 'Winter' : 'Winter'
 
       // Rule 1: Sort by effective endYear in descending order
       if (aEndYear !== bEndYear) {
