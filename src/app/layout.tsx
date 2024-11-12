@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     url: 'https://www.kixlab.org',
     images: [
       {
-        url: 'https://www.kixlab.org/images/logo.png',
+        url: 'https://www.kixlab.org/images/logo_preview.png',
         width: 1200,
         height: 630,
-        alt: 'KIXLAB Open Graph Image',
+        alt: 'KIXLAB Logo Preview Image',
       },
     ],
     type: 'website',
