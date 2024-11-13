@@ -1830,7 +1830,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2021/chi2021-lbw-MobileGuideline-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2021/chi2021-lbw-MobileGuideline-poster.pdf',
         type: PublicationLinkType.POS,
       },
       {
@@ -1838,7 +1838,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.VID,
       },
       {
-        url: 'https://www.kixlab.org/files/2021/chi2021-lbw-MobileGuideline-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2021/chi2021-lbw-MobileGuideline-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1870,7 +1870,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2020/dew2020-annotation-artifact-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/dew2020-annotation-artifact-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1903,7 +1903,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.VID,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/cscw2020-Protochat-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/cscw2020-Protochat-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1921,7 +1921,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/cscw2020-CReference-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/cscw2020-CReference-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1947,7 +1947,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.VID,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/cscw2020-MyButler-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/cscw2020-MyButler-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1972,7 +1972,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.VID,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/cscw2020-Protochat-demo.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/cscw2020-Protochat-demo.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1990,7 +1990,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/mobilehci2020-MilliCat-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/mobilehci2020-MilliCat-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2008,7 +2008,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/gi2020-WGraphs-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/gi2020-WGraphs-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2036,7 +2036,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/dis2020-AIMirror-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/dis2020-AIMirror-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2065,7 +2065,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/tsc2020-Reeboc-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/tsc2020-Reeboc-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2079,7 +2079,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Poster',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2020/l@s2020-wip-AlgoPlan-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/l@s2020-wip-AlgoPlan-poster.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2104,7 +2104,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/chi2020-workshop-ProtoChat-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/chi2020-workshop-ProtoChat-poster.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2129,7 +2129,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/chi2020-lbw-ProtoChat-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/chi2020-lbw-ProtoChat-poster.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2143,7 +2143,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Poster',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2020/chi2020-lbw-CoSeq-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/chi2020-lbw-CoSeq-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2180,7 +2180,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/chi2020-SolutionChat-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/chi2020-SolutionChat-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2207,7 +2207,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.TRA,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/chi2020-APA-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/chi2020-APA-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2237,7 +2237,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://www.kixlab.org/files/2020/chi2020-Snapstream-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/chi2020-Snapstream-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2251,7 +2251,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2020/hcik2020-SoftwareTutorial-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2020/hcik2020-SoftwareTutorial-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2265,7 +2265,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/cscw2019-workshop-APA-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/cscw2019-workshop-APA-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2279,7 +2279,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/cscw2019-workshop-ContestabilityDesign-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/cscw2019-workshop-ContestabilityDesign-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2303,7 +2303,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/cscw2019-ComeTogether-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/cscw2019-ComeTogether-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2329,7 +2329,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://www.kixlab.org/files/2019/cscw2019-ManyThoughts-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/cscw2019-ManyThoughts-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2343,7 +2343,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/uist2019-docsym-ds-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/uist2019-docsym-ds-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2357,7 +2357,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Poster',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/l@s2019-FSIST-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/l@s2019-FSIST-poster.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2371,7 +2371,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/chi2019-workshop-Modeling-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/chi2019-workshop-Modeling-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2386,7 +2386,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/chi2019-workshop-Readersourcing-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/chi2019-workshop-Readersourcing-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2400,7 +2400,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Poster',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/chi2019-lbw-SolveDeep-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/chi2019-lbw-SolveDeep-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2422,7 +2422,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Poster',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/chi2019-lbw-PolicyScape-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/chi2019-lbw-PolicyScape-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2436,7 +2436,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/chi2019-VoiceVideoNavigation-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/chi2019-VoiceVideoNavigation-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2458,7 +2458,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: 'https://www.kixlab.org/files/2019/iui2019-2D3DReconstruction-paper.pdf',
+        url: 'https://kixlab.github.io/website-files/2019/iui2019-2D3DReconstruction-paper.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -2476,7 +2476,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/cscw2018-Motivation-slides.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/cscw2018-Motivation-slides.pdf',
         type: PublicationLinkType.SLI,
       },
       {
@@ -2512,7 +2512,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/uist2018-poster-DynamicSlide-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/uist2018-poster-DynamicSlide-poster.pdf',
         type: PublicationLinkType.PDF,
       },
       {
@@ -2535,7 +2535,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/mm2018-workshop-DynamicSlide-slides.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/mm2018-workshop-DynamicSlide-slides.pdf',
         type: PublicationLinkType.SLI,
       },
       {
@@ -2575,7 +2575,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ACM,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/chi2018-lbw-MicroNGO-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/chi2018-lbw-MicroNGO-poster.pdf',
         type: PublicationLinkType.POS,
       },
       {
@@ -2601,7 +2601,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.VID,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/chi2018-lbw-PersonalityDetection-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/chi2018-lbw-PersonalityDetection-poster.pdf',
         type: PublicationLinkType.POS,
       },
       {
@@ -2627,7 +2627,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.VID,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/chi2018-lbw-Exprgram-poster.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/chi2018-lbw-Exprgram-poster.pdf',
         type: PublicationLinkType.POS,
       },
       {
@@ -2837,7 +2837,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://www.kixlab.org/files/2018/iui2018-ToolDiversity-slides.pdf',
+        url: 'https://kixlab.github.io/website-files/2018/iui2018-ToolDiversity-slides.pdf',
         type: PublicationLinkType.SLI,
       },
       {
