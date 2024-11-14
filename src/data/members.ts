@@ -38,7 +38,7 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
-  eunjooKim: {
+  eunjookim: {
     firstName: 'Eunjoo',
     lastName: 'Kim',
     email: 'ejkim96@yuhs.ac',
@@ -56,6 +56,15 @@ export const MEMBERS: Record<string, Member> = {
     site: 'http://juhokim.com/',
     startYear: 2016,
     startSeason: 'Summer',
+  },
+  seungjukim: {
+    firstName: 'Seungju',
+    lastName: 'Kim',
+    email: 'sjkim64891@gmail.com',
+    kixlabPosition: 'Postdoc Researcher',
+    img: 'seungju.jpeg',
+    startYear: 2024,
+    startSeason: 'Fall',
   },
   daehyunkim: {
     firstName: 'Dae Hyun',
@@ -1841,10 +1850,10 @@ const categorizeByPosition = (members: Record<string, Member>): Record<KixlabPos
       const bIsAlumni = b.isAlumni ?? false
 
       // Set endYear and endSeason with default values to ensure they are not undefined
-      const aEndYear = aIsAlumni ? a.endYear ?? a.startYear ?? 3000 : 3000
-      const bEndYear = bIsAlumni ? b.endYear ?? b.startYear ?? 3000 : 3000
-      const aEndSeason = aIsAlumni ? a.endSeason ?? a.startSeason ?? 'Winter' : 'Winter'
-      const bEndSeason = bIsAlumni ? b.endSeason ?? b.startSeason ?? 'Winter' : 'Winter'
+      const aEndYear = aIsAlumni ? (a.endYear ?? a.startYear ?? 3000) : 3000
+      const bEndYear = bIsAlumni ? (b.endYear ?? b.startYear ?? 3000) : 3000
+      const aEndSeason = aIsAlumni ? (a.endSeason ?? a.startSeason ?? 'Winter') : 'Winter'
+      const bEndSeason = bIsAlumni ? (b.endSeason ?? b.startSeason ?? 'Winter') : 'Winter'
 
       // Rule 1: Sort by effective endYear in descending order
       if (aEndYear !== bEndYear) {
