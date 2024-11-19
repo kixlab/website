@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'KIXLAB members and papers at CSCW 2024',
+    date: new Date('2024-11-18'),
+    categories: ['news'],
+    summary:
+      'Four KIXLAB members attended [CSCW 2024](https://cscw.acm.org/2024/) in person. Four papers by KIXLAB members and collaborators were presented at the venue.',
+    contentMdFilePath: '2024-11-18-cscw2024.md',
+  },
+  {
     title: 'KIXLAB has positions for MS students',
     date: new Date('2024-10-07'),
     categories: ['position'],
