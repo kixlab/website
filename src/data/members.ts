@@ -487,7 +487,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Jeongeon',
     lastName: 'Park',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2023-jeongeon.pdf',
-    currentPosition: 'Researcher at DGIST',
+    currentPosition: 'Ph.D. Student at UCSD',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
     startYear: 2019,
@@ -595,7 +595,7 @@ export const MEMBERS: Record<string, Member> = {
   jeanyoungsong: {
     firstName: 'Jean Young',
     lastName: 'Song',
-    currentPosition: 'Assistant Professor at DGIST',
+    currentPosition: 'Assistant Professor at Yonsei University',
     kixlabPosition: 'Postdoc Researcher',
     isAlumni: true,
     startYear: 2016,
@@ -618,7 +618,7 @@ export const MEMBERS: Record<string, Member> = {
   minsukchang: {
     firstName: 'Minsuk',
     lastName: 'Chang',
-    currentPosition: 'Research Scientist at PAIR, Google Research',
+    currentPosition: 'Research Scientist at Google Deepmind',
     kixlabPosition: 'Ph.D. Student',
     isAlumni: true,
     startYear: 2016,
@@ -684,7 +684,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2019,
     endSeason: 'Spring',
     site: 'https://sites.google.com/view/artithakur',
-    currentPosition: 'Co-founder at CTO @ NordInsight',
+    currentPosition: 'Co-founder and CTO at NordInsight',
   },
   eveyhuang: {
     firstName: 'Evey',
@@ -708,7 +708,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2019,
     endSeason: 'Winter',
     site: 'https://hyeungshikjung.com/',
-    currentPosition: 'Software Engineer at NAVER',
+    currentPosition: 'Software Engineer at Coupang',
   },
   yichingjanethuang: {
     firstName: 'Yi-Ching (Janet)',
@@ -1175,6 +1175,7 @@ export const MEMBERS: Record<string, Member> = {
     lastName: 'Lee',
     kixlabPosition: 'Undergrad Intern',
     isAlumni: true,
+    currentPosition: 'Ph.D Stuent at Virginia Tech',
     startYear: 2020,
     startSeason: 'Fall',
     endYear: 2021,
