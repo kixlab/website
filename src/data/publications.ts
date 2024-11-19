@@ -46,6 +46,28 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages',
+    authors: [
+      MEMBERS.junhomyung,
+      'Nayeon Lee',
+      'Yi Zhou',
+      'Jiho Jin',
+      'Rifki Afina Putri',
+      'and 17 more authors'
+    ],
+    venue: 'NeurIPS 2024 Datasets & Benchmarks',
+    year: 2024,
+    topics: ['social'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2406.09948',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  
+  {
     title: 'ARXIVDIGESTABLES: Synthesizing Scientific Literature into Tables using Language Models',
     authors: [
       'Benjamin Newman',
