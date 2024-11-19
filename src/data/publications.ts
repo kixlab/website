@@ -46,6 +46,20 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages',
+    authors: [MEMBERS.junhomyung, 'Nayeon Lee', 'Yi Zhou', 'Jiho Jin', 'Rifki Afina Putri', 'and 17 more authors'],
+    venue: 'NeurIPS 2024 Datasets & Benchmarks',
+    year: 2024,
+    topics: ['social'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2406.09948',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: 'ARXIVDIGESTABLES: Synthesizing Scientific Literature into Tables using Language Models',
     authors: [
       'Benjamin Newman',
@@ -429,20 +443,6 @@ export const PUBLICATIONS: Publication[] = [
     links: [
       {
         url: 'https://arxiv.org/abs/2310.01331',
-        type: PublicationLinkType.ARX,
-      },
-    ],
-  },
-  {
-    title: 'CReHate: Cross-cultural Re-annotation of English Hate Speech Dataset',
-    authors: ['Nayeon Lee', 'Chani Jung', MEMBERS.junhomyung, 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
-    year: 2024,
-    venue: 'NAACL 2024',
-    topics: ['social'],
-    type: 'Conference',
-    links: [
-      {
-        url: 'https://arxiv.org/abs/2308.16705',
         type: PublicationLinkType.ARX,
       },
     ],
