@@ -153,6 +153,13 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://hyungyu.com/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
+  sungchullee: {
+    firstName: 'Sung-Chul',
+    lastName: 'Lee',
+    email: 'leesungchul@kaist.ac.kr',
+    kixlabPosition: 'Ph.D. Student',
+    img: 'sclee.png',
+  },
   kihoonson: {
     firstName: 'Kihoon',
     lastName: 'Son',
@@ -526,7 +533,7 @@ export const MEMBERS: Record<string, Member> = {
     currentPosition: 'Ph.D. Student at Cornell University',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
-    site: 'https://ejjjjkang.github.io/',
+    site: 'https://eunkang.info/',
     startYear: 2020,
     startSeason: 'Summer',
     endYear: 2022,
@@ -684,7 +691,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Winter',
     endYear: 2019,
     endSeason: 'Spring',
-    site: 'https://sites.google.com/view/artithakur',
+    site: 'https://sixped.dk/',
     currentPosition: 'Co-founder and CTO at NordInsight',
   },
   eveyhuang: {
@@ -696,7 +703,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Summer',
     endYear: 2019,
     endSeason: 'Spring',
-    site: 'https://portfolio.adobe.com/missing',
+    site: 'https://eveyhuang.com/',
     currentPosition: 'Ph.D. Student at Northwestern University',
   },
   hyeungshikjung: {
