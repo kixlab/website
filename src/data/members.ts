@@ -207,6 +207,7 @@ export const MEMBERS: Record<string, Member> = {
     email: 'junho00211@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'junhomyung.jpg',
+    site: 'https://junhomyung.github.io/',
   },
   yeonsupark: {
     firstName: 'Yeon Su',
