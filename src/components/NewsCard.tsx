@@ -76,14 +76,18 @@ export const ReadMoreButton = styled.button`
 `
 
 const TimelineDot = styled.div<{ labelsOnLeft?: boolean }>`
-  width: 16px;
+  width: 6.4%;
   height: 2px;
   background-color: ${Color.orange900};
   position: absolute;
-  left: ${props => (props.labelsOnLeft ? '-20px' : 'calc(100% + 22px)')};
+  left: ${props => (props.labelsOnLeft ? 'calc(-3.2%)' : 'calc(100% + 3.2%)')};
   top: 28px;
   transform: translate(-50%, -50%);
   z-index: -1;
+
+  @media (max-width: ${ScreenSize.md}) {
+    display: none;
+  }
 `
 
 interface Props {

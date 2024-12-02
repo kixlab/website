@@ -21,6 +21,7 @@ const ModalContainer = styled.div`
 
 const ModalCard = styled.div`
   width: 70%;
+  max-width: ${ScreenSize.max};
   background-color: ${Color.white};
   padding: 48px;
   border-radius: 5px;
@@ -30,6 +31,8 @@ const ModalCard = styled.div`
 
   @media (max-width: ${ScreenSize.lg}) {
     width: 90%;
+    max-height: 90%;
+    padding: 24px 16px;
   }
 `
 
