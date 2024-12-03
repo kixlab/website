@@ -432,7 +432,6 @@ export const PUBLICATIONS: Publication[] = [
       },
     ],
   },
-
   {
     title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
     authors: [MEMBERS.jeongeonpark, MEMBERS.bryanmin, 'Xiaojuan Ma', MEMBERS.juhokim],
@@ -874,6 +873,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://dl.acm.org/doi/10.1145/3637308',
         type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://jhw123.github.io/project/codetree',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
