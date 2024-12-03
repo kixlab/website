@@ -7,15 +7,12 @@ import { NewsModal } from '@/components/NewsModal'
 import styled from '@emotion/styled'
 import { Color, ScreenSize } from '../theme'
 
-const padding = 80
-const postWidth = 400
-
 const NewsSection = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding: 50px 0px;
+  padding: 40px 0px;
   width: 100%;
 
   @media (max-width: ${ScreenSize.sm}) {
@@ -67,7 +64,7 @@ const NewsContainer = styled.div`
 
   & > div {
     width: 47%; // needs to be <50% to show gap between cards and vertical line
-    margin-bottom: -${padding / 2}px;
+    margin-bottom: -40px;
 
     @media (max-width: ${ScreenSize.md}) {
       width: 100%;

@@ -14,6 +14,8 @@ export class Course {
   }
 }
 
+// course urls that begins with kixlab.org are redirected. redirection managed in next.config.js
+
 export const COURSES: Course[] = [
   {
     title: 'Introduction to Human-Computer Interaction',
@@ -23,6 +25,7 @@ export const COURSES: Course[] = [
       'Designing useful and usable user interfaces is much more than designing fancy and beautiful things. This course introduces fundamental principles, techniques, and methods for designing, prototyping, and evaluating user interfaces. Through this course, you’ll master the skills to design useful and usable interfaces that are carefully catered to users’ needs.',
     url: 'https://kixlab.org/courses/hci/',
     editions: [
+      { semester: 'Spring 2023', url: 'https://kixlab.org/courses/cs374-spring-2023/' },
       { semester: 'Spring 2021', url: 'https://kixlab.org/courses/cs374-spring-2021/' },
       { semester: 'Spring 2020', url: 'https://kixlab.org/courses/cs374-spring-2020/' },
       { semester: 'Spring 2019', url: 'https://kixlab.org/courses/cs374-spring-2019/' },
@@ -33,12 +36,13 @@ export const COURSES: Course[] = [
 
   {
     title: 'Introduction to Social Computing',
-    code: 'CS474',
+    code: 'CS473',
     image: 'cs374.png',
     description:
       'Human-computer interaction no longer only concerns a single user in front of their computer. An increasing number of modern systems are inherently social, involving a large group of users to collaborate, discuss, ideate, solve problems, and make decisions together via social interaction. This course focuses on crowdsourcing and social computing, two of the most important concepts in the era of interaction at scale. This course will cover major design issues and computational techniques in building crowdsourcing and social computing systems.',
     url: 'https://kixlab.org/courses/hci/',
     editions: [
+      { semester: 'Fall 2023', url: 'https://kixlab.org/courses/cs473-fall-2023/' },
       { semester: 'Fall 2021', url: 'https://kixlab.org/courses/cs473-fall-2021/' },
       { semester: 'Fall 2020', url: 'https://kixlab.org/courses/cs473-fall-2020/' },
       { semester: 'Fall 2019', url: 'https://kixlab.org/courses/cs473-fall-2019/' },
@@ -56,8 +60,9 @@ export const COURSES: Course[] = [
       'Humans and AI are more closely interacting than ever before, in all areas of our work, education, and life. As more intelligent machines are entering our lives, their accuracy and performance are not the only important factor that matters. As designers of such technology, we have to carefully consider the user experience of AI in order for AI to be of practical value. In this course, we will explore various dimensions of human-AI interaction, including ethics, explainability, design process involving AI, visualization, human-AI collaboration, recommender systems, and a few notable application areas.',
     url: 'https://kixlab.org/courses/hci/',
     editions: [
+      { semester: 'Fall 2023', url: 'https://kixlab.org/courses/cs492-fall-2023/' },
       { semester: 'Spring 2021', url: 'https://human-ai.kixlab.org/' },
-      { semester: 'Fall 2020', url: 'https://www.kixlab.org/courses/cs492-fall-2020/' },
+      { semester: 'Fall 2020', url: 'https://kixlab.org/courses/cs492-fall-2020/' },
     ],
   },
 
@@ -70,8 +75,8 @@ export const COURSES: Course[] = [
     url: 'https://kixlab.org/courses/hci/',
     editions: [
       { semester: 'Spring 2020', url: 'https://www.kixlab.org/courses/cs492d-spring-2020/' },
-      { semester: 'Spring 2019', url: 'https://nmsl.kaist.ac.kr/courses/i2r/' },
-      { semester: 'Spring 2018', url: 'https://www.kixlab.org/courses/cs492c-fall-2018/' },
+      { semester: 'Spring 2019', url: 'https://nmsl.kaist.ac.kr/courses/i2r/index.html' },
+      { semester: 'Fall 2018', url: 'https://www.kixlab.org/courses/cs492c-fall-2018/' },
     ],
   },
 ] as const satisfies Course[]

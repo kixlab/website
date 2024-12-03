@@ -9,7 +9,9 @@ const AuthorList = styled.span`
   }
 `
 
-const LabMember = styled.span``
+const LabMember = styled.span`
+  color: ${Color.gray800};
+`
 
 const NotLabMember = styled.span`
   color: ${Color.gray500};

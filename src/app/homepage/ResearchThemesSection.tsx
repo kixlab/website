@@ -58,8 +58,11 @@ const GatherStatsByResearchTopic = () => {
         .flatMap(publication => publication.authors[0])
         .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
     )
-    const filteredAuthors: Member[] = topicAuthors.flatMap(author => {
-      return Object.values(MEMBERS).filter(member => member.img && `${member.firstName} ${member.lastName}` === author)
+    const filteredAuthors: Member[] = topicAuthors.filter(entry => {
+      if (entry instanceof Object && entry.isAlumni !== true) {
+        // TODO: Optimize this condition
+        return entry
+      }
     })
 
     statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
@@ -78,42 +81,44 @@ export const ResearchThemesSection = () => {
     <Section id="research-section">
       <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
       <ResearchTopicsArea>
-        {Object.entries(statsByResearchTopic).map(([topic, stats]) => {
-          return (
-            <Link
-              href={`/publications/?researchTopic=${topic}`}
-              key={topic}
-              style={{ textDecoration: 'none', color: 'black' }}
-            >
-              <ResearchTopicItem key={topic}>
-                <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
-                  {ResearchTopics[topic as ResearchTopicType].emoji}
-                  <br />
-                  {topic}
-                </ResearchTopicItemTitle>
-                <Text style={{ color: 'gray', paddingBottom: '12px' }}>
-                  <span style={{ fontWeight: 'bold' }}>{stats.numPublications}</span> publications
-                </Text>
-                <ResearchTopicMembersArea>
-                  {stats.authors.slice(0, numVisible).map((member: Member) => (
-                    <ResearchTopicsMemberAvatar
-                      width={36}
-                      height={36}
-                      src={`/members/${member.img}`}
-                      alt={`${member.firstName} ${member.lastName}`}
-                      key={member.email}
-                    />
-                  ))}
+        {Object.entries(statsByResearchTopic)
+          .sort(([, a], [, b]) => b.numPublications - a.numPublications) // Sort in descending order
+          .map(([topic, stats]) => {
+            return (
+              <Link
+                href={`/publications/?researchTopic=${topic}`}
+                key={topic}
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <ResearchTopicItem key={topic}>
+                  <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
+                    {ResearchTopics[topic as ResearchTopicType].emoji}
+                    <br />
+                    {topic}
+                  </ResearchTopicItemTitle>
+                  <Text style={{ color: 'gray', paddingBottom: '12px' }}>
+                    <span style={{ fontWeight: 'bold' }}>{stats.numPublications}</span> publications
+                  </Text>
+                  <ResearchTopicMembersArea>
+                    {stats.authors.slice(0, numVisible).map((member: Member) => (
+                      <ResearchTopicsMemberAvatar
+                        width={36}
+                        height={36}
+                        src={`/members/${member.img}`}
+                        alt={`${member.firstName} ${member.lastName}`}
+                        key={member.email}
+                      />
+                    ))}
 
-                  {/* Conditional rendering optimized */}
-                  {stats.authors.length - numVisible > 0 && (
-                    <span style={{ width: '36px', textAlign: 'center' }}>+{stats.authors.length - numVisible}</span>
-                  )}
-                </ResearchTopicMembersArea>
-              </ResearchTopicItem>
-            </Link>
-          )
-        })}
+                    {/* Conditional rendering optimized */}
+                    {stats.authors.length - numVisible > 0 && (
+                      <span style={{ width: '36px', textAlign: 'center' }}>+{stats.authors.length - numVisible}</span>
+                    )}
+                  </ResearchTopicMembersArea>
+                </ResearchTopicItem>
+              </Link>
+            )
+          })}
       </ResearchTopicsArea>
     </Section>
   )

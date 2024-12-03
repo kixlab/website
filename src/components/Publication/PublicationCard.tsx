@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { FontVariant, Color } from '@/app/theme'
+import { FontVariant, Color, Padding, Radius } from '@/app/theme'
 import { Publication } from '@/data/publications'
 import { URL } from '@/components/URL'
 import { Author } from './Author'
@@ -57,9 +57,16 @@ const URLs = styled.div`
 `
 
 const Award = styled.div`
+  display: inline-flex;
+  align-items: center;
   ${FontVariant.body_sm}
+  padding: ${Padding.y} ${Padding.x};
+  background-color: #8fd036;
+  border-radius: ${Radius.sm};
+  color: ${Color.gray900};
+
   &::before {
-    content: '🥇';
+    content: '🏆';
     margin-right: 2px;
   }
 `
@@ -68,6 +75,10 @@ const Tags = styled.span`
   ${FontVariant.body_sm}
   color: ${Color.gray700};
 `
+const linkOrder = ['ACM DL', 'Website', 'arXiv', 'PDF', 'Slides', 'Poster', 'Video', 'Trailer']
+const sortLinksByType = (links: { url: string; type: string }[]) => {
+  return links.sort((a, b) => linkOrder.indexOf(a.type) - linkOrder.indexOf(b.type))
+}
 
 export const PublicationCard = ({ pub }: { pub: Publication }) => {
   return (
@@ -80,7 +91,7 @@ export const PublicationCard = ({ pub }: { pub: Publication }) => {
       <SubInfo>
         {pub.links && pub.links?.length > 0 && (
           <URLs>
-            {pub.links?.map(({ url, type }, i) => (
+            {sortLinksByType(pub.links).map(({ url, type }, i) => (
               <URL href={url} key={i} type={type} target="_blank">
                 {type}
               </URL>

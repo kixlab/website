@@ -11,11 +11,9 @@ export const categoryColors: { [key: string]: string } = {
   news: Color.orange500,
 }
 
-const postWidth = 400
-const padding = 80
-
 const PostContainer = styled.div`
   display: flex;
+  max-width: 960px;
   flex-direction: column;
   gap: 4px;
   border-radius: 8px;
@@ -68,13 +66,24 @@ export const ReadMoreButton = styled.button`
   text-decoration: none;
   background-color: transparent;
   border: none;
-  text-align: left;
+  text-align: inherit;
   margin-top: 8px;
   padding: 0px;
 
   &:hover {
     text-decoration: underline;
   }
+`
+
+const TimelineDot = styled.div<{ labelsOnLeft?: boolean }>`
+  width: 16px;
+  height: 2px;
+  background-color: ${Color.orange900};
+  position: absolute;
+  left: ${props => (props.labelsOnLeft ? '-20px' : 'calc(100% + 22px)')};
+  top: 28px;
+  transform: translate(-50%, -50%);
+  z-index: -1;
 `
 
 interface Props {
@@ -88,35 +97,38 @@ export const NewsCard = ({ post, setModalContent, labelsOnLeft: labelsOnLeft }: 
   const expired = post.endsAt && post.endsAt < currentDate
 
   return (
-    <PostContainer>
-      <CategoryContainer labelsOnLeft={labelsOnLeft}>
-        {post.categories.map((category, i) => (
-          <Category key={i} style={{ backgroundColor: expired ? Color.gray400 : categoryColors[category] }}>
-            {category}
-          </Category>
-        ))}
-        {expired !== undefined &&
-          (expired ? (
-            <Category style={{ backgroundColor: Color.gray400 }}>Closed</Category>
-          ) : (
-            <Category style={{ backgroundColor: Color.green300 }}>Open</Category>
+    <div style={{ position: 'relative' }}>
+      <PostContainer>
+        <CategoryContainer labelsOnLeft={labelsOnLeft}>
+          {post.categories.map((category, i) => (
+            <Category key={i} style={{ backgroundColor: expired ? Color.gray400 : categoryColors[category] }}>
+              {category}
+            </Category>
           ))}
-      </CategoryContainer>
-      <Title>{post.title}</Title>
-      <NewsDate>{post.date.toDateString()}</NewsDate>
-      <Summary>
-        <Markdown>{post.summary}</Markdown>
-      </Summary>
-      {post.contentMdFilePath && (
-        <ReadMoreButton
-          onClick={e => {
-            e.preventDefault()
-            setModalContent(post)
-          }}
-        >
-          Read More →
-        </ReadMoreButton>
-      )}
-    </PostContainer>
+          {expired !== undefined &&
+            (expired ? (
+              <Category style={{ backgroundColor: Color.gray400 }}>Closed</Category>
+            ) : (
+              <Category style={{ backgroundColor: Color.green300 }}>Open</Category>
+            ))}
+        </CategoryContainer>
+        <Title>{post.title}</Title>
+        <NewsDate>{post.date.toDateString().split(' ').slice(1).join(' ')}</NewsDate>
+        <Summary>
+          <Markdown>{post.summary}</Markdown>
+        </Summary>
+        {post.contentMdFilePath && (
+          <ReadMoreButton
+            onClick={e => {
+              e.preventDefault()
+              setModalContent(post)
+            }}
+          >
+            Read More →
+          </ReadMoreButton>
+        )}
+      </PostContainer>
+      <TimelineDot labelsOnLeft={labelsOnLeft} />
+    </div>
   )
 }

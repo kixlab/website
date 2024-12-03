@@ -16,6 +16,30 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'KIXLAB members and papers at CSCW 2024',
+    date: new Date('2024-11-18'),
+    categories: ['news'],
+    summary:
+      'Four KIXLAB members attended [CSCW 2024](https://cscw.acm.org/2024/) in person. Four papers by KIXLAB members and collaborators were presented at the venue.',
+    contentMdFilePath: '2024-11-18-cscw2024.md',
+  },
+  {
+    title: 'KIXLAB has positions for MS students',
+    date: new Date('2024-10-07'),
+    categories: ['position'],
+    summary:
+      'KIXLAB has one or two open positions for MS students for Spring 2025. If interested, please follow the instructions in the [MS Student Selection Process](https://juhokim.com/students.html#ms_process) Application deadline: Oct. 22, 2024.',
+    endsAt: new Date('2023-10-22'),
+  },
+  {
+    title: 'KIXLAB has positions for MS students',
+    date: new Date('2024-07-04'),
+    categories: ['position'],
+    summary:
+      'KIXLAB has one or two open positions for MS students for Fall 2024. If interested, please follow the instructions in the [MS Student Selection Process](https://juhokim.com/students.html#ms_process) Application deadline: Jul. 12th, 2024.',
+    endsAt: new Date('2024-07-12'),
+  },
+  {
     title: 'A paper accepted to Interspeech 2024',
     date: new Date('2024-06-04'),
     categories: ['publication'],

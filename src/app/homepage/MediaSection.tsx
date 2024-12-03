@@ -47,6 +47,8 @@ const formatDate = (date: Date) => {
   return new Intl.DateTimeFormat('en-US', options).format(date)
 }
 
+const isYouTubeLink = (url: string) => url.includes('youtube.com')
+
 export const MediaSection = () => {
   return (
     <FullWidthContainer>
@@ -56,7 +58,13 @@ export const MediaSection = () => {
           {VIDEOS.map(video => (
             <VideoCard key={video.url}>
               <VideoContainer>
-                <YouTubeEmbed videoid={video.id}></YouTubeEmbed>
+                {isYouTubeLink(video.url) ? (
+                  <YouTubeEmbed videoid={video.id}></YouTubeEmbed>
+                ) : (
+                  <a href={video.url} target="_blank" rel="noopener noreferrer">
+                    <img src={`/thumbnails/${video.id}.png`} alt={video.title} />
+                  </a>
+                )}
               </VideoContainer>
               <VideoTitle>{video.title}</VideoTitle>
               <VideoDate>{formatDate(video.date)}</VideoDate>

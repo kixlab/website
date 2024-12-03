@@ -53,6 +53,14 @@ interface ISidebar {
 }
 
 const capitalizeWords = (s: string) => {
+  if (s.toLowerCase() === 'ph d student') {
+    return 'Ph.D. Student'
+  }
+
+  if (s.toLowerCase() === 'm s student') {
+    return 'M.S. Student'
+  }
+
   return _.startCase(s)
 }
 

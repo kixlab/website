@@ -38,6 +38,15 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  seungjukim: {
+    firstName: 'Seungju',
+    lastName: 'Kim',
+    email: 'sjkim64891@gmail.com',
+    kixlabPosition: 'Postdoc Researcher',
+    img: 'seungju.jpeg',
+    startYear: 2024,
+    startSeason: 'Fall',
+  },
   eunjooKim: {
     firstName: 'Eunjoo',
     lastName: 'Kim',
@@ -144,6 +153,13 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://hyungyu.com/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
+  sungchullee: {
+    firstName: 'Sung-Chul',
+    lastName: 'Lee',
+    email: 'leesungchul@kaist.ac.kr',
+    kixlabPosition: 'Ph.D. Student',
+    img: 'sclee.png',
+  },
   kihoonson: {
     firstName: 'Kihoon',
     lastName: 'Son',
@@ -177,11 +193,11 @@ export const MEMBERS: Record<string, Member> = {
   jihyeonghong: {
     firstName: 'Jihyeong',
     lastName: 'Hong',
+    email: 'z.hyeong@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'jihyeong.jpg',
     startYear: 2020,
     startSeason: 'Summer',
-    affiliation: 'KAIST',
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a',
   },
   hyoungwookjin: {
@@ -198,6 +214,7 @@ export const MEMBERS: Record<string, Member> = {
     email: 'junho00211@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'junhomyung.jpg',
+    site: 'https://junhomyung.github.io/',
   },
   yeonsupark: {
     firstName: 'Yeon Su',
@@ -227,6 +244,11 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Visiting Researcher',
     img: 'jiangnan.jpg',
     site: 'https://www.jiangnanxu.net/',
+    startYear: 2024,
+    startSeason: 'Winter',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     affiliation: 'RIT',
   },
   jaesangyu: {
@@ -242,7 +264,6 @@ export const MEMBERS: Record<string, Member> = {
     email: 'neohgeek@gmail.com',
     kixlabPosition: 'M.S. Student',
     img: 'daeheon.jpg',
-    affiliation: 'Sogang',
     startSeason: 'Fall',
     startYear: 2024,
   },
@@ -252,6 +273,11 @@ export const MEMBERS: Record<string, Member> = {
     email: 'jjchs1@kaist.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'haeseul.jpg',
+    startYear: 2024,
+    startSeason: 'Winter',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     affiliation: 'KAIST',
   },
   dongyunjung: {
@@ -268,6 +294,11 @@ export const MEMBERS: Record<string, Member> = {
     email: 'itnoj15@kaist.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'chanyoung.jpg',
+    startYear: 2024,
+    startSeason: 'Winter',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     affiliation: 'KAIST',
   },
   shahnozayadgarova: {
@@ -366,7 +397,6 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'M.S. Student',
     img: 'hyehyun.png',
     site: 'https://hyehyunchu.vercel.app/',
-    affiliation: 'KAIST',
     startSeason: 'Fall',
     startYear: 2024,
   },
@@ -465,7 +495,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Jeongeon',
     lastName: 'Park',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2023-jeongeon.pdf',
-    currentPosition: 'Researcher at DGIST',
+    currentPosition: 'Ph.D. Student at UCSD',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
     startYear: 2019,
@@ -503,7 +533,7 @@ export const MEMBERS: Record<string, Member> = {
     currentPosition: 'Ph.D. Student at Cornell University',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
-    site: 'https://ejjjjkang.github.io/',
+    site: 'https://eunkang.info/',
     startYear: 2020,
     startSeason: 'Summer',
     endYear: 2022,
@@ -573,8 +603,8 @@ export const MEMBERS: Record<string, Member> = {
   jeanyoungsong: {
     firstName: 'Jean Young',
     lastName: 'Song',
-    currentPosition: 'Assistant Professor at DGIST',
-    kixlabPosition: 'Visiting Researcher',
+    currentPosition: 'Assistant Professor at Yonsei University',
+    kixlabPosition: 'Postdoc Researcher',
     isAlumni: true,
     startYear: 2016,
     startSeason: 'Winter',
@@ -596,7 +626,7 @@ export const MEMBERS: Record<string, Member> = {
   minsukchang: {
     firstName: 'Minsuk',
     lastName: 'Chang',
-    currentPosition: 'Research Scientist at PAIR, Google Research',
+    currentPosition: 'Research Scientist at Google Deepmind',
     kixlabPosition: 'Ph.D. Student',
     isAlumni: true,
     startYear: 2016,
@@ -661,8 +691,8 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Winter',
     endYear: 2019,
     endSeason: 'Spring',
-    site: 'https://sites.google.com/view/artithakur',
-    currentPosition: 'Co-founder at CTO @ NordInsight',
+    site: 'https://sixped.dk/',
+    currentPosition: 'Co-founder and CTO at NordInsight',
   },
   eveyhuang: {
     firstName: 'Evey',
@@ -673,7 +703,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Summer',
     endYear: 2019,
     endSeason: 'Spring',
-    site: 'https://portfolio.adobe.com/missing',
+    site: 'https://eveyhuang.com/',
     currentPosition: 'Ph.D. Student at Northwestern University',
   },
   hyeungshikjung: {
@@ -686,7 +716,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2019,
     endSeason: 'Winter',
     site: 'https://hyeungshikjung.com/',
-    currentPosition: 'Software Engineer at NAVER',
+    currentPosition: 'Software Engineer at Coupang',
   },
   yichingjanethuang: {
     firstName: 'Yi-Ching (Janet)',
@@ -700,8 +730,8 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://janetyc.github.io/',
     currentPosition: ' Assistant Professor at Eindhoven University of Technology ',
   },
-  johnchung: {
-    firstName: 'John',
+  johnjoonyoungchung: {
+    firstName: 'John Joon Young',
     lastName: 'Chung',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
@@ -724,8 +754,8 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://graycoding.com/',
     currentPosition: 'Lead Frontend Engineer at Alvin',
   },
-  heechankim: {
-    firstName: 'Heechan',
+  haechankim: {
+    firstName: 'Haechan',
     lastName: 'Kim',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
@@ -808,9 +838,9 @@ export const MEMBERS: Record<string, Member> = {
     endSeason: 'Spring',
     currentPosition: 'Ph.D. Researcher at University of Trento',
   },
-  lekhanhduy: {
-    firstName: 'Le Khanh',
-    lastName: 'Duy',
+  khanhduyle: {
+    firstName: 'Khanh Duy',
+    lastName: 'Le',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
     startSeason: 'Summer',
@@ -1153,6 +1183,7 @@ export const MEMBERS: Record<string, Member> = {
     lastName: 'Lee',
     kixlabPosition: 'Undergrad Intern',
     isAlumni: true,
+    currentPosition: 'Ph.D Stuent at Virginia Tech',
     startYear: 2020,
     startSeason: 'Fall',
     endYear: 2021,
@@ -1833,15 +1864,41 @@ const categorizeByPosition = (members: Record<string, Member>): Record<KixlabPos
     },
     {} as Record<KixlabPositionTypes, Member[]>
   )
-  // Sort each group by lastName and firstName
+
+  const seasonOrder = ['Fall', 'Summer', 'Spring', 'Winter']
+
   for (const position in groupedMembers) {
     groupedMembers[position as KixlabPositionTypes].sort((a, b) => {
+      // Determine effective endYear and endSeason for sorting
+      const aIsAlumni = a.isAlumni ?? false
+      const bIsAlumni = b.isAlumni ?? false
+
+      // Set endYear and endSeason with default values to ensure they are not undefined
+      const aEndYear = aIsAlumni ? a.endYear ?? a.startYear ?? 3000 : 3000
+      const bEndYear = bIsAlumni ? b.endYear ?? b.startYear ?? 3000 : 3000
+      const aEndSeason = aIsAlumni ? a.endSeason ?? a.startSeason ?? 'Winter' : 'Winter'
+      const bEndSeason = bIsAlumni ? b.endSeason ?? b.startSeason ?? 'Winter' : 'Winter'
+
+      // Rule 1: Sort by effective endYear in descending order
+      if (aEndYear !== bEndYear) {
+        return bEndYear - aEndYear // Descending order for endYear
+      }
+
+      // Rule 2: If endYear is the same, sort by endSeason
+      const seasonA = seasonOrder.indexOf(aEndSeason)
+      const seasonB = seasonOrder.indexOf(bEndSeason)
+      if (seasonA !== seasonB) {
+        return seasonA - seasonB // Winter first, then Fall, Summer, Spring
+      }
+
+      // Rule 3: If endYear and endSeason are the same, sort by name
       if (a.lastName === b.lastName) {
         return a.firstName.localeCompare(b.firstName)
       }
       return a.lastName.localeCompare(b.lastName)
     })
   }
+
   return groupedMembers
 }
 export const CURRENT_MEMBERS_BY_POSITION: Record<KixlabPositionTypes, Member[]> = categorizeByPosition(CURRENT_MEMBERS)

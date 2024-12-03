@@ -14,9 +14,9 @@ export class Video {
 
 export const VIDEOS: Video[] = [
   {
-    url: 'https://www.youtube.com/embed/j0v1Cr74kN8?si=tp_blkpKqN4FP9te',
-    id: 'j0v1Cr74kN8',
-    title: 'What is Interaction-centric AI?',
+    url: 'https://slideslive.com/38996064/interactioncentric-ai',
+    id: '38996064',
+    title: '[NeurIPS 2022] What is Interaction-centric AI?',
     date: new Date('2022-10-28'),
   },
   {
