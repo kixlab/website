@@ -38,7 +38,7 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
-  eunjooKim : {
+  eunjooKim: {
     firstName: 'Eunjoo',
     lastName: 'Kim',
     email: 'ejkim96@yuhs.ac',
