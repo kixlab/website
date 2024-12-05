@@ -113,7 +113,7 @@ export const MEMBERS: Record<string, Member> = {
   taesookim: {
     firstName: 'Tae Soo',
     lastName: 'Kim',
-    email: 'kimts0830@gmail.com',
+    email: 'taesoo.kim@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'taesoo.jpg',
     site: 'https://taesookim.com/',
