@@ -317,6 +317,9 @@ export const MEMBERS: Record<string, Member> = {
     img: 'saetbyeol.jpg',
     site: 'https://sbleeyouk.github.io',
     affiliation: 'Sogang',
+    startSeason: 'Summer',
+    startYear: 2024,
+    isAlumni: true,
   },
   jihokim: {
     firstName: 'Jiho',
@@ -326,6 +329,9 @@ export const MEMBERS: Record<string, Member> = {
     img: 'jiho.jpg',
     site: 'https://jihokim.dev',
     affiliation: 'Calvin University',
+    startSeason: 'Summer',
+    startYear: 2024,
+    isAlumni: true,
   },
   vedadmisirli: {
     firstName: 'Vedad',
@@ -371,6 +377,9 @@ export const MEMBERS: Record<string, Member> = {
     img: 'yoonsang.jpg',
     site: 'https://lilys012.github.io',
     affiliation: 'SNU',
+    startSeason: 'Summer',
+    startYear: 2024,
+    isAlumni: true,  
   },
   jihyunyoo: {
     firstName: 'Jihyun',
@@ -389,6 +398,7 @@ export const MEMBERS: Record<string, Member> = {
     img: 'sieun.png',
     site: 'https://sieunk08.github.io',
     affiliation: 'SNU',
+    isAlumni: true,
   },
   hyehyunchu: {
     firstName: 'Hyehyun',
@@ -417,6 +427,9 @@ export const MEMBERS: Record<string, Member> = {
     img: 'brandonchin.jpg',
     site: '',
     affiliation: 'UC Berkeley',
+    startSeason: 'Summer',
+    startYear: 2024,
+    isAlumni: true,
   },
   nayoungkim: {
     firstName: 'Nayoung',
