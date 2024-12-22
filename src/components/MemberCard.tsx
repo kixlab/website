@@ -11,19 +11,20 @@ const Card = styled.div`
   max-width: 250px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
+  text-align: center;
 `
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
   align-items: center;
   ${FontVariant.body_md}
 `
 
 const Email = styled.span`
+  margin-top: 6px;
   color: ${Color.gray700};
   ${FontVariant.body_md}
 `
@@ -31,7 +32,6 @@ const Email = styled.span`
 const NameWithWebsite = styled(Link)`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
-  text-align: center;
 `
 
 const ImageContainer = styled.div`
@@ -54,7 +54,6 @@ const MemberImage = styled(ImageWithFallback)`
 const Name = styled.span`
   ${FontVariant.body_lg}
   color: ${Color.gray900};
-  text-align: center;
 `
 
 const Affiliation = styled.div`
@@ -93,8 +92,8 @@ export const MemberCard = ({ member }: Props) => {
             {member.firstName} {member.lastName}
           </Name>
         )}
-        <Email>{member.email}</Email>
         {member.affiliation && <Affiliation>{member.affiliation}</Affiliation>}
+        <Email>{member.email}</Email>
       </Info>
     </Card>
   )

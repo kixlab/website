@@ -14,8 +14,8 @@ import { ScreenSize, linearlyScaleSize } from '@/app/theme'
 
 const SectionContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 48px 24px;
   @media (max-width: ${ScreenSize.sm}) {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
@@ -47,7 +47,7 @@ const Container = styled.div`
 
   & > main {
     // make the main content (publications list) take up 85% and the Sidebar component 15%
-    width: 85%;
+    width: 80%;
 
     @media (max-width: ${ScreenSize.sm}) {
       width: 100%;
@@ -56,11 +56,13 @@ const Container = styled.div`
 `
 const SideContainer = styled.div`
   padding-top: 96px;
-  width: 15%;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  @media (max-width: ${ScreenSize.sm}) {
+  @media (max-width: ${ScreenSize.md}) {
     display: none;
   }
 `
