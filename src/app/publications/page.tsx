@@ -12,7 +12,6 @@ import { Sidebar } from '@/components/SideBar'
 import { Divider } from '@/components/Divider'
 import _ from 'lodash'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
-import { ViewportList } from 'react-viewport-list'
 
 const Container = styled.div`
   display: flex;
@@ -149,9 +148,9 @@ export default function Page() {
                   >
                     <SectionTitle>{sectionName}</SectionTitle>
                     <SectionContent>
-                      <ViewportList items={publicationList[sectionName]}>
-                        {(pub, index) => <PublicationCard key={pub.title} pub={pub} />}
-                      </ViewportList>
+                      {publicationList[sectionName].map((pub, index) => (
+                        <PublicationCard key={pub.title} pub={pub} />
+                      ))}
                     </SectionContent>
                   </Section>
                   <Divider />
