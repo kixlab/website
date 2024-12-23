@@ -26,6 +26,8 @@ const SpecialThanksContainer = styled.div`
 const TextRow = styled.div`
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
 
   & > span,
   & > a {
