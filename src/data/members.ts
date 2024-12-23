@@ -20,6 +20,7 @@ interface Props {
   img?: string
   site?: string
   msThesis?: string
+  phdThesis?: string
   affiliation?: string
   // TODO: combine startYear and startSeason into a single Date field: startDate
   startYear?: number
@@ -324,6 +325,11 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Undergrad Intern',
     img: 'saetbyeol.jpg',
     site: 'https://sbleeyouk.github.io',
+    startYear: 2024,
+    startSeason: 'Summer',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     affiliation: 'Sogang',
   },
   jihokim: {
@@ -333,6 +339,9 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Undergrad Intern',
     img: 'jiho.jpg',
     site: 'https://jihokim.dev',
+    startYear: 2024,
+    startSeason: 'Summer',
+    isAlumni: true,
     affiliation: 'Calvin University',
   },
   vedadmisirli: {
@@ -342,6 +351,9 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Visiting Researcher',
     img: 'vedad.jpg',
     site: '',
+    startYear: 2024,
+    startSeason: 'Summer',
+    isAlumni: true,
     affiliation: 'Graz University of Technology',
   },
   heechanlee: {
@@ -378,6 +390,11 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Undergrad Intern',
     img: 'yoonsang.jpg',
     site: 'https://lilys012.github.io',
+    startYear: 2024,
+    startSeason: 'Summer',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     affiliation: 'SNU',
   },
   jihyunyoo: {
@@ -396,6 +413,11 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Undergrad Intern',
     img: 'sieun.png',
     site: 'https://sieunk08.github.io',
+    startYear: 2024,
+    startSeason: 'Summer',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     affiliation: 'SNU',
   },
   hyehyunchu: {
@@ -424,6 +446,9 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Undergrad Intern',
     img: 'brandonchin.jpg',
     site: '',
+    startYear: 2024,
+    startSeason: 'Summer',
+    isAlumni: true,
     affiliation: 'UC Berkeley',
   },
   nayoungkim: {
@@ -436,6 +461,8 @@ export const MEMBERS: Record<string, Member> = {
     affiliation: 'DGIST',
     startSeason: 'Summer',
     startYear: 2024,
+    endYear: 2024,
+    endSeason: 'Fall',
     isAlumni: true,
   },
   jinhyeonkwon: {
@@ -642,6 +669,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2021,
     endSeason: 'Winter',
     site: 'https://minsukchang.com/',
+    phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2021-minsuk.pdf',
   },
   kyungjejo: {
     firstName: 'Kyung',
