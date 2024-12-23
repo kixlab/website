@@ -44,26 +44,26 @@ const NameWithWebsite = styled(Link)`
 `
 
 const CurrentPosition = styled.div`
-  font-size: 0.9rem;
+  ${FontVariant.body_md}
   color: ${Color.gray700};
 `
 
 const Period = styled.span`
-  font-size: 0.9rem;
+  ${FontVariant.body_md}
   color: ${Color.gray500};
 `
 const Education = styled.span`
-  font-size: 0.9rem;
+  ${FontVariant.body_md}
   color: ${Color.gray700};
 `
 
 const ThesisLink = styled(Link)`
-  font-size: 0.9rem;
+  ${FontVariant.body_md}
   color: ${Color.gray700};
 `
 
 const Description = styled.span`
-  font-size: 0.9rem;
+  ${FontVariant.body_md}
   color: ${Color.gray700};
   font-style: italic;
 `
