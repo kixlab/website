@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import { CURRENT_MEMBERS_BY_POSITION, ALUMNI_MEMBERS_BY_POSITION, KixlabPositions } from '@/data/members'
 import { Sections, Section, SectionTitle } from '@/components/Section'
 import { MemberCard } from '@/components/MemberCard'
-import { AlumniCard } from '@/components/AlumniCard'
+import { AlumniCard, SpecialThanksCard } from '@/components/AlumniCard'
 import { FontVariant, Color } from '@/app/theme'
 import Image from 'next/image'
 import _ from 'lodash'
@@ -68,42 +68,17 @@ const SideContainer = styled.div`
 `
 const AlumniSectionContent = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1px;
-  @media (min-width: ${ScreenSize.xl}) {
-    grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  @media (max-width: ${ScreenSize.xl}) {
+    grid-template-columns: 1fr;
   }
+  margin-bottom: 24px;
 `
 
 const SubCategoryTitle = styled.h2`
   ${FontVariant.title_md}
-`
-
-const SpecialThanksSection = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
-`
-const SpecialThanksTitle = styled.h2`
-  font-size: 1.5rem;
-  color: ${Color.gray900};
-`
-
-const SpecialThanksText = styled.div`
-  display: flex;
-  flex-direction: column;
-`
-
-const SpecialThanksSubtitle = styled.h3`
-  ${FontVariant.body_lg}
-  color: ${Color.gray900};
-  margin: 0;
-`
-
-const SpecialThanksDescription = styled.p`
-  ${FontVariant.body_md}
-  color: ${Color.gray700};
-  gap: 4px;
+  margin-bottom: 8px;
 `
 
 const kixlabPositions = KixlabPositions // change this if you want to re-order the sections in the page.
@@ -167,17 +142,13 @@ export default function Page() {
           </Section>
           <Divider />
           <Section key="thanks">
-            <SpecialThanksTitle id="thanks">Special Thanks</SpecialThanksTitle>
-            <SpecialThanksSection>
-              <Image src="/images/jura.png" alt="Jura Coffee Machine" width={200} height={200} />
-              <SpecialThanksText>
-                <SpecialThanksSubtitle>Jura</SpecialThanksSubtitle>
-                <SpecialThanksDescription>Coffee Machine</SpecialThanksDescription>
-                <SpecialThanksDescription>
-                  <i>“Thank you for your steadfast warmth and the delightful brews that kickstart my mornings”</i>
-                </SpecialThanksDescription>
-              </SpecialThanksText>
-            </SpecialThanksSection>
+            <SectionTitle id="thanks">Special Thanks</SectionTitle>
+            <SpecialThanksCard
+              img="/images/jura.png"
+              name="Jura"
+              position="Coffee Machine"
+              description="Thank you for your steadfast warmth and the delightful brews that kickstart my mornings"
+            />
           </Section>
         </Sections>
       </main>

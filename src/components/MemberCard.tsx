@@ -23,17 +23,6 @@ const Info = styled.div`
   ${FontVariant.body_md}
 `
 
-const Email = styled.span`
-  margin-top: 6px;
-  color: ${Color.gray700};
-  ${FontVariant.body_md}
-`
-
-const NameWithWebsite = styled(Link)`
-  ${FontVariant.body_lg}
-  color: ${Color.gray900};
-`
-
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
@@ -64,6 +53,48 @@ const Affiliation = styled.div`
   }
 `
 
+const Buttons = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+`
+
+const EmailButton = styled.a`
+  content: url('/images/email.svg');
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  cursor: pointer;
+
+  color: ${Color.white};
+  background-color: ${Color.gray700};
+  border-radius: 50%;
+`
+
+const WebsiteButton = styled.a`
+  content: url('/images/website.svg');
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  cursor: pointer;
+
+  color: ${Color.white};
+  background-color: ${Color.gray700};
+  border-radius: 50%;
+`
+
+const ThesisButton = styled.a`
+  content: url('/images/thesis.svg');
+  width: 30px;
+  height: 30px;
+  padding: 7px;
+  cursor: pointer;
+
+  color: ${Color.white};
+  background-color: ${Color.gray700};
+  border-radius: 50%;
+`
+
 interface Props {
   member: Member
 }
@@ -83,17 +114,15 @@ export const MemberCard = ({ member }: Props) => {
         />
       </ImageContainer>
       <Info>
-        {member.site ? (
-          <NameWithWebsite href={member.site}>
-            {member.firstName} {member.lastName}
-          </NameWithWebsite>
-        ) : (
-          <Name>
-            {member.firstName} {member.lastName}
-          </Name>
-        )}
-        {member.affiliation && <Affiliation>{member.affiliation}</Affiliation>}
-        <Email>{member.email}</Email>
+        <Name>
+          {member.firstName} {member.lastName}
+        </Name>
+        <Affiliation>{member.affiliation || member.kixlabPosition}</Affiliation>
+        <Buttons>
+          {member.email && <EmailButton href={`mailto:${member.email}`} />}
+          {member.site && <WebsiteButton href={member.site} target="_blank" rel="noopener noreferrer" />}
+          {member.msThesis && <ThesisButton href={member.msThesis} />}
+        </Buttons>
       </Info>
     </Card>
   )
