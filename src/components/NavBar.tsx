@@ -21,7 +21,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
 
-  // Prevent the Kixlab logo from suddenly jumping to the left when shrinking the window
+  // Prevent the KIXLAB logo from suddenly jumping to the left when shrinking the window
   padding: 12px 24px 12px
     ${linearlyScaleSize({
       minSizePx: 24,

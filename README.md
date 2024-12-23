@@ -1,4 +1,4 @@
-Repo of [Kixlab's redesigned website](https://www.kixlab.org/).
+Repo of [KIXLAB's redesigned website](https://www.kixlab.org/).
 
 # How to Contribute
 
@@ -37,6 +37,6 @@ Run the following commands:
 
 1. Go to `src/data/publications.ts`
 2. Add a new entry at the top of `PUBLICATIONS`. Follow the format as indicated in `interace Props`.
-3. For authors, make sure that Kixlab members are inputted as `MEMBERS.[firstnamelastname]` (e.g., `MEMBERS.alexsuryapranata`)
+3. For authors, make sure that KIXLAB members are inputted as `MEMBERS.[firstnamelastname]` (e.g., `MEMBERS.alexsuryapranata`)
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
