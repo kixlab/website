@@ -39,6 +39,16 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  hanaoh: {
+    firstName: 'Hana',
+    lastName: 'Oh',
+    email: 'hana2001@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'hana.jpg',
+    affiliation: 'SNU',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   gosuchoi: {
     firstName: 'Gosu',
     lastName: 'Choi',
