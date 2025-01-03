@@ -229,6 +229,7 @@ export const MEMBERS: Record<string, Member> = {
     startYear: 2022,
     endSeason: 'Summer',
     endYear: 2024,
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-seulgi.pdf',
   },
   jihyeonghong: {
     firstName: 'Jihyeong',
@@ -598,7 +599,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Eun Jeong',
     lastName: 'Kang',
     currentPosition: 'Ph.D. Student at Cornell University',
-    kixlabPosition: 'M.S. Student',
+    kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
     site: 'https://eunkang.info/',
     startYear: 2020,
@@ -654,6 +655,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2021,
     endSeason: 'Summer',
     site: 'https://www.kabdochoi.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-kabdo.pdf',
   },
   taewookkim: {
     firstName: 'Taewook',
@@ -689,6 +691,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2021,
     endSeason: 'Winter',
     currentPosition: 'ML Engineer at Branch and Bound (CodeTree)',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-hoon.pdf',
   },
   minsukchang: {
     firstName: 'Minsuk',
@@ -714,6 +717,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2021,
     endSeason: 'Winter',
     site: 'https://kyungjejo.com/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2020-kyungje.pdf',
   },
   jibonnaher: {
     firstName: 'Jibon',
@@ -725,6 +729,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2020,
     endSeason: 'Summer',
     site: 'https://jibonnaher.github.io/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2020-jibon.pdf',
   },
   jisoolee: {
     firstName: 'Jisoo',
@@ -761,6 +766,7 @@ export const MEMBERS: Record<string, Member> = {
     endSeason: 'Spring',
     site: 'https://sixped.dk/',
     currentPosition: 'Co-founder and CTO at NordInsight',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-mathias.pdf',
   },
   eveyhuang: {
     firstName: 'Evey',
@@ -785,6 +791,7 @@ export const MEMBERS: Record<string, Member> = {
     endSeason: 'Winter',
     site: 'https://hyeungshikjung.com/',
     currentPosition: 'Software Engineer at Coupang',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyeungshik.pdf',
   },
   yichingjanethuang: {
     firstName: 'Yi-Ching (Janet)',
@@ -821,6 +828,7 @@ export const MEMBERS: Record<string, Member> = {
     endSeason: 'Spring',
     site: 'https://graycoding.com/',
     currentPosition: 'Lead Frontend Engineer at Alvin',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-paul.pdf',
   },
   haechankim: {
     firstName: 'Haechan',
@@ -909,7 +917,7 @@ export const MEMBERS: Record<string, Member> = {
   khanhduyle: {
     firstName: 'Khanh Duy',
     lastName: 'Le',
-    kixlabPosition: 'Visiting Researcher',
+    kixlabPosition: 'Undergrad Intern',
     isAlumni: true,
     startSeason: 'Summer',
     startYear: 2023,
