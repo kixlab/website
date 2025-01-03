@@ -197,6 +197,8 @@ export const MEMBERS: Record<string, Member> = {
     email: 'leesungchul@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'sclee.png',
+    startYear: 2016,
+    startSeason: 'Summer',
   },
   kihoonson: {
     firstName: 'Kihoon',
@@ -590,6 +592,7 @@ export const MEMBERS: Record<string, Member> = {
     endSeason: 'Fall',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
+    currentPosition: 'Ph.D. Student at Stanford University',
   },
   eunjeongkang: {
     firstName: 'Eun Jeong',
@@ -607,7 +610,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Jeongyeon',
     lastName: 'Kim',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-jeongyeon.pdf',
-    currentPosition: ' Ph.D. Student at Stanford University',
+    currentPosition: 'Ph.D. Student at Stanford University',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
     startYear: 2019,
@@ -793,7 +796,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2018,
     endSeason: 'Fall',
     site: 'https://janetyc.github.io/',
-    currentPosition: ' Assistant Professor at Eindhoven University of Technology ',
+    currentPosition: 'Assistant Professor at Eindhoven University of Technology',
   },
   johnjoonyoungchung: {
     firstName: 'John Joon Young',
@@ -805,7 +808,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2018,
     endSeason: 'Spring',
     site: 'https://johnr0.github.io/',
-    currentPosition: ' Research Scientist at Midjourney',
+    currentPosition: 'Research Scientist at Midjourney',
   },
   paulgrau: {
     firstName: 'Paul',
@@ -933,6 +936,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2024,
     endSeason: 'Winter',
     affiliation: 'Seoultech',
+    currentPosition: 'Ph.D. Student at University of Notre Dame',
   },
   jiwonjang: {
     firstName: 'Jiwon',
@@ -985,6 +989,7 @@ export const MEMBERS: Record<string, Member> = {
     startYear: 2023,
     affiliation: 'UCSD',
     site: 'https://bryanmin.me/',
+    currentPosition: 'Ph.D. Student at UCSD',
   },
   seongheelee: {
     firstName: 'Seong Hee',
@@ -994,6 +999,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Summer',
     startYear: 2021,
     affiliation: 'Cornell University',
+    currentPosition: 'M.S. Student at Stanford University',
   },
   michallewkowicz: {
     firstName: 'Michal',
@@ -1023,6 +1029,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2023,
     endSeason: 'Summer',
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at Georgia Tech',
   },
   dakyeomahn: {
     firstName: 'Dakyeom',
@@ -1056,6 +1063,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2023,
     endSeason: 'Spring',
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at CSTL KAIST',
   },
   soyeongmin: {
     firstName: 'Soyeong',
@@ -1065,6 +1073,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Winter',
     startYear: 2023,
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at Next Interface Lab, KAIST',
   },
   arghyasarkar: {
     firstName: 'Arghya',
@@ -1095,6 +1104,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2022,
     endSeason: 'Summer',
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at KAIST Graduate School of AI',
   },
   inhwasong: {
     firstName: 'Inhwa',
@@ -1145,6 +1155,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2022,
     endSeason: 'Summer',
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at HCI Lab, KAIST',
   },
   subeenpark: {
     firstName: 'Subeen',
@@ -1175,6 +1186,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Winter',
     startYear: 2022,
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at KAIST',
   },
   jeannechoi: {
     firstName: 'Jeanne',
@@ -1186,6 +1198,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2021,
     endSeason: 'Fall',
     affiliation: 'KAIST',
+    currentPosition: 'M.S. Student at CSTL KAIST',
   },
   nurlykhankopenov: {
     firstName: 'Nurlykhan',
@@ -1265,6 +1278,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Winter',
     endYear: 2021,
     endSeason: 'Summer',
+    currentPosition: 'M.S. Student at HCI Lab, KAIST',
   },
   sanghyeonlee: {
     firstName: 'Sanghyeon',
@@ -1329,6 +1343,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2021,
     endSeason: 'Summer',
     affiliation: 'UNIST',
+    currentPosition: 'M.S. Student at CSTL KAIST',
   },
   intizartashov: {
     firstName: 'Intizar',
@@ -1392,6 +1407,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2020,
     endSeason: 'Fall',
     affiliation: 'KAIST',
+    currentPosition: 'Ph.D. Student at UIUC',
   },
   umartaufiqulhakim: {
     firstName: 'Umar',
@@ -1526,7 +1542,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2019,
     endSeason: 'Summer',
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at KAIST ',
+    currentPosition: 'M.S. Student at KAIST',
   },
   yeonsukim: {
     firstName: 'Yeonsu',
@@ -1536,7 +1552,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Summer',
     startYear: 2019,
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at HCI Lab, KAIST',
+    currentPosition: 'Ph.D. Student at HCI Lab, KAIST',
   },
   jaeyoonsong: {
     firstName: 'Jaeyoon',
@@ -1615,7 +1631,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Winter',
     startYear: 2019,
     affiliation: 'KAIST',
-    currentPosition: ' M.S. Student at KAIST',
+    currentPosition: 'M.S. Student at KAIST',
   },
   seonghopark: {
     firstName: 'Seongho',
@@ -1636,7 +1652,7 @@ export const MEMBERS: Record<string, Member> = {
     startSeason: 'Summer',
     startYear: 2018,
     affiliation: 'SNU',
-    currentPosition: 'M.S. Student at KAIST Graduate School of AI',
+    currentPosition: 'CPO at Branch and Bound (CodeTree)',
     site: 'http://hyuntak.com/',
   },
   rachelkwak: {
@@ -1851,7 +1867,8 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2017,
     endSeason: 'Winter',
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at NMSL',
+    currentPosition: 'Ph.D. Student at CMU',
+    site: 'https://hyunsungcho.com/',
   },
   juhosun: {
     firstName: 'Juho',
@@ -1885,7 +1902,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2016,
     endSeason: 'Fall',
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at U&I Lab',
+    currentPosition: 'Ph.D. Student at U&I Lab',
   },
   taekyungpark: {
     firstName: 'Taekyung',
@@ -1896,15 +1913,6 @@ export const MEMBERS: Record<string, Member> = {
     startYear: 2016,
     affiliation: 'SNU',
   },
-  // sungchullee: {
-  //   firstName: 'Sung-Chul',
-  //   lastName: 'Lee',
-  //   email: 'leesungchul@kaist.ac.kr',
-  //   kixlabPosition: 'Ph.D. Student',
-  //   img: 'sclee.png',
-  //   startYear: 2016,
-  //   startSeason: 'Summer',
-  // },
   oaksilkim: {
     firstName: 'Oaksil',
     lastName: 'Kim',
