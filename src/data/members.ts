@@ -682,13 +682,13 @@ export const MEMBERS: Record<string, Member> = {
   donghoonhan: {
     firstName: 'Donghoon',
     lastName: 'Han',
-    currentPosition: 'Machine Learning Engineer at Superb AI',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
     startYear: 2018,
     startSeason: 'Summer',
     endYear: 2021,
     endSeason: 'Winter',
+    currentPosition: 'ML Engineer at Branch and Bound (CodeTree)',
   },
   minsukchang: {
     firstName: 'Minsuk',
