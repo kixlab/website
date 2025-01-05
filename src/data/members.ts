@@ -1550,7 +1550,7 @@ export const MEMBERS: Record<string, Member> = {
     endYear: 2019,
     endSeason: 'Summer',
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at KAIST',
+    currentPosition: 'ML Researcher at Scatter Lab',
   },
   yeonsukim: {
     firstName: 'Yeonsu',
