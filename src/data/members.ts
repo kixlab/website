@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  nadiaarvi: {
+    firstName: 'Nadia',
+    lastName: 'Arvi',
+    email: 'nadia.arvi@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'nadia.png',
+    site: 'https://nadiarvi.github.io/online-resume/',
+    affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   seoyeonbyun: {
     firstName: 'Seoyeon',
     lastName: 'Byun',
