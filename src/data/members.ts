@@ -68,6 +68,16 @@ export const MEMBERS: Record<string, Member> = {
     startYear: 2025,
     startSeason: 'Winter',
   },
+  jingyu: {
+    firstName: 'Jingyu',
+    lastName: 'Tang',
+    email: 'tangjingyu0621@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'jingyu.jpeg',
+    affiliation: 'HUST',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   gosuchoi: {
     firstName: 'Gosu',
     lastName: 'Choi',
