@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  yukaihung: {
+    firstName: 'Yu-Kai',
+    lastName: 'Hung',
+    email: 'b09902040@csie.ntu.edu.tw',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'yukaihung.jpg',
+    site: '',
+    affiliation: 'National Taiwan University',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   nadiaarvi: {
     firstName: 'Nadia',
     lastName: 'Arvi',
