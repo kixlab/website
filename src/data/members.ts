@@ -454,8 +454,8 @@ export const MEMBERS: Record<string, Member> = {
     lastName: 'Kim',
     email: 'gracekim027@snu.ac.kr',
     kixlabPosition: 'Undergrad Intern',
-    img: 'eunhye.jpeg',
-    site: '',
+    img: 'eunhye.jpg',
+    site: 'https://gracekim027.github.io/',
     affiliation: 'SNU',
   },
   yoonsanglee: {
