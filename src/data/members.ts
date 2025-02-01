@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  samueldawit: {
+    firstName: 'Samuel Dawit',
+    lastName: 'Assefa',
+    email: 'samuelassefa@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'samuel.jpg',
+    site: '',
+    affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   yukaihung: {
     firstName: 'Yu-Kai',
     lastName: 'Hung',
