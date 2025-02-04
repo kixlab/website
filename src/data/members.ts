@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS: Record<string, Member> = {
+  chenzhou: {
+    firstName: 'Chen',
+    lastName: 'Zhou',
+    email: 'zhouchen@comp.nus.edu.sg',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'chenzhou.png',
+    site: 'https://czzoe.github.io/',
+    affiliation: 'National University of Singapore',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   samueldawit: {
     firstName: 'Samuel Dawit',
     lastName: 'Assefa',
