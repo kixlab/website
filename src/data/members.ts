@@ -46,7 +46,7 @@ export const MEMBERS: Record<string, Member> = {
     kixlabPosition: 'Visiting Researcher',
     img: 'chenzhou.png',
     site: 'https://czzoe.github.io/',
-    affiliation: 'National University of Singapore',
+    affiliation: 'NUS',
     startYear: 2025,
     startSeason: 'Winter',
   },
