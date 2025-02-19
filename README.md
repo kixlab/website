@@ -37,6 +37,7 @@ Run the following commands:
 
 1. Go to `src/data/publications.ts`
 2. Add a new entry at the top of `PUBLICATIONS`. Follow the format as indicated in `interace Props`.
-3. For authors, make sure that KIXLAB members are inputted as `MEMBERS.[firstnamelastname]` (e.g., `MEMBERS.alexsuryapranata`)
+3. In the `authors` field, make sure that KIXLAB members are inputted as `MEMBERS.[firstnamelastname]` (e.g., `MEMBERS.alexsuryapranata`) so that their name is shown prominently amongst the rest of the authors.
+4. For co-authors or authors who made equal contribution, group them into an array within the `authors` field. Astericks will show up next to each co-author's name. The number of asterisks corresponds to the level of authorship. (I.e., \* = first author-level co-author. \*\* = second author-level co-author, etc...)
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
