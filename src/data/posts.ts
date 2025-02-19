@@ -3,7 +3,7 @@ interface Props {
   date: Date
   categories: readonly string[]
   summary: string
-  contentMdFilePath?: string // Add path to markdown file if exists
+  contentMdFilePath?: string // Add path to markdown file if exists. Path should be relative to /public/posts/
   endsAt?: Date // Add if the post has a deadline
 }
 
@@ -15,6 +15,34 @@ export class Post {
 }
 
 export const POSTS: Post[] = [
+  {
+    title: 'Three New Students Join KIXLAB',
+    date: new Date('2025-02-19'),
+    categories: ['news'],
+    summary:
+      'Three new grad students have joined KIXLAB starting from spring 2025. Welcome Jennie (Ph.D), Heechan (M.S.), and Jaesang (M.S.)!',
+  },
+  {
+    title: 'Dae Hyun Becomes Professor at Yonsei University',
+    date: new Date('2025-02-18'),
+    categories: ['news'],
+    summary:
+      'Dae Hyun Kim officially completed his postdoc at KIXLAB and is now an assistant professor at Yonsei University. Congratulations, Dae Hyun!',
+  },
+  {
+    title: 'Three KIXLAB Members Graduate from KAIST',
+    date: new Date('2025-02-14'),
+    categories: ['news'],
+    summary:
+      "Three KIXLAB members graduated from KAIST. Congratulations to Dr. Seoyoung Kim, KIXLAB's second Ph.D graduate(!) and to Jihyeong and Junho, KIXLAB's newly minted M.S. graduates!",
+  },
+  {
+    title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
+    date: new Date('2025-02-11'),
+    categories: ['news'],
+    summary:
+      'Seoyoung Kim was awarded the prestigious Outstanding Ph.D Thesis Award from the KAIST School of Computing.',
+  },
   {
     title: 'KIXLAB members and papers at CSCW 2024',
     date: new Date('2024-11-18'),
