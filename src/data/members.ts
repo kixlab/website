@@ -164,6 +164,7 @@ export const MEMBERS: Record<string, Member> = {
     email: 'dhkim16@cs.stanford.edu',
     kixlabPosition: 'Postdoc Researcher',
     img: 'daehyun.jpg',
+    isAlumni: true,
     site: 'https://dhkim16.github.io/',
   },
   daeunchoi: {
@@ -199,6 +200,7 @@ export const MEMBERS: Record<string, Member> = {
     email: 'youthskim@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'seoyoung.jpg',
+    isAlumni: true,
     site: 'https://sites.google.com/view/seoyoung/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-seoyoung.pdf',
   },
@@ -245,15 +247,16 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://hyungyu.com/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
-  sungchullee: {
-    firstName: 'Sung-Chul',
-    lastName: 'Lee',
-    email: 'leesungchul@kaist.ac.kr',
-    kixlabPosition: 'Ph.D. Student',
-    img: 'sclee.png',
-    startYear: 2016,
-    startSeason: 'Summer',
-  },
+  // How should we handle Sung-Chul's entry?
+  // sungchullee: {
+  //   firstName: 'Sung-Chul',
+  //   lastName: 'Lee',
+  //   email: 'leesungchul@kaist.ac.kr',
+  //   kixlabPosition: 'Ph.D. Student',
+  //   img: 'sclee.png',
+  //   startYear: 2016,
+  //   startSeason: 'Summer',
+  // },
   kihoonson: {
     firstName: 'Kihoon',
     lastName: 'Son',
@@ -293,6 +296,7 @@ export const MEMBERS: Record<string, Member> = {
     img: 'jihyeong.jpg',
     startYear: 2020,
     startSeason: 'Summer',
+    isAlumni: true,
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a',
   },
   hyoungwookjin: {
@@ -309,6 +313,7 @@ export const MEMBERS: Record<string, Member> = {
     email: 'junho00211@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'junhomyung.jpg',
+    isAlumni: true,
     site: 'https://junhomyung.github.io/',
   },
   yeonsupark: {
@@ -350,7 +355,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Jaesang',
     lastName: 'Yu',
     email: 'jaesangyu22@gmail.com',
-    kixlabPosition: 'Visiting Researcher',
+    kixlabPosition: 'M.S. Student',
     img: 'jaesang.jpg',
   },
   daeheonjeong: {
@@ -446,7 +451,7 @@ export const MEMBERS: Record<string, Member> = {
     firstName: 'Heechan',
     lastName: 'Lee',
     email: 'hclee99@kaist.ac.kr',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'M.S. Student',
     img: 'heechan_lee.jpeg',
     site: '',
     affiliation: 'KAIST',
