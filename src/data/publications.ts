@@ -46,6 +46,27 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students',
+    authors: [
+      MEMBERS.hyoungwookjin,
+      MEMBERS.minjuyoo,
+      MEMBERS.jeongeonpark,
+      MEMBERS.yokyunglee,
+      'Xu Wang',
+      MEMBERS.juhokim,
+    ],
+    venue: 'arXiv preprint',
+    year: 2025,
+    topics: ['human-AI interaction', 'learning'],
+    type: 'Preprint',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2410.04078',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: 'BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages',
     authors: [MEMBERS.junhomyung, 'Nayeon Lee', 'Yi Zhou', 'Jiho Jin', 'Rifki Afina Putri', 'and 17 more authors'],
     venue: 'NeurIPS 2024 Datasets & Benchmarks',
