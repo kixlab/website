@@ -61,7 +61,7 @@ export default function GlobalStyles() {
           scroll-behavior: smooth;
           scroll-padding-top: ${NAV_BAR_HEIGHT + 24}px;
         }
-        ,
+
         main {
           display: flex;
           flex-direction: column;
@@ -72,13 +72,13 @@ export default function GlobalStyles() {
             padding: 40px 24px;
           }
         }
-        ,
+
         h1 {
           margin: 0;
           ${FontVariant.title_lg}
           text-align: center;
         }
-        ,
+
         *:focus-visible {
           outline: 2px solid ${Color.orange700};
         }

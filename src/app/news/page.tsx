@@ -17,8 +17,7 @@ const NewsSection = styled.div`
 
   @media (max-width: ${ScreenSize.sm}) {
     padding: 0px 0px;
-  } 
-}
+  }
 `
 
 const NewsLine = styled.div`
@@ -49,7 +48,6 @@ const NewsLine = styled.div`
 const NewsContainer = styled.div`
   width: 100%;
   display: grid;
-  grid-template-colums: 1fr 1fr;
 
   @media (max-width: ${ScreenSize.md}) {
     display: grid;

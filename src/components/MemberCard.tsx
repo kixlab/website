@@ -50,7 +50,6 @@ const Affiliation = styled.div`
   align-items: center;
   gap: 6px;
   color: ${Color.gray700};
-  }
 `
 
 const Buttons = styled.div`
