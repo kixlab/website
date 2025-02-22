@@ -38,7 +38,7 @@ export class Member {
   }
 }
 
-export const MEMBERS: Record<string, Member> = {
+export const MEMBERS = {
   chenzhou: {
     firstName: 'Chen',
     lastName: 'Zhou',
@@ -1985,7 +1985,7 @@ export const MEMBERS: Record<string, Member> = {
 } as const satisfies Record<string, Member>
 
 export const ALUMNI_MEMBERS = Object.fromEntries(
-  Object.entries(MEMBERS).filter(([key, member]) => member.isAlumni === true)
+  Object.entries(MEMBERS).filter(([key, member]) => 'isAlumni' in member && member.isAlumni === true)
 )
 export const CURRENT_MEMBERS = Object.fromEntries(Object.entries(MEMBERS).filter(([key]) => !(key in ALUMNI_MEMBERS)))
 const categorizeByPosition = (members: Record<string, Member>): Record<KixlabPositionTypes, Member[]> => {
@@ -2036,5 +2036,5 @@ const categorizeByPosition = (members: Record<string, Member>): Record<KixlabPos
 
   return groupedMembers
 }
-export const CURRENT_MEMBERS_BY_POSITION: Record<KixlabPositionTypes, Member[]> = categorizeByPosition(CURRENT_MEMBERS)
-export const ALUMNI_MEMBERS_BY_POSITION: Record<KixlabPositionTypes, Member[]> = categorizeByPosition(ALUMNI_MEMBERS)
+export const CURRENT_MEMBERS_BY_POSITION = categorizeByPosition(CURRENT_MEMBERS)
+export const ALUMNI_MEMBERS_BY_POSITION = categorizeByPosition(ALUMNI_MEMBERS)
