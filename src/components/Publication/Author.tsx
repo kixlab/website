@@ -17,7 +17,7 @@ const NotLabMember = styled.span`
   color: ${Color.gray500};
 `
 
-const printAuthor = (author: Member | string, asterisks: string) => {
+const Name = (author: Member | string, asterisks: string) => {
   return typeof author === 'string' ? (
     <NotLabMember key={author}>
       {author}
@@ -28,12 +28,12 @@ const printAuthor = (author: Member | string, asterisks: string) => {
   )
 }
 
-const flattenAuthors = (authors: (Member | string | (string | Member)[])[]) => {
+const printAuthors = (authors: (Member | string | (string | Member)[])[]) => {
   return authors.flatMap((entry, index) =>
-    Array.isArray(entry) ? entry.map(a => printAuthor(a, '*'.repeat(index + 1))) : printAuthor(entry, '')
+    Array.isArray(entry) ? entry.map(a => Name(a, '*'.repeat(index + 1))) : Name(entry, '')
   )
 }
 
 export const Author = ({ authors }: { authors: (Member | string | (string | Member)[])[] }) => {
-  return <AuthorList>{flattenAuthors(authors)}</AuthorList>
+  return <AuthorList>{printAuthors(authors)}</AuthorList>
 }

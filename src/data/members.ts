@@ -247,16 +247,15 @@ export const MEMBERS: Record<string, Member> = {
     site: 'https://hyungyu.com/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
-  // How should we handle Sung-Chul's entry?
-  // sungchullee: {
-  //   firstName: 'Sung-Chul',
-  //   lastName: 'Lee',
-  //   email: 'leesungchul@kaist.ac.kr',
-  //   kixlabPosition: 'Ph.D. Student',
-  //   img: 'sclee.png',
-  //   startYear: 2016,
-  //   startSeason: 'Summer',
-  // },
+  sungchullee: {
+    firstName: 'Sung-Chul',
+    lastName: 'Lee',
+    email: 'leesungchul@kaist.ac.kr',
+    kixlabPosition: 'Ph.D. Student',
+    img: 'sclee.png',
+    startYear: 2016,
+    startSeason: 'Summer',
+  },
   kihoonson: {
     firstName: 'Kihoon',
     lastName: 'Son',
