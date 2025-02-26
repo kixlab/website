@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  sehoonlim: {
+    firstName: 'Sehoon',
+    lastName: 'Lim',
+    email: 'sehoon1106@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'sehoon.png',
+    site: '',
+    affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Spring',
+  },
   chenzhou: {
     firstName: 'Chen',
     lastName: 'Zhou',
