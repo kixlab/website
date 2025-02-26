@@ -461,7 +461,7 @@ export const MEMBERS = {
     email: 'hclee99@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'heechan_lee.jpeg',
-    site: '',
+    site: 'https://heechanlee.com',
     startSeason: 'Spring',
     startYear: 2025,
   },
