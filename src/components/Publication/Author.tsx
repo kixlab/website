@@ -17,18 +17,23 @@ const NotLabMember = styled.span`
   color: ${Color.gray500};
 `
 
-export const Author = ({ authors }: { authors: (Member | string)[] }) => {
-  return (
-    <AuthorList>
-      {authors.map(author =>
-        typeof author === 'string' ? (
-          <NotLabMember key={author}>{author}</NotLabMember>
-        ) : (
-          <LabMember key={author.email}>
-            {author.firstName} {author.lastName}
-          </LabMember>
-        )
-      )}
-    </AuthorList>
+const Name = (author: Member | string, asterisks: string) => {
+  return typeof author === 'string' ? (
+    <NotLabMember key={author}>
+      {author}
+      {asterisks}
+    </NotLabMember>
+  ) : (
+    <LabMember key={author.email}>{`${author.firstName} ${author.lastName}${asterisks}`}</LabMember>
   )
+}
+
+const printAuthors = (authors: (Member | string | (string | Member)[])[]) => {
+  return authors.flatMap((entry, index) =>
+    Array.isArray(entry) ? entry.map(a => Name(a, '*'.repeat(index + 1))) : Name(entry, '')
+  )
+}
+
+export const Author = ({ authors }: { authors: (Member | string | (string | Member)[])[] }) => {
+  return <AuthorList>{printAuthors(authors)}</AuthorList>
 }

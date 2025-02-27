@@ -175,6 +175,7 @@ export const MEMBERS = {
     email: 'dhkim16@cs.stanford.edu',
     kixlabPosition: 'Postdoc Researcher',
     img: 'daehyun.jpg',
+    isAlumni: true,
     site: 'https://dhkim16.github.io/',
   },
   daeunchoi: {
@@ -210,6 +211,7 @@ export const MEMBERS = {
     email: 'youthskim@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'seoyoung.jpg',
+    isAlumni: true,
     site: 'https://sites.google.com/view/seoyoung/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-seoyoung.pdf',
   },
@@ -304,6 +306,7 @@ export const MEMBERS = {
     img: 'jihyeong.jpg',
     startYear: 2020,
     startSeason: 'Summer',
+    isAlumni: true,
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a',
   },
   hyoungwookjin: {
@@ -320,6 +323,7 @@ export const MEMBERS = {
     email: 'junho00211@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'junhomyung.jpg',
+    isAlumni: true,
     site: 'https://junhomyung.github.io/',
   },
   yeonsupark: {
