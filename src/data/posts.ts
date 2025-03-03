@@ -39,7 +39,7 @@ export const POSTS: Post[] = [
   {
     title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
     date: new Date('2025-02-11'),
-    categories: ['news'],
+    categories: ['award'],
     summary:
       'Seoyoung Kim was awarded the prestigious Outstanding Ph.D Thesis Award from the KAIST School of Computing.',
   },
