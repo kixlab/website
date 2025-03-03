@@ -1,5 +1,5 @@
 export const KixlabPositions = [
-  'Faculty',
+  'Associate Professor',
   'Postdoc Researcher',
   'Ph.D. Student',
   'M.S. Student',
@@ -39,6 +39,12 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jennyyang: {
+    firstName: 'Jenny',
+    lastName: 'Yang',
+    email: 'jenny_yang@kaist.ac.kr',
+    kixlabPosition: 'Ph.D. Student',
+  },
   sehoonlim: {
     firstName: 'Sehoon',
     lastName: 'Lim',
@@ -158,12 +164,16 @@ export const MEMBERS = {
     img: 'default.png',
     startYear: 2024,
     startSeason: 'Fall',
+    endYear: 2025,
+    endSeason: 'Winter',
+    isAlumni: true,
+    affiliation: 'Yonsei University College of Medicine',
   },
   juhokim: {
     firstName: 'Juho',
     lastName: 'Kim',
     email: 'juhokim@kaist.ac.kr',
-    kixlabPosition: 'Faculty',
+    kixlabPosition: 'Associate Professor',
     img: 'juhokim.jpg',
     site: 'http://juhokim.com/',
     startYear: 2016,
@@ -432,6 +442,11 @@ export const MEMBERS = {
     email: 'yadgarova@kaist.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'noza.jpeg',
+    startYear: 2024,
+    startSeason: 'Winter',
+    endYear: 2025,
+    endSeason: 'Winter',
+    isAlumni: true,
     affiliation: 'KAIST',
   },
   saetbyeolleeyouk: {
@@ -520,6 +535,11 @@ export const MEMBERS = {
     email: 'yoojihyun6933@kaist.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'jihyun.jpg',
+    startYear: 2024,
+    startSeason: 'Summer',
+    endYear: 2024,
+    endSeason: 'Fall',
+    isAlumni: true,
     site: '',
     affiliation: 'KAIST',
   },

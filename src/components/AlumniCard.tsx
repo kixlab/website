@@ -28,6 +28,7 @@ const TextRow = styled.div`
   text-align: left;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   & > span,
   & > a {
