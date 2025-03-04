@@ -1,5 +1,5 @@
 export const KixlabPositions = [
-  'Associate Professor',
+  'Faculty',
   'Postdoc Researcher',
   'Ph.D. Student',
   'M.S. Student',
@@ -173,7 +173,7 @@ export const MEMBERS = {
     firstName: 'Juho',
     lastName: 'Kim',
     email: 'juhokim@kaist.ac.kr',
-    kixlabPosition: 'Associate Professor',
+    kixlabPosition: 'Faculty',
     img: 'juhokim.jpg',
     site: 'http://juhokim.com/',
     startYear: 2016,
@@ -435,6 +435,7 @@ export const MEMBERS = {
     endSeason: 'Fall',
     isAlumni: true,
     affiliation: 'KAIST',
+    currentPosition: 'Engineer at SkillBench',
   },
   shahnozayadgarova: {
     firstName: 'Shahnoza',
@@ -703,6 +704,7 @@ export const MEMBERS = {
   eunjeongkang: {
     firstName: 'Eun Jeong',
     lastName: 'Kang',
+    affiliation: 'Sogang University',
     currentPosition: 'Ph.D. Student at Cornell University',
     kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
@@ -741,7 +743,7 @@ export const MEMBERS = {
     firstName: 'Mina',
     lastName: 'Huh',
     currentPosition: 'Ph.D. Student at University of Texas, Austin',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'Visiting Researcher',
     isAlumni: true,
     site: 'https://minahuh.com/',
     startYear: 2020,
@@ -846,7 +848,7 @@ export const MEMBERS = {
     endYear: 2020,
     endSeason: 'Spring',
     site: 'https://jisoolee0123.github.io/',
-    currentPosition: 'UX Lead & ML engineer at Beeble',
+    currentPosition: 'Co-founder at Beeble',
   },
   artithakur: {
     firstName: 'Arti',
@@ -944,7 +946,7 @@ export const MEMBERS = {
     startSeason: 'Spring',
     endYear: 2024,
     endSeason: 'Winter',
-    currentPosition: 'Ringle',
+    affiliation: 'Ringle',
   },
   saharadmoni: {
     firstName: 'Sahar',
@@ -953,7 +955,7 @@ export const MEMBERS = {
     isAlumni: true,
     startSeason: 'Winter',
     startYear: 2024,
-    currentPosition: 'Technion',
+    affiliation: 'Technion',
   },
   yuewenyang: {
     firstName: 'Yuewen',
@@ -962,7 +964,7 @@ export const MEMBERS = {
     isAlumni: true,
     startSeason: 'Winter',
     startYear: 2024,
-    currentPosition: 'Cornell Tech',
+    affiliation: 'Cornell Tech',
   },
   gionnievelim: {
     firstName: 'Gionnieve',
@@ -973,6 +975,7 @@ export const MEMBERS = {
     startSeason: 'Winter',
     endYear: 2023,
     endSeason: 'Summer',
+    affiliation: 'SUTD',
     currentPosition: 'Ph.D. Student at SUTD',
   },
   tonijankeithmonserrat: {
@@ -983,7 +986,9 @@ export const MEMBERS = {
     startSeason: 'Summer',
     startYear: 2019,
     currentPosition: 'Ph.D. Researcher at UPLB',
+    affiliation: 'UPLB',
   },
+
   simonperrault: {
     firstName: 'Simon',
     lastName: 'Perrault',
@@ -993,6 +998,7 @@ export const MEMBERS = {
     startSeason: 'Summer',
     endYear: 2018,
     endSeason: 'Fall',
+    affiliation: 'SUTD',
     currentPosition: 'Assistant Professor at Singapore University of Technology and Design',
     site: 'https://istd.sutd.edu.sg/people/faculty/simon-perrault',
   },
@@ -1005,6 +1011,7 @@ export const MEMBERS = {
     startSeason: 'Summer',
     endYear: 2018,
     endSeason: 'Summer',
+    affiliation: 'UW',
     currentPosition: 'Assistant Professor at George Mason University',
     site: 'http://rayhong.net/?i=1',
   },
@@ -1017,6 +1024,7 @@ export const MEMBERS = {
     startSeason: 'Winter',
     endYear: 2018,
     endSeason: 'Spring',
+    affiliation: 'University of Trento',
     currentPosition: 'Ph.D. Researcher at University of Trento',
   },
   khanhduyle: {
@@ -1205,6 +1213,7 @@ export const MEMBERS = {
     startSeason: 'Fall',
     startYear: 2022,
     affiliation: 'KAIST',
+    currentPosition: 'Engineer at SkillBench',
     site: 'https://thestar.notion.site/e6f6b641bd8f493085e5f044182dcae3',
   },
   sangkyungkwak: {
@@ -1334,6 +1343,7 @@ export const MEMBERS = {
     endYear: 2021,
     endSeason: 'Fall',
     affiliation: 'KAIST',
+    currentPosition: 'AI Product Manager atStudio XID',
   },
   seokhunjeong: {
     firstName: 'Seokhun',
@@ -1374,7 +1384,7 @@ export const MEMBERS = {
     lastName: 'Lee',
     kixlabPosition: 'Undergrad Intern',
     isAlumni: true,
-    currentPosition: 'Ph.D Stuent at Virginia Tech',
+    currentPosition: 'Ph.D. Student at Virginia Tech',
     startYear: 2020,
     startSeason: 'Fall',
     endYear: 2021,
@@ -1539,6 +1549,7 @@ export const MEMBERS = {
     startSeason: 'Summer',
     startYear: 2020,
     affiliation: 'KAIST',
+    currentPosition: 'Researcher at Wikimedia Foundation',
   },
   eunseochoi: {
     firstName: 'Eunseo',
@@ -1622,6 +1633,7 @@ export const MEMBERS = {
     endYear: 2020,
     endSeason: 'Winter',
     affiliation: 'R V College of Engineering, India',
+    currentPosition: 'Ph.D. Student at Northeastern University',
     site: 'https://nix07.github.io/',
   },
   taehyeonan: {
@@ -1690,6 +1702,7 @@ export const MEMBERS = {
     endYear: 2019,
     endSeason: 'Summer',
     affiliation: 'DGIST',
+    currentPosition: 'Co-founder & CTO at Companoid Labs',
     site: 'https://www.harooo.com/terminal',
   },
   jimmywei: {
@@ -1722,7 +1735,7 @@ export const MEMBERS = {
     endYear: 2019,
     endSeason: 'Spring',
     affiliation: 'CAU',
-    currentPosition: 'M.S. Student at KAIST Graduate School of AI',
+    currentPosition: 'Researcher at Twelve Labs',
   },
   juanlee: {
     firstName: 'Juan',
@@ -1832,7 +1845,7 @@ export const MEMBERS = {
     endYear: 2017,
     endSeason: 'Fall',
     affiliation: 'KAIST',
-    currentPosition: 'Software Engineer at NAVER',
+    currentPosition: 'Software Engineer at Pinterest',
   },
   beomsukim: {
     firstName: 'Beomsu',
@@ -1855,6 +1868,7 @@ export const MEMBERS = {
     endYear: 2017,
     endSeason: 'Fall',
     affiliation: 'KAIST',
+    currentPosition: 'Backend Engineer at Coupang',
   },
   jonghyukjung: {
     firstName: 'Jonghyuk',
@@ -1880,13 +1894,14 @@ export const MEMBERS = {
   },
   suhwanlee: {
     firstName: 'Suhwan',
-    lastName: 'Lee',
+    lastName: 'Jee',
     kixlabPosition: 'Undergrad Intern',
     isAlumni: true,
     startSeason: 'Summer',
     startYear: 2017,
     affiliation: 'KAIST',
     site: 'https://suhwan.dev/',
+    currentPosition: 'Backend Engineer at Rapport Labs',
   },
   amyhan: {
     firstName: 'Amy',
@@ -1927,7 +1942,7 @@ export const MEMBERS = {
     endYear: 2017,
     endSeason: 'Spring',
     affiliation: 'NTHU',
-    currentPosition: 'M.S. Student at NTHU',
+    currentPosition: 'Engineer at SkillBench',
   },
   hyungwookim: {
     firstName: 'Hyungwoo',
