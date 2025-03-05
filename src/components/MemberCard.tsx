@@ -116,7 +116,11 @@ export const MemberCard = ({ member }: Props) => {
         <Name>
           {member.firstName} {member.lastName}
         </Name>
-        <Affiliation>{member.affiliation || member.kixlabPosition}</Affiliation>
+        <Affiliation>
+          {member.displayedPosition ||
+            ((member.kixlabPosition === 'Visiting Researcher' || member.kixlabPosition === 'Undergrad Intern') &&
+              member.affiliation)}
+        </Affiliation>
         <Buttons>
           {member.email && <EmailButton href={`mailto:${member.email}`} />}
           {member.site && <WebsiteButton href={member.site} target="_blank" rel="noopener noreferrer" />}

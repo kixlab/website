@@ -17,6 +17,7 @@ interface Props {
   lastName: string
   email?: string
   kixlabPosition: KixlabPositionTypes
+  displayedPosition?: string
   img?: string
   site?: string
   msThesis?: string
@@ -174,6 +175,7 @@ export const MEMBERS = {
     lastName: 'Kim',
     email: 'juhokim@kaist.ac.kr',
     kixlabPosition: 'Faculty',
+    displayedPosition: 'Associate Professor',
     img: 'juhokim.jpg',
     site: 'http://juhokim.com/',
     startYear: 2016,
