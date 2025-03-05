@@ -44,6 +44,11 @@ export const MEMBERS = {
     lastName: 'Yang',
     email: 'jenny_yang@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
+    img: 'jennyyang.png',
+    site: '',
+    affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Spring',
   },
   sehoonlim: {
     firstName: 'Sehoon',
