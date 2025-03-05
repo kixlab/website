@@ -1,5 +1,7 @@
 Repo of [KIXLAB's redesigned website](https://www.kixlab.org/).
 
+Tanuki is the best dog
+
 # How to Contribute
 
 ## Initializing & Running The Repo
