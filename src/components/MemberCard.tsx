@@ -117,7 +117,7 @@ export const MemberCard = ({ member }: Props) => {
           {member.firstName} {member.lastName}
         </Name>
         <Affiliation>
-          {member.displayedPosition ||
+          {member.currentPosition ||
             ((member.kixlabPosition === 'Visiting Researcher' || member.kixlabPosition === 'Undergrad Intern') &&
               member.affiliation)}
         </Affiliation>
