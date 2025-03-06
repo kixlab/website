@@ -16,11 +16,32 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'KIXLAB members and papers at CHI 2025',
+    date: new Date('2025-01-17'),
+    categories: ['news'],
+    summary: 'Nine papers from KIXLAB have been conditionally accepted to [CHI 2025](https://chi2025.acm.org/).',
+    contentMdFilePath: '2025-01-17-chi2025.md',
+  },
+  {
+    title: 'A paper conditionally accepted to IUI 2025',
+    date: new Date('2025-01-10'),
+    categories: ['news'],
+    summary: 'One paper from KIXLAB has been conditionally accepted to [IUI 2025](https://iui.acm.org/2025/).',
+    contentMdFilePath: '2025-01-10-iui2025.md',
+  },
+  {
+    title: 'A paper accepted to CSCW 2025',
+    date: new Date('2024-09-24'),
+    categories: ['news'],
+    summary: 'One paper from KIXLAB has been accepted to [CSCW 2025](https://cscw.acm.org/2025/)',
+    contentMdFilePath: '2024-09-24-cscw2025.md',
+  },
+  {
     title: 'Three New Students Join KIXLAB',
     date: new Date('2025-02-19'),
     categories: ['news'],
     summary:
-      'Three new grad students have joined KIXLAB starting from spring 2025. Welcome Jennie (Ph.D), Heechan (M.S.), and Jaesang (M.S.)!',
+      'Three new grad students have joined KIXLAB starting from spring 2025. Welcome Jenny (Ph.D), Heechan (M.S.), and Jaesang (M.S.)!',
   },
   {
     title: 'Dae Hyun Becomes Professor at Yonsei University',
