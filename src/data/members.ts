@@ -27,7 +27,7 @@ interface Props {
   endYear?: number
   endSeason?: SeasonType
   isAlumni?: boolean
-  affiliation?: string // for alumni
+  affiliation?: string // the affiliation at the time of being at KIXLAB
   currentPosition?: string // for alumni
 }
 
