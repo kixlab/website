@@ -468,7 +468,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'FABRIC: Automated Scoring and Feedback Generation for Essays',
+    title: 'LLM-as-a-tutor in EFL Writing Education: Focusing on Evaluation of Student-LLM Interaction',
     authors: [
       'Jieun Han',
       'Haneul Yoo',
@@ -482,10 +482,10 @@ export const PUBLICATIONS: Publication[] = [
       'So-Yeon Ahn',
       'Alice Oh',
     ],
-    year: 2023,
-    venue: 'arXiv preprint',
+    year: 2024,
+    venue: 'EMNLP 2024 Workshop on Customizable NLP (CustomNLP4U)',
     topics: ['learning'],
-    type: 'Preprint',
+    type: 'Conference',
     links: [
       {
         url: 'https://arxiv.org/abs/2310.05191',
