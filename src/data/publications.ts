@@ -46,6 +46,20 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'Proxona: Supporting Creators’ Sensemaking and Ideation with LLM-Powered Audience Personas',
+    authors: [MEMBERS.yoonseochoi, MEMBERS.eunjeongkang, MEMBERS.seulgichoi, 'Min Kyung Lee', MEMBERS.juhokim],
+    venue: 'CHI 2025',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2408.10937',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: 'TeachTune: Reviewing Pedagogical Agents Against Diverse Student Profiles with Simulated Students',
     authors: [
       MEMBERS.hyoungwookjin,
@@ -55,16 +69,157 @@ export const PUBLICATIONS: Publication[] = [
       'Xu Wang',
       MEMBERS.juhokim,
     ],
-    venue: 'arXiv preprint',
+    venue: 'CHI 2025',
     year: 2025,
     topics: ['human-AI interaction', 'learning'],
-    type: 'Preprint',
+    type: 'Conference',
     links: [
       {
-        url: 'https://arxiv.org/abs/2410.04078',
+        url: 'https://arxiv.org/html/2410.04078v1',
         type: PublicationLinkType.ARX,
       },
     ],
+  },
+  {
+    title: 'PlanTogether: Facilitating AI Application Planning Using Information Graphs and Large Language Models',
+    authors: [
+      MEMBERS.daehyunkim,
+      MEMBERS.daeheonjeong,
+      MEMBERS.shahnozayadgarova,
+      MEMBERS.hyungyushin,
+      'Jinho Son',
+      'Hari Subramonyam',
+      MEMBERS.juhokim,
+    ],
+    venue: 'CHI 2025',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://dhkim16.github.io/plan-together/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dhkim16.github.io/plan-together/pdf/paper.pdf',
+        type: PublicationLinkType.PDF,
+      },
+    ],
+  },
+  {
+    title:
+      "Less Talk, More Trust: Understanding Players' In-game Assessment of Communication Processes in League of Legends",
+    authors: [
+      MEMBERS.juhoonlee,
+      MEMBERS.seoyoungkim,
+      MEMBERS.yeonsupark,
+      MEMBERS.juhokim,
+      'Jeong-woo Jang',
+      'Joseph Seering',
+    ],
+    venue: 'CHI 2025',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2502.17935',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title:
+      'Applying the Gricean Maxims to a Human-LLM Interaction Cycle: Design Insights from a Participatory Approach',
+    authors: [MEMBERS.yoonsukim, MEMBERS.brandonchin, MEMBERS.kihoonson, MEMBERS.seoyoungkim, MEMBERS.juhokim],
+    venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2503.00858',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'Expandora: Broadening Design Exploration with Text-to-Image Model',
+    authors: [MEMBERS.daeunchoi, MEMBERS.kihoonson, 'Hyunjoon Jung', MEMBERS.juhokim],
+    venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2503.00791',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: "DocVoyager: Anticipating User's Information Needs and Guiding Document Reading through Question Answering",
+    authors: [
+      MEMBERS.yoonjoolee,
+      'Nedim Lipka',
+      'Zichao Wang',
+      'Puneet Mathur',
+      'Ryan Rossi',
+      'Tong Sun',
+      'Alexa F Siu',
+    ],
+    venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [],
+  },
+  {
+    title: 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication',
+    authors: [MEMBERS.daeheonjeong, MEMBERS.hyehyunchu],
+    venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2503.06067',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'Inteacting with AI by Manipulating Intents',
+    authors: [MEMBERS.taesookim],
+    venue: 'CHI 2025 Doctoral Symposium',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [],
+  },
+  {
+    title:
+      'Can Fans Build Parasocial Relationships through Idols’ Simulated Voice Messages?: A Study of AI Private Call Users’ Perceptions, Cognitions, and Behaviors.',
+    authors: [MEMBERS.yoonseochoi, MEMBERS.eunjeongkang, MEMBERS.seulgichoi, 'Min Kyung Lee', MEMBERS.juhokim],
+    venue: 'CSCW 2025',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: "https://www.researchgate.net/profile/Eun-Kang-12/publication/389279977_Can_Fans_Build_Parasocial_Relationships_through_Idols'_Simulated_Voice_Messages_A_Study_of_AI_Private_Call_Users'_Perceptions_Cognitions_and_Behaviors/links/67bd1b1e645ef274a4940227/Can-Fans-Build-Parasocial-Relationships-through-Idols-Simulated-Voice-Messages-A-Study-of-AI-Private-Call-Users-Perceptions-Cognitions-and-Behaviors.pdf",
+        type: PublicationLinkType.PDF,
+      },
+    ],
+  },
+  {
+    title: 'VideoMix: Aggregating How-To Videos for Task-Oriented Learning',
+    authors: [MEMBERS.saelyneyang, 'Anh Truong', MEMBERS.juhokim, 'Dingzeyu Li'],
+    venue: 'IUI 2025',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [],
   },
   {
     title: 'BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages',
