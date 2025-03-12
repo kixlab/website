@@ -135,7 +135,7 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
     year: 2025,
     topics: ['human-AI interaction'],
-    type: 'Conference',
+    type: 'Poster',
     links: [
       {
         url: 'https://arxiv.org/abs/2503.00858',
@@ -149,7 +149,7 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
     year: 2025,
     topics: ['human-AI interaction'],
-    type: 'Conference',
+    type: 'Poster',
     links: [
       {
         url: 'https://arxiv.org/abs/2503.00791',
@@ -171,7 +171,7 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
     year: 2025,
     topics: ['human-AI interaction'],
-    type: 'Conference',
+    type: 'Poster',
     links: [],
   },
   {
@@ -180,7 +180,7 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
     year: 2025,
     topics: ['human-AI interaction'],
-    type: 'Conference',
+    type: 'Poster',
     links: [
       {
         url: 'https://arxiv.org/abs/2503.06067',
@@ -194,13 +194,13 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'CHI 2025 Doctoral Symposium',
     year: 2025,
     topics: ['human-AI interaction'],
-    type: 'Conference',
+    type: 'Poster',
     links: [],
   },
   {
     title:
       'Can Fans Build Parasocial Relationships through Idols’ Simulated Voice Messages?: A Study of AI Private Call Users’ Perceptions, Cognitions, and Behaviors.',
-    authors: [MEMBERS.yoonseochoi, MEMBERS.eunjeongkang, MEMBERS.seulgichoi, 'Min Kyung Lee', MEMBERS.juhokim],
+    authors: [MEMBERS.eunjeongkang, MEMBERS.haesookim, MEMBERS.hyunwookim, 'Susan Fussell', MEMBERS.juhokim],
     venue: 'CSCW 2025',
     year: 2025,
     topics: ['human-AI interaction'],
