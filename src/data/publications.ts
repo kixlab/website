@@ -189,7 +189,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'Inteacting with AI by Manipulating Intents',
+    title: 'Interacting with AI by Manipulating Intents',
     authors: [MEMBERS.taesookim],
     venue: 'CHI 2025 Doctoral Symposium',
     year: 2025,
