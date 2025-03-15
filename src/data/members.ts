@@ -89,7 +89,7 @@ export const MEMBERS = {
     email: 'b09902040@csie.ntu.edu.tw',
     kixlabPosition: 'Visiting Researcher',
     img: 'yukaihung.jpg',
-    site: '',
+    site: 'https://yukai0928.github.io/',
     affiliation: 'National Taiwan University',
     startYear: 2025,
     startSeason: 'Winter',
