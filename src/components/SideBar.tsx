@@ -1,10 +1,10 @@
 // Sidebar.js
-import React, { useState, useRef, useEffect } from 'react'
-import styled from '@emotion/styled'
 import { Color, FontVariant } from '@/app/theme'
-import { NAV_BAR_HEIGHT } from './NavBar'
+import styled from '@emotion/styled'
+import { startCase } from 'lodash'
 import Link from 'next/link'
-import _ from 'lodash'
+import React, { useEffect, useRef, useState } from 'react'
+import { NAV_BAR_HEIGHT } from './NavBar'
 
 const SideBarContainer = styled.div`
   position: sticky;
@@ -61,7 +61,7 @@ const capitalizeWords = (s: string) => {
     return 'M.S. Student'
   }
 
-  return _.startCase(s)
+  return startCase(s)
 }
 
 export const Sidebar = React.forwardRef(

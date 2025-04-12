@@ -1,17 +1,17 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
-import styled from '@emotion/styled'
-import { PUBLICATIONS_BY_YEAR, PREPRINTS, PublicationTypes, ResearchTopics, Publication } from '@/data/publications'
-import type { PublicationType, ResearchTopicType } from '@/data/publications'
-import { Sections, Section, SectionTitle, SectionContent } from '@/components/Section'
-import { PublicationCard } from '@/components/Publication/PublicationCard'
-import { Filter } from '@/components/Filter'
-import { Sidebar } from '@/components/SideBar'
-import { Divider } from '@/components/Divider'
-import _ from 'lodash'
 import { ScreenSize, linearlyScaleSize } from '@/app/theme'
+import { Divider } from '@/components/Divider'
+import { Filter } from '@/components/Filter'
+import { PublicationCard } from '@/components/Publication/PublicationCard'
+import { Section, SectionContent, SectionTitle, Sections } from '@/components/Section'
+import { Sidebar } from '@/components/SideBar'
+import type { PublicationType, ResearchTopicType } from '@/data/publications'
+import { PREPRINTS, PUBLICATIONS_BY_YEAR, Publication, PublicationTypes, ResearchTopics } from '@/data/publications'
+import styled from '@emotion/styled'
+import { capitalize, startCase } from 'lodash'
+import { useRouter, useSearchParams } from 'next/navigation'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Container = styled.div`
   display: flex;
@@ -82,7 +82,7 @@ export default function Page() {
   const router = useRouter()
   const params = useSearchParams()
   const researchTopic = (params.get('researchTopic') as ResearchTopicType | null) ?? 'All'
-  const publicationType = _.capitalize((params.get('publicationType') as PublicationType | null) ?? 'All')
+  const publicationType = capitalize((params.get('publicationType') as PublicationType | null) ?? 'All')
   const [publicationList, setPublicationList] = useState<Record<string, Publication[]>>(PUBLICATIONS_BY_SECTION)
   const [sectionList, setSectionList] = useState<string[]>(sortSections(Object.keys(PUBLICATIONS_BY_SECTION)))
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
@@ -141,7 +141,7 @@ export default function Page() {
                 <React.Fragment key={sectionName}>
                   <Section
                     key={sectionName}
-                    id={_.startCase(sectionName)}
+                    id={startCase(sectionName)}
                     ref={el => {
                       sectionRefs.current[sectionName] = el
                     }}

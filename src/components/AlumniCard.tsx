@@ -91,8 +91,7 @@ export const AlumniCard = ({ mem }: { mem: Member }) => {
         {mem.phdThesis && (
           <ThesisLink
             href={{
-              pathname: '/publications',
-              query: { search: mem.phdThesis },
+              pathname: mem.phdThesis,
             }}
           >
             Ph.D. Thesis
@@ -101,8 +100,7 @@ export const AlumniCard = ({ mem }: { mem: Member }) => {
         {mem.msThesis && (
           <ThesisLink
             href={{
-              pathname: '/publications',
-              query: { search: mem.msThesis },
+              pathname: mem.msThesis,
             }}
           >
             M.S. Thesis

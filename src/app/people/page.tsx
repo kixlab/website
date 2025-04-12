@@ -1,16 +1,14 @@
 'use client'
-import styled from '@emotion/styled'
-import React, { useRef } from 'react'
-import { CURRENT_MEMBERS_BY_POSITION, ALUMNI_MEMBERS_BY_POSITION, KixlabPositions } from '@/data/members'
-import { Sections, Section, SectionTitle } from '@/components/Section'
-import { MemberCard } from '@/components/MemberCard'
+import { FontVariant, ScreenSize, linearlyScaleSize } from '@/app/theme'
 import { AlumniCard, SpecialThanksCard } from '@/components/AlumniCard'
-import { FontVariant, Color } from '@/app/theme'
-import Image from 'next/image'
-import _ from 'lodash'
 import { Divider } from '@/components/Divider'
+import { MemberCard } from '@/components/MemberCard'
+import { Section, SectionTitle, Sections } from '@/components/Section'
 import { Sidebar } from '@/components/SideBar'
-import { ScreenSize, linearlyScaleSize } from '@/app/theme'
+import { ALUMNI_MEMBERS_BY_POSITION, CURRENT_MEMBERS_BY_POSITION, KixlabPositions } from '@/data/members'
+import styled from '@emotion/styled'
+import { startCase } from 'lodash'
+import React, { useRef } from 'react'
 
 const SectionContent = styled.div`
   display: grid;
@@ -98,7 +96,7 @@ export default function Page() {
                 <React.Fragment key={position}>
                   <Section
                     key={position}
-                    id={_.startCase(position)}
+                    id={startCase(position)}
                     ref={el => {
                       sectionRefs.current[position] = el
                     }}
@@ -154,7 +152,7 @@ export default function Page() {
       </main>
       <SideContainer>
         <Sidebar
-          sidebarList={[...kixlabPositions.map(position => _.startCase(position)), 'alumni']}
+          sidebarList={[...kixlabPositions.map(position => startCase(position)), 'alumni']}
           sectionRefs={sectionRefs}
         />
       </SideContainer>
