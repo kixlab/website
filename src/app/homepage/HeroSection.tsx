@@ -25,17 +25,11 @@ const HeroTextArea = styled.div`
   justify-content: center;
   align-items: start;
   padding: ${linearlyScaleSize({
-      minSizePx: 48,
-      maxSizePx: 96,
-      minScreenSizePx: parseInt(ScreenSize.md),
-      maxScreenSizePx: parseInt(ScreenSize.lg),
-    })}
-    ${linearlyScaleSize({
-      minSizePx: 48,
-      maxSizePx: 96,
-      minScreenSizePx: parseInt(ScreenSize.md),
-      maxScreenSizePx: parseInt(ScreenSize.lg),
-    })};
+    minSizePx: 48,
+    maxSizePx: 96,
+    minScreenSizePx: parseInt(ScreenSize.md),
+    maxScreenSizePx: parseInt(ScreenSize.lg),
+  })};
 `
 
 const HeroTitle = styled.h1`
@@ -63,12 +57,13 @@ const HeroSubtitle = styled.h2`
   }
 `
 const HeroMessage = styled.p`
-${FontVariant.body_md}
-color: ${Color.gray700};
-text-align: left;
-max-width: 100%;
-@media (max-width: ${ScreenSize.md}) {
-  text-align: center;
+  ${FontVariant.body_md}
+  color: ${Color.gray700};
+  text-align: left;
+  max-width: 100%;
+  @media (max-width: ${ScreenSize.md}) {
+    text-align: center;
+  }
 `
 
 const HeroImageContainer = styled.div`

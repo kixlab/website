@@ -1,13 +1,12 @@
 'use client'
-import Image from 'next/image'
-import { Color, FontVariant, ScreenSize } from '@/app/theme'
+import { Color, FontVariant } from '@/app/theme'
+import { Member } from '@/data/members'
+import { PUBLICATIONS, Publication, ResearchTopics, type ResearchTopicType } from '@/data/publications'
 import styled from '@emotion/styled'
-import { CURRENT_MEMBERS as MEMBERS, Member } from '@/data/members'
-import { ResearchTopics, PUBLICATIONS, type ResearchTopicType, Publication } from '@/data/publications'
-import { useMemo } from 'react'
-import { Section, SectionHeader, Text } from './Styles'
-import Link from 'next/link'
 import { uniq } from 'lodash'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Section, SectionHeader, Text } from './Styles'
 
 const ResearchTopicsArea = styled.div`
   display: grid;
@@ -58,62 +57,57 @@ const GatherStatsByResearchTopic = () => {
         .flatMap(publication => publication.authors[0])
         .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
     )
-    const filteredAuthors = topicAuthors.filter(entry => entry instanceof Member && entry.isAlumni !== true) as Member[]
+    const filteredAuthors = topicAuthors.filter(entry => entry instanceof Object && entry.isAlumni !== true) as Member[]
 
     statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
   })
   return statsByResearchTopic
 }
 
-export const ResearchThemesSection = () => {
-  const [statsByResearchTopic, numVisible] = useMemo(() => {
-    // TODO: Specify the type of membersByResearchTopic
-    const statsByResearchTopic: Record<ResearchTopicType, any> = GatherStatsByResearchTopic()
-    return [statsByResearchTopic, 5]
-  }, [])
+const RESEARCH_TOPICS = Object.entries(GatherStatsByResearchTopic()).sort(
+  ([, a], [, b]) => b.numPublications - a.numPublications
+)
+const NUM_VISIBLE = 5
 
+export const ResearchThemesSection = () => {
   return (
     <Section id="research-section">
       <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
       <ResearchTopicsArea>
-        {Object.entries(statsByResearchTopic)
-          .sort(([, a], [, b]) => b.numPublications - a.numPublications) // Sort in descending order
-          .map(([topic, stats]) => {
-            return (
-              <Link
-                href={`/publications/?researchTopic=${topic}`}
-                key={topic}
-                style={{ textDecoration: 'none', color: 'black' }}
-              >
-                <ResearchTopicItem key={topic}>
-                  <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
-                    {ResearchTopics[topic as ResearchTopicType].emoji}
-                    <br />
-                    {topic}
-                  </ResearchTopicItemTitle>
-                  <Text style={{ color: 'gray', paddingBottom: '12px' }}>
-                    <span style={{ fontWeight: 'bold' }}>{stats.numPublications}</span> publications
-                  </Text>
-                  <ResearchTopicMembersArea>
-                    {stats.authors.slice(0, numVisible).map((member: Member) => (
-                      <ResearchTopicsMemberAvatar
-                        width={36}
-                        height={36}
-                        src={`/members/${member.img}`}
-                        alt={`${member.firstName} ${member.lastName}`}
-                        key={member.email}
-                      />
-                    ))}
-
-                    {/* Conditional rendering optimized */}
-                    {stats.authors.length - numVisible > 0 && (
-                      <span style={{ width: '36px', textAlign: 'center' }}>+{stats.authors.length - numVisible}</span>
-                    )}
-                  </ResearchTopicMembersArea>
-                </ResearchTopicItem>
-              </Link>
-            )
-          })}
+        {RESEARCH_TOPICS.map(([topic, stats]) => {
+          return (
+            <Link
+              href={`/publications/?researchTopic=${topic}`}
+              key={topic}
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <ResearchTopicItem key={topic}>
+                <ResearchTopicItemTitle style={{ textTransform: 'capitalize' }}>
+                  {ResearchTopics[topic as ResearchTopicType].emoji}
+                  <br />
+                  {topic}
+                </ResearchTopicItemTitle>
+                <Text style={{ color: 'gray', paddingBottom: '12px' }}>
+                  <span style={{ fontWeight: 'bold' }}>{stats.numPublications}</span> publications
+                </Text>
+                <ResearchTopicMembersArea>
+                  {stats.authors.slice(0, NUM_VISIBLE).map((member: Member) => (
+                    <ResearchTopicsMemberAvatar
+                      width={36}
+                      height={36}
+                      src={`/members/${member.img}`}
+                      alt={`${member.firstName} ${member.lastName}`}
+                      key={member.email}
+                    />
+                  ))}
+                  {stats.authors.length > NUM_VISIBLE && (
+                    <span style={{ width: '36px', textAlign: 'center' }}>+{stats.authors.length - NUM_VISIBLE}</span>
+                  )}
+                </ResearchTopicMembersArea>
+              </ResearchTopicItem>
+            </Link>
+          )
+        })}
       </ResearchTopicsArea>
     </Section>
   )
