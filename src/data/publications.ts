@@ -1,5 +1,4 @@
-import { MEMBERS, Member } from './members'
-import { uniq } from 'lodash'
+import { MEMBERS } from './members'
 
 export const PublicationTypes = ['Conference', 'Poster', 'Workshop', 'Journal', 'Preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
@@ -99,6 +98,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/html/2410.04078v1',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://teachtune.kixlab.org',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
