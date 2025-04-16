@@ -1,22 +1,15 @@
-import dynamic from 'next/dynamic'
-
-const loadSection = (section: string) => {
-  return dynamic(() => import(`./homepage/${section}`).then(mod => mod[section]), {
-    loading: () => <p>Loading...</p>,
-  })
-}
-const HeroSection = loadSection('HeroSection')
-const NewsSection = loadSection('NewsSection')
-const ResearchThemesSection = loadSection('ResearchThemesSection')
-const MediaSection = loadSection('MediaSection')
+import { HeroSection } from './homepage/HeroSection'
+import { MediaSection } from './homepage/MediaSection'
+import { NewsSection } from './homepage/NewsSection'
+import { ResearchThemesSection } from './homepage/ResearchThemesSection'
 
 export default function Page() {
   return (
     <main style={{ width: '100vw', padding: '0px', gap: '0px', alignItems: 'center' }}>
-      <HeroSection></HeroSection>
-      <NewsSection></NewsSection>
-      <ResearchThemesSection></ResearchThemesSection>
-      <MediaSection></MediaSection>
+      <HeroSection />
+      <NewsSection />
+      <ResearchThemesSection />
+      <MediaSection />
     </main>
   )
 }
