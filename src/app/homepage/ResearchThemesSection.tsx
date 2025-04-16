@@ -58,12 +58,7 @@ const GatherStatsByResearchTopic = () => {
         .flatMap(publication => publication.authors[0])
         .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
     )
-    const filteredAuthors: Member[] = topicAuthors.filter(entry => {
-      if (entry instanceof Object && entry.isAlumni !== true) {
-        // TODO: Optimize this condition
-        return entry
-      }
-    })
+    const filteredAuthors = topicAuthors.filter(entry => entry instanceof Member && entry.isAlumni !== true) as Member[]
 
     statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
   })
