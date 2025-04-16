@@ -1,4 +1,4 @@
-import { MEMBERS } from './members'
+import { MEMBERS, Member } from './members'
 
 export const PublicationTypes = ['Conference', 'Poster', 'Workshop', 'Journal', 'Preprint'] as const
 export type PublicationType = (typeof PublicationTypes)[number]
@@ -27,7 +27,7 @@ export enum PublicationLinkType {
 
 interface Props {
   title: string
-  authors: any[]
+  authors: (Member | string)[]
   year: number
   venue: string
   topics: ResearchTopicType[]
