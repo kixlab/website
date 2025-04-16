@@ -25,7 +25,7 @@ const Title = styled.h3`
   text-decoration: none;
   color: ${Color.gray900};
 
-  &[href]: hover {
+  &[href]:hover {
     text-decoration: underline;
   }
 `
