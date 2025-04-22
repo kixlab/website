@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Noto_Sans } from 'next/font/google'
-import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
@@ -34,23 +34,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WY6K7SWSCE" />
-      <Script id="gtag-init" strategy="afterInteractive">
-        {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WY6K7SWSCE', {
-        page_path: window.location.pathname,
-      });
-    `}
-      </Script>
       <body className={notoSans.className}>
         <GlobalStyles />
         <NavBar />
         {children}
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-WY6K7SWSCE" />
     </html>
   )
 }
