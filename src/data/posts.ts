@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Summer 2025 Undergraduate Research Internship',
+    date: new Date('2025-04-18'),
+    categories: ['position'],
+    summary:
+      "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2025-summer-internship-call.html).",
+    endsAt: new Date('2025-04-30'),
+  },
+  {
     title: 'KIXLAB members and papers at CHI 2025',
     date: new Date('2025-01-17'),
     categories: ['publication'],
@@ -37,32 +45,18 @@ export const POSTS: Post[] = [
     contentMdFilePath: '2024-09-24-cscw2025.md',
   },
   {
-    title: 'Three New Students Join KIXLAB',
-    date: new Date('2025-02-19'),
-    categories: ['news'],
-    summary:
-      'Three new grad students have joined KIXLAB starting from spring 2025. Welcome Jenny (Ph.D), Heechan (M.S.), and Jaesang (M.S.)!',
-  },
-  {
-    title: 'Dae Hyun Becomes Professor at Yonsei University',
-    date: new Date('2025-02-18'),
-    categories: ['news'],
-    summary:
-      'Dae Hyun Kim officially completed his postdoc at KIXLAB and is now an assistant professor at Yonsei University. Congratulations, Dae Hyun!',
-  },
-  {
-    title: 'Three KIXLAB Members Graduate from KAIST',
-    date: new Date('2025-02-14'),
-    categories: ['news'],
-    summary:
-      "Three KIXLAB members graduated from KAIST. Congratulations to Dr. Seoyoung Kim, KIXLAB's second Ph.D graduate(!) and to Jihyeong and Junho, KIXLAB's newly minted M.S. graduates!",
-  },
-  {
     title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
     date: new Date('2025-02-11'),
     categories: ['award'],
     summary:
       'Seoyoung Kim was awarded the prestigious Outstanding Ph.D Thesis Award from the KAIST School of Computing.',
+  },
+  {
+    title: 'Seoyoung successfully defended his Ph.D. thesis',
+    date: new Date('2024-12-02'),
+    categories: ['news'],
+    summary:
+      "Seoyoung Kim successfully defended her Ph.D. thesis and became KIXLAB's second Ph.D graduate(!). Congratulations!",
   },
   {
     title: 'KIXLAB members and papers at CSCW 2024',
@@ -397,7 +391,7 @@ export const POSTS: Post[] = [
     date: new Date('2021-12-04'),
     categories: ['news'],
     summary:
-      '[“Open KAIST”](https://www.openkaist.ac.kr/bbs/board.php?bo_table=m234) is an annual outreach event of KAIST that tries to communicate the science and research happening on campus to the public. [Open KAIST video](https://www.youtube.com/watch?v=GgvkmXXPFPI ) of KIXLAB (as a representative of SoC) is up!',
+      '[“Open KAIST”](https://www.openkaist.ac.kr/bbs/board.php?bo_table=m234) is an annual outreach event of KAIST that tries to communicate the science and research happening on campus to the public. [Open KAIST video](https://www.youtube.com/watch?v=GgvkmXXPFPI) of KIXLAB (as a representative of SoC) is up!',
   },
   {
     title: 'A paper accepted to LAK 2022',
