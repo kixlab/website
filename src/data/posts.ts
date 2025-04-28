@@ -16,12 +16,47 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'KIXLAB members and papers at CHI 2025',
+    date: new Date('2025-04-28'),
+    categories: ['publication'],
+    summary: 'Four full papers, four LBW papers, and one DC got accepted to [CHI 2025](https://chi2025.acm.org/).',
+    contentMdFilePath: '2025-04-28-chi2025.md',
+  },
+  {
     title: 'Summer 2025 Undergraduate Research Internship',
     date: new Date('2025-04-18'),
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2025-summer-internship-call.html).",
     endsAt: new Date('2025-04-30'),
+  },
+  {
+    title: 'Three New Students Join KIXLAB',
+    date: new Date('2025-02-19'),
+    categories: ['news'],
+    summary:
+      'Three new grad students have joined KIXLAB starting from spring 2025. Welcome Jennie (Ph.D), Heechan (M.S.), and Jaesang (M.S.)!',
+  },
+  {
+    title: 'Dae Hyun Becomes Professor at Yonsei University',
+    date: new Date('2025-02-18'),
+    categories: ['news'],
+    summary:
+      'Dae Hyun Kim officially completed his postdoc at KIXLAB and is now an assistant professor at Yonsei University. Congratulations, Dae Hyun!',
+  },
+  {
+    title: 'Three KIXLAB Members Graduate from KAIST',
+    date: new Date('2025-02-14'),
+    categories: ['news'],
+    summary:
+      "Three KIXLAB members graduated from KAIST. Congratulations to Dr. Seoyoung Kim, KIXLAB's second Ph.D graduate(!) and to Jihyeong and Junho, KIXLAB's newly minted M.S. graduates!",
+  },
+  {
+    title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
+    date: new Date('2025-02-11'),
+    categories: ['award'],
+    summary:
+      'Seoyoung Kim was awarded the prestigious Outstanding Ph.D Thesis Award from the KAIST School of Computing.',
   },
   {
     title: 'KIXLAB members and papers at CHI 2025',
