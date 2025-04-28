@@ -139,6 +139,7 @@ export const MEMBERS = {
     lastName: 'Tang',
     email: 'tangjingyu0621@gmail.com',
     kixlabPosition: 'Undergrad Intern',
+    site: 'https://jingyuhhh.github.io/',
     img: 'jingyu.jpeg',
     affiliation: 'HUST',
     startYear: 2025,
