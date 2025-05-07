@@ -31,25 +31,11 @@ export const POSTS: Post[] = [
     endsAt: new Date('2025-04-30'),
   },
   {
-    title: 'Three New Students Join KIXLAB',
-    date: new Date('2025-02-19'),
-    categories: ['news'],
-    summary:
-      'Three new grad students have joined KIXLAB starting from spring 2025. Welcome Jennie (Ph.D), Heechan (M.S.), and Jaesang (M.S.)!',
-  },
-  {
     title: 'Dae Hyun Becomes Professor at Yonsei University',
     date: new Date('2025-02-18'),
     categories: ['news'],
     summary:
       'Dae Hyun Kim officially completed his postdoc at KIXLAB and is now an assistant professor at Yonsei University. Congratulations, Dae Hyun!',
-  },
-  {
-    title: 'Three KIXLAB Members Graduate from KAIST',
-    date: new Date('2025-02-14'),
-    categories: ['news'],
-    summary:
-      "Three KIXLAB members graduated from KAIST. Congratulations to Dr. Seoyoung Kim, KIXLAB's second Ph.D graduate(!) and to Jihyeong and Junho, KIXLAB's newly minted M.S. graduates!",
   },
   {
     title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
@@ -59,10 +45,11 @@ export const POSTS: Post[] = [
       'Seoyoung Kim was awarded the prestigious Outstanding Ph.D Thesis Award from the KAIST School of Computing.',
   },
   {
-    title: 'KIXLAB members and papers at CHI 2025',
+    title: 'Four papers, four LBW papers, and one DC accepted to CHI 2025',
     date: new Date('2025-01-17'),
     categories: ['publication'],
-    summary: 'Four full papers, four LBW papers, and one DC got accepted to [CHI 2025](https://chi2025.acm.org/).',
+    summary:
+      'Four full papers, four LBW papers, and one DC from KIXLAB have been accepted to [CHI 2025](https://chi2025.acm.org/).',
     contentMdFilePath: '2025-01-17-chi2025.md',
   },
   {
