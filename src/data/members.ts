@@ -512,7 +512,7 @@ export const MEMBERS = {
     email: 'sadatshams@kaist.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'sadat.jpeg',
-    site: 'https://sadatshams.herokuapp.com',
+    site: 'https://shamsow.github.io/',
     affiliation: 'KAIST',
   },
   eunhyekim: {
