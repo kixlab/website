@@ -299,7 +299,7 @@ export const MEMBERS = {
     email: 'kihoon.son@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'kihoon.jpg',
-    site: 'https://kihoonson.com/',
+    site: 'https://kihoon-son.github.io/',
   },
   saelyneyang: {
     firstName: 'Saelyne',
