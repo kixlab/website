@@ -93,6 +93,7 @@ export const MEMBERS = {
     affiliation: 'National Taiwan University',
     startYear: 2025,
     startSeason: 'Winter',
+    isAlumni: true,
   },
   nadiaarvi: {
     firstName: 'Nadia',
@@ -143,6 +144,7 @@ export const MEMBERS = {
     img: 'jingyu.jpeg',
     affiliation: 'HUST',
     startYear: 2025,
+    isAlumni: true,
     startSeason: 'Winter',
   },
   gosuchoi: {
@@ -430,6 +432,7 @@ export const MEMBERS = {
     kixlabPosition: 'Undergrad Intern',
     img: 'dongyun.jpeg',
     affiliation: 'KAIST',
+    isAlumni: true,
   },
   chanyoungkim: {
     firstName: 'Chanyoung',
@@ -514,6 +517,7 @@ export const MEMBERS = {
     img: 'sadat.jpeg',
     site: 'https://shamsow.github.io/',
     affiliation: 'KAIST',
+    isAlumni: true,
   },
   eunhyekim: {
     firstName: 'Eunhye',
