@@ -4,6 +4,7 @@ import { Color, ScreenSize, linearlyScaleSize, FontVariant } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
 import { Section } from './Styles'
+import Link from 'next/link'
 
 const HeroContainer = styled.div`
   display: flex;
@@ -94,14 +95,16 @@ export const HeroSection = () => {
           </HeroMessage>
         </HeroTextArea>
         <HeroImageContainer id="hero-image-container">
-          <Image
-            id="hero-image"
-            src={'/images/hero-image.webp'}
-            alt="KIXLAB group picture"
-            fill={true}
-            priority
-            style={{ position: 'absolute', objectFit: 'cover', width: '100%', height: '100%' }}
-          />
+          <Link href="/gallery">
+            <Image
+              id="hero-image"
+              src={'/images/hero-image.webp'}
+              alt="KIXLAB group picture"
+              fill={true}
+              priority
+              style={{ position: 'absolute', objectFit: 'cover', width: '100%', height: '100%' }}
+            />
+          </Link>
         </HeroImageContainer>
       </HeroContainer>
     </Section>
