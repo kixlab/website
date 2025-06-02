@@ -40,6 +40,7 @@ const ResearchTopicMembersArea = styled.div`
 
 const ResearchTopicsMemberAvatar = styled(Image)`
   border-radius: 50%;
+  object-fit: cover;
 `
 
 const GatherStatsByResearchTopic = () => {
