@@ -5,6 +5,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 import { Section } from './Styles'
 import Link from 'next/link'
+import { GROUPPHOTOS } from '@/data/groupPhotos'
 
 const HeroContainer = styled.div`
   display: flex;
@@ -98,7 +99,7 @@ export const HeroSection = () => {
           <Link href="/gallery">
             <Image
               id="hero-image"
-              src={'/images/hero-image.webp'}
+              src={`/group/${GROUPPHOTOS[0].filename}`}
               alt="KIXLAB group picture"
               fill={true}
               priority
