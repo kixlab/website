@@ -43,8 +43,8 @@ export default function GalleryPage() {
     <main>
       <h1>Gallery</h1>
       <Row>
-        {GROUPPHOTOS.map((img, idx) => (
-          <Col key={idx}>
+        {GROUPPHOTOS.map((img) => (
+          <Col key={img.filename}>
             <Link href={`/group/${img.filename}`} target="_blank" rel="noopener noreferrer">
               <StyledImage
                 src={`/group/${img.filename}`}
