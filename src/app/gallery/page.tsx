@@ -31,6 +31,11 @@ const StyledImage = styled(Image)`
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `
 
 const ImageSubtitle = styled.p`
@@ -43,7 +48,7 @@ export default function GalleryPage() {
     <main>
       <h1>Gallery</h1>
       <Row>
-        {GROUPPHOTOS.map((img) => (
+        {GROUPPHOTOS.map(img => (
           <Col key={img.filename}>
             <Link href={`/group/${img.filename}`} target="_blank" rel="noopener noreferrer">
               <StyledImage
@@ -53,7 +58,6 @@ export default function GalleryPage() {
                 height={300}
                 layout="responsive"
                 sizes="(max-width: 768px) 100vw, 50vw"
-                priority={idx < 2}
                 style={{ objectFit: 'cover', aspectRatio: '8 / 5' }}
               />
             </Link>
