@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  yosheejain: {
+    firstName: 'Yoshee',
+    lastName: 'Jain',
+    email: 'yosheej2@illinois.edu',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'yoshee.png',
+    site: 'https://yosheejain.com/',
+    affiliation: 'UIUC',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   jennyyang: {
     firstName: 'Jenny',
     lastName: 'Yang',
