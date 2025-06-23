@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  seankim: {
+    firstName: 'Sean',
+    lastName: 'Kim',
+    email: 'seahn1021@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'sean.jpg',
+    site: 'https://kimsean.vercel.app/',
+    affiliation: 'SNU',
+    startYear: 2025,
+    startSeason: 'Spring',
+  },
   yosheejain: {
     firstName: 'Yoshee',
     lastName: 'Jain',
