@@ -48,6 +48,17 @@ export const MEMBERS = {
     site: 'https://kimsean.vercel.app/',
     affiliation: 'SNU',
     startYear: 2025,
+    startSeason: 'Spring',
+  },
+  yosheejain: {
+    firstName: 'Yoshee',
+    lastName: 'Jain',
+    email: 'yosheej2@illinois.edu',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'yoshee.png',
+    site: 'https://yosheejain.com/',
+    affiliation: 'UIUC',
+    startYear: 2025,
     startSeason: 'Summer',
   },
   jennyyang: {
