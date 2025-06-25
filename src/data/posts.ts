@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Two Ph.D. students and three M.S. students successfully defended their theses',
+    date: new Date('2025-06-25'),
+    categories: ['news'],
+    summary:
+      'We are proud to announce that Yoonjoo and Hyungyu successfully defended their Ph.D. theses, and Bekzat, Hyoungwook, and Alex successfully defended their M.S. theses. Congratulations to all of them!',
+  },
+  {
     title: 'KIXLAB members and papers at CHI 2025',
     date: new Date('2025-04-28'),
     categories: ['publication'],
