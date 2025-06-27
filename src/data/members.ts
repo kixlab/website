@@ -89,7 +89,7 @@ export const MEMBERS = {
     email: 'zhouchen@comp.nus.edu.sg',
     kixlabPosition: 'Visiting Researcher',
     img: 'chenzhou.png',
-    site: 'https://czzoe.github.io/',
+    site: 'https://chenzhou.vercel.app/',
     affiliation: 'NUS',
     startYear: 2025,
     startSeason: 'Winter',
