@@ -39,7 +39,6 @@ export class Member {
 }
 
 export const MEMBERS = {
-
   minbeomkim: {
     firstName: 'Minbeom',
     lastName: 'Kim',
