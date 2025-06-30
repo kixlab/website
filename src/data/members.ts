@@ -39,6 +39,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+   hayondoh: {
+    firstName: 'Hayeon',
+    lastName: 'Doh',
+    email: 'hayeonlr@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'hayeon.jpeg',
+    affiliation: 'Ewha',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   minbeomkim: {
     firstName: 'Minbeom',
     lastName: 'Kim',
