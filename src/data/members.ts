@@ -39,7 +39,7 @@ export class Member {
 }
 
 export const MEMBERS = {
-   hayondoh: {
+  hayondoh: {
     firstName: 'Hayeon',
     lastName: 'Doh',
     email: 'hayeonlr@gmail.com',
