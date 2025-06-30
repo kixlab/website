@@ -309,6 +309,7 @@ export const MEMBERS = {
     endSeason: 'Winter',
     site: 'https://sites.google.com/view/seoyoung/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2018-seoyoung.pdf',
+    phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2025-seoyoung.pdf',
   },
   taesookim: {
     firstName: 'Tae Soo',
