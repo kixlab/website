@@ -39,6 +39,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  dahojung: {
+    firstName: 'Daho',
+    lastName: 'Jung',
+    email: 'dhj1104@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'daho.jpg',
+    affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   seankim: {
     firstName: 'Sean',
     lastName: 'Kim',
