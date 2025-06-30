@@ -39,6 +39,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  minbeomkim: {
+    firstName: 'Minbeom',
+    lastName: 'Kim',
+    email: 'kmb3322@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    site: 'https://minbeomkim.com',
+    img: 'minbeom.jpg',
+    affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   dahojung: {
     firstName: 'Daho',
     lastName: 'Jung',
