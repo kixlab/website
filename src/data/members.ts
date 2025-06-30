@@ -39,6 +39,7 @@ export class Member {
 }
 
 export const MEMBERS = {
+
   minbeomkim: {
     firstName: 'Minbeom',
     lastName: 'Kim',
@@ -47,6 +48,28 @@ export const MEMBERS = {
     site: 'https://minbeomkim.com',
     img: 'minbeom.jpg',
     affiliation: 'KAIST',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
+  seankim: {
+    firstName: 'Sean',
+    lastName: 'Kim',
+    email: 'seahn1021@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'sean.jpg',
+    site: 'https://kimsean.vercel.app/',
+    affiliation: 'SNU',
+    startYear: 2025,
+    startSeason: 'Spring',
+  },
+  yosheejain: {
+    firstName: 'Yoshee',
+    lastName: 'Jain',
+    email: 'yosheej2@illinois.edu',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'yoshee.png',
+    site: 'https://yosheejain.com/',
+    affiliation: 'UIUC',
     startYear: 2025,
     startSeason: 'Summer',
   },
@@ -78,7 +101,7 @@ export const MEMBERS = {
     email: 'zhouchen@comp.nus.edu.sg',
     kixlabPosition: 'Visiting Researcher',
     img: 'chenzhou.png',
-    site: 'https://czzoe.github.io/',
+    site: 'https://chenzhou.vercel.app/',
     affiliation: 'NUS',
     startYear: 2025,
     startSeason: 'Winter',
