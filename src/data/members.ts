@@ -39,6 +39,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  shujunju: {
+    firstName: 'Shujun',
+    lastName: 'Ju',
+    email: 'jeff1015jeff@outlook.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'shujun.jpg',
+    affiliation: 'PolyU_HK',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   hayondoh: {
     firstName: 'Hayeon',
     lastName: 'Doh',
