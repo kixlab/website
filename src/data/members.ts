@@ -39,6 +39,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  chanbinpark: {
+    firstName: 'Chanbin',
+    lastName: 'Park',
+    email: 'chanbin.park@berkeley.edu',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'chanbinpark.jpg',
+    affiliation: 'UC Berkeley',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   shujunju: {
     firstName: 'Shujun',
     lastName: 'Ju',
