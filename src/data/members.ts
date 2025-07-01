@@ -189,6 +189,9 @@ export const MEMBERS = {
     affiliation: 'KAIST',
     startYear: 2025,
     startSeason: 'Winter',
+    endYear: 2025,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   hanaoh: {
     firstName: 'Hana',
