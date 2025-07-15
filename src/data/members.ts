@@ -209,9 +209,13 @@ export const MEMBERS = {
     email: 'hana2001@snu.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'hana.jpg',
+    site: 'https://hanaisreal.github.io/',
     affiliation: 'SNU',
     startYear: 2025,
     startSeason: 'Winter',
+    endYear: 2025,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   jingyu: {
     firstName: 'Jingyu',
