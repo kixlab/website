@@ -431,6 +431,13 @@ export const MEMBERS = {
     email: 'jinhw@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'hyoungwook.jpg',
+    startYear: 2018,
+    startSeason: 'Winter',
+    endYear: 2025,
+    endSeason: 'Summer',
+    currentPosition: 'Ph.D. Student at Univerity of Michigan',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2025-hyoungwook.pdf',
+    isAlumni: true,
     site: 'https://jhw123.github.io/',
   },
   junhomyung: {
