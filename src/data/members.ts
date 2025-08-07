@@ -31,7 +31,7 @@ interface Props {
   currentPosition?: string // for alumni
 }
 
-export interface Member extends Props { }
+export interface Member extends Props {}
 export class Member {
   constructor(attrs: Props) {
     Object.assign(this, attrs)
