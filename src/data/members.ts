@@ -31,7 +31,7 @@ interface Props {
   currentPosition?: string // for alumni
 }
 
-export interface Member extends Props {}
+export interface Member extends Props { }
 export class Member {
   constructor(attrs: Props) {
     Object.assign(this, attrs)
@@ -1177,7 +1177,9 @@ export const MEMBERS = {
     firstName: 'Hyewon',
     lastName: 'Lee',
     kixlabPosition: 'Undergrad Intern',
-    isAlumni: true,
+    img: 'hyewon.jpg',
+    email: 'hyewon0809@kaist.ac.kr',
+    site: 'https://hyewon.me/',
     startYear: 2023,
     startSeason: 'Summer',
     endYear: 2023,
