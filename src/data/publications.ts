@@ -45,6 +45,41 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'BloomIntent: A Multi-Intent Framework for LLM-Based Automated Search Quality Evaluation',
+    authors: [
+      MEMBERS.yoonseochoi,
+      MEMBERS.eunhyekim,
+      MEMBERS.hyunwookim,
+      'Donghyun Park',
+      'Honggu Lee',
+      'Jinyoung Kim',
+      MEMBERS.juhokim,
+    ],
+    venue: 'UIST 2025',
+    year: 2025,
+    topics: ['datamining', 'human-AI interaction'],
+    type: 'Conference',
+    links: [],
+  },
+  {
+    title: 'Identifying, Capturing, and Reusing Tacit Knowledge in Creative Domains with Generative AI',
+    authors: [MEMBERS.kihoonson],
+    venue: 'UIST 2025 Doctoral Symposium',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Poster',
+    links: [],
+  },
+  {
+    title: 'IdeaBlocks: Expressing and Reusing Exploratory Intents for Design Exploration with Generative AI',
+    authors: [MEMBERS.daeunchoi, MEMBERS.kihoonson, MEMBERS.jaesangyu, 'Hyunjoon Jung', MEMBERS.juhokim],
+    venue: 'UIST 2025 Demos',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Poster',
+    links: [],
+  },
+  {
     title: "Investigating Large Language Models in Diagnosing Students' Cognitive Skills in Math Problem-solving",
     authors: [
       MEMBERS.hyoungwookjin,
