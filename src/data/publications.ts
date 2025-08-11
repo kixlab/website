@@ -45,14 +45,14 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
-    title: 'BloomIntent: A Multi-Intent Framework for LLM-Based Automated Search Quality Evaluation',
+    title: 'BloomIntent: Automating Search Evaluation with LLM-Generated Fine-Grained User Intents',
     authors: [
       MEMBERS.yoonseochoi,
       MEMBERS.eunhyekim,
       MEMBERS.hyunwookim,
       'Donghyun Park',
       'Honggu Lee',
-      'Jinyoung Kim',
+      'Jin Young Kim',
       MEMBERS.juhokim,
     ],
     venue: 'UIST 2025',
