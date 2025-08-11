@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'One paper, one demo, and one DC accepted to UIST 2025',
+    date: new Date('2025-08-08'),
+    categories: ['publication'],
+    summary:
+      'One paper, one demo, and one DC from KIXLAB have been accepted to [UIST 2025](https://uist.acm.org/2025/).',
+    contentMdFilePath: '2025-08-08-uist2025.md',
+  },
+  {
     title: 'Two Ph.D. students and three M.S. students successfully defended their theses',
     date: new Date('2025-06-25'),
     categories: ['news'],
