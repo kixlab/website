@@ -11,6 +11,12 @@ export type KixlabPositionTypes = (typeof KixlabPositions)[number]
 
 export const SeasonTypes = ['Winter', 'Spring', 'Summer', 'Fall'] as const
 export type SeasonType = (typeof SeasonTypes)[number]
+export type Period = {
+  startSeason: SeasonType
+  startYear: number
+  endSeason?: SeasonType
+  endYear?: number
+}
 
 interface Props {
   firstName: string
@@ -26,6 +32,7 @@ interface Props {
   startSeason?: SeasonType
   endYear?: number
   endSeason?: SeasonType
+  periods?: Period[] // For representing multiple separate periods (e.g., multiple internships at KIXLAB)
   isAlumni?: boolean
   affiliation?: string // the affiliation at the time of being at KIXLAB
   currentPosition?: string // for alumni
@@ -1191,6 +1198,10 @@ export const MEMBERS = {
     startSeason: 'Summer',
     endYear: 2023,
     endSeason: 'Fall',
+    periods: [
+      { startYear: 2023, startSeason: 'Summer', endYear: 2023, endSeason: 'Fall' },
+      { startYear: 2025, startSeason: 'Summer' },
+    ],
     affiliation: 'KAIST',
   },
   hainam: {

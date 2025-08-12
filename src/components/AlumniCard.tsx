@@ -85,9 +85,20 @@ export const AlumniCard = ({ mem }: { mem: Member }) => {
           </Name>
         )}
         {mem.affiliation && <Education>{mem.affiliation}</Education>}
-        <Period>
-          {mem.startSeason} {mem.startYear} {mem.endSeason && mem.endYear ? ` - ${mem.endSeason} ${mem.endYear}` : ''}
-        </Period>
+        {Array.isArray(mem.periods) && mem.periods.length > 0 ? (
+          <Period>
+            {mem.periods
+              .map(
+                p =>
+                  `${p.startYear} ${p.startSeason}${p.endSeason && p.endYear ? ` - ${p.endYear} ${p.endSeason}` : ''}`
+              )
+              .join(' / ')}
+          </Period>
+        ) : (
+          <Period>
+            {mem.startSeason} {mem.startYear} {mem.endSeason && mem.endYear ? ` - ${mem.endSeason} ${mem.endYear}` : ''}
+          </Period>
+        )}
         {mem.phdThesis && (
           <ThesisLink
             href={{
