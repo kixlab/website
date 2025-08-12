@@ -409,6 +409,7 @@ export const MEMBERS = {
     startYear: 2022,
     endSeason: 'Summer',
     endYear: 2024,
+    currentPosition: 'IT Planning Specialist at Kakao Bank',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2024-seulgi.pdf',
   },
   jihyeonghong: {
