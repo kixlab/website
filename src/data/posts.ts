@@ -19,8 +19,7 @@ export const POSTS: Post[] = [
     title: 'A paper accepted to COLM 2025',
     date: new Date('2025-08-13'),
     categories: ['publication'],
-    summary: 'One paper from KIXLAB has been accepted to [COLM 2025](https://colmweb.org/).',
-    contentMdFilePath: '2025-08-13-colm2025.md',
+    summary: 'Our paper "CUPID: Evaluating Personalized and Contextualized Alignment of LLMs from Interaction" led by Tae Soo has been accepted to [COLM 2025](https://colmweb.org/). Congratulations!',
   },
   {
     title: 'One paper, one demo, and one DC accepted to UIST 2025',
