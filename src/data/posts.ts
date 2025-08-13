@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'A paper accepted to COLM 2025',
+    date: new Date('2025-08-13'),
+    categories: ['publication'],
+    summary:
+      'Our paper "CUPID: Evaluating Personalized and Contextualized Alignment of LLMs from Interaction" led by Tae Soo has been accepted to [COLM 2025](https://colmweb.org/). Congratulations!',
+  },
+  {
     title: 'One paper, one demo, and one DC accepted to UIST 2025',
     date: new Date('2025-08-08'),
     categories: ['publication'],
