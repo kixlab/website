@@ -45,6 +45,31 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'CUPID: Evaluating Personalized and Contextualized Alignment of LLMs from Interactions',
+    authors: [
+      MEMBERS.taesookim,
+      MEMBERS.yoonjoolee,
+      MEMBERS.yoonahpark,
+      MEMBERS.jihokim,
+      'Young-Ho Kim',
+      MEMBERS.juhokim,
+    ],
+    venue: 'COLM 2025',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2508.01674',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://cupid.kixlab.org',
+        type: PublicationLinkType.WEB,
+      },
+    ],
+  },
+  {
     title: 'BloomIntent: Automating Search Evaluation with LLM-Generated Fine-Grained User Intents',
     authors: [
       MEMBERS.yoonseochoi,
@@ -255,7 +280,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2025,
     topics: ['human-AI interaction'],
     type: 'Poster',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706599.3707611',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title:
