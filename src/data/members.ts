@@ -60,7 +60,7 @@ export const MEMBERS = {
     firstName: 'Shujun',
     lastName: 'Ju',
     email: 'jeff1015jeff@outlook.com',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'Visiting Researcher',
     img: 'shujun.jpg',
     affiliation: 'PolyU_HK',
     startYear: 2025,
