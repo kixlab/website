@@ -46,6 +46,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jihohanankim: {
+    firstName: 'Jiho',
+    lastName: 'Kim',
+    email: 'hanan.dev04@gmail.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'jihohanan.jpg',
+    affiliation: 'SNU',
+    startYear: 2025,
+    startSeason: 'Fall',
+  },
   chanbinpark: {
     firstName: 'Chanbin',
     lastName: 'Park',
