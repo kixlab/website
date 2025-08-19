@@ -46,6 +46,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  emircangundogdu: {
+    firstName: 'Emircan',
+    lastName: 'Gundogdu',
+    email: 'gundogdu.emircan@outlook.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'emircangundogdu.jpg',
+    affiliation: 'ETH Zurich',
+    startYear: 2025,
+    startSeason: 'Summer',
+  },
   jihohanankim: {
     firstName: 'Jiho',
     lastName: 'Kim',
