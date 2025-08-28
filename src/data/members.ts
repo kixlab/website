@@ -171,6 +171,9 @@ export const MEMBERS = {
     affiliation: 'NUS',
     startYear: 2025,
     startSeason: 'Winter',
+    endYear: 2025,
+    endSeason: 'Summer',
+    isAlumni: true,
   },
   samueldawit: {
     firstName: 'Samuel Dawit',
