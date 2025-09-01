@@ -491,9 +491,16 @@ export const MEMBERS = {
   alexsuryapranata: {
     firstName: 'Alex',
     lastName: 'Suryapranata',
-    email: 'alextio@kaist.ac.kr',
+    email: 'alexsuryapranata@utexas.edu',
     kixlabPosition: 'M.S. Student',
     img: 'alex.webp',
+    site: 'alextio.com',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2025-alextio.pdf',
+    isAlumni: true,
+    startYear: 2022,
+    startSeason: 'Fall',
+    endYear: 2025,
+    endSeason: 'Summer',
   },
   bekzattilekbay: {
     firstName: 'Bekzat',
