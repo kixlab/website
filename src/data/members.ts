@@ -661,10 +661,9 @@ export const MEMBERS = {
     firstName: 'Eunhye',
     lastName: 'Kim',
     email: 'gracekim027@snu.ac.kr',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'M.S. Student',
     img: 'eunhye.jpg',
     site: 'https://gracekim027.github.io/',
-    affiliation: 'SNU',
   },
   yoonsanglee: {
     firstName: 'Yoonsang',
@@ -722,10 +721,9 @@ export const MEMBERS = {
     firstName: 'Minju',
     lastName: 'Yoo',
     email: 'minjuu.yoo@gmail.com',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'M.S. Student',
     img: 'minju.jpg',
     site: 'https://minjuu1.github.io',
-    affiliation: 'Ewha',
   },
   brandonchin: {
     firstName: 'Brandon',
