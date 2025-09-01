@@ -506,7 +506,7 @@ export const MEMBERS = {
     firstName: 'Bekzat',
     lastName: 'Tilekbay',
     email: 'tlekbay.b@gmail.com',
-    kixlabPosition: 'M.S. Student',
+    kixlabPosition: 'Ph.D. Student',
     img: 'bekzattilekbay.jpg',
   },
   jiangnanxu: {
