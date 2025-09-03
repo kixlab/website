@@ -406,12 +406,6 @@ export const MEMBERS = {
     kixlabPosition: 'Ph.D. Student',
     img: 'hyungyu.jpg',
     site: 'https://hyungyu.com/',
-    isAlumni: true,
-    startYear: 2016,
-    startSeason: 'Summer',
-    endYear: 2025,
-    endSeason: 'Summer',
-    currentPosition: 'CTO at Hamamath',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2019-hyungyu.pdf',
   },
   sungchullee: {
