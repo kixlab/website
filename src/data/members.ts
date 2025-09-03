@@ -391,6 +391,13 @@ export const MEMBERS = {
     kixlabPosition: 'Ph.D. Student',
     img: 'yoonjoo.jpg',
     site: 'https://yoonjoolee.com/',
+    isAlumni: true,
+    startYear: 2020,
+    startSeason: 'Spring',
+    endYear: 2025,
+    endSeason: 'Summer',
+    currentPosition: 'Postdoc Researcher at UMich',
+    phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2025-yoonjoo.pdf',
   },
   hyungyushin: {
     firstName: 'Hyungyu',
