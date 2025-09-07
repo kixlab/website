@@ -55,6 +55,7 @@ export const MEMBERS = {
     affiliation: 'ETH Zurich',
     startYear: 2025,
     startSeason: 'Summer',
+    isAlumni: true,
   },
   jihohanankim: {
     firstName: 'Jiho',
@@ -185,6 +186,9 @@ export const MEMBERS = {
     affiliation: 'KAIST',
     startYear: 2025,
     startSeason: 'Winter',
+    endYear: 2025,
+    endSeason: 'Summer',
+    isAlumni: true,
   },
   yukaihung: {
     firstName: 'Yu-Kai',
