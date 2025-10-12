@@ -84,7 +84,16 @@ export const PUBLICATIONS: Publication[] = [
     year: 2025,
     topics: ['datamining', 'human-AI interaction'],
     type: 'Conference',
-    links: [],
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2509.18641v1',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://bloomintent.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+    ],
   },
   {
     title: 'Identifying, Capturing, and Reusing Tacit Knowledge in Creative Domains with Generative AI',
