@@ -45,6 +45,31 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'Why Social Media Users Press "Not Interested": Motivations, Anticipated Effects, and Result Interpretation',
+    authors: [MEMBERS.jihyeonghong, MEMBERS.eunyoungko, MEMBERS.juhokim, 'Jeong-woo Jang'],
+    venue: 'CSCW 2025',
+    year: 2025,
+    topics: ['human-AI interaction', 'social'],
+    type: 'Conference',
+    award: 'Honorable Mention Award',
+    links: [],
+  },
+  {
+    title:
+      "Can Fans Build Parasocial Relationships through Idols' Simulated Voice Messages?: A Study of AI Private Call Users' Perceptions, Cognitions, and Behaviors",
+    authors: [MEMBERS.eunjeongkang, MEMBERS.haesookim, MEMBERS.hyunwookim, 'Susan R. Fussell', MEMBERS.juhokim],
+    venue: 'CSCW 2025',
+    year: 2025,
+    topics: ['human-AI interaction', 'social'],
+    type: 'Conference',
+    links: [
+      {
+        url: "https://www.researchgate.net/profile/Eun-Kang-12/publication/389279977_Can_Fans_Build_Parasocial_Relationships_through_Idols'_Simulated_Voice_Messages_A_Study_of_AI_Private_Call_Users'_Perceptions_Cognitions_and_Behaviors/links/67bd1b1e645ef274a4940227/Can-Fans-Build-Parasocial-Relationships-through-Idols-Simulated-Voice-Messages-A-Study-of-AI-Private-Call-Users-Perceptions-Cognitions-and-Behaviors.pdf",
+        type: PublicationLinkType.PDF,
+      },
+    ],
+  },
+  {
     title: 'CUPID: Evaluating Personalized and Contextualized Alignment of LLMs from Interactions',
     authors: [
       MEMBERS.taesookim,
@@ -93,6 +118,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://bloomintent.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3746059.3747677',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -102,7 +131,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2025,
     topics: ['human-AI interaction'],
     type: 'Poster',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3746058.3758467',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title: 'IdeaBlocks: Expressing and Reusing Exploratory Intents for Design Exploration with Generative AI',
@@ -111,7 +145,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2025,
     topics: ['human-AI interaction'],
     type: 'Poster',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3746058.3759001',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title: "Investigating Large Language Models in Diagnosing Students' Cognitive Skills in Math Problem-solving",
@@ -136,7 +175,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'Proxona: Supporting Creators’ Sensemaking and Ideation with LLM-Powered Audience Personas',
+    title: "Proxona: Supporting Creators' Sensemaking and Ideation with LLM-Powered Audience Personas",
     authors: [MEMBERS.yoonseochoi, MEMBERS.eunjeongkang, MEMBERS.seulgichoi, 'Min Kyung Lee', MEMBERS.juhokim],
     venue: 'CHI 2025',
     year: 2025,
@@ -146,6 +185,14 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2408.10937',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://proxona.kixlab.org',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3544548.3581386',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -171,6 +218,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://teachtune.kixlab.org',
         type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706598.3714054',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -198,6 +249,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://dhkim16.github.io/plan-together/pdf/paper.pdf',
         type: PublicationLinkType.PDF,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706598.3714044',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -220,6 +275,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2502.17935',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://dl.acm.org/doi/full/10.1145/3706598.3714226',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -235,6 +294,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2503.00858',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706599.3719759',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -248,6 +311,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2503.00791',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706599.3720189',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -266,7 +333,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2025,
     topics: ['human-AI interaction'],
     type: 'Poster',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706599.3719846',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title: 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication',
@@ -279,6 +351,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2503.06067',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3706599.3720050',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -297,28 +373,22 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title:
-      'Can Fans Build Parasocial Relationships through Idols’ Simulated Voice Messages?: A Study of AI Private Call Users’ Perceptions, Cognitions, and Behaviors.',
-    authors: [MEMBERS.eunjeongkang, MEMBERS.haesookim, MEMBERS.hyunwookim, 'Susan Fussell', MEMBERS.juhokim],
-    venue: 'CSCW 2025',
-    year: 2025,
-    topics: ['human-AI interaction'],
-    type: 'Conference',
-    links: [
-      {
-        url: "https://www.researchgate.net/profile/Eun-Kang-12/publication/389279977_Can_Fans_Build_Parasocial_Relationships_through_Idols'_Simulated_Voice_Messages_A_Study_of_AI_Private_Call_Users'_Perceptions_Cognitions_and_Behaviors/links/67bd1b1e645ef274a4940227/Can-Fans-Build-Parasocial-Relationships-through-Idols-Simulated-Voice-Messages-A-Study-of-AI-Private-Call-Users-Perceptions-Cognitions-and-Behaviors.pdf",
-        type: PublicationLinkType.PDF,
-      },
-    ],
-  },
-  {
     title: 'VideoMix: Aggregating How-To Videos for Task-Oriented Learning',
     authors: [MEMBERS.saelyneyang, 'Anh Truong', MEMBERS.juhokim, 'Dingzeyu Li'],
     venue: 'IUI 2025',
     year: 2025,
     topics: ['human-AI interaction'],
     type: 'Conference',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/full/10.1145/3708359.3712144',
+        type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://arxiv.org/abs/2503.21130',
+        type: PublicationLinkType.ARX,
+      },
+    ],
   },
   {
     title: 'BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages',
@@ -331,6 +401,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2406.09948',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.5555/3737916.3740399',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -351,7 +425,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2024,
     topics: ['human-AI interaction', 'datamining'],
     type: 'Conference',
-    links: [],
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2410.22360',
+        type: PublicationLinkType.ARX,
+      },
+    ],
   },
 
   {
@@ -365,6 +444,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://kixlab.github.io/website-files/2024/uist2024-dc-saelyne.pdf',
         type: PublicationLinkType.PDF,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3672539.3686711',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -465,7 +548,7 @@ export const PUBLICATIONS: Publication[] = [
   },
 
   {
-    title: 'LearnerVoice: A Dataset of Non-Native English Learners’ Spontaneous Speech',
+    title: "LearnerVoice: A Dataset of Non-Native English Learners' Spontaneous Speech",
     authors: [
       MEMBERS.haechankim,
       MEMBERS.junhomyung,
