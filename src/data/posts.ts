@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'One Honorable Mention Award for CSCW 2025',
+    date: new Date('2025-10-17'),
+    categories: ['award'],
+    summary:
+      'Our paper "Why Social Media Users Press "Not Interested": Motivations, Anticipated Effects, and Result Interpretation" led by Jihyeong wins a Honorable Mention Award for [CSCW 2025](https://cscw.acm.org/2025/).',
+  },
+  {
     title: 'A paper accepted to COLM 2025',
     date: new Date('2025-08-13'),
     categories: ['publication'],
@@ -29,6 +36,13 @@ export const POSTS: Post[] = [
     summary:
       'One paper, one demo, and one DC from KIXLAB have been accepted to [UIST 2025](https://uist.acm.org/2025/).',
     contentMdFilePath: '2025-08-08-uist2025.md',
+  },
+  {
+    title: 'One more paper accepted to CSCW 2025',
+    date: new Date('2025-08-06'),
+    categories: ['publication'],
+    summary:
+      'Our paper "Why Social Media Users Press "Not Interested": Motivations, Anticipated Effects, and Result Interpretation" led by Jihyeong has been accepted to [CSCW 2025](https://cscw.acm.org/2025/). Congratulations!',
   },
   {
     title: 'Two Ph.D. students and three M.S. students successfully defended their theses',
@@ -78,15 +92,15 @@ export const POSTS: Post[] = [
     title: 'A paper conditionally accepted to IUI 2025',
     date: new Date('2025-01-10'),
     categories: ['publication'],
-    summary: 'One paper from KIXLAB has been conditionally accepted to [IUI 2025](https://iui.acm.org/2025/).',
-    contentMdFilePath: '2025-01-10-iui2025.md',
+    summary:
+      'Our paper "VideoMix: Aggregating How-To Videos for Task-Oriented Learning" led by Saelyne has been accepted to [IUI 2025](https://iui.acm.org/2025/). Congratulations!',
   },
   {
     title: 'A paper accepted to CSCW 2025',
     date: new Date('2024-09-24'),
     categories: ['publication'],
-    summary: 'One paper from KIXLAB has been accepted to [CSCW 2025](https://cscw.acm.org/2025/)',
-    contentMdFilePath: '2024-09-24-cscw2025.md',
+    summary:
+      'Our paper "Can Fans Build Parasocial Relationships through Idols’ Simulated Voice Messages?: A Study of AI Private Call Users’ Perceptions, Cognitions, and Behaviors." led by Eun Jeong has been accepted to [CSCW 2025](https://cscw.acm.org/2025/). Congratulations!',
   },
   {
     title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
