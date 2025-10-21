@@ -52,7 +52,12 @@ export const PUBLICATIONS: Publication[] = [
     topics: ['human-AI interaction', 'social'],
     type: 'Conference',
     award: 'Honorable Mention Award',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3757706',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title:
@@ -63,6 +68,10 @@ export const PUBLICATIONS: Publication[] = [
     topics: ['human-AI interaction', 'social'],
     type: 'Conference',
     links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3711111',
+        type: PublicationLinkType.ACM,
+      },
       {
         url: "https://www.researchgate.net/profile/Eun-Kang-12/publication/389279977_Can_Fans_Build_Parasocial_Relationships_through_Idols'_Simulated_Voice_Messages_A_Study_of_AI_Private_Call_Users'_Perceptions_Cognitions_and_Behaviors/links/67bd1b1e645ef274a4940227/Can-Fans-Build-Parasocial-Relationships-through-Idols-Simulated-Voice-Messages-A-Study-of-AI-Private-Call-Users-Perceptions-Cognitions-and-Behaviors.pdf",
         type: PublicationLinkType.PDF,
