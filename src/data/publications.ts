@@ -52,7 +52,12 @@ export const PUBLICATIONS: Publication[] = [
     topics: ['human-AI interaction', 'social'],
     type: 'Conference',
     award: 'Honorable Mention Award',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3757706',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title:
