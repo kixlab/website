@@ -64,7 +64,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: "https://dl.acm.org/doi/10.1145/3711111",
+        url: 'https://dl.acm.org/doi/10.1145/3711111',
         type: PublicationLinkType.ACM,
       },
       {
