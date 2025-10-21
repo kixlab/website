@@ -45,6 +45,51 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'Mind the Blind Spots: A Focus-Level Evaluation Framework for LLM Reviews',
+    authors: [
+      MEMBERS.hyungyushin,
+      MEMBERS.jingyu,
+      MEMBERS.yoonjoolee,
+      MEMBERS.nayoungkim,
+      'Hyunseung Lim',
+      'Ji Yong Cho',
+      'Hwajung Hong',
+      'Moontae Lee',
+      MEMBERS.juhokim,
+    ],
+    venue: 'EMNLP 2025 Main Track',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2502.17086',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title:
+      'PANORAMA: A Dataset and Benchmark Tasks Capturing the Evaluation Trails and Rationales in Patent Examination',
+    authors: [
+      'Hyunseung Lim',
+      'Sooyohn Nam',
+      'Sungmin Na',
+      'Ji Yong Cho',
+      'June Yong Yang',
+      MEMBERS.hyungyushin,
+      MEMBERS.yoonjoolee,
+      MEMBERS.juhokim,
+      'Moontae Lee',
+      'Hwajung Hong',
+    ],
+    venue: 'NeurIPS 2025 Datasets & Benchmarks',
+    year: 2025,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [],
+  },
+  {
     title: 'Why Social Media Users Press "Not Interested": Motivations, Anticipated Effects, and Result Interpretation',
     authors: [MEMBERS.jihyeonghong, MEMBERS.eunyoungko, MEMBERS.juhokim, 'Jeong-woo Jang'],
     venue: 'CSCW 2025',
