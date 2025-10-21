@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Two Papers Accepted to NeurIPS 2025 and EMNLP 2025',
+    date: new Date('2025-10-20'),
+    categories: ['publication'],
+    summary:
+      'Two papers from KIXLAB and collaborators have been accepted to [NeurIPS 2025](https://nips.cc/Conferences/2025) and [EMNLP 2025](https://2025.emnlp.org/).',
+    contentMdFilePath: '2025-10-20-neurips2025-emnlp2025.md',
+  },
+  {
     title: 'One Honorable Mention Award for CSCW 2025',
     date: new Date('2025-10-17'),
     categories: ['award'],
