@@ -45,6 +45,25 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title:
+      'Iffy-Or-Not: Critically Evaluating Potential Misinformation With Fallacy Detection and Socratic Questioning Using LLMs',
+    authors: [MEMBERS.gionnievelim, MEMBERS.juhokim, MEMBERS.simonperrault],
+    venue: 'TOCHI 2025',
+    year: 2025,
+    topics: ['human-AI interaction', 'social'],
+    type: 'Journal',
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/abs/10.1145/3771935',
+        type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://arxiv.org/abs/2503.14412',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: 'Mind the Blind Spots: A Focus-Level Evaluation Framework for LLM Reviews',
     authors: [
       MEMBERS.hyungyushin,
