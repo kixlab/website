@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Winter 2026 Undergraduate Research Internship',
+    date: new Date('2025-10-28'),
+    categories: ['position'],
+    summary:
+      "We are looking for a few undergraduate research interns to join KIXLAB this winter. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2026-winter-internship-call.html).",
+    endsAt: new Date('2025-11-06'),
+  },
+  {
     title: 'Two Papers Accepted to NeurIPS 2025 and EMNLP 2025',
     date: new Date('2025-10-20'),
     categories: ['publication'],
