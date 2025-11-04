@@ -104,9 +104,14 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'NeurIPS 2025 Datasets & Benchmarks',
     year: 2025,
-    topics: ['human-AI interaction'],
+    topics: ['human-AI interaction', 'datamining'],
     type: 'Conference',
-    links: [],
+    links: [
+      {
+        url: 'https://www.arxiv.org/abs/2510.24774',
+        type: PublicationLinkType.ARX,
+      },
+    ],
   },
   {
     title: 'Why Social Media Users Press "Not Interested": Motivations, Anticipated Effects, and Result Interpretation',
@@ -911,7 +916,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2024,
     topics: ['learning', 'social'],
     type: 'Conference',
-    links: [],
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3686960',
+        type: PublicationLinkType.ACM,
+      },
+    ],
   },
   {
     title: 'VIVID: Human-AI Collaborative Authoring of Vicarious Dialogues from Lecture Videos',
