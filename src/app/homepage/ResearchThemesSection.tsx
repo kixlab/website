@@ -3,7 +3,7 @@ import { Color, FontVariant } from '@/app/theme'
 import { Member } from '@/data/members'
 import { PUBLICATIONS, Publication, ResearchTopics, type ResearchTopicType } from '@/data/publications'
 import styled from '@emotion/styled'
-import { uniq } from 'lodash'
+import { uniq, shuffle } from 'lodash'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Section, SectionHeader, Text } from './Styles'
@@ -60,7 +60,9 @@ const GatherStatsByResearchTopic = () => {
     )
     const filteredAuthors = topicAuthors.filter(entry => entry instanceof Object && entry.isAlumni !== true) as Member[]
 
-    statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
+    const shuffledAuthors = shuffle(filteredAuthors)
+
+    statsByResearchTopic[researchTopicKey] = { numPublications, authors: shuffledAuthors }
   })
   return statsByResearchTopic
 }
