@@ -63,6 +63,7 @@ export const MEMBERS = {
     email: 'hanan.dev04@gmail.com',
     kixlabPosition: 'Visiting Researcher',
     img: 'jihohanan.jpg',
+    site: 'https://jiho.dev/',
     affiliation: 'SNU',
     startYear: 2025,
     startSeason: 'Fall',
