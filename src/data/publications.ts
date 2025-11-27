@@ -346,7 +346,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
     venue: 'CHI 2025',
     year: 2025,
-    topics: ['human-AI interaction'],
+    topics: ['social'],
     type: 'Conference',
     links: [
       {
