@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'A paper accepted to AAAI 2026',
+    date: new Date('2025-11-10'),
+    categories: ['publication'],
+    summary:
+      'Our paper "CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design" led by Daeheon has been accepted to [AAAI 2026](https://aaai.org/conference/aaai/aaai-26/). Congratulations!',
+  },
+  {
     title: 'Winter 2026 Undergraduate Research Internship',
     date: new Date('2025-10-28'),
     categories: ['position'],
