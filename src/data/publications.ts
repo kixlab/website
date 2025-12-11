@@ -45,6 +45,24 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design',
+    authors: [MEMBERS.daeheonjeong, MEMBERS.seoyeonbyun, MEMBERS.kihoonson, MEMBERS.daehyunkim, MEMBERS.juhokim],
+    venue: 'AAAI 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2511.20737',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://canvas.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+    ],
+  },
+  {
     title:
       'Iffy-Or-Not: Critically Evaluating Potential Misinformation With Fallacy Detection and Socratic Questioning Using LLMs',
     authors: [MEMBERS.gionnievelim, MEMBERS.juhokim, MEMBERS.simonperrault],
