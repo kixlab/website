@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'A paper accepted to IUI 2026',
+    date: new Date('2025-12-14'),
+    categories: ['publication'],
+    summary:
+      'Our paper "ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions" led by Jeongeon has been accepted to [IUI 2026](https://iui.acm.org/2026/). Congratulations!',
+  },
+  {
     title: 'A paper accepted to AAAI 2026',
     date: new Date('2025-11-10'),
     categories: ['publication'],

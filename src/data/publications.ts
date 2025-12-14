@@ -45,6 +45,27 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
+    authors: [
+      MEMBERS.jeongeonpark,
+      MEMBERS.bryanmin,
+      MEMBERS.kihoonson,
+      'Jean Y. Song',
+      'Xiaojuan Ma',
+      MEMBERS.juhokim,
+    ],
+    venue: 'IUI 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2310.01331',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: 'CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design',
     authors: [MEMBERS.daeheonjeong, MEMBERS.seoyeonbyun, MEMBERS.kihoonson, MEMBERS.daehyunkim, MEMBERS.juhokim],
     venue: 'AAAI 2026',
@@ -883,20 +904,6 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://heal-workshop.github.io/papers/30_towards_an_evaluation_of_llm_g.pdf',
         type: PublicationLinkType.PDF,
-      },
-    ],
-  },
-  {
-    title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
-    authors: [MEMBERS.jeongeonpark, MEMBERS.bryanmin, 'Xiaojuan Ma', MEMBERS.juhokim],
-    venue: 'arXiv preprint',
-    year: 2023,
-    topics: ['human-AI interaction'],
-    type: 'Preprint',
-    links: [
-      {
-        url: 'https://arxiv.org/abs/2310.01331',
-        type: PublicationLinkType.ARX,
       },
     ],
   },
