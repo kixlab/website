@@ -112,12 +112,14 @@ export const MEMBERS = {
   dahojung: {
     firstName: 'Daho',
     lastName: 'Jung',
-    email: 'dhj1104@kaist.ac.kr',
     kixlabPosition: 'Undergrad Intern',
-    img: 'daho.jpg',
+    isAlumni: true,
     affiliation: 'KAIST',
     startYear: 2025,
     startSeason: 'Summer',
+    endYear: 2025,
+    endSeason: 'Fall',
+    site: 'https://daho.kr',
   },
   seankim: {
     firstName: 'Sean',
