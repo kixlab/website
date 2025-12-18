@@ -119,7 +119,7 @@ export const MEMBERS = {
     startSeason: 'Summer',
     endYear: 2025,
     endSeason: 'Fall',
-    site: 'https://daho.kr'
+    site: 'https://daho.kr',
   },
   seankim: {
     firstName: 'Sean',
