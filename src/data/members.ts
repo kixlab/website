@@ -77,6 +77,9 @@ export const MEMBERS = {
     affiliation: 'UC Berkeley',
     startYear: 2025,
     startSeason: 'Summer',
+    endYear: 2025,
+    endSeason: 'Fall',
+    isAlumni: true,
   },
   shujunju: {
     firstName: 'Shujun',
@@ -108,6 +111,9 @@ export const MEMBERS = {
     affiliation: 'KAIST',
     startYear: 2025,
     startSeason: 'Summer',
+    endYear: 2025,
+    endSeason: 'Fall',
+    isAlumni: true,
   },
   dahojung: {
     firstName: 'Daho',
@@ -142,6 +148,9 @@ export const MEMBERS = {
     affiliation: 'UIUC',
     startYear: 2025,
     startSeason: 'Summer',
+    endYear: 2025,
+    endSeason: 'Fall',
+    isAlumni: true,
   },
   jennyyang: {
     firstName: 'Jenny',
