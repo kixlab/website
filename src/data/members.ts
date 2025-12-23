@@ -46,6 +46,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  hyunjungyi: {
+    firstName: 'Hyunjung',
+    lastName: 'Yi',
+    email: 'hyoungjung.yi@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'hyunjungyi.png',
+    site: 'https://hyoungjungyi.github.io/',
+    affiliation: 'Korea Univ',
+    startYear: 2025,
+    startSeason: 'Winter',
+  },
   emircangundogdu: {
     firstName: 'Emircan',
     lastName: 'Gundogdu',
