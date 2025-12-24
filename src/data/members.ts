@@ -46,6 +46,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jaeyoungkwon: {
+    firstName: 'Jaeyoung',
+    lastName: 'Kwon',
+    email: 'jaylions@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'jaeyoung.jpg',
+    site: 'https://www.jaykwon.me/',
+    affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   hyunjungyi: {
     firstName: 'Hyunjung',
     lastName: 'Yi',
