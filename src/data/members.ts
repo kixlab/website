@@ -46,6 +46,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+    mingyukim: {
+    firstName: 'Mingyu',
+    lastName: 'Kim',
+    email: 'gyu7991@unist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'mingyu.jpg',
+    site: 'https://strawberrycheesecake2.github.io/',
+    affiliation: 'UNIST',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   jaeyoungkwon: {
     firstName: 'Jaeyoung',
     lastName: 'Kwon',
