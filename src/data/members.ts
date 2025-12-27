@@ -76,7 +76,7 @@ export const MEMBERS = {
     img: 'hyunjungyi.png',
     site: 'https://hyoungjungyi.github.io/',
     affiliation: 'Korea Univ',
-    startYear: 2025,
+    startYear: 2026,
     startSeason: 'Winter',
   },
   emircangundogdu: {
