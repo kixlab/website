@@ -46,6 +46,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  juhyeonchoi:{
+    firstName: 'Juhyeon',
+    lastName: 'Choi',
+    email: 'wngus0223@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'juhyeon.jpg',
+    affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   mingyukim: {
     firstName: 'Mingyu',
     lastName: 'Kim',
