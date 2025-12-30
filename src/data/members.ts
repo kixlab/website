@@ -46,6 +46,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  eugenechoi: {
+    firstName: 'Eugene',
+    lastName: 'Choi',
+    email: 'eugene@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'eugenechoi.jpg',
+    site: 'https://eugene-choi.vercel.app/',
+    affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   chanyoungpark: {
     firstName: 'Chanyoung',
     lastName: 'Park',
