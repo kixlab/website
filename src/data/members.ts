@@ -46,6 +46,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  yurilee:  {
+    firstName: 'Yuri',
+    lastName: 'Lee',
+    email: 'yurilee@postech.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'yuri.jpg',
+    affiliation: 'POSTECH',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   eugenechoi: {
     firstName: 'Eugene',
     lastName: 'Choi',
