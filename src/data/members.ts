@@ -46,7 +46,7 @@ export class Member {
 }
 
 export const MEMBERS = {
-  yurilee:  {
+  yurilee: {
     firstName: 'Yuri',
     lastName: 'Lee',
     email: 'yurilee@postech.ac.kr',
