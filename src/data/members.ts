@@ -46,6 +46,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jihoonchae: {
+    firstName: 'Jihoon',
+    lastName: 'Chae',
+    email: 'jfchae1483@gmail.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'cjh.jpg',
+    affiliation: 'ROK.Army',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   yurilee: {
     firstName: 'Yuri',
     lastName: 'Lee',
