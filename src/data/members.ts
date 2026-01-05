@@ -55,7 +55,7 @@ export const MEMBERS = {
     affiliation: 'ROK.Army',
     startYear: 2026,
     startSeason: 'Winter',
-  },  
+  },
   yurilee: {
     firstName: 'Yuri',
     lastName: 'Lee',
