@@ -46,6 +46,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  hyunseokhong: {
+    firstName: 'Hyunseok',
+    lastName: 'Hong',
+    email: 'hhs5125@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'hyunseok.jpg',
+    affiliation: 'KAIST',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   jihoonchae: {
     firstName: 'Jihoon',
     lastName: 'Chae',
