@@ -46,6 +46,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  zhengwei: {
+    firstName: 'Zheng',
+    lastName: 'Wei',
+    email: 'zwei302@connect.ust.hk',
+    kixlabPosition: 'Postdoc Researcher',
+    img: 'zhengwei.jpg',
+    site: 'https://www.zhengwei302.com/',
+    affiliation: 'KAIST',
+    startYear: 2026,
+    startSeason: 'Winter',
+  },
   hyunseokhong: {
     firstName: 'Hyunseok',
     lastName: 'Hong',
