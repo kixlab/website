@@ -308,7 +308,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://dl.acm.org/doi/10.1145/3544548.3581386',
+        url: 'https://dl.acm.org/doi/10.1145/3706598.3714034',
         type: PublicationLinkType.ACM,
       },
     ],
