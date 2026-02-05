@@ -119,6 +119,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 2025,
     topics: ['human-AI interaction'],
     type: 'Conference',
+    award: 'SAC Highlights',
     links: [
       {
         url: 'https://arxiv.org/abs/2502.17086',
