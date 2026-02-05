@@ -2,6 +2,7 @@
 import { FontSize, FontWeight } from '@/app/theme'
 import styled from '@emotion/styled'
 import React from 'react'
+import Image from 'next/image'
 import { Section, SectionHeader, FullWidthContainer } from './Styles'
 import { VIDEOS } from '@/data/videos'
 import { LinkButton } from '@/components/LinkButton'
@@ -28,6 +29,8 @@ const VideoContainer = styled.div`
   min-width: 300px;
   aspect-ratio: 16 / 9;
   margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
 `
 
 const VideoTitle = styled.h3`
@@ -62,7 +65,14 @@ export const MediaSection = () => {
                   <YouTubeEmbed videoid={video.id}></YouTubeEmbed>
                 ) : (
                   <a href={video.url} target="_blank" rel="noopener noreferrer">
-                    <img src={`/thumbnails/${video.id}.png`} alt={video.title} />
+                    <Image
+                      src={`/thumbnails/${video.id}.png`}
+                      alt={video.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 320px"
+                      style={{ objectFit: 'cover' }}
+                      priority={false}
+                    />
                   </a>
                 )}
               </VideoContainer>
