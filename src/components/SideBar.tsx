@@ -64,47 +64,49 @@ const capitalizeWords = (s: string) => {
   return startCase(s)
 }
 
-export const Sidebar = React.forwardRef(
-  ({ handleLinkClick, sidebarList, sectionRefs, observerOptions = defaultObserverOptions }: ISidebar) => {
-    const [activeSection, setActiveSection] = useState<string | null>(null)
-    const ignoreObserver = useRef(false)
-    useEffect(() => {
-      const observer = new IntersectionObserver(entries => {
-        if (ignoreObserver.current) return
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      }, observerOptions)
-
-      if (sectionRefs.current !== null) {
-        const sections = Object.values(sectionRefs.current)
-        sections.forEach(section => {
-          section && observer.observe(section)
-        })
-
-        return () => {
-          observer.disconnect()
+export const Sidebar = ({
+  handleLinkClick,
+  sidebarList,
+  sectionRefs,
+  observerOptions = defaultObserverOptions,
+}: ISidebar) => {
+  const [activeSection, setActiveSection] = useState<string | null>(null)
+  const ignoreObserver = useRef(false)
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      if (ignoreObserver.current) return
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
         }
-      }
-    }, [sectionRefs, observerOptions])
+      })
+    }, observerOptions)
 
-    return (
-      <SideBarContainer>
-        {/* TODO: replace sideBarList with sectionRefs */}
-        {sidebarList.map(section => (
-          <SidebarLink
-            key={section}
-            href={`#${section}`}
-            className={activeSection === section ? 'active' : ''}
-            onClick={() => handleLinkClick && handleLinkClick()}
-          >
-            {capitalizeWords(section)}
-          </SidebarLink>
-        ))}
-      </SideBarContainer>
-    )
-  }
-)
-Sidebar.displayName = 'Sidebar'
+    if (sectionRefs.current !== null) {
+      const sections = Object.values(sectionRefs.current)
+      sections.forEach(section => {
+        section && observer.observe(section)
+      })
+
+      return () => {
+        observer.disconnect()
+      }
+    }
+  }, [sectionRefs, observerOptions])
+
+  return (
+    <SideBarContainer>
+      {/* TODO: replace sideBarList with sectionRefs */}
+      {sidebarList.map(section => (
+        <SidebarLink
+          key={section}
+          href={`#${section}`}
+          className={activeSection === section ? 'active' : ''}
+          onClick={() => handleLinkClick && handleLinkClick()}
+        >
+          {capitalizeWords(section)}
+        </SidebarLink>
+      ))}
+    </SideBarContainer>
+  )
+}

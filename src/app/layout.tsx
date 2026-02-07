@@ -5,6 +5,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { NavBar } from '@/components/NavBar'
 import { Footer } from '@/components/Footer'
 import GlobalStyles from '@/app/GlobalStyles'
+import EmotionRegistry from '@/app/EmotionRegistry'
 
 const notoSans = Noto_Sans({ subsets: ['latin'], weight: ['400', '700'] })
 
@@ -35,10 +36,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={notoSans.className}>
-        <GlobalStyles />
-        <NavBar />
-        {children}
-        <Footer />
+        <EmotionRegistry>
+          <GlobalStyles />
+          <NavBar />
+          {children}
+          <Footer />
+        </EmotionRegistry>
       </body>
       <GoogleAnalytics gaId="G-WY6K7SWSCE" />
     </html>
