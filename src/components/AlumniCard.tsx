@@ -146,8 +146,8 @@ const FadingImage = styled.div<{ opacity: number }>`
 `
 
 const juraHoverImages: Partial<Record<string, string>> = {
-  'DEFAULT': '/images/jura.png',
-  'HANBOK': '/images/jura-hanbok.jpg',
+  DEFAULT: '/images/jura.png',
+  HANBOK: '/images/jura-hanbok.jpg',
 }
 
 export const SpecialThanksCard = ({
@@ -181,7 +181,7 @@ export const SpecialThanksCard = ({
         <FadingImage opacity={hasHover && isHovered ? 0 : 1}>
           <Image src={img} alt="Jura Coffee Machine" width={200} height={200} priority />
         </FadingImage>
-        
+
         {/* Hover Image */}
         {hasHover && hoverImg && (
           <FadingImage opacity={isHovered ? 1 : 0}>

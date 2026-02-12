@@ -2384,7 +2384,7 @@ export const MEMBERS = {
     email: 'oksil@kaist.ac.kr',
     kixlabPosition: 'Staff',
     img: 'oaksil.jpg',
-    hoverImg: { HANBOK: 'members-hanbok/oaksil.jpg' }
+    hoverImg: { HANBOK: 'members-hanbok/oaksil.jpg' },
   },
 } as const satisfies Record<string, Member>
 
