@@ -2,7 +2,7 @@
 import { FontVariant, ScreenSize, linearlyScaleSize } from '@/app/theme'
 import { AlumniCard, SpecialThanksCard } from '@/components/AlumniCard'
 import { Divider } from '@/components/Divider'
-import { MemberCard } from '@/components/MemberCard'
+import { MemberCard, ProfileMode } from '@/components/MemberCard'
 import { Section, SectionTitle, Sections } from '@/components/Section'
 import { Sidebar } from '@/components/SideBar'
 import { ALUMNI_MEMBERS_BY_POSITION, CURRENT_MEMBERS_BY_POSITION, KixlabPositions } from '@/data/members'
@@ -81,6 +81,8 @@ const SubCategoryTitle = styled.h2`
 
 const kixlabPositions = KixlabPositions // change this if you want to re-order the sections in the page.
 
+export const mode = ProfileMode.HANBOK // DEFAULT, CHRISTMAS, CHILDREN, APRIL_FOOLS, HANBOK
+
 export default function Page() {
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
 
@@ -104,7 +106,7 @@ export default function Page() {
                     <SectionTitle>{position}</SectionTitle>
                     <SectionContent>
                       {CURRENT_MEMBERS_BY_POSITION[position].map(member => (
-                        <MemberCard key={member.email} member={member} />
+                        <MemberCard key={member.email} member={member} mode={mode} />
                       ))}
                     </SectionContent>
                   </Section>

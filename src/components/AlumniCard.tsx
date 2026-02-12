@@ -1,11 +1,13 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import Link from 'next/link'
 import { Member } from '@/data/members'
 import Image from 'next/image'
+import { mode } from '@/app/people/page'
+import { ProfileMode } from './MemberCard'
 
 const AlumniCardContainer = styled.div`
   width: 100%;
@@ -127,6 +129,27 @@ export const AlumniCard = ({ mem }: { mem: Member }) => {
   )
 }
 
+const JuraImageWrapper = styled.div`
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+`
+
+const FadingImage = styled.div<{ opacity: number }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease-in-out;
+  opacity: ${({ opacity }) => opacity};
+`
+
+const juraHoverImages: Partial<Record<ProfileMode, string>> = {
+  [ProfileMode.HANBOK]: '/images/jura-hanbok.jpg',
+}
+
 export const SpecialThanksCard = ({
   img,
   name,
@@ -138,9 +161,34 @@ export const SpecialThanksCard = ({
   position: string
   description: string
 }) => {
+  const [isHovered, setIsHovered] = useState(false)
+
+  const hoverImg = juraHoverImages[mode]
+  const hasHover = Boolean(hoverImg)
+
+  const toggleHover = () => {
+    setIsHovered(prev => !prev)
+  }
+
   return (
     <SpecialThanksContainer>
-      <Image src={img} alt="Jura Coffee Machine" width={200} height={200} />
+      <JuraImageWrapper
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={toggleHover}
+      >
+        {/* Base Image */}
+        <FadingImage opacity={hasHover && isHovered ? 0 : 1}>
+          <Image src={img} alt="Jura Coffee Machine" width={200} height={200} priority />
+        </FadingImage>
+        
+        {/* Hover Image */}
+        {hasHover && hoverImg && (
+          <FadingImage opacity={isHovered ? 1 : 0}>
+            <Image src={hoverImg} alt="Jura Coffee Machine (Hover)" width={200} height={200} priority />
+          </FadingImage>
+        )}
+      </JuraImageWrapper>
       <div>
         <TextRow>
           <Name>{name}</Name>
