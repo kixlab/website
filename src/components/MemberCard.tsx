@@ -1,11 +1,20 @@
 'use client'
 
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import styled from '@emotion/styled'
 import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
 import { Member } from '@/data/members'
-import Link from 'next/link'
+
+enum ProfileMode {
+  DEFAULT = 'DEFAULT',
+  CHRISTMAS = 'CHRISTMAS',
+  CHILDREN = 'CHILDREN',
+  APRIL_FOOLS = 'APRIL-FOOLS',
+  HANBOK = 'HANBOK',
+}
+
+export const CurrentMode = ProfileMode.HANBOK
 
 const Card = styled.div`
   max-width: 250px;
@@ -96,21 +105,63 @@ const ThesisButton = styled.a`
 
 interface Props {
   member: Member
+  mode?: ProfileMode
 }
 
-export const MemberCard = ({ member }: Props) => {
+export const MemberCard = ({ member, mode = ProfileMode.DEFAULT }: Props) => {
+  const [isHovered, setIsHovered] = useState(false)
+
+  const originalSrc = member.img ? `/members/${member.img}` : '/members/default.png'
+  const hoverSrc = useMemo(() => {
+    if (mode === ProfileMode.DEFAULT) return undefined
+    return member.hoverImg?.[mode]
+  }, [member.hoverImg, mode])
+
+  const hasHover = Boolean(hoverSrc)
+
+  const handleEnter = () => {
+    if (!hasHover) return
+    setIsHovered(true)
+  }
+  const handleLeave = () => {
+    if (!hasHover) return
+    setIsHovered(false)
+  }
+  const handleClick = () => {
+    if (!hasHover) return
+    setIsHovered(prev => !prev)
+  }
+
   return (
     <Card>
-      <ImageContainer>
+      <ImageContainer onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={handleClick}>
         <MemberImage
           placeholder="blur"
           blurDataURL="/members/default.png"
           fallbackSrc="/members/default.png"
           width={180}
           height={180}
-          src={`/members/${member.img}`}
+          src={originalSrc}
           alt={member.firstName}
         />
+        {hasHover && (
+          <MemberImage
+            key={hoverSrc}
+            placeholder="blur"
+            blurDataURL="/members/default.png"
+            fallbackSrc="/members/default.png"
+            width={180}
+            height={180}
+            src={`/${hoverSrc}`}
+            alt={member.firstName}
+            style={{
+              opacity: isHovered ? 1 : 0,
+              transition: 'opacity 0.3s ease-in-out',
+              zIndex: 1,
+              pointerEvents: 'none',
+            }}
+          />
+        )}
       </ImageContainer>
       <Info>
         <Name>
