@@ -6,13 +6,15 @@ import { FontVariant, Color } from '@/app/theme'
 import { ImageWithFallback } from '@/components/ImageWithFallback'
 import { Member } from '@/data/members'
 
-export enum ProfileMode {
+enum ProfileMode {
   DEFAULT = 'DEFAULT',
   CHRISTMAS = 'CHRISTMAS',
   CHILDREN = 'CHILDREN',
   APRIL_FOOLS = 'APRIL-FOOLS',
   HANBOK = 'HANBOK',
 }
+
+export const CurrentMode = ProfileMode.HANBOK
 
 const Card = styled.div`
   max-width: 250px;

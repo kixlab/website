@@ -6,8 +6,7 @@ import { FontVariant, Color } from '@/app/theme'
 import Link from 'next/link'
 import { Member } from '@/data/members'
 import Image from 'next/image'
-import { mode } from '@/app/people/page'
-import { ProfileMode } from './MemberCard'
+import { CurrentMode } from './MemberCard'
 
 const AlumniCardContainer = styled.div`
   width: 100%;
@@ -146,8 +145,9 @@ const FadingImage = styled.div<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
 `
 
-const juraHoverImages: Partial<Record<ProfileMode, string>> = {
-  [ProfileMode.HANBOK]: '/images/jura-hanbok.jpg',
+const juraHoverImages: Partial<Record<string, string>> = {
+  'DEFAULT': '/images/jura.png',
+  'HANBOK': '/images/jura-hanbok.jpg',
 }
 
 export const SpecialThanksCard = ({
@@ -163,7 +163,7 @@ export const SpecialThanksCard = ({
 }) => {
   const [isHovered, setIsHovered] = useState(false)
 
-  const hoverImg = juraHoverImages[mode]
+  const hoverImg = juraHoverImages[CurrentMode]
   const hasHover = Boolean(hoverImg)
 
   const toggleHover = () => {
