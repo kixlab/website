@@ -145,8 +145,8 @@ const FadingImage = styled.div<{ opacity: number }>`
   opacity: ${({ opacity }) => opacity};
 `
 
-const juraHoverImages: Partial<Record<string, string>> = {
-  DEFAULT: '/images/jura.png',
+const juraHoverImages: Partial<Record<string, string | null>> = {
+  DEFAULT: null,
   HANBOK: '/images/jura-hanbok.jpg',
 }
 

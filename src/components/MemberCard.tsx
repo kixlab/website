@@ -14,7 +14,7 @@ enum ProfileMode {
   HANBOK = 'HANBOK',
 }
 
-export const CurrentMode = ProfileMode.HANBOK
+export const CurrentMode = ProfileMode.DEFAULT
 
 const Card = styled.div`
   max-width: 250px;
