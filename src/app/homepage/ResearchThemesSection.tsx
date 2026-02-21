@@ -1,4 +1,5 @@
 'use client'
+import React, { useEffect, useState } from 'react'
 import { Color, FontVariant } from '@/app/theme'
 import { Member } from '@/data/members'
 import { PUBLICATIONS, Publication, ResearchTopics, type ResearchTopicType } from '@/data/publications'
@@ -60,9 +61,7 @@ const GatherStatsByResearchTopic = () => {
     )
     const filteredAuthors = topicAuthors.filter(entry => entry instanceof Object && entry.isAlumni !== true) as Member[]
 
-    const shuffledAuthors = shuffle(filteredAuthors)
-
-    statsByResearchTopic[researchTopicKey] = { numPublications, authors: shuffledAuthors }
+    statsByResearchTopic[researchTopicKey] = { numPublications, authors: filteredAuthors }
   })
   return statsByResearchTopic
 }
@@ -71,13 +70,25 @@ const RESEARCH_TOPICS = Object.entries(GatherStatsByResearchTopic()).sort(
   ([, a], [, b]) => b.numPublications - a.numPublications
 )
 const NUM_VISIBLE = 5
+type ResearchTopicsEntry = (typeof RESEARCH_TOPICS)[number]
 
 export const ResearchThemesSection = () => {
+  const [displayTopics, setDisplayTopics] = useState<ResearchTopicsEntry[]>(RESEARCH_TOPICS)
+
+  useEffect(() => {
+    setDisplayTopics(
+      RESEARCH_TOPICS.map(([topic, stats]) => [
+        topic,
+        { ...stats, authors: shuffle(stats.authors) },
+      ]) as ResearchTopicsEntry[]
+    )
+  }, [])
+
   return (
     <Section id="research-section">
       <SectionHeader title="Research Themes" subtitle="Discover the research happening at KIXLAB" />
       <ResearchTopicsArea>
-        {RESEARCH_TOPICS.map(([topic, stats]) => {
+        {displayTopics.map(([topic, stats]) => {
           return (
             <Link
               href={`/publications/?researchTopic=${topic}`}
