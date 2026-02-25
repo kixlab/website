@@ -553,7 +553,7 @@ export const MEMBERS = {
     startSeason: 'Spring',
     endYear: 2026,
     endSeason: 'Winter',
-    currentPosition: 'Software Engineer at SkillBench',
+    currentPosition: 'Applied Scientist at SkillBench',
     site: 'https://eunyoungko.com/',
   },
   yoonjoolee: {
