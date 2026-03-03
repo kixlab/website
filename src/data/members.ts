@@ -592,9 +592,12 @@ export const MEMBERS = {
     email: 'leesungchul@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'sclee.png',
+    isAlumni: true,
     hoverImg: { HANBOK: 'members-hanbok/sclee.jpg' },
     startYear: 2016,
     startSeason: 'Summer',
+    endYear: 2026,
+    endSeason: 'Winter',
   },
   kihoonson: {
     firstName: 'Kihoon',
