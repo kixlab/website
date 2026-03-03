@@ -531,6 +531,7 @@ export const MEMBERS = {
     currentPosition: 'Postdoc Researcher at SkillBench',
     site: 'https://taesookim.com/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2022-taesoo.pdf',
+    phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2026-taesoo.pdf',
   },
   yoonsukim: {
     firstName: 'Yoonsu',
@@ -555,6 +556,7 @@ export const MEMBERS = {
     endSeason: 'Winter',
     currentPosition: 'Applied Scientist at SkillBench',
     site: 'https://eunyoungko.com/',
+    phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2026-eunyoung.pdf',
   },
   yoonjoolee: {
     firstName: 'Yoonjoo',
@@ -622,6 +624,7 @@ export const MEMBERS = {
     currentPosition: 'Postdoc Researcher at CMU',
     site: 'https://www.saelyne.com/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2021-saelyne.pdf',
+    phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2026-saelyne.pdf',
   },
   seulgichoi: {
     firstName: 'Seulgi',
@@ -651,6 +654,7 @@ export const MEMBERS = {
     currentPosition: 'Tech Manager at Naver',
     isAlumni: true,
     site: 'https://harmonious-prune-381.notion.site/Jihyeong-Hong-44f4f7033cbb480e944eeaf8fb22b30a',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2025-jihyeong.pdf',
   },
   hyoungwookjin: {
     firstName: 'Hyoungwook',
@@ -677,6 +681,7 @@ export const MEMBERS = {
     startYear: 2023,
     startSeason: 'Spring',
     site: 'https://junhomyung.github.io/',
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2025-junho.pdf',
   },
   yeonsupark: {
     firstName: 'Yeon Su',
@@ -685,6 +690,7 @@ export const MEMBERS = {
     kixlabPosition: 'Ph.D. Student',
     img: 'yeonsupark.jpg',
     hoverImg: { HANBOK: 'members-hanbok/yeonsupark.jpg' },
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2026-yeonsu.pdf',
   },
   alexsuryapranata: {
     firstName: 'Alex',
@@ -707,6 +713,7 @@ export const MEMBERS = {
     kixlabPosition: 'Ph.D. Student',
     img: 'bekzattilekbay.jpg',
     hoverImg: { HANBOK: 'members-hanbok/bekzattilekbay.png' },
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2025-bekzat.pdf',
   },
   jiangnanxu: {
     firstName: 'Jiangnan',
