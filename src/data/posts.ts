@@ -16,6 +16,27 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Three Ph.D. Students and One M.S. Student Successfully Defended Their Theses',
+    date: new Date('2026-02-20'),
+    categories: ['news'],
+    summary:
+      'We are proud to announce that Eunyoung, Saelyne, and Taesoo successfully defended their Ph.D. dissertations, and Yeon Su successfully defended her M.S. thesis. Congratulations to all!',
+  },
+  {
+    title: 'Outstanding Paper Awards – School of Computing',
+    date: new Date('2026-01-30'),
+    categories: ['award'],
+    summary:
+      'Eight KIXLAB members received the Outstanding Paper Awards, presented annually to graduating M.S. and Ph.D. students in the School of Computing. Congratulations to Eunyoung, Taesoo, Hyungyu, Saelyne, Yoonjoo, Yeon Su, Hyoungwook, and Bekzat!',
+  },
+  {
+    title: 'CoE Ph.D. Dissertation Award',
+    date: new Date('2026-01-28'),
+    categories: ['award'],
+    summary:
+      'Taesoo received the College of Engineering Ph.D. Dissertation Award for his dissertation, “Disentangling Text for Interactive AI Alignment.” Congratulations!',
+  },
+  {
     title: 'A paper accepted to IUI 2026',
     date: new Date('2025-12-14'),
     categories: ['publication'],
