@@ -44,6 +44,138 @@ export class Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
+  // {
+  //   title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
+  //   authors: [MEMBERS.saelyneyang, MEMBERS.jaesangyu, 'Yi-Hao Peng', 'Kevin Qinghong Lin', 'Jae Won Cho', 'Yale Song', MEMBERS.juhokim],
+  //   venue: 'CVPR 2026',
+  //   year: 2026,
+  //   topics: ['human-AI interaction'],
+  //   type: 'Conference',
+  //   links: [
+  //     {
+  //       url: '',
+  //       type: PublicationLinkType.ARX,
+  //     },
+  //   ],
+  // },
+  {
+    title: `"I Can't Keep Up": Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning`,
+    authors: [
+      MEMBERS.hyehyunchu,
+      MEMBERS.seungjukim,
+      MEMBERS.chenzhou,
+      MEMBERS.yukaihung,
+      MEMBERS.saelyneyang,
+      'Hyun W. Ka',
+      MEMBERS.juhokim,
+    ],
+    venue: 'CHI 2026',
+    year: 2026,
+    topics: ['learning', 'social'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2602.08300',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'Authorship Drift: How Self-Efficacy and Trust Evolve During LLM-Assisted Writing',
+    authors: [MEMBERS.yeonsupark, MEMBERS.nadiaarvi, MEMBERS.seoyoungkim, MEMBERS.juhokim],
+    venue: 'CHI 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2602.05819',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title:
+      'ClearFairy: Capturing Creative Workflows through Decision Structuring, In-Situ Questioning, and Rationale Inference',
+    authors: [MEMBERS.kihoonson, MEMBERS.daeunchoi, MEMBERS.taesookim, 'Young-Ho Kim', 'Sangdoo Yun', MEMBERS.juhokim],
+    venue: 'CHI 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2509.14537',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'DiaryPlay: AI-Assisted Authoring of Interactive Vignettes for Everyday Storytelling',
+    authors: [
+      MEMBERS.jiangnanxu,
+      MEMBERS.haeseulcha,
+      MEMBERS.gosuchoi,
+      'Gyu-cheol Lee',
+      'Yeo-Jin Yoon',
+      'Zucheul Lee',
+      'Konstantinos Papangelis',
+      MEMBERS.daehyunkim,
+      MEMBERS.juhokim,
+    ],
+    venue: 'CHI 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2507.11628',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions',
+    authors: [MEMBERS.taesookim, MEMBERS.heechanlee, MEMBERS.yoonjoolee, 'Joseph Seering', MEMBERS.juhokim],
+    venue: 'CHI 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2509.11206',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://evalet.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+    ],
+  },
+  {
+    title:
+      'When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms',
+    authors: [
+      MEMBERS.junhomyung,
+      'Hyunseung Lim',
+      MEMBERS.hanaoh,
+      MEMBERS.hyoungwookjin,
+      'Nayeon Kang',
+      'So-Yeon Ahn',
+      'Hwajung Hong',
+      'Alice Oh',
+      MEMBERS.juhokim,
+    ],
+    venue: 'CHI 2026',
+    year: 2026,
+    topics: ['learning'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2512.05506',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
   {
     title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
     authors: [

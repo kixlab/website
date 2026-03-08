@@ -37,6 +37,13 @@ export const POSTS: Post[] = [
       'Tae Soo received the College of Engineering Ph.D. Dissertation Award for his dissertation, "Disentangling Text for Interactive AI Alignment." Congratulations!',
   },
   {
+    title: 'KIXLAB members and papers at CHI 2026', // Will be updated just before CHI 2026.
+    date: new Date('2026-01-16'),
+    categories: ['news'],
+    summary: 'Six papers from KIXLAB have been accepted to [CHI 2026](https://chi2026.acm.org/)',
+    contentMdFilePath: '2026-01-16-chi2026.md',
+  },
+  {
     title: 'A paper accepted to IUI 2026',
     date: new Date('2025-12-14'),
     categories: ['publication'],
