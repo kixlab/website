@@ -16,25 +16,32 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
-    title: 'Three Ph.D. Students and One M.S. Student Successfully Defended Their Theses',
+    title: 'Three Ph.D. students and one M.S. student successfully defended their theses',
     date: new Date('2026-02-20'),
     categories: ['news'],
     summary:
-      'We are proud to announce that Eunyoung, Saelyne, and Taesoo successfully defended their Ph.D. dissertations, and Yeon Su successfully defended her M.S. thesis. Congratulations to all!',
+      'We are proud to announce that Eunyoung, Saelyne, and Tae Soo successfully defended their Ph.D. dissertations, and Yeon Su successfully defended her M.S. thesis. Congratulations to all!',
   },
   {
     title: 'Outstanding Paper Awards – School of Computing',
     date: new Date('2026-01-30'),
     categories: ['award'],
     summary:
-      'Eight KIXLAB members received the Outstanding Paper Awards, presented annually to graduating M.S. and Ph.D. students in the School of Computing. Congratulations to Eunyoung, Taesoo, Hyungyu, Saelyne, Yoonjoo, Yeon Su, Hyoungwook, and Bekzat!',
+      'Eight KIXLAB members received the Outstanding Paper Awards, presented annually to graduating M.S. and Ph.D. students in the School of Computing. Congratulations to Eunyoung, Tae Soo, Hyungyu, Saelyne, Yoonjoo, Yeon Su, Hyoungwook, and Bekzat!',
   },
   {
     title: 'CoE Ph.D. Dissertation Award',
     date: new Date('2026-01-28'),
     categories: ['award'],
     summary:
-      'Taesoo received the College of Engineering Ph.D. Dissertation Award for his dissertation, “Disentangling Text for Interactive AI Alignment.” Congratulations!',
+      'Tae Soo received the College of Engineering Ph.D. Dissertation Award for his dissertation, "Disentangling Text for Interactive AI Alignment." Congratulations!',
+  },
+  {
+    title: 'KIXLAB members and papers at CHI 2026', // Will be updated just before CHI 2026.
+    date: new Date('2026-01-16'),
+    categories: ['news'],
+    summary: 'Six papers from KIXLAB have been accepted to [CHI 2026](https://chi2026.acm.org/)',
+    contentMdFilePath: '2026-01-16-chi2026.md',
   },
   {
     title: 'A paper accepted to IUI 2026',
@@ -125,11 +132,11 @@ export const POSTS: Post[] = [
       'Dae Hyun Kim officially completed his postdoc at KIXLAB and is now an assistant professor at Yonsei University. Congratulations, Dae Hyun!',
   },
   {
-    title: 'Seoyoung Awarded Outstanding Ph.D Thesis Award from KAIST School of Computing!',
+    title: 'Seoyoung Awarded Outstanding Ph.D. Thesis Award from KAIST School of Computing!',
     date: new Date('2025-02-11'),
     categories: ['award'],
     summary:
-      'Seoyoung Kim was awarded the prestigious Outstanding Ph.D Thesis Award from the KAIST School of Computing.',
+      'Seoyoung Kim was awarded the prestigious Outstanding Ph.D. Thesis Award from the KAIST School of Computing.',
   },
   {
     title: 'Four papers, four LBW papers, and one DC accepted to CHI 2025',
@@ -155,11 +162,11 @@ export const POSTS: Post[] = [
   },
 
   {
-    title: 'Seoyoung successfully defended his Ph.D. thesis',
+    title: 'Seoyoung successfully defended her Ph.D. thesis',
     date: new Date('2024-12-02'),
     categories: ['news'],
     summary:
-      "Seoyoung Kim successfully defended her Ph.D. thesis and became KIXLAB's second Ph.D graduate(!). Congratulations!",
+      "Seoyoung Kim successfully defended her Ph.D. thesis and became KIXLAB's second Ph.D. graduate(!). Congratulations!",
   },
   {
     title: 'KIXLAB members and papers at CSCW 2024',
@@ -417,7 +424,7 @@ export const POSTS: Post[] = [
     date: new Date('2022-04-06'),
     categories: ['award'],
     summary:
-      'Our paper ["Mobile-Friendly Content Design for MOOCs: Challenges, Requirements, and Design Opportunities"](https://kixlab.github.io/website-files/2022/chi2022-mMOOC-paper.pdf) led by Jeongyeon wins a Best Paper Award for [CHI 2022](https://chi2022.acm.org/). Also, our paper ["Stylette: Styling the Web with Natural Language"](https://kixlab.github.io/website-files/2022/chi2022-stylette-paper.pdf) led by Taesoo wins an Honorable Mention Award for [CHI2022](https://chi2022.acm.org/).',
+      'Our paper ["Mobile-Friendly Content Design for MOOCs: Challenges, Requirements, and Design Opportunities"](https://kixlab.github.io/website-files/2022/chi2022-mMOOC-paper.pdf) led by Jeongyeon wins a Best Paper Award for [CHI 2022](https://chi2022.acm.org/). Also, our paper ["Stylette: Styling the Web with Natural Language"](https://kixlab.github.io/website-files/2022/chi2022-stylette-paper.pdf) led by Tae Soo wins an Honorable Mention Award for [CHI2022](https://chi2022.acm.org/).',
   },
   {
     title: 'A paper accepted to Learning at Scale 2022',
@@ -455,11 +462,11 @@ export const POSTS: Post[] = [
       'Haesoo worked excellently as a TA in the CS473 course, and was selected as an outstanding Education 4.0Q TA in fall 2021.',
   },
   {
-    title: 'Taesoo and Jeongyeon won the department’s Outstanding MS Thesis Award',
+    title: 'Tae Soo and Jeongyeon won the department’s Outstanding MS Thesis Award',
     date: new Date('2022-02-09'),
     categories: ['award'],
     summary:
-      'Taesoo and Jeongyeon won the department’s Outstanding MS Thesis Award. KIXLAB rocked this year again with two awardees out of the six awardees for MS theses.',
+      'Tae Soo and Jeongyeon won the department’s Outstanding MS Thesis Award. KIXLAB rocked this year again with two awardees out of the six awardees for MS theses.',
   },
   {
     title: 'One more CHI 2022 paper accepted',
