@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'One Best Paper Award and one Honorable Mention Award for CHI 2026',
+    date: new Date('2022-03-09'),
+    categories: ['award'],
+    summary:
+      'Our paper ["When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms"](https://arxiv.org/abs/2512.05506) led by Junho wins a Best Paper Award for [CHI 2026](https://chi2026.acm.org/). Also, our paper ["Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions"](https://arxiv.org/abs/2509.11206) led by Tae Soo wins an Honorable Mention Award for [CHI2026](https://chi2026.acm.org/).',
+  },
+  {
     title: 'Three Ph.D. students and one M.S. student successfully defended their theses',
     date: new Date('2026-02-20'),
     categories: ['news'],
