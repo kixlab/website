@@ -23,21 +23,21 @@ export const POSTS: Post[] = [
       'We are proud to announce that Eunyoung, Saelyne, and Tae Soo successfully defended their Ph.D. dissertations, and Yeon Su successfully defended her M.S. thesis. Congratulations to all!',
   },
   {
-    title: 'Outstanding Paper Awards – School of Computing',
+    title: 'Eight Outstanding Thesis Award from KAIST School of Computing',
     date: new Date('2026-01-30'),
     categories: ['award'],
     summary:
-      'Eight KIXLAB members received the Outstanding Paper Awards, presented annually to graduating M.S. and Ph.D. students in the School of Computing. Congratulations to Eunyoung, Tae Soo, Hyungyu, Saelyne, Yoonjoo, Yeon Su, Hyoungwook, and Bekzat!',
+      'Eight KIXLAB members received the Outstanding Thesis Awards, presented annually to graduating M.S. and Ph.D. students in the School of Computing. Congratulations to Eunyoung, Tae Soo, Hyungyu, Saelyne, Yoonjoo, Yeon Su, Hyoungwook, and Bekzat!',
   },
   {
-    title: 'CoE Ph.D. Dissertation Award',
+    title: 'Tae Soo Awarded Ph.D. Dissertation Award from College of Engineering',
     date: new Date('2026-01-28'),
     categories: ['award'],
     summary:
       'Tae Soo received the College of Engineering Ph.D. Dissertation Award for his dissertation, "Disentangling Text for Interactive AI Alignment." Congratulations!',
   },
   {
-    title: 'KIXLAB members and papers at CHI 2026', // Will be updated just before CHI 2026.
+    title: 'Six papers conditionally accepted to CHI 2026',
     date: new Date('2026-01-16'),
     categories: ['news'],
     summary: 'Six papers from KIXLAB have been accepted to [CHI 2026](https://chi2026.acm.org/)',
