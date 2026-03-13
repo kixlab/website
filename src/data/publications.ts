@@ -140,6 +140,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Conference',
+    award: 'Honorable Mention Award',
     links: [
       {
         url: 'https://arxiv.org/abs/2509.11206',
@@ -169,6 +170,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['learning'],
     type: 'Conference',
+    award: 'Best Paper Award',
     links: [
       {
         url: 'https://arxiv.org/abs/2512.05506',
