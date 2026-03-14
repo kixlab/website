@@ -46,7 +46,7 @@ export const POSTS: Post[] = [
   {
     title: 'Six papers conditionally accepted to CHI 2026',
     date: new Date('2026-01-16'),
-    categories: ['news'],
+    categories: ['publication'],
     summary: 'Six papers from KIXLAB have been accepted to [CHI 2026](https://chi2026.acm.org/)',
     contentMdFilePath: '2026-01-16-chi2026.md',
   },
