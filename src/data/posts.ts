@@ -37,6 +37,13 @@ export const POSTS: Post[] = [
       'Eight KIXLAB members received the Outstanding Thesis Awards, presented annually to graduating M.S. and Ph.D. students in the School of Computing. Congratulations to Eunyoung, Tae Soo, Hyungyu, Saelyne, Yoonjoo, Yeon Su, Hyoungwook, and Bekzat!',
   },
   {
+    title: 'KIXLAB is selected as the 2026 KAIST Globalization Excellence Lab',
+    date: new Date('2026-01-30'),
+    categories: ['award'],
+    summary:
+      'KIXLAB is selected as the 2026 KAIST Globalization Excellence Lab. Thank you all for contributing to creating and maintaining an international-friendly research environment.',
+  },
+  {
     title: 'Tae Soo Awarded Ph.D. Dissertation Award from College of Engineering',
     date: new Date('2026-01-28'),
     categories: ['award'],
