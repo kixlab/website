@@ -20,7 +20,7 @@ export const POSTS: Post[] = [
     date: new Date('2026-03-09'),
     categories: ['award'],
     summary:
-      'Our paper ["When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms"](https://arxiv.org/abs/2512.05506) led by Junho wins a Best Paper Award for [CHI 2026](https://chi2026.acm.org/). Also, our paper ["Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions"](https://arxiv.org/abs/2509.11206) co-led by Tae Soo and Heechan wins an Honorable Mention Award for [CHI 2026](https://chi2026.acm.org/).',
+      'Our paper "When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms" led by Junho wins a Best Paper Award for [CHI 2026](https://chi2026.acm.org/). Also, our paper "Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions" co-led by Tae Soo and Heechan wins an Honorable Mention Award for [CHI 2026](https://chi2026.acm.org/).',
   },
   {
     title: 'A paper accepted to CVPR 2026',
