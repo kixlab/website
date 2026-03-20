@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Two papers accepted to DIS 2026',
+    date: new Date('2026-03-19'),
+    categories: ['publication'],
+    summary:
+      'Two KIXLAB papers "IntentFlow: Investigating Fluid Dynamics of Intent Communication in Generative AI" led by Yoonsu and "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI" led by DaEun have been accepted at DIS 2026, congratulations!',
+  },
+  {
     title: 'One Best Paper Award and one Honorable Mention Award for CHI 2026',
     date: new Date('2026-03-09'),
     categories: ['award'],
