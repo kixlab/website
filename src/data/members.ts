@@ -4,6 +4,7 @@ export const KixlabPositions = [
   'Ph.D. Student',
   'M.S. Student',
   'Visiting Researcher',
+  'Past Researcher',
   'Undergrad Intern',
   'Staff',
 ] as const
@@ -592,7 +593,7 @@ export const MEMBERS = {
     firstName: 'Sung-Chul',
     lastName: 'Lee',
     email: 'leesungchul@kaist.ac.kr',
-    kixlabPosition: 'Ph.D. Student',
+    kixlabPosition: 'Past Researcher',
     img: 'sclee.png',
     isAlumni: true,
     hoverImg: { HANBOK: 'members-hanbok/sclee.jpg' },
