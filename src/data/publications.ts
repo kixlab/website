@@ -44,6 +44,34 @@ export class Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
+  {
+    title: `IntentFlow: Investigating Fluid Dynamics of Intent Communication in Generative AI`,
+    authors: [MEMBERS.yoonsukim, MEMBERS.kihoonson, MEMBERS.seoyoungkim, MEMBERS.brandonchin, MEMBERS.juhokim],
+    venue: 'DIS 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2507.22134',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: `IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI`,
+    authors: [MEMBERS.daeunchoi, MEMBERS.kihoonson, MEMBERS.jaesangyu, 'Hyunjoon Jung', MEMBERS.juhokim],
+    venue: 'DIS 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2507.22163',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
   // {
   //   title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
   //   authors: [MEMBERS.saelyneyang, MEMBERS.jaesangyu, 'Yi-Hao Peng', 'Kevin Qinghong Lin', 'Jae Won Cho', 'Yale Song', MEMBERS.juhokim],
