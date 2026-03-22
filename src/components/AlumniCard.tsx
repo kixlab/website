@@ -72,7 +72,15 @@ const Description = styled.span`
   font-style: italic;
 `
 
-export const AlumniCard = ({ mem }: { mem: Member }) => {
+const Role = styled.span`
+  ${FontVariant.body_md}
+  color: ${Color.black};
+`
+
+export const AlumniCard = ({ mem, showRole }: { mem: Member; showRole?: boolean }) => {
+  const role =
+    mem.kixlabPosition === 'Postdoc Researcher' ? '(Postdoc)' : mem.kixlabPosition === 'Ph.D. Student' ? '(Ph.D.)' : ''
+
   return (
     <AlumniCardContainer>
       <TextRow>
@@ -85,6 +93,7 @@ export const AlumniCard = ({ mem }: { mem: Member }) => {
             {mem.firstName} {mem.lastName}
           </Name>
         )}
+        {showRole && role && <Role>{role}</Role>}
         {mem.affiliation && <Education>{mem.affiliation}</Education>}
         {Array.isArray(mem.periods) && mem.periods.length > 0 ? (
           <Period>
