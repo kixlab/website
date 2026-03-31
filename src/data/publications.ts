@@ -207,6 +207,28 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
+    title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
+    authors: [
+      MEMBERS.saelyneyang,
+      MEMBERS.jaesangyu,
+      'Yi-Hao Peng',
+      'Kevin Qinghong Lin',
+      'Jae Won Cho',
+      'Yale Song',
+      MEMBERS.juhokim,
+    ],
+    venue: 'CVPR 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2603.25864',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: 'ChoiceMates: Supporting Unfamiliar Online Decision-Making with Multi-Agent Conversational Interactions',
     authors: [
       MEMBERS.jeongeonpark,
