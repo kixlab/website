@@ -267,7 +267,7 @@ export const MEMBERS = {
     kixlabPosition: 'Undergrad Intern',
     img: 'sean.jpg',
     hoverImg: { HANBOK: 'members-hanbok/sean.jpg', CHRISTMAS: 'members-christmas/sean.png' },
-    site: 'https://kimsean.vercel.app/',
+    site: 'https://seank021.github.io/',
     affiliation: 'SNU',
     startYear: 2025,
     startSeason: 'Spring',
