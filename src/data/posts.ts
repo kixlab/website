@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'KIXLAB members and papers at CHI 2026',
+    date: new Date('2026-04-10'),
+    categories: ['publication'],
+    summary:
+      'Six full papers, one poster, one student research competition paper, and two workshop papers got accepted to [CHI 2026](https://chi2026.acm.org/).',
+    contentMdFilePath: '2026-04-10-chi2026.md',
+  },
+  {
     title: 'Two papers accepted to DIS 2026',
     date: new Date('2026-03-19'),
     categories: ['publication'],
