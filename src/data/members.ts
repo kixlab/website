@@ -689,8 +689,9 @@ export const MEMBERS = {
     lastName: 'Park',
     email: 'yeonsupark@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
-    img: 'yeonsupark.jpg',
+    img: 'yeonsu.jpeg',
     hoverImg: { HANBOK: 'members-hanbok/yeonsupark.jpg' },
+    site: 'https://yeonsuuuu28.github.io/',
     msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2026-yeonsu.pdf',
   },
   alexsuryapranata: {
