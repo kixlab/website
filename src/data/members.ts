@@ -83,6 +83,9 @@ export const MEMBERS = {
     affiliation: 'KAIST',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   jihoonchae: {
     firstName: 'Jihoon',
@@ -139,6 +142,9 @@ export const MEMBERS = {
     affiliation: 'SNU',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   mingyukim: {
     firstName: 'Mingyu',
@@ -151,6 +157,7 @@ export const MEMBERS = {
     affiliation: 'UNIST',
     startYear: 2026,
     startSeason: 'Winter',
+    isAlumni: true,
   },
   jaeyoungkwon: {
     firstName: 'Jaeyoung',
@@ -175,6 +182,9 @@ export const MEMBERS = {
     affiliation: 'Korea Univ',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   emircangundogdu: {
     firstName: 'Emircan',
@@ -233,6 +243,9 @@ export const MEMBERS = {
     affiliation: 'Ewha',
     startYear: 2025,
     startSeason: 'Summer',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   minbeomkim: {
     firstName: 'Minbeom',
@@ -433,6 +446,10 @@ export const MEMBERS = {
     hoverImg: { HANBOK: 'members-hanbok/seungju.jpg' },
     startYear: 2024,
     startSeason: 'Fall',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
+    currentPosition: 'Researcher at the Korea Institute for Curriculum and Evaluation',
   },
   eunjooKim: {
     firstName: 'Eunjoo',
@@ -818,6 +835,7 @@ export const MEMBERS = {
     endSeason: 'Fall',
     isAlumni: true,
     affiliation: 'Sogang',
+    currentPosition: 'M.S. Student at MIT',
   },
   jihokim: {
     firstName: 'Jiho',
@@ -867,6 +885,7 @@ export const MEMBERS = {
     endYear: 2025,
     endSeason: 'Winter',
     isAlumni: true,
+    currentPosition: 'AI Researcher at Gudo Advisory Co.',
   },
   eunhyekim: {
     firstName: 'Eunhye',
@@ -890,6 +909,7 @@ export const MEMBERS = {
     endSeason: 'Fall',
     isAlumni: true,
     affiliation: 'SNU',
+    currentPosition: 'Ph.D. Student at Princeton University',
   },
   jihyunyoo: {
     firstName: 'Jihyun',
@@ -918,6 +938,7 @@ export const MEMBERS = {
     endSeason: 'Fall',
     isAlumni: true,
     affiliation: 'SNU',
+    currentPosition: 'Ph.D. Student at University of Michigan',
   },
   hyehyunchu: {
     firstName: 'Hyehyun',
@@ -1013,6 +1034,7 @@ export const MEMBERS = {
     startSeason: 'Winter',
     endYear: 2024,
     endSeason: 'Summer',
+    currentPosition: 'Ph.D. Student at University of Maryland',
   },
   juhoonlee: {
     firstName: 'Juhoon',
@@ -1176,9 +1198,9 @@ export const MEMBERS = {
     phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2021-minsuk.pdf',
   },
   kyungjejo: {
-    firstName: 'Kyung',
-    lastName: 'Je Jo',
-    currentPosition: 'Software Engineer at Peoplefund',
+    firstName: 'Kyung Je',
+    lastName: 'Jo',
+    currentPosition: 'Software Engineer at Meta',
     kixlabPosition: 'M.S. Student',
     isAlumni: true,
     startYear: 2018,
@@ -1361,7 +1383,7 @@ export const MEMBERS = {
     endYear: 2018,
     endSeason: 'Fall',
     affiliation: 'SUTD',
-    currentPosition: 'Assistant Professor at Singapore University of Technology and Design',
+    currentPosition: 'Assistant Professor at Télécom Paris',
     site: 'https://istd.sutd.edu.sg/people/faculty/simon-perrault',
   },
   rayhong: {
@@ -1553,7 +1575,7 @@ export const MEMBERS = {
     endYear: 2023,
     endSeason: 'Spring',
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at CSTL KAIST',
+    currentPosition: 'CRM at Celine',
   },
   soyeongmin: {
     firstName: 'Soyeong',
@@ -1607,7 +1629,8 @@ export const MEMBERS = {
     endYear: 2022,
     endSeason: 'Summer',
     affiliation: 'KAIST',
-    site: 'https://greenina.notion.site/Inhwa-Song-0cb769c9a9314e358cf728c0fe3b1e74',
+    site: 'https://inhwasong.com/',
+    currentPosition: 'Ph.D. student at Princeton University',
   },
   myeongkyuncho: {
     firstName: 'Myeongkyun',
@@ -1689,7 +1712,7 @@ export const MEMBERS = {
     endYear: 2021,
     endSeason: 'Fall',
     affiliation: 'KAIST',
-    currentPosition: 'M.S. Student at CSTL KAIST',
+    currentPosition: 'Ph.D. student in Northwestern University',
   },
   nurlykhankopenov: {
     firstName: 'Nurlykhan',
@@ -1868,6 +1891,7 @@ export const MEMBERS = {
     endYear: 2021,
     endSeason: 'Winter',
     affiliation: 'KAIST',
+    currentPosition: 'Software Engineer at Toss',
   },
   jisuchoi: {
     firstName: 'Jisu',
@@ -2399,7 +2423,7 @@ export const MEMBERS = {
     endYear: 2016,
     endSeason: 'Fall',
     affiliation: 'KAIST',
-    currentPosition: 'Ph.D. Student at U&I Lab',
+    currentPosition: 'Postdoc Researcher in Texas A&M',
   },
   taekyungpark: {
     firstName: 'Taekyung',
