@@ -121,6 +121,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2509.14537',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://clearfairy.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      }
     ],
   },
   {
