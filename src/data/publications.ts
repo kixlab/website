@@ -72,20 +72,6 @@ export const PUBLICATIONS: Publication[] = [
       },
     ],
   },
-  // {
-  //   title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
-  //   authors: [MEMBERS.saelyneyang, MEMBERS.jaesangyu, 'Yi-Hao Peng', 'Kevin Qinghong Lin', 'Jae Won Cho', 'Yale Song', MEMBERS.juhokim],
-  //   venue: 'CVPR 2026',
-  //   year: 2026,
-  //   topics: ['human-AI interaction'],
-  //   type: 'Conference',
-  //   links: [
-  //     {
-  //       url: '',
-  //       type: PublicationLinkType.ARX,
-  //     },
-  //   ],
-  // },
   {
     title: `"I Can't Keep Up": Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning`,
     authors: [
@@ -138,7 +124,7 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://clearfairy.kixlab.org/',
         type: PublicationLinkType.WEB,
-      }
+      },
     ],
   },
   {
