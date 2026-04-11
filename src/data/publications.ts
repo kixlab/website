@@ -124,7 +124,7 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://clearfairy.kixlab.org/',
         type: PublicationLinkType.WEB,
-      }
+      },
     ],
   },
   {
