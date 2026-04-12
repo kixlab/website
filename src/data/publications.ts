@@ -92,6 +92,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2602.08300',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://icantkeepup.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
     ],
   },
   {
