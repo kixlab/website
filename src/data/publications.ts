@@ -96,6 +96,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://icantkeepup.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
+      {
+        url: 'https://doi.org/10.1145/3772318.3790458',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
