@@ -110,6 +110,14 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2602.05819',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://authorshipdrift.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790276',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
