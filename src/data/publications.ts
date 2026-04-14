@@ -269,6 +269,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2310.01331',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3742413.3789107',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
