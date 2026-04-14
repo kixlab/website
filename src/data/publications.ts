@@ -142,7 +142,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://doi.org/10.1145/3772318.3791680',
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3791680',
         type: PublicationLinkType.ACM,
       },
     ],
@@ -170,7 +170,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ARX,
       },
       {
-        url: 'https://doi.org/10.1145/3772318.3790572',
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790572',
         type: PublicationLinkType.ACM,
       },
     ],
@@ -193,7 +193,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
       {
-        url: 'https://doi.org/10.1145/3772318.3790285',
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790285',
         type: PublicationLinkType.ACM,
       },
     ],
@@ -223,7 +223,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ARX,
       },
       {
-        url: 'https://doi.org/10.1145/3772318.3791517',
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3791517',
         type: PublicationLinkType.ACM,
       },
     ],
