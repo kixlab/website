@@ -141,6 +141,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://clearfairy.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3791680',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -165,6 +169,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2507.11628',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790572',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -183,6 +191,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://evalet.kixlab.org/',
         type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790285',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -209,6 +221,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2512.05506',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3791517',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
