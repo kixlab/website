@@ -223,6 +223,10 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ARX,
       },
       {
+        url: 'https://scaffoldingbreaks.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
         url: 'https://dl.acm.org/doi/10.1145/3772318.3791517',
         type: PublicationLinkType.ACM,
       },
