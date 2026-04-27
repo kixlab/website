@@ -229,6 +229,20 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
+    title: 'Supporting Design Reasoning in AI-assisted Interface Prototyping for HCI Research',
+    authors: [MEMBERS.eunhyekim, MEMBERS.minjuyoo, MEMBERS.jennyyang, MEMBERS.daeunchoi],
+    venue: 'CHI 2026 Extended Abstracts (Late Breaking Work)',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Poster',
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772363.3798883',
+        type: PublicationLinkType.ACM,
+      },
+    ],
+  },
+  {
     title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
     authors: [
       MEMBERS.saelyneyang,
