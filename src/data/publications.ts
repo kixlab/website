@@ -231,7 +231,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'Supporting Design Reasoning in AI-assisted Interface Prototyping for HCI Research',
     authors: [MEMBERS.eunhyekim, MEMBERS.minjuyoo, MEMBERS.jennyyang, MEMBERS.daeunchoi],
-    venue: 'CHI 2026 Extended Abstracts (Late Breaking Work)',
+    venue: 'CHI 2026 Extended Abstracts (Posters)',
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Poster',
