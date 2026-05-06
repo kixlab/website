@@ -21,7 +21,7 @@ export const POSTS: Post[] = [
     categories: ['position'],
     summary:
       "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2026-summer-internship-call).",
-    endsAt: new Date('2026-05-06'),
+    endsAt: new Date('2026-05-07'),
   },
   {
     title: 'KIXLAB members and papers at CHI 2026',
