@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  thiemo: {
+    firstName: 'Thiemo',
+    lastName: 'Wambsganss',
+    email: 'thiemo.wambsganss@bfh.ch',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'thiemo.png',
+    site: 'https://thiemowa.github.io/',
+    startYear: 2026,
+    startSeason: 'Spring',
+    affiliation: 'Bern University of Applied Sciences',
+  },
   haerilee: {
     firstName: 'Haeri',
     lastName: 'Lee',
