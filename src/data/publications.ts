@@ -79,6 +79,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Conference',
+    award: 'Honorable Mention Award',
     links: [
       {
         url: 'https://arxiv.org/abs/2507.22163',

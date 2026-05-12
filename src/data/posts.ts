@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'One Honorable Mention Award for DIS 2026',
+    date: new Date('2026-05-12'),
+    categories: ['award'],
+    summary:
+      'Our paper "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI" led by DaEun wins a Honorable Mention Award for [DIS 2026](https://dis.acm.org/2026/).',
+  },
+  {
     title: 'A paper accepted to ICML 2026',
     date: new Date('2026-05-01'),
     categories: ['publication'],
