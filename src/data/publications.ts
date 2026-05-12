@@ -45,6 +45,20 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'DiscoverLLM: From Executing Intents to Discovering Them',
+    authors: [MEMBERS.taesookim, MEMBERS.yoonjoolee, MEMBERS.jaesangyu, MEMBERS.johnjoonyoungchung, MEMBERS.juhokim],
+    venue: 'ICML 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2602.03429',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
     title: `IntentFlow: Investigating Fluid Dynamics of Intent Communication in Generative AI`,
     authors: [MEMBERS.yoonsukim, MEMBERS.kihoonson, MEMBERS.seoyoungkim, MEMBERS.brandonchin, MEMBERS.juhokim],
     venue: 'DIS 2026',
