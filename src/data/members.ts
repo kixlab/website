@@ -52,7 +52,7 @@ export const MEMBERS = {
     email: 'jaylions@snu.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'jaeyoung.jpg',
-    site: 'https://www.jaykwon.me/',
+    site: 'https://jaylions.github.io/',
     affiliation: 'SNU',
     startYear: 2026,
     startSeason: 'Winter',
