@@ -177,7 +177,7 @@ export const MEMBERS = {
     kixlabPosition: 'Undergrad Intern',
     img: 'jaeyoung.jpeg',
     hoverImg: { HANBOK: 'members-hanbok/jaeyoung.jpeg' },
-    site: 'https://www.jaykwon.me/',
+    site: 'https://jaylions.github.io/',
     affiliation: 'SNU',
     startYear: 2026,
     startSeason: 'Winter',
