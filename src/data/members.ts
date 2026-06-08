@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  diana: {
+    firstName: 'Diana',
+    lastName: 'Kozachek',
+    email: 'diana.kozachek@unisg.ch',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'diana.png',
+    site: 'https://koizachek.github.io/',
+    startYear: 2026,
+    startSeason: 'Summer',
+    affiliation: 'University of St. Gallen',
+  },
   thiemo: {
     firstName: 'Thiemo',
     lastName: 'Wambsganss',
