@@ -6,7 +6,6 @@ export const KixlabPositions = [
   'Visiting Researcher',
   'Past Researcher',
   'Undergrad Intern',
-  'Research Intern',
   'Staff',
 ] as const
 export type KixlabPositionTypes = (typeof KixlabPositions)[number]
@@ -61,6 +60,16 @@ export const MEMBERS = {
     affiliation: 'University of Moratuwa',
     startYear: 2026,
     startSeason: 'Summer',
+  diana: {
+    firstName: 'Diana',
+    lastName: 'Kozachek',
+    email: 'diana.kozachek@unisg.ch',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'diana.png',
+    site: 'https://koizachek.github.io/',
+    startYear: 2026,
+    startSeason: 'Summer',
+    affiliation: 'University of St. Gallen',
   },
   thiemo: {
     firstName: 'Thiemo',
@@ -249,12 +258,15 @@ export const MEMBERS = {
     firstName: 'Shujun',
     lastName: 'Ju',
     email: 'jeff1015jeff@outlook.com',
-    kixlabPosition: 'Visiting Researcher',
+    kixlabPosition: 'Undergrad Intern',
     img: 'shujun.jpg',
     hoverImg: { HANBOK: 'members-hanbok/shujun.jpg' },
     affiliation: 'PolyU_HK',
     startYear: 2025,
     startSeason: 'Summer',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   hayondoh: {
     firstName: 'Hayeon',
