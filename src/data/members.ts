@@ -60,6 +60,7 @@ export const MEMBERS = {
     affiliation: 'University of Moratuwa',
     startYear: 2026,
     startSeason: 'Summer',
+  },
   diana: {
     firstName: 'Diana',
     lastName: 'Kozachek',
