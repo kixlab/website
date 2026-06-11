@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  oshanmudannayake: {
+    firstName: 'Oshan',
+    lastName: 'Mudannayake',
+    email: 'oshan.ivantha@gmail.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'oshanmudannayake.jpg',
+    site: 'https://ivantha.com',
+    affiliation: 'University of Moratuwa',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   diana: {
     firstName: 'Diana',
     lastName: 'Kozachek',
