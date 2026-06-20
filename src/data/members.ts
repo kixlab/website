@@ -55,7 +55,7 @@ export const MEMBERS = {
     lastName: 'Hunzwi',
     email: 'candace.hunzwi@gmail.com',
     kixlabPosition: 'Visiting Researcher',
-    img: 'candace.jpg',
+    img: 'candace.png',
     site: 'https://candace-personal-portfolio.vercel.app/',
     affiliation: 'Carnegie Mellon University',
     startYear: 2026,
