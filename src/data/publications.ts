@@ -70,6 +70,14 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2507.22134',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://intentflow.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3800645.3812999',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -84,6 +92,14 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2507.22163',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://ideablocks.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3800645.3813005',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
