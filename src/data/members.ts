@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  candace: {
+    firstName: 'Candace',
+    lastName: 'Hunzwi',
+    email: 'candace.hunzwi@gmail.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'candace.jpg',
+    site: 'https://candace-personal-portfolio.vercel.app/',
+    affiliation: 'Carnegie Mellon University',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   oshanmudannayake: {
     firstName: 'Oshan',
     lastName: 'Mudannayake',
