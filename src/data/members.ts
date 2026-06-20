@@ -108,11 +108,11 @@ export const MEMBERS = {
   zhengwei: {
     firstName: 'Zheng',
     lastName: 'Wei',
-    email: 'zwei302@connect.ust.hk',
+    email: 'zhengwei084014@gmail.com',
     kixlabPosition: 'Postdoc Researcher',
     img: 'zhengwei.jpg',
     hoverImg: { HANBOK: 'members-hanbok/zhengwei.jpg' },
-    site: 'https://www.zhengwei302.com/',
+    site: 'https://zhengwei302.github.io/',
     affiliation: 'KAIST',
     startYear: 2026,
     startSeason: 'Winter',
