@@ -93,6 +93,7 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Spring',
     affiliation: 'Bern University of Applied Sciences',
+    isAlumni: true,
   },
   haerilee: {
     firstName: 'Haeri',
@@ -141,6 +142,9 @@ export const MEMBERS = {
     affiliation: 'ROK.Army',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   yurilee: {
     firstName: 'Yuri',
@@ -164,6 +168,9 @@ export const MEMBERS = {
     affiliation: 'SNU',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   chanyoungpark: {
     firstName: 'Chanyoung',
@@ -483,6 +490,11 @@ export const MEMBERS = {
     img: 'gosuchoi.jpg',
     hoverImg: { HANBOK: 'members-hanbok/gosuchoi.png' },
     affiliation: 'KAIST',
+    startYear: 2024,
+    startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   seungjukim: {
     firstName: 'Seungju',
