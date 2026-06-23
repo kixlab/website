@@ -44,20 +44,65 @@ export class Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
-  // {
-  //   title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
-  //   authors: [MEMBERS.saelyneyang, MEMBERS.jaesangyu, 'Yi-Hao Peng', 'Kevin Qinghong Lin', 'Jae Won Cho', 'Yale Song', MEMBERS.juhokim],
-  //   venue: 'CVPR 2026',
-  //   year: 2026,
-  //   topics: ['human-AI interaction'],
-  //   type: 'Conference',
-  //   links: [
-  //     {
-  //       url: '',
-  //       type: PublicationLinkType.ARX,
-  //     },
-  //   ],
-  // },
+  {
+    title: 'DiscoverLLM: From Executing Intents to Discovering Them',
+    authors: [MEMBERS.taesookim, MEMBERS.yoonjoolee, MEMBERS.jaesangyu, MEMBERS.johnjoonyoungchung, MEMBERS.juhokim],
+    venue: 'ICML 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2602.03429',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: `IntentFlow: Investigating Fluid Dynamics of Intent Communication in Generative AI`,
+    authors: [MEMBERS.yoonsukim, MEMBERS.kihoonson, MEMBERS.seoyoungkim, MEMBERS.brandonchin, MEMBERS.juhokim],
+    venue: 'DIS 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2507.22134',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://intentflow.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3800645.3812999',
+        type: PublicationLinkType.ACM,
+      },
+    ],
+  },
+  {
+    title: `IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI`,
+    authors: [MEMBERS.daeunchoi, MEMBERS.kihoonson, MEMBERS.jaesangyu, 'Hyunjoon Jung', MEMBERS.juhokim],
+    venue: 'DIS 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    award: 'Honorable Mention Award',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2507.22163',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://ideablocks.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3800645.3813005',
+        type: PublicationLinkType.ACM,
+      },
+    ],
+  },
   {
     title: `"I Can't Keep Up": Accessibility Barriers in Video-Based Learning for Individuals with Borderline Intellectual Functioning`,
     authors: [
@@ -78,6 +123,14 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2602.08300',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://icantkeepup.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790458',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -91,6 +144,14 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2602.05819',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://authorshipdrift.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790276',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -106,6 +167,14 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2509.14537',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://clearfairy.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3791680',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -131,6 +200,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2507.11628',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790572',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -149,6 +222,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://evalet.kixlab.org/',
         type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3790285',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -176,6 +253,50 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2512.05506',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://scaffoldingbreaks.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772318.3791517',
+        type: PublicationLinkType.ACM,
+      },
+    ],
+  },
+  {
+    title: 'Supporting Design Reasoning in AI-assisted Interface Prototyping for HCI Research',
+    authors: [MEMBERS.eunhyekim, MEMBERS.minjuyoo, MEMBERS.jennyyang, MEMBERS.daeunchoi],
+    venue: 'CHI 2026 Extended Abstracts (Posters)',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Poster',
+    links: [
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3772363.3798883',
+        type: PublicationLinkType.ACM,
+      },
+    ],
+  },
+  {
+    title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks',
+    authors: [
+      MEMBERS.saelyneyang,
+      MEMBERS.jaesangyu,
+      'Yi-Hao Peng',
+      'Kevin Qinghong Lin',
+      'Jae Won Cho',
+      'Yale Song',
+      MEMBERS.juhokim,
+    ],
+    venue: 'CVPR 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2603.25864',
+        type: PublicationLinkType.ARX,
+      },
     ],
   },
   {
@@ -196,6 +317,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2310.01331',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3742413.3789107',
+        type: PublicationLinkType.ACM,
       },
     ],
   },

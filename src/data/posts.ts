@@ -16,6 +16,43 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'One Honorable Mention Award for DIS 2026',
+    date: new Date('2026-05-12'),
+    categories: ['award'],
+    summary:
+      'Our paper "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI" led by DaEun wins a Honorable Mention Award for [DIS 2026](https://dis.acm.org/2026/).',
+  },
+  {
+    title: 'A paper accepted to ICML 2026',
+    date: new Date('2026-05-01'),
+    categories: ['publication'],
+    summary:
+      'Our paper "DiscoverLLM: From Executing Intents to Discovering Them" led by Tae Soo has been accepted to [ICML 2026](https://icml.cc/). Congratulations!',
+  },
+  {
+    title: 'Summer 2026 Undergraduate Research Internship',
+    date: new Date('2026-04-28'),
+    categories: ['position'],
+    summary:
+      "We are looking for a few undergraduate research interns to join KIXLAB this summer. You can find more information on [Prof. Juho Kim's website](https://juhokim.com/2026-summer-internship-call).",
+    endsAt: new Date('2026-05-07'),
+  },
+  {
+    title: 'KIXLAB members and papers at CHI 2026',
+    date: new Date('2026-04-10'),
+    categories: ['publication'],
+    summary:
+      'Six full papers, one poster, one student research competition paper, and two workshop papers got accepted to [CHI 2026](https://chi2026.acm.org/).',
+    contentMdFilePath: '2026-04-10-chi2026.md',
+  },
+  {
+    title: 'Two papers accepted to DIS 2026',
+    date: new Date('2026-03-19'),
+    categories: ['publication'],
+    summary:
+      'Two KIXLAB papers "IntentFlow: Investigating Fluid Dynamics of Intent Communication in Generative AI" led by Yoonsu and "IdeaBlocks: Expressing and Reusing Divergent Intents for Graphic Design Exploration using Generative AI" led by DaEun have been accepted to [DIS 2026](https://dis.acm.org/2026/), congratulations!',
+  },
+  {
     title: 'One Best Paper Award and one Honorable Mention Award for CHI 2026',
     date: new Date('2026-03-09'),
     categories: ['award'],
