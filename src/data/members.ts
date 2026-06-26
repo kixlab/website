@@ -56,7 +56,7 @@ export const MEMBERS = {
     email: 'nami200284@snu.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'namhee.jpg',
-    affiliation: 'Seoul National University',
+    affiliation: 'SNU',
     startYear: 2026,
     startSeason: 'Summer',
   },
