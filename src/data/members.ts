@@ -204,6 +204,16 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Winter',
   },
+  gahyunkim: {
+    firstName: 'Gahyun',
+    lastName: 'Kim',
+    email: 'gahyunnnkim@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'gahyun.jpg',
+    affiliation: 'SKKU',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   juhyeonchoi: {
     firstName: 'Juhyeon',
     lastName: 'Choi',
