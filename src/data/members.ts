@@ -50,7 +50,7 @@ export class Member {
 }
 
 export const MEMBERS = {
-    namhee: {
+  namhee: {
     firstName: 'NamHee',
     lastName: 'Kim',
     email: 'nami200284@snu.ac.kr',
@@ -58,7 +58,7 @@ export const MEMBERS = {
     img: 'namhee.jpg',
     affiliation: 'Seoul National University',
     startYear: 2026,
-    startSeason: 'Summer'
+    startSeason: 'Summer',
   },
   candace: {
     firstName: 'Candace',
