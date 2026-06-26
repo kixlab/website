@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  chaeyeonlee: {
+    firstName: 'Chaeyeon',
+    lastName: 'Lee',
+    email: 'mylcy03@ewha.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'chaeyeonlee.png',
+    affiliation: 'EWHA',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   candace: {
     firstName: 'Candace',
     lastName: 'Hunzwi',
