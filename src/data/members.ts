@@ -56,7 +56,7 @@ export const MEMBERS = {
     email: 'mylcy03@ewha.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'chaeyeonlee.png',
-    affiliation: 'EWHA',
+    affiliation: 'Ewha',
     startYear: 2026,
     startSeason: 'Summer',
   },
