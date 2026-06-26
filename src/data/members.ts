@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  namhee: {
+    firstName: 'NamHee',
+    lastName: 'Kim',
+    email: 'nami200284@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'namhee.jpg',
+    affiliation: 'Seoul National University',
+    startYear: 2026,
+    startSeason: 'Summer'
+  },
   candace: {
     firstName: 'Candace',
     lastName: 'Hunzwi',
