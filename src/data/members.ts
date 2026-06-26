@@ -50,13 +50,23 @@ export class Member {
 }
 
 export const MEMBERS = {
-  namhee: {
+  namheekim: {
     firstName: 'NamHee',
     lastName: 'Kim',
     email: 'nami200284@snu.ac.kr',
     kixlabPosition: 'Undergrad Intern',
     img: 'namhee.jpg',
     affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
+  chaeyeonlee: {
+    firstName: 'Chaeyeon',
+    lastName: 'Lee',
+    email: 'mylcy03@ewha.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'chaeyeonlee.png',
+    affiliation: 'Ewha',
     startYear: 2026,
     startSeason: 'Summer',
   },
@@ -167,6 +177,17 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Winter',
   },
+  junyoungpark: {
+    firstName: 'Junyoung',
+    lastName: 'Park',
+    email: 'bloomwayz@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'junyoung.jpg',
+    site: 'https://junyoung.vercel.app/',
+    affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   eugenechoi: {
     firstName: 'Eugene',
     lastName: 'Choi',
@@ -192,6 +213,16 @@ export const MEMBERS = {
     affiliation: 'SNU',
     startYear: 2026,
     startSeason: 'Winter',
+  },
+  gahyunkim: {
+    firstName: 'Gahyun',
+    lastName: 'Kim',
+    email: 'gahyunnnkim@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'gahyun.jpg',
+    affiliation: 'SKKU',
+    startYear: 2026,
+    startSeason: 'Summer',
   },
   juhyeonchoi: {
     firstName: 'Juhyeon',
