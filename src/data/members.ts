@@ -157,6 +157,17 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Winter',
   },
+  junyoungpark: {
+    firstName: 'Junyoung',
+    lastName: 'Park',
+    email: 'bloomwayz@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'junyoung.jpg',
+    site: 'https://junyoung.vercel.app/',
+    affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   eugenechoi: {
     firstName: 'Eugene',
     lastName: 'Choi',
