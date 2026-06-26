@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  hyunminkim: {
+    firstName: 'Hyunmin',
+    lastName: 'Kim',
+    email: 'paisano1206@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'hyunminkim.jpeg',
+    site: 'https://kimhm.in',
+    affiliation: 'KAIST',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   suminlee: {
     firstName: 'Sumin',
     lastName: 'Lee',
