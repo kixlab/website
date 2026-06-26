@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  suminlee: {
+    firstName: 'Sumin',
+    lastName: 'Lee',
+    email: 'cirtuare@snu.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'suminlee.jpg',
+    site: 'https://suminxlee.com',
+    affiliation: 'SNU',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   candace: {
     firstName: 'Candace',
     lastName: 'Hunzwi',
