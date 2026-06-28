@@ -71,7 +71,6 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Summer',
   },
-
   suminlee: {
     firstName: 'Sumin',
     lastName: 'Lee',
