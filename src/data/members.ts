@@ -61,6 +61,17 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Summer',
   },
+  zeynabmammar: {
+    firstName: 'Zeynab',
+    lastName: 'Mammar',
+    email: 'zeynabmammar@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'zeynabmammar.jpg',
+    affiliation: 'Stony Brook University',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
+
   suminlee: {
     firstName: 'Sumin',
     lastName: 'Lee',
