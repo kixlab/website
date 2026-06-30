@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jungkyungyoon: {
+    firstName: 'Kyungyoon',
+    lastName: 'Jung',
+    email: 'juliecandoit98@kaist.ac.kr',
+    kixlabPosition: 'Ph.D. Student',
+    img: 'jungkyungyoon.png',
+    startYear: 2026,
+    startSeason: 'Summer',
+    affiliation: 'KAIST',
+  },
   hyunminkim: {
     firstName: 'Hyunmin',
     lastName: 'Kim',
