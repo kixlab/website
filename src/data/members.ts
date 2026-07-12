@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  seongeunjeon: {
+    firstName: 'Seongeun',
+    lastName: 'Jeon',
+    email: 'tjddms422422@gmail.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'seongeunjeon.jpg',
+    affiliation: 'ROKA',
+    startYear: 2026,
+    startSeason: 'Summer',
+  },
   jungkyungyoon: {
     firstName: 'Kyungyoon',
     lastName: 'Jung',
