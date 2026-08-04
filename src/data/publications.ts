@@ -45,6 +45,31 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics',
+    authors: [
+      MEMBERS.heechanlee,
+      'Jeonggyu Kang',
+      MEMBERS.junhomyung,
+      'Jaywoong Jeong',
+      MEMBERS.juhokim,
+      'Joseph Seering',
+    ],
+    venue: 'COLM 2026',
+    year: 2026,
+    topics: ['social', 'human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2608.01724',
+        type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://tides.cstlab.org/',
+        type: PublicationLinkType.WEB,
+      },
+    ],
+  },
+  {
     title: 'DiscoverLLM: From Executing Intents to Discovering Them',
     authors: [MEMBERS.taesookim, MEMBERS.yoonjoolee, MEMBERS.jaesangyu, MEMBERS.johnjoonyoungchung, MEMBERS.juhokim],
     venue: 'ICML 2026',

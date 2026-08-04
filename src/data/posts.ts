@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'A paper accepted to COLM 2026',
+    date: new Date('2026-07-09'),
+    categories: ['publication'],
+    summary:
+      'Our paper "TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics" led by Heechan has been accepted to [COLM 2026](https://colmweb.org/). Congratulations!',
+  },
+  {
     title: 'One Honorable Mention Award for DIS 2026',
     date: new Date('2026-05-12'),
     categories: ['award'],
