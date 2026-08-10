@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Two papers accepted to UIST 2026',
+    date: new Date('2026-08-10'),
+    categories: ['publication'],
+    summary:
+      'Two KIXLAB papers "Contexty: Capturing and Organizing In-situ Thoughts for Context-Aware AI Support" led by Yoonsu and "Maru: Information Architecture as a Shared Language for Generating Aligned and Persistent User Interfaces" led by Eunhye have been accepted to [UIST 2026](https://uist.acm.org/2026/), congratulations!',
+  },
+  {
     title: 'A paper accepted to COLM 2026',
     date: new Date('2026-07-09'),
     categories: ['publication'],

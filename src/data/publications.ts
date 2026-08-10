@@ -45,6 +45,28 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'Contexty: Capturing and Organizing In-situ Thoughts for Context-Aware AI Support',
+    authors: [MEMBERS.yoonsukim, MEMBERS.chanbinpark, MEMBERS.kihoonson, MEMBERS.saelyneyang, MEMBERS.juhokim],
+    venue: 'UIST 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2604.11067',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'Maru: Information Architecture as a Shared Language for Generating Aligned and Persistent User Interfaces',
+    authors: [MEMBERS.eunhyekim, MEMBERS.daeunchoi, MEMBERS.bryanmin, MEMBERS.hyunjungyi, 'Yue Jiang', MEMBERS.juhokim],
+    venue: 'UIST 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+  },
+  {
     title: 'TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics',
     authors: [
       MEMBERS.heechanlee,
