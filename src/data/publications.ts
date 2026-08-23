@@ -45,6 +45,22 @@ export class Publication {
 
 export const PUBLICATIONS: Publication[] = [
   {
+    title: 'Investigating Assistant Bias in LLM User Simulators Using a Role Vector',
+    authors: [MEMBERS.daeheonjeong, MEMBERS.yoonjoolee, MEMBERS.eugenechoi, 'Sinie van der Ben', MEMBERS.juhokim],
+    venue: 'EMNLP 2026 Findings',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Conference',
+  },
+  {
+    title: 'Hypothesize and Verify: Natural-Language Explanations of Vision Model Errors',
+    authors: ['Hyeon-Woo Nam', MEMBERS.yoonsukim, MEMBERS.kihoonson, MEMBERS.juhokim, 'Tae-Hyun Oh'],
+    venue: 'TMLR 2026',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Journal',
+  },
+  {
     title: 'Contexty: Capturing and Organizing In-situ Thoughts for Context-Aware AI Support',
     authors: [MEMBERS.yoonsukim, MEMBERS.chanbinpark, MEMBERS.kihoonson, MEMBERS.saelyneyang, MEMBERS.juhokim],
     venue: 'UIST 2026',
@@ -65,6 +81,14 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Conference',
+  },
+  {
+    title: 'When AI "Works," When Does Help Begin?: Intergenerational Support Around Older Adults\' LLM Usage',
+    authors: [MEMBERS.hyehyunchu, MEMBERS.yurilee, MEMBERS.yeonsupark, MEMBERS.saelyneyang, MEMBERS.juhokim],
+    venue: 'CSCW 2026 Workshop on Growing Up (and Old) with AI',
+    year: 2026,
+    topics: ['social', 'human-AI interaction'],
+    type: 'Workshop',
   },
   {
     title: 'TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics',
@@ -90,6 +114,65 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.WEB,
       },
     ],
+  },
+  {
+    title: "STEPwise: Diagnosing Students' Math Problem-Solving Skills via LLM-Generated Stepwise Sub-Questions",
+    authors: [MEMBERS.yoonsukim, MEMBERS.hayondoh, MEMBERS.eunhyekim, 'Jinho Son', MEMBERS.juhokim],
+    venue: 'AIED 2026 on Interactive Events',
+    year: 2026,
+    topics: ['learning', 'human-AI interaction'],
+    type: 'Poster',
+    links: [
+      {
+        url: 'https://www.youtube.com/watch?v=cyquqLOIEoo',
+        type: PublicationLinkType.VID,
+      },
+    ],
+  },
+  {
+    title: 'Supporting Tutors in the Gig Economy with Automated Feedback: A Case Study on Ringle',
+    authors: [
+      MEMBERS.yeonsupark,
+      MEMBERS.sieunkim,
+      'Keighley Overbay',
+      MEMBERS.seoyoungkim,
+      'Sewook Wee',
+      MEMBERS.dahojung,
+      MEMBERS.juhokim,
+    ],
+    venue: 'FoL 2026 Workshop on Pedagogical Evaluation of Automated Feedback',
+    year: 2026,
+    topics: ['learning'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2606.22609',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+  },
+  {
+    title: 'GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks ', // space for preventing same title error
+    authors: [
+      MEMBERS.saelyneyang,
+      MEMBERS.jaesangyu,
+      'Yi-Hao Peng',
+      'Kevin Qinghong Lin',
+      'Jae Won Cho',
+      'Yale Song',
+      MEMBERS.juhokim,
+    ],
+    venue: 'CVPR 2026 Workshop on Multi-Modal Reasoning for Agentic Intelligence',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2603.25864',
+        type: PublicationLinkType.ARX,
+      },
+    ],
+    award: 'Outstanding Paper Award',
   },
   {
     title: 'DiscoverLLM: From Executing Intents to Discovering Them',
