@@ -164,6 +164,7 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Summer',
     affiliation: 'University of St. Gallen',
+    isAlumni: true,
   },
   thiemo: {
     firstName: 'Thiemo',
@@ -187,6 +188,9 @@ export const MEMBERS = {
     affiliation: 'KAIST',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Summer',
+    isAlumni: true,
   },
   zhengwei: {
     firstName: 'Zheng',
@@ -362,6 +366,9 @@ export const MEMBERS = {
     affiliation: 'SNU',
     startYear: 2025,
     startSeason: 'Fall',
+    endYear: 2026,
+    endSeason: 'Summer',
+    isAlumni: true,
   },
   chanbinpark: {
     firstName: 'Chanbin',
@@ -542,7 +549,12 @@ export const MEMBERS = {
     img: 'seoyeon.jpg',
     hoverImg: { HANBOK: 'members-hanbok/seoyeon.jpg' },
     site: 'https://seooyxx.com/',
+    startYear: 2025,
+    startSeason: 'Winter',
     affiliation: 'Korea Univ',
+    endYear: 2026,
+    endSeason: 'Summer',
+    isAlumni: true,
   },
   heejinbin: {
     firstName: 'Heejin',
@@ -1628,9 +1640,10 @@ export const MEMBERS = {
     endSeason: 'Fall',
     periods: [
       { startYear: 2023, startSeason: 'Summer', endYear: 2023, endSeason: 'Fall' },
-      { startYear: 2025, startSeason: 'Summer' },
+      { startYear: 2025, startSeason: 'Summer', endYear: 2026, endSeason: 'Summer' },
     ],
     affiliation: 'KAIST',
+    isAlumni: true,
   },
   hainam: {
     firstName: 'Hai',
