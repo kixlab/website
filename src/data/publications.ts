@@ -93,8 +93,8 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2608.24297',
         type: PublicationLinkType.ARX,
-      }
-    ]
+      },
+    ],
   },
   {
     title: 'TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics',
