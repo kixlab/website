@@ -89,6 +89,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['social', 'human-AI interaction'],
     type: 'Workshop',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2608.24297',
+        type: PublicationLinkType.ARX,
+      }
+    ]
   },
   {
     title: 'TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics',
