@@ -81,6 +81,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2608.25565',
+        type: PublicationLinkType.ARX,
+      },
+    ],
   },
   {
     title: 'When AI "Works," When Does Help Begin?: Intergenerational Support Around Older Adults\' LLM Usage',
