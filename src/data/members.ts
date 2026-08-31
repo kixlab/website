@@ -1134,6 +1134,7 @@ export const MEMBERS = {
     site: 'https://hyehyunchu.vercel.app/',
     startSeason: 'Fall',
     startYear: 2024,
+    msThesis: 'https://kixlab.github.io/website-files/theses/thesis-ms-2026-hyehyun.pdf',
   },
   minjuyoo: {
     firstName: 'Minju',
