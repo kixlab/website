@@ -164,6 +164,7 @@ export const MEMBERS = {
     affiliation: 'University of Moratuwa',
     startYear: 2026,
     startSeason: 'Summer',
+    isAlumni: true,
   },
   diana: {
     firstName: 'Diana',
