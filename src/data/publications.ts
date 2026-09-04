@@ -51,6 +51,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Conference',
+    links: [
+      {
+        url: 'https://arxiv.org/abs/2609.00608',
+        type: PublicationLinkType.ARX,
+      },
+    ],
   },
   {
     title: 'Hypothesize and Verify: Natural-Language Explanations of Vision Model Errors',

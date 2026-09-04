@@ -16,6 +16,13 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'A paper accepted to EMNLP 2026 Findings',
+    date: new Date('2026-08-21'),
+    categories: ['publication'],
+    summary:
+      'Our paper "Investigating Assistant Bias in LLM User Simulators Using a Role Vector" led by Daeheon has been accepted to [EMNLP 2026 Findings](https://2026.emnlp.org/). Congratulations!',
+  },
+  {
     title: 'Two papers accepted to UIST 2026',
     date: new Date('2026-08-10'),
     categories: ['publication'],
