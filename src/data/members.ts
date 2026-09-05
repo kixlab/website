@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  yoonseokim: {
+    firstName: 'Yoonseo',
+    lastName: 'Kim',
+    email: 'yoonseo.kim.kr@gmail.com',
+    kixlabPosition: 'Visiting Researcher',
+    img: 'yoonseokim.jpg',
+    site: 'https://myoons.com',
+    affiliation: 'Independent',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   junminpark: {
     firstName: 'Junmin',
     lastName: 'Park',
