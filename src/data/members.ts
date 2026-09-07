@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jiyeonpark: {
+    firstName: 'Jiyeon',
+    lastName: 'Park',
+    email: 'jeeyeon513@kaist.ac.kr',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'jiyeonpark.png',
+    affiliation: 'KAIST',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   junminpark: {
     firstName: 'Junmin',
     lastName: 'Park',
