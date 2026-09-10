@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  yumicho: {
+    firstName: 'Yumi',
+    lastName: 'Cho',
+    email: 'whdbal0327@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'yumicho.jpg',
+    affiliation: 'CNU',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   junminpark: {
     firstName: 'Junmin',
     lastName: 'Park',
