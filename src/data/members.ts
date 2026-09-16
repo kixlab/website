@@ -1180,7 +1180,7 @@ export const MEMBERS = {
   hyehyunchu: {
     firstName: 'Hyehyun',
     lastName: 'Chu',
-    email: 'ded06031@snu.ac.kr',
+    email: 'hyenchu@kaist.ac.kr',
     kixlabPosition: 'Ph.D. Student',
     img: 'hyehyun.png',
     hoverImg: { HANBOK: 'members-hanbok/hyehyun.jpg' },
