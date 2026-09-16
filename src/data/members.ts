@@ -1127,7 +1127,7 @@ export const MEMBERS = {
   eunhyekim: {
     firstName: 'Eunhye',
     lastName: 'Kim',
-    email: 'gracekim027@snu.ac.kr',
+    email: 'gracekim027@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'eunhye.jpg',
     hoverImg: { HANBOK: 'members-hanbok/eunhye.jpg' },
