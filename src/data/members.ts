@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  alexnoh: {
+    firstName: 'Alex',
+    lastName: 'Noh',
+    email: 'ndh707@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'alexnoh.jpg',
+    site: 'https://ndh707.github.io/',
+    affiliation: 'SFU',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   yuxuanguo: {
     firstName: 'Yuxuan',
     lastName: 'Guo',
