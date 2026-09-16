@@ -50,7 +50,7 @@ export class Member {
 }
 
 export const MEMBERS = {
-   yuxuanguo: {
+  yuxuanguo: {
     firstName: 'Yuxuan',
     lastName: 'Guo',
     email: 'yuxuanguo@msn.com',
