@@ -752,6 +752,7 @@ export const MEMBERS = {
     endYear: 2026,
     endSeason: 'Summer',
     phdThesis: 'https://kixlab.github.io/website-files/theses/thesis-phd-2026-hyunwoo.pdf',
+    currentPosition: 'Senior Engineer at Samsung SDS',
   },
   seoyoungkim: {
     firstName: 'Seoyoung',
