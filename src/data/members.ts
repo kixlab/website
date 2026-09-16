@@ -50,6 +50,16 @@ export class Member {
 }
 
 export const MEMBERS = {
+  jeykim: {
+    firstName: 'Jey',
+    lastName: 'Kim',
+    email: 'jeynkimn@gmail.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'jeykim.jpg',
+    affiliation: 'SKKU',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   alexnoh: {
     firstName: 'Alex',
     lastName: 'Noh',
