@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  yuxuanguo: {
+    firstName: 'Yuxuan',
+    lastName: 'Guo',
+    email: 'yuxuanguo@msn.com',
+    kixlabPosition: 'Undergrad Intern',
+    img: 'yuxuanguo.jpg',
+    site: 'https://yuxuanguo.com',
+    affiliation: 'UoE',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   yumicho: {
     firstName: 'Yumi',
     lastName: 'Cho',
