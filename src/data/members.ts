@@ -54,7 +54,7 @@ export const MEMBERS = {
     firstName: 'Jey',
     lastName: 'Kim',
     email: 'jeynkimn@gmail.com',
-    kixlabPosition: 'Undergrad Intern',
+    kixlabPosition: 'Intern',
     img: 'jeykim.jpg',
     affiliation: 'SKKU',
     startYear: 2026,
