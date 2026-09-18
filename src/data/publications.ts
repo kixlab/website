@@ -25,9 +25,13 @@ export enum PublicationLinkType {
   ARX = 'arXiv',
 }
 
+export type PublicationAuthor = Member | string
+// A single author, or a group of authors who contributed equally (rendered with asterisks).
+export type PublicationAuthorEntry = PublicationAuthor | PublicationAuthor[]
+
 interface Props {
   title: string
-  authors: (Member | string)[]
+  authors: PublicationAuthorEntry[]
   year: number
   venue: string
   topics: ResearchTopicType[]

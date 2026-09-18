@@ -1,4 +1,5 @@
 import { Member } from '@/data/members'
+import { PublicationAuthorEntry } from '@/data/publications'
 import styled from '@emotion/styled'
 import { Color } from '@/app/theme'
 
@@ -18,14 +19,18 @@ const Name = ({ author, asterisks }: AuthorProps) => {
   )
 }
 
-export const Author = ({ authors }: { authors: (Member | string | (string | Member)[])[] }) => {
+export const Author = ({ authors }: { authors: PublicationAuthorEntry[] }) => {
+  // Each group of equal-contribution authors gets one more asterisk than the group before it.
+  let groupCount = 0
+  const asterisks = authors.map(entry => (Array.isArray(entry) ? '*'.repeat(++groupCount) : ''))
+
   return (
     <AuthorList>
       {authors.flatMap((entry, i) =>
         Array.isArray(entry) ? (
-          entry.map((a, j) => <Name key={j} author={a} asterisks={'*'.repeat(i + 1)} />)
+          entry.map((a, j) => <Name key={`${i}-${j}`} author={a} asterisks={asterisks[i]} />)
         ) : (
-          <Name key={i} author={entry} asterisks="" />
+          <Name key={i} author={entry} asterisks={asterisks[i]} />
         )
       )}
     </AuthorList>

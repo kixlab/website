@@ -54,10 +54,11 @@ const GatherStatsByResearchTopic = () => {
     const numPublications = filteredPublications.length
     // TODO: Change the MEMBERS data structure. The current structure is not optimized for this sort of filtering algorithm.
     // Algorithm: First authors are shown first with most recent publication, then the rest of the authors
+    // .flat() unwraps groups of equal-contribution authors so that each member is counted individually.
     const topicAuthors = uniq(
       filteredPublications
-        .flatMap(publication => publication.authors[0])
-        .concat(filteredPublications.flatMap(publication => publication.authors.slice(1)))
+        .flatMap(publication => publication.authors.slice(0, 1).flat())
+        .concat(filteredPublications.flatMap(publication => publication.authors.slice(1).flat()))
     )
     const filteredAuthors = topicAuthors.filter(entry => entry instanceof Object && entry.isAlumni !== true) as Member[]
 
