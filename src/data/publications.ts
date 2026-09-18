@@ -25,9 +25,13 @@ export enum PublicationLinkType {
   ARX = 'arXiv',
 }
 
+export type PublicationAuthor = Member | string
+// A single author, or a group of authors who contributed equally (rendered with asterisks).
+export type PublicationAuthorEntry = PublicationAuthor | PublicationAuthor[]
+
 interface Props {
   title: string
-  authors: (Member | string)[]
+  authors: PublicationAuthorEntry[]
   year: number
   venue: string
   topics: ResearchTopicType[]
@@ -111,8 +115,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'TIDES: A Longitudinal Bilingual Dataset for Modeling Multi-Party Social Dynamics',
     authors: [
-      MEMBERS.heechanlee,
-      'Jeonggyu Kang',
+      [MEMBERS.heechanlee, 'Jeonggyu Kang'],
       MEMBERS.junhomyung,
       'Jaywoong Jeong',
       MEMBERS.juhokim,
@@ -150,8 +153,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'Supporting Tutors in the Gig Economy with Automated Feedback: A Case Study on Ringle',
     authors: [
-      MEMBERS.yeonsupark,
-      MEMBERS.sieunkim,
+      [MEMBERS.yeonsupark, MEMBERS.sieunkim],
       'Keighley Overbay',
       MEMBERS.seoyoungkim,
       'Sewook Wee',
@@ -356,7 +358,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions',
-    authors: [MEMBERS.taesookim, MEMBERS.heechanlee, MEMBERS.yoonjoolee, 'Joseph Seering', MEMBERS.juhokim],
+    authors: [[MEMBERS.taesookim, MEMBERS.heechanlee], MEMBERS.yoonjoolee, 'Joseph Seering', MEMBERS.juhokim],
     venue: 'CHI 2026',
     year: 2026,
     topics: ['human-AI interaction'],
@@ -382,8 +384,7 @@ export const PUBLICATIONS: Publication[] = [
       'When Scaffolding Breaks: Investigating Student Interaction with LLM-Based Writing Support in Real-Time K-12 EFL Classrooms',
     authors: [
       MEMBERS.junhomyung,
-      'Hyunseung Lim',
-      MEMBERS.hanaoh,
+      ['Hyunseung Lim', MEMBERS.hanaoh],
       MEMBERS.hyoungwookjin,
       'Nayeon Kang',
       'So-Yeon Ahn',
@@ -413,7 +414,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Supporting Design Reasoning in AI-assisted Interface Prototyping for HCI Research',
-    authors: [MEMBERS.eunhyekim, MEMBERS.minjuyoo, MEMBERS.jennyyang, MEMBERS.daeunchoi],
+    authors: [[MEMBERS.eunhyekim, MEMBERS.minjuyoo], MEMBERS.jennyyang, MEMBERS.daeunchoi],
     venue: 'CHI 2026 Extended Abstracts (Posters)',
     year: 2026,
     topics: ['human-AI interaction'],
@@ -474,7 +475,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'CANVAS: A Benchmark for Vision-Language Models on Tool-Based User Interface Design',
-    authors: [MEMBERS.daeheonjeong, MEMBERS.seoyeonbyun, MEMBERS.kihoonson, MEMBERS.daehyunkim, MEMBERS.juhokim],
+    authors: [[MEMBERS.daeheonjeong, MEMBERS.seoyeonbyun], MEMBERS.kihoonson, MEMBERS.daehyunkim, MEMBERS.juhokim],
     venue: 'AAAI 2026',
     year: 2026,
     topics: ['human-AI interaction'],
@@ -578,7 +579,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       "Can Fans Build Parasocial Relationships through Idols' Simulated Voice Messages?: A Study of AI Private Call Users' Perceptions, Cognitions, and Behaviors",
-    authors: [MEMBERS.eunjeongkang, MEMBERS.haesookim, MEMBERS.hyunwookim, 'Susan R. Fussell', MEMBERS.juhokim],
+    authors: [MEMBERS.eunjeongkang, [MEMBERS.haesookim, MEMBERS.hyunwookim], 'Susan R. Fussell', MEMBERS.juhokim],
     venue: 'CSCW 2025',
     year: 2025,
     topics: ['human-AI interaction', 'social'],
@@ -753,8 +754,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'PlanTogether: Facilitating AI Application Planning Using Information Graphs and Large Language Models',
     authors: [
-      MEMBERS.daehyunkim,
-      MEMBERS.daeheonjeong,
+      [MEMBERS.daehyunkim, MEMBERS.daeheonjeong],
       MEMBERS.shahnozayadgarova,
       MEMBERS.hyungyushin,
       'Jinho Son',
@@ -867,7 +867,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Visual Embedding of Screen Sequences for User-Flow Search in Example-driven Communication',
-    authors: [MEMBERS.daeheonjeong, MEMBERS.hyehyunchu],
+    authors: [[MEMBERS.daeheonjeong, MEMBERS.hyehyunchu]],
     venue: 'CHI 2025 Extended Abstracts (Late Breaking Work)',
     year: 2025,
     topics: ['human-AI interaction'],
@@ -917,7 +917,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages',
-    authors: [MEMBERS.junhomyung, 'Nayeon Lee', 'Yi Zhou', 'Jiho Jin', 'Rifki Afina Putri', 'and 17 more authors'],
+    authors: [[MEMBERS.junhomyung, 'Nayeon Lee', 'Yi Zhou'], 'Jiho Jin', 'Rifki Afina Putri', 'and 17 more authors'],
     venue: 'NeurIPS 2024 Datasets & Benchmarks',
     year: 2024,
     topics: ['social'],
@@ -936,8 +936,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'ARXIVDIGESTABLES: Synthesizing Scientific Literature into Tables using Language Models',
     authors: [
-      'Benjamin Newman',
-      MEMBERS.yoonjoolee,
+      ['Benjamin Newman', MEMBERS.yoonjoolee],
       'Aakanksha Naik',
       'Pao Siangliulue',
       'Raymond Fok',
@@ -979,7 +978,7 @@ export const PUBLICATIONS: Publication[] = [
 
   {
     title: 'KUIZ: Encouraging Modular Learnersourcing of Multiple Choice Questions through LLM Interventions',
-    authors: [MEMBERS.hyoungwookjin, MEMBERS.haesookim, 'Nathan Mekuria Haile', 'Soyeong Min', MEMBERS.juhokim],
+    authors: [[MEMBERS.hyoungwookjin, MEMBERS.haesookim], 'Nathan Mekuria Haile', 'Soyeong Min', MEMBERS.juhokim],
     venue: 'L@S 2024 Workshop on Learnersourcing: Student-generated Content @ Scale',
     year: 2024,
     topics: ['learning'],
@@ -994,7 +993,7 @@ export const PUBLICATIONS: Publication[] = [
 
   {
     title: 'Using Large Language Models To Diagnose Math Problem-solving Skills At Scale',
-    authors: [MEMBERS.hyoungwookjin, MEMBERS.yoonsukim, MEMBERS.yeonsupark, MEMBERS.bekzattilekbay, MEMBERS.juhokim],
+    authors: [[MEMBERS.hyoungwookjin, MEMBERS.yoonsukim], MEMBERS.yeonsupark, MEMBERS.bekzattilekbay, MEMBERS.juhokim],
     venue: 'L@S 2024 (Work-in-Progress)',
     year: 2024,
     topics: ['learning'],
@@ -1036,8 +1035,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'Using LLMs to Investigate Correlations of Conversational Follow-up Queries with User Satisfaction',
     authors: [
-      MEMBERS.hyunwookim,
-      MEMBERS.yoonseochoi,
+      [MEMBERS.hyunwookim, MEMBERS.yoonseochoi],
       MEMBERS.taehyunyang,
       'Honggu Lee',
       'Chaneon Park',
@@ -1152,8 +1150,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'Co-Creating Question-and-Answer Style Articles with Large Language Models for Research Promotion',
     authors: [
-      'Hyunseung Lim',
-      'Ji Yong Cho',
+      ['Hyunseung Lim', 'Ji Yong Cho'],
       'Taewan Kim',
       MEMBERS.jeongeonpark,
       MEMBERS.hyungyushin,
@@ -1183,7 +1180,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Exploring Cross-Cultural Differences in English Hate Speech Annotations: From Dataset Construction to Analysis',
-    authors: ['Nayeon Lee', 'Chani Jung', MEMBERS.junhomyung, 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
+    authors: ['Nayeon Lee', ['Chani Jung', MEMBERS.junhomyung], 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
     venue: 'NAACL 2024',
     year: 2024,
     topics: ['social'],
@@ -1557,8 +1554,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'FLASK: Fine-grained Language Model Evaluation based on Alignment Skill Sets',
     authors: [
-      'Seonghyeon Ye',
-      'Doyoung Kim',
+      ['Seonghyeon Ye', 'Doyoung Kim'],
       'Sungdong Kim',
       'Hyeonbin Hwang',
       'Seungone Kim',
@@ -1698,7 +1694,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Is the Same Performance Really the Same?: Understanding How Listeners Perceive ASR Results Differently According to the Speaker’s Accent',
-    authors: [MEMBERS.seoyoungkim, MEMBERS.yeonsupark, MEMBERS.dakyeomahn, 'Jin Myung Kwak', MEMBERS.juhokim],
+    authors: [MEMBERS.seoyoungkim, [MEMBERS.yeonsupark, MEMBERS.dakyeomahn], 'Jin Myung Kwak', MEMBERS.juhokim],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['human-AI interaction', 'social'],
@@ -1801,8 +1797,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'QASA: Advanced Question Answering on Scientific Articles',
     authors: [
-      MEMBERS.yoonjoolee,
-      'Kyungjae Lee',
+      [MEMBERS.yoonjoolee, 'Kyungjae Lee'],
       'Sunghyun Park',
       'Dasol Hwang',
       'Jaehyeon Kim',
@@ -1868,8 +1863,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title: 'RECIPE: How to Integrate ChatGPT into EFL Writing Education',
     authors: [
-      'Jieun Han',
-      'Haneul Yoo',
+      ['Jieun Han', 'Haneul Yoo'],
       MEMBERS.yoonsukim,
       MEMBERS.junhomyung,
       'Minsun Kim',
@@ -1979,7 +1973,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Beyond Instructions: A Taxonomy of Information Types in How-to Videos',
-    authors: [MEMBERS.saelyneyang, MEMBERS.sangkyungkwak, MEMBERS.juhoonlee, MEMBERS.juhokim],
+    authors: [MEMBERS.saelyneyang, [MEMBERS.sangkyungkwak, MEMBERS.juhoonlee], MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['learning'],
@@ -2056,7 +2050,7 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'ModSandbox: Facilitating Online Community Moderation Through Error Prediction and Improvement of Automated Rules',
-    authors: [MEMBERS.jeanyoungsong, MEMBERS.sangwooklee, MEMBERS.jisoolee, MEMBERS.minakim, MEMBERS.juhokim],
+    authors: [[MEMBERS.jeanyoungsong, MEMBERS.sangwooklee], MEMBERS.jisoolee, MEMBERS.minakim, MEMBERS.juhokim],
     venue: 'CHI 2023',
     year: 2023,
     topics: ['social', 'civics'],
@@ -2169,9 +2163,7 @@ export const PUBLICATIONS: Publication[] = [
       'RLens: A Computer-aided Visualization System for Supporting Reflection on Language Learning under Distributed Tutorship',
     authors: [
       MEMBERS.mengxia,
-      'Yankun Zhao',
-      MEMBERS.jihyeonghong,
-      MEMBERS.mehmethamzaerol,
+      ['Yankun Zhao', MEMBERS.jihyeonghong, MEMBERS.mehmethamzaerol],
       MEMBERS.taewookkim,
       MEMBERS.juhokim,
     ],
