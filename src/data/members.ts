@@ -435,6 +435,7 @@ export const MEMBERS = {
     lastName: 'Kim',
     email: 'hanan.dev04@gmail.com',
     kixlabPosition: 'Visiting Researcher',
+    currentPosition: 'Now M.S. Student at Columbia University',
     img: 'jihohanan.jpg',
     hoverImg: { HANBOK: 'members-hanbok/jihohanan.jpg' },
     site: 'https://jiho.dev/',
