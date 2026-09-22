@@ -60,6 +60,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2609.00608',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://assistantbias.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
     ],
   },
   {
