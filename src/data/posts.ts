@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'KIXLAB has positions for MS students',
+    date: new Date('2026-10-07'),
+    categories: ['position'],
+    summary:
+      'KIXLAB has four open positions for MS students for 2027. If interested, please follow the instructions in the [MS Student Selection Process](https://juhokim.com/join#ms_process). Application deadline: Oct. 13, 2026.',
+    endsAt: new Date('2026-10-13'),
+  },
+  {
     title: 'A paper accepted to EMNLP 2026 Findings',
     date: new Date('2026-08-21'),
     categories: ['publication'],
