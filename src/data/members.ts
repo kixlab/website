@@ -1011,6 +1011,7 @@ export const MEMBERS = {
     email: 'jaesangyu22@gmail.com',
     kixlabPosition: 'M.S. Student',
     img: 'jaesang.jpg',
+    site: 'https://www.jaesangyu.com/',
     hoverImg: { HANBOK: 'members-hanbok/jaesang.jpg' },
     startSeason: 'Spring',
     startYear: 2025,
