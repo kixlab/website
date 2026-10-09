@@ -317,6 +317,9 @@ export const MEMBERS = {
     affiliation: 'POSTECH',
     startYear: 2026,
     startSeason: 'Winter',
+    endYear: 2026,
+    endSeason: 'Spring',
+    isAlumni: true,
   },
   junyoungpark: {
     firstName: 'Junyoung',
