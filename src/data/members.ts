@@ -318,7 +318,7 @@ export const MEMBERS = {
     startYear: 2026,
     startSeason: 'Winter',
     endYear: 2026,
-    endSeason: 'Spring',
+    endSeason: 'Fall',
     isAlumni: true,
   },
   junyoungpark: {
