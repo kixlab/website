@@ -521,7 +521,7 @@ export const MEMBERS = {
     lastName: 'Kim',
     email: 'kimsean@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
-    img: 'sean.jpg',
+    img: 'sean.jpeg',
     hoverImg: { HANBOK: 'members-hanbok/sean.jpg', CHRISTMAS: 'members-christmas/sean.png' },
     site: 'https://seank021.github.io/',
     startYear: 2025,
