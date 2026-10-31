@@ -15,6 +15,7 @@ export const ResearchTopics = {
 export type ResearchTopicType = keyof typeof ResearchTopics
 
 export enum PublicationLinkType {
+  OR = 'OpenReview',
   PDF = 'PDF',
   SLI = 'Slides',
   POS = 'Poster',
@@ -48,6 +49,78 @@ export class Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
+  {
+    title: 'Same Behavior, Different Feedback: Interpreting Multi-Agent Coordination Beyond Performance Metrics',
+    authors: [
+      [MEMBERS.jungkyungyoon, 'Donggun Lee'],
+      'Hyun Seung Moon',
+      'Eunji Shin',
+      'Seon Gyeom Kim',
+      'SeongWon Hong',
+      MEMBERS.juhokim,
+      'Tak Yeon Lee',
+    ],
+    venue: 'NeurIPS 2026 Workshop on Interpreting Agent Behavior (IAB)',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://openreview.net/forum?id=k47c8eDKsd',
+        type: PublicationLinkType.OR,
+      },
+    ],
+  },
+  {
+    title: 'Human-Grounded Representations for Neuro-Symbolic Monitoring of Multi-Agent Coordination',
+    authors: [
+      ['Donggun Lee', MEMBERS.jungkyungyoon],
+      'Hyun Seung Moon',
+      'Jaywoong Jeong',
+      'Eunji Shin',
+      'Seon Gyeom Kim',
+      'SeongWon Hong',
+      MEMBERS.juhokim,
+      'Tak Yeon Lee',
+    ],
+    venue: 'NeurIPS 2026 Workshop on Neuro-Symbolic Embodied Intelligence (NEmo)',
+    year: 2026,
+    topics: ['human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://openreview.net/forum?id=h8ykpkojQt',
+        type: PublicationLinkType.OR,
+      },
+    ],
+  },
+  {
+    title: 'From Simulated Citizens to Simulated Deliberation: Challenges in Representation and Interaction',
+    authors: [
+      'Chaemin Jang',
+      'Junsik Min',
+      'Jaewoo Choi',
+      'Donggyu Lee',
+      'Haiin Lee',
+      MEMBERS.junyoungpark,
+      MEMBERS.namheekim,
+      MEMBERS.hyunwookim,
+      'Jungwon Kim',
+      MEMBERS.juhokim,
+      'Nuri Kim',
+      'Jihee Kim',
+    ],
+    venue: 'SocialAgent@NeurIPS 2026',
+    year: 2026,
+    topics: ['social', 'human-AI interaction'],
+    type: 'Workshop',
+    links: [
+      {
+        url: 'https://openreview.net/forum?id=QDrdive3af',
+        type: PublicationLinkType.OR,
+      },
+    ],
+  },
   {
     title: 'Investigating Assistant Bias in LLM User Simulators Using a Role Vector',
     authors: [MEMBERS.daeheonjeong, MEMBERS.yoonjoolee, MEMBERS.eugenechoi, 'Sinie van der Ben', MEMBERS.juhokim],
