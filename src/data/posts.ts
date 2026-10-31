@@ -16,6 +16,14 @@ export class Post {
 
 export const POSTS: Post[] = [
   {
+    title: 'Three papers accepted to NeurIPS 2026 Workshops',
+    date: new Date('2026-10-31'),
+    categories: ['publication'],
+    summary:
+      'Three papers from KIXLAB and collaborators have been accepted to NeurIPS 2026 workshops: IAB, NEmo, and SocialAgent. Congratulations to all authors!',
+    contentMdFilePath: '2026-10-31-neurips2026-workshops.md',
+  },
+  {
     title: 'Winter 2027 Undergraduate Research Internship',
     date: new Date('2026-10-26'),
     categories: ['position'],
