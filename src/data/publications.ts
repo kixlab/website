@@ -137,6 +137,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://assistantbias.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
+      {
+        url: 'https://openreview.net/forum?id=kuY5rzjSbS',
+        type: PublicationLinkType.OR,
+      },
     ],
   },
   {
@@ -146,6 +150,12 @@ export const PUBLICATIONS: Publication[] = [
     year: 2026,
     topics: ['human-AI interaction'],
     type: 'Journal',
+    links: [
+      {
+        url: 'https://openreview.net/forum?id=TVO84EFoTu',
+        type: PublicationLinkType.OR,
+      },
+    ],
   },
   {
     title: 'Contexty: Capturing and Organizing In-situ Thoughts for Context-Aware AI Support',
@@ -158,6 +168,14 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2604.11067',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3830398.3830663',
+        type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://contexty.kixlab.org/',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
@@ -172,6 +190,14 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2608.25565',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3830398.3830621',
+        type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://maru.kixlab.org/',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
@@ -210,6 +236,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://tides.cstlab.org/',
         type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://openreview.net/forum?id=Sk6wuoyjIy',
+        type: PublicationLinkType.OR,
       },
     ],
   },
@@ -282,6 +312,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2602.03429',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://taesookim.com/discoverllm/',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
@@ -431,6 +465,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://dl.acm.org/doi/10.1145/3772318.3790572',
         type: PublicationLinkType.ACM,
       },
+      {
+        url: 'https://diaryplay.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
     ],
   },
   {
@@ -523,6 +561,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2603.25864',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://guide-bench.github.io/',
+        type: PublicationLinkType.WEB,
+      },
     ],
   },
   {
@@ -547,6 +589,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://dl.acm.org/doi/10.1145/3742413.3789107',
         type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://choicemates.kixlab.org/',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
@@ -753,6 +799,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://dl.acm.org/doi/10.1145/3746058.3759001',
         type: PublicationLinkType.ACM,
       },
+      {
+        url: 'https://ideablocks.kixlab.org/',
+        type: PublicationLinkType.WEB,
+      },
     ],
   },
   {
@@ -854,6 +904,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://dl.acm.org/doi/10.1145/3706598.3714044',
         type: PublicationLinkType.ACM,
+      },
+      {
+        url: 'https://plantogether.kixlab.org/',
+        type: PublicationLinkType.WEB,
       },
     ],
   },
