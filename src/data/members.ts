@@ -132,6 +132,9 @@ export const MEMBERS = {
     affiliation: 'ROKA',
     startYear: 2026,
     startSeason: 'Summer',
+    endYear: 2026,
+    endSeason: 'Fall',
+    isAlumni: true,
   },
   jungkyungyoon: {
     firstName: 'Kyungyoon',
@@ -152,6 +155,9 @@ export const MEMBERS = {
     affiliation: 'ROKA',
     startYear: 2026,
     startSeason: 'Summer',
+    endYear: 2026,
+    endSeason: 'Fall',
+    isAlumni: true,
   },
   hyunminkim: {
     firstName: 'Hyunmin',
