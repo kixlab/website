@@ -1311,7 +1311,14 @@ export const PUBLICATIONS: Publication[] = [
   {
     title:
       'Exploring Cross-Cultural Differences in English Hate Speech Annotations: From Dataset Construction to Analysis',
-    authors: ['Nayeon Lee', ['Chani Jung', MEMBERS.junhomyung], 'Jiho Jin', MEMBERS.juhokim, 'Alice Oh'],
+    authors: [
+      'Nayeon Lee',
+      ['Chani Jung', MEMBERS.junhomyung],
+      'Jiho Jin',
+      'Jose Camacho-Collados',
+      MEMBERS.juhokim,
+      'Alice Oh',
+    ],
     venue: 'NAACL 2024',
     year: 2024,
     topics: ['social'],
@@ -1461,7 +1468,7 @@ export const PUBLICATIONS: Publication[] = [
     year: 2024,
     venue: 'EMNLP 2024 Workshop on Customizable NLP (CustomNLP4U)',
     topics: ['learning'],
-    type: 'Conference',
+    type: 'Workshop',
     links: [
       {
         url: 'https://arxiv.org/abs/2310.05191',
@@ -1740,6 +1747,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://kixlab.github.io/website-files/2024/iui2024-ChatGPT-paper.pdf',
         type: PublicationLinkType.PDF,
+      },
+      {
+        url: 'https://arxiv.org/abs/2311.07434',
+        type: PublicationLinkType.ARX,
       },
     ],
   },
@@ -2213,6 +2224,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://dl.acm.org/doi/abs/10.1145/3581641.3584078',
         type: PublicationLinkType.ACM,
       },
+      {
+        url: 'https://arxiv.org/abs/2210.08477',
+        type: PublicationLinkType.ARX,
+      },
     ],
   },
   {
@@ -2307,6 +2322,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://kixlab.github.io/website-files/2022/l@s2022-RLens-paper.pdf',
         type: PublicationLinkType.PDF,
       },
+      {
+        url: 'https://dl.acm.org/doi/abs/10.1145/3491140.3528264',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -2369,7 +2388,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Conference',
     links: [
       {
-        url: 'https://dl.acm.org/doi/10.1145/3485447.3512243',
+        url: 'https://dl.acm.org/doi/10.1145/3506860.3506883',
         type: PublicationLinkType.ACM,
       },
       {
@@ -2642,7 +2661,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'Supporting Dynamic Construction of Datasets through Crowd Suggestions',
+    title: 'Supporting Dynamic Construction of Datasets with Annotator Suggestions',
     authors: [MEMBERS.jeongeonpark, MEMBERS.eunyoungko, MEMBERS.donghoonhan, 'Jinyeong Yim', MEMBERS.juhokim],
     venue: 'HCOMP 2021 WiP (Works-in-Progress)',
     year: 2021,
@@ -2667,6 +2686,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://kixlab.github.io/website-files/2021/cscw2021-poster-hagendas-paper.pdf',
         type: PublicationLinkType.PDF,
+      },
+      {
+        url: 'https://dl.acm.org/doi/abs/10.1145/3462204.3481761',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -2947,7 +2970,7 @@ export const PUBLICATIONS: Publication[] = [
     venue: 'CSCW 2020 Demonstrations',
     year: 2020,
     topics: ['crowdsourcing', 'visualization'],
-    type: 'Conference',
+    type: 'Poster',
     links: [
       {
         url: 'https://youtu.be/x_nYnn8S3u8',
@@ -3064,6 +3087,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://kixlab.github.io/website-files/2020/l@s2020-wip-AlgoPlan-poster.pdf',
         type: PublicationLinkType.PDF,
       },
+      {
+        url: 'https://dl.acm.org/doi/abs/10.1145/3386527.3406750',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -3128,6 +3155,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://kixlab.github.io/website-files/2020/chi2020-lbw-CoSeq-paper.pdf',
         type: PublicationLinkType.PDF,
       },
+      {
+        url: 'https://dl.acm.org/doi/abs/10.1145/3334480.3382906',
+        type: PublicationLinkType.ACM,
+      },
     ],
   },
   {
@@ -3135,8 +3166,8 @@ export const PUBLICATIONS: Publication[] = [
     authors: [
       MEMBERS.sungchullee,
       MEMBERS.jaeyoonsong,
-      MEMBERS.eunyoungko,
       MEMBERS.seonghopark,
+      MEMBERS.eunyoungko,
       'Jihee Kim',
       MEMBERS.juhokim,
     ],
@@ -3471,7 +3502,7 @@ export const PUBLICATIONS: Publication[] = [
     title: 'FourEyes: Leveraging Tool Diversity as a Means to Improve Aggregate Accuracy in Crowdsourcing',
     authors: [MEMBERS.jeanyoungsong, 'Raymond Fok', MEMBERS.juhokim, 'Walter S. Lasecki'],
     venue: 'ACM TIIS',
-    year: 2018,
+    year: 2019,
     topics: ['crowdsourcing'],
     type: 'Journal',
     links: [
