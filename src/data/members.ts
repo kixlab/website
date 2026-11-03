@@ -402,7 +402,7 @@ export const MEMBERS = {
     isAlumni: true,
   },
   jaeyoungkwon: {
-    firstName: 'Jaeyoung',
+    firstName: 'Jay',
     lastName: 'Kwon',
     email: 'jaylions@snu.ac.kr',
     kixlabPosition: 'Intern',
