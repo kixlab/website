@@ -119,6 +119,7 @@ export const MEMBERS = {
     email: 'deanvilgel21@kaist.ac.kr',
     kixlabPosition: 'M.S. Student',
     img: 'junminpark.png',
+    site: 'https://junmin-park.pages.dev/',
     affiliation: 'KAIST',
     startYear: 2026,
     startSeason: 'Fall',
