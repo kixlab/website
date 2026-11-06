@@ -50,6 +50,17 @@ export class Member {
 }
 
 export const MEMBERS = {
+  zijianding: {
+    firstName: 'Zijian "Jason"',
+    lastName: 'Ding',
+    email: 'jasonziding@gmail.com',
+    kixlabPosition: 'Postdoc Researcher',
+    img: 'zijianding.jpg',
+    site: 'https://jason-ding.com/',
+    affiliation: 'KAIST',
+    startYear: 2026,
+    startSeason: 'Fall',
+  },
   jeykim: {
     firstName: 'Jey',
     lastName: 'Kim',
