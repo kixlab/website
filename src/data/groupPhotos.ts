@@ -12,6 +12,10 @@ export class GroupPhoto {
 
 export const GROUPPHOTOS: GroupPhoto[] = [
   {
+    filename: 'group_2026_nov.jpg',
+    description: 'November, 2026',
+  },
+  {
     filename: 'group_2025_may.jpg',
     description: 'May, 2025',
   },
