@@ -110,10 +110,11 @@ export const PUBLICATIONS: Publication[] = [
       'Nuri Kim',
       'Jihee Kim',
     ],
-    venue: 'SocialAgent@NeurIPS 2026',
+    venue: 'SocialAgent@NeurIPS 2026 & UserSim@NeurIPS 2026',
     year: 2026,
     topics: ['social', 'human-AI interaction'],
     type: 'Workshop',
+    award: 'UserSim Spotlight (Oral Presentation)',
     links: [
       {
         url: 'https://openreview.net/forum?id=QDrdive3af',
