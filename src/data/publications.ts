@@ -120,6 +120,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://openreview.net/forum?id=QDrdive3af',
         type: PublicationLinkType.OR,
       },
+      {
+        url: 'https://arxiv.org/abs/2609.07573',
+        type: PublicationLinkType.ARX,
+      },
     ],
   },
   {
@@ -141,6 +145,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://openreview.net/forum?id=kuY5rzjSbS',
         type: PublicationLinkType.OR,
+      },
+      {
+        url: 'https://aclanthology.org/2026.findings-emnlp.2426.pdf',
+        type: PublicationLinkType.PDF,
       },
     ],
   },
@@ -277,6 +285,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2606.22609',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://ceur-ws.org/Vol-4282/short6.pdf',
+        type: PublicationLinkType.PDF,
+      },
     ],
   },
   {
@@ -317,6 +329,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://taesookim.com/discoverllm/',
         type: PublicationLinkType.WEB,
+      },
+      {
+        url: 'https://openreview.net/forum?id=uIi5FfjtwR',
+        type: PublicationLinkType.OR,
       },
     ],
   },
@@ -441,7 +457,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'DiaryPlay: AI-Assisted Authoring of Interactive Vignettes for Everyday Storytelling',
+    title: 'DiaryPlay: AI-Assisted Creation of Interactive Story Vignettes for Everyday Storytelling',
     authors: [
       MEMBERS.jiangnanxu,
       MEMBERS.haeseulcha,
@@ -473,7 +489,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'Evalet: Evaluating Large Language Models by Fragmenting Outputs into Functions',
+    title: 'Evalet: Evaluating Large Language Models through Functional Fragmentation',
     authors: [[MEMBERS.taesookim, MEMBERS.heechanlee], MEMBERS.yoonjoolee, 'Joseph Seering', MEMBERS.juhokim],
     venue: 'CHI 2026',
     year: 2026,
@@ -566,6 +582,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://guide-bench.github.io/',
         type: PublicationLinkType.WEB,
       },
+      {
+        url: 'https://openaccess.thecvf.com/content/CVPR2026/papers/Yang_GUIDE_A_Benchmark_for_Understanding_and_Assisting_Users_in_Open-Ended_CVPR_2026_paper.pdf',
+        type: PublicationLinkType.PDF,
+      },
     ],
   },
   {
@@ -613,14 +633,18 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://canvas.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
+      {
+        url: 'https://ojs.aaai.org/index.php/AAAI/article/download/39374/43335',
+        type: PublicationLinkType.PDF,
+      },
     ],
   },
   {
     title:
-      'Iffy-Or-Not: Critically Evaluating Potential Misinformation With Fallacy Detection and Socratic Questioning Using LLMs',
+      'Iffy-or-Not: Critically Evaluating Potential Misinformation Using Fallacy Detection and Socratic Questioning with LLMs',
     authors: [MEMBERS.gionnievelim, MEMBERS.juhokim, MEMBERS.simonperrault],
-    venue: 'TOCHI 2025',
-    year: 2025,
+    venue: 'TOCHI 2026',
+    year: 2026,
     topics: ['human-AI interaction', 'social'],
     type: 'Journal',
     links: [
@@ -657,11 +681,14 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2502.17086',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://aclanthology.org/2025.emnlp-main.1805.pdf',
+        type: PublicationLinkType.PDF,
+      },
     ],
   },
   {
-    title:
-      'PANORAMA: A Dataset and Benchmark Tasks Capturing the Evaluation Trails and Rationales in Patent Examination',
+    title: 'PANORAMA: A Dataset and Benchmarks Capturing Decision Trails and Rationales in Patent Examination',
     authors: [
       'Hyunseung Lim',
       'Sooyohn Nam',
@@ -682,6 +709,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://www.arxiv.org/abs/2510.24774',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://proceedings.neurips.cc/paper_files/paper/2025/file/4aab82c8d6b77c0b6b010145c1bfcdd3-Paper-Datasets_and_Benchmarks_Track.pdf',
+        type: PublicationLinkType.PDF,
       },
     ],
   },
@@ -807,10 +838,12 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: "Investigating Large Language Models in Diagnosing Students' Cognitive Skills in Math Problem-solving",
+    title: "Benchmarking Large Language Models for Diagnosing Students' Cognitive Skills from Handwritten Math Work",
     authors: [
-      MEMBERS.hyoungwookjin,
       MEMBERS.yoonsukim,
+      MEMBERS.hyoungwookjin,
+      MEMBERS.hayondoh,
+      MEMBERS.eunhyekim,
       MEMBERS.dongyunjung,
       MEMBERS.seungjukim,
       'Kiyoon Choi',
@@ -1066,7 +1099,7 @@ export const PUBLICATIONS: Publication[] = [
     ],
   },
   {
-    title: 'ARXIVDIGESTABLES: Synthesizing Scientific Literature into Tables using Language Models',
+    title: 'ArxivDIGESTables: Synthesizing Scientific Literature into Tables using Language Models',
     authors: [
       ['Benjamin Newman', MEMBERS.yoonjoolee],
       'Aakanksha Naik',
@@ -1085,6 +1118,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2410.22360',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://aclanthology.org/2024.emnlp-main.538.pdf',
+        type: PublicationLinkType.PDF,
       },
     ],
   },
@@ -1125,7 +1162,13 @@ export const PUBLICATIONS: Publication[] = [
 
   {
     title: 'Using Large Language Models To Diagnose Math Problem-solving Skills At Scale',
-    authors: [[MEMBERS.hyoungwookjin, MEMBERS.yoonsukim], MEMBERS.yeonsupark, MEMBERS.bekzattilekbay, MEMBERS.juhokim],
+    authors: [
+      [MEMBERS.hyoungwookjin, MEMBERS.yoonsukim],
+      MEMBERS.yeonsupark,
+      MEMBERS.bekzattilekbay,
+      'Jinho Son',
+      MEMBERS.juhokim,
+    ],
     venue: 'L@S 2024 (Work-in-Progress)',
     year: 2024,
     topics: ['learning'],
@@ -1221,6 +1264,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2407.04280',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://www.isca-archive.org/interspeech_2024/kim24v_interspeech.pdf',
+        type: PublicationLinkType.PDF,
       },
     ],
   },
@@ -1330,6 +1377,10 @@ export const PUBLICATIONS: Publication[] = [
         url: 'https://arxiv.org/abs/2308.16705',
         type: PublicationLinkType.ARX,
       },
+      {
+        url: 'https://aclanthology.org/2024.naacl-long.236.pdf',
+        type: PublicationLinkType.PDF,
+      },
     ],
   },
 
@@ -1352,6 +1403,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2405.05581',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://dl.acm.org/doi/10.1145/3630106.3662681',
+        type: PublicationLinkType.ACM,
       },
     ],
   },
@@ -1421,7 +1476,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://heal-workshop.github.io/papers/34_how_to_reflect_diverse_people_.pdf',
+        url: 'https://heal-workshop.github.io/chi2024_papers/34_how_to_reflect_diverse_people_.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1446,7 +1501,7 @@ export const PUBLICATIONS: Publication[] = [
     type: 'Workshop',
     links: [
       {
-        url: 'https://heal-workshop.github.io/papers/30_towards_an_evaluation_of_llm_g.pdf',
+        url: 'https://heal-workshop.github.io/chi2024_papers/30_towards_an_evaluation_of_llm_g.pdf',
         type: PublicationLinkType.PDF,
       },
     ],
@@ -1474,6 +1529,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2310.05191',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://aclanthology.org/2024.customnlp4u-1.21.pdf',
+        type: PublicationLinkType.PDF,
       },
     ],
   },
@@ -1596,7 +1655,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.ARX,
       },
       {
-        url: 'http://tacitknowledge.kixlab.org/',
+        url: 'https://tacitknowledge.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
       {
@@ -1711,6 +1770,10 @@ export const PUBLICATIONS: Publication[] = [
       {
         url: 'https://arxiv.org/abs/2307.10928',
         type: PublicationLinkType.ARX,
+      },
+      {
+        url: 'https://openreview.net/forum?id=CYmF38ysDa',
+        type: PublicationLinkType.OR,
       },
     ],
   },
@@ -1877,7 +1940,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     title: 'Re:SPect: Enabling Active and Scalable Responses to Networked Online Harassment',
-    authors: [MEMBERS.haesookim, MEMBERS.juhoonlee, MEMBERS.juhokim, 'Jeong-woo Jang'],
+    authors: [MEMBERS.haesookim, MEMBERS.juhoonlee, 'Jeong-woo Jang', MEMBERS.juhokim],
     venue: 'CSCW 2024',
     year: 2024,
     topics: ['social'],
@@ -3190,7 +3253,7 @@ export const PUBLICATIONS: Publication[] = [
         type: PublicationLinkType.TRA,
       },
       {
-        url: 'http://solutionchat.kixlab.org/',
+        url: 'https://solutionchat.kixlab.org/',
         type: PublicationLinkType.WEB,
       },
       {
